@@ -9,7 +9,7 @@ File:
 2. Buka `nihongo-michi-lynk.html`, lalu Find & Replace:
    - `GANTI_LINK_CHECKOUT` -> link checkout Lynk (dipakai di 4 tombol)
    - `GANTI_URL_GAMBAR_HOME`, `GANTI_URL_GAMBAR_AKSARA`, `GANTI_URL_GAMBAR_LEARNING`, `GANTI_URL_GAMBAR_TRACKER` -> URL gambar masing-masing
-3. Salin seluruh isi file, tempel ke Text Code View Lynk.
+3. Di editor Text Lynk, klik tombol `</>` (Code View), hapus isi awalnya (`<br>`), lalu tempel seluruh isi file. Simpan langsung dari Code View; jangan pindah balik ke mode visual karena editor bisa merapikan/mengubah kode.
 4. `<title>` dan meta description tidak ikut (tidak boleh di Text Code View). Isi judul dan deskripsi di pengaturan produk Lynk.
 
 ## Yang berubah dari versi asli
@@ -17,5 +17,6 @@ File:
 - Semua selector CSS di-scope ke `.nmichi` (`:root` dan `body` jadi `.nmichi`), supaya tidak mengubah tampilan template Lynk dan sebaliknya.
 - Google Fonts dipindah dari `<link>` ke `@import` di dalam `<style>`.
 - ID radio tab preview diganti `nm-pv-*` biar tidak bentrok dengan elemen Lynk.
+- Aturan responsive HP memakai `@container` (lebar kolom Lynk), bukan lebar layar, jadi tetap 1 kolom walau dibuka di laptop. `@media` dipertahankan sebagai cadangan.
 - Gambar preview diberi `loading="lazy"`.
 - Tidak ada JavaScript (aslinya juga tidak ada): tab preview pakai radio + CSS, FAQ pakai `<details>`.
