@@ -1,0 +1,16 @@
+{
+  "name": "日本語の道 · Nihongo Michi",
+  "short_name": "Nihongo Michi",
+  "description": "Belajar bahasa Jepang dan persiapan JLPT N5 sampai N1 versi santai.",
+  "lang": "id",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFF3E6",
+  "theme_color": "#FF7A45",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

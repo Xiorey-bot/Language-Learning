@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+
+/* ===== Tema Terang (default) ===== */
+:root, .nm-root {
+  --ink: #3A2418; --paper: #FFF3E6; --line: #F5DCC0;
+  --card-bg: #FFFFFF;
+  --text-secondary: #8A6650; --text-body: #6B4A35; --text-muted: #E8CDB0;
+  --sakura: #FF5D8F; --sakura-tint: #FFE3ED;
+  --sora: #4FB3D9; --sora-tint: #E1F4FB;
+  --matcha: #4CAF7D; --matcha-tint: #E1F5EA;
+  --yuzu: #FFB627; --yuzu-tint: #FFF0D6;
+  --momiji: #FF6B35; --momiji-tint: #FFE6DA;
+  --sun: #FFD23F;
+}
+
+/* ===== Tema Gelap — aktif saat <html> atau <body> punya class "dark" ===== */
+/* Satu keluarga warna (indigo) untuk SEMUA permukaan: latar < panel < kartu makin terang sedikit demi sedikit,
+   sehingga berlapis rapi dan menyatu. Kelima warna aksen (sakura/sora/matcha/yuzu/momiji) tetap di keluarga hue
+   masing-masing, tetapi diset ke tingkat kecerahan (luminans) yang SAMA — jadi tidak ada satu warna yang terasa
+   lebih "menyala" dari yang lain. Tint = hue aksen yang sama, sangat gelap & kurang jenuh, untuk latar lencana. */
+html.dark :root, html.dark, body.dark {
+  --ink: #F0F2F9; --paper: #0B0E1C; --wash: #121628; --line: #333957;
+  --card-bg: #1B2037;
+  --text-secondary: #A0A6C5; --text-body: #CDD1E5; --text-muted: #484F75;
+  --sakura: #E079A2; --sakura-tint: #3E232E;
+  --sora: #3FA3D2; --sora-tint: #23353E;
+  --matcha: #29AD7D; --matcha-tint: #233E34;
+  --yuzu: #C0922D; --yuzu-tint: #3E3523;
+  --momiji: #DA8361; --momiji-tint: #3E2B23;
+  --sun: #C0922D;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--paper); }
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  color: var(--ink);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+/* Elemen form (button/input/select/textarea) TIDAK otomatis mewarisi warna teks dari induknya
+   di kebanyakan browser (memakai warna sistem sendiri) - makanya judul di dalam <button> tetap
+   hitam walau mode gelap aktif. Aturan ini memastikan semuanya ikut var(--ink) seperti teks lain. */
+button, input, select, textarea { color: inherit; font: inherit; }
+
+#root {
+  min-height: 100vh;
+}
+
+.nm-bottomnav { position: sticky; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-around;
+  align-items: center; gap: 2px; margin: 1.25rem -1.25rem -1.25rem; padding: 10px 4px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: var(--card-bg); border-top: 2px solid var(--line); border-radius: 0 0 20px 20px; }
+.nm-bottomnav-item { display: flex; flex-direction: column; align-items: center; gap: 3px;
+  font-family: 'Zen Maru Gothic', sans-serif; font-size: 10.5px; font-weight: 700;
+  background: none; border: none; color: #B8AEA3; cursor: pointer; padding: 4px 2px; flex: 1;
+  transition: color 0.15s ease; }
+.nm-bottomnav-item.active { color: var(--tab-color, var(--sakura)); }
+.nm-bottomnav-item.active .nm-bottomnav-icon { background: var(--tab-color, var(--sakura)); border-radius: 10px; }
+.nm-bottomnav-item.active .nm-bottomnav-icon svg { stroke: #fff; }
+.nm-bottomnav-icon { display: flex; align-items: center; justify-content: center; height: 26px; width: 42px; border-radius: 10px; transition: background 0.15s ease; }
+.nm-card { position: relative; background: var(--card-bg); border: 2px solid var(--line); border-radius: 18px;
+  padding: 1.1rem 1.25rem; box-shadow: 0 3px 0 var(--line); overflow: hidden; }
+.nm-card::after {
+  content: ""; position: absolute; right: -6px; bottom: -6px; width: 34px; height: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23E63E6D' opacity='0.16'%3E%3Cg transform='translate(20,20)'%3E%3Ccircle r='7' cx='0' cy='-10'/%3E%3Ccircle r='7' cx='9.5' cy='-3'/%3E%3Ccircle r='7' cx='6' cy='8'/%3E%3Ccircle r='7' cx='-6' cy='8'/%3E%3Ccircle r='7' cx='-9.5' cy='-3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain; background-repeat: no-repeat; pointer-events: none; }
+.nm-item { display: flex; align-items: center; gap: 8px; padding: 9px 0; font-size: 14px;
+  border-bottom: 1.5px dashed var(--line); cursor: pointer; }
+.nm-item:last-child { border-bottom: none; }
+.nm-lvl-btn { font-family: 'Shippori Mincho', serif; font-size: 15px; font-weight: 700;
+  padding: 8px 14px; border-radius: 12px; border: 2px solid var(--line);
+  background: var(--card-bg); cursor: pointer; color: var(--ink); }
+.nm-lvl-btn.active { background: var(--sakura); color: #fff; border-color: var(--sakura); }
+.nm-kana-tile { display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; width: 54px; height: 54px; border-radius: 14px; border: 2px solid var(--line);
+  cursor: pointer; background: var(--card-bg); transition: all 0.12s ease; }
+.nm-kana-tile.known { background: var(--sora); border-color: var(--sora); }
+.nm-kana-tile.known span { color: #fff !important; }
+.nm-day-pill { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 11px; font-weight: 700; border: 2px solid var(--line); cursor: pointer;
+  background: var(--card-bg); color: var(--ink); }
+.nm-day-pill.done { background: var(--yuzu); color: #fff; border-color: var(--yuzu); }
+.nm-title { font-family: 'Shippori Mincho', serif; font-weight: 700; }
+svg.acjk { width: 100%; height: 100%; display: block; }
+@keyframes nm-stroke-zk { to { stroke-dashoffset: 0; } }
+
+/* === Animasi & efek interaktif === */
+.nm-card-tap { transition: transform 0.15s ease, box-shadow 0.15s ease; cursor: pointer; }
+.nm-card-tap:active { transform: scale(0.985); }
+
+.nm-lvl-btn { transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease; }
+.nm-lvl-btn:active { transform: scale(0.92); }
+
+.nm-day-pill { transition: transform 0.15s ease, background 0.15s ease; }
+.nm-day-pill:active { transform: scale(0.88); }
+
+.nm-kana-tile { transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease; }
+.nm-kana-tile:active { transform: scale(0.94); }
+
+.nm-bottomnav-item { transition: transform 0.15s ease; }
+.nm-bottomnav-item:active { transform: scale(0.88); }
+.nm-bottomnav-item.active .nm-bottomnav-icon { animation: nm-bounce 0.35s ease; }
+@keyframes nm-bounce {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+button { transition: transform 0.1s ease; }
+button:active { transform: scale(0.96); }
+
+.nm-tab-content { animation: nm-fadeIn 0.28s ease; }
+@keyframes nm-fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nm-ring-progress { transition: stroke-dashoffset 0.7s cubic-bezier(0.34, 1.2, 0.64, 1); }
+
+.nm-quiz-option-selected { animation: nm-optionPulse 0.25s ease; }
+.nm-quiz-option { transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease; }
+.nm-quiz-option:hover { transform: translateX(2px); border-color: var(--momiji); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.nm-quiz-option:active { transform: scale(0.98); }
+.nm-ujian-navdot { transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease; }
+.nm-ujian-navdot:hover { transform: scale(1.12); }
+.nm-ujian-navdot:active { transform: scale(0.92); }
+@keyframes nm-optionPulse {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.015); }
+  100% { transform: scale(1); }
+}
+@keyframes nm-flamePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.75; }
+}
+
+/* ================================================================== */
+/* === Peningkatan UI/UX: shell responsif, tombol, kartu pilihan,   === */
+/* === navigasi soal, audio player, timer — untuk Latihan Ujian JLPT === */
+/* === (murni tambahan visual; tidak mengubah kelas/HTML yang lama)  === */
+/* ================================================================== */
+
+:root, .nm-root {
+  --radius-sm: 10px; --radius-md: 14px; --radius-lg: 18px; --radius-xl: 24px;
+  --shadow-xs: 0 1px 3px rgba(58, 36, 24, 0.06);
+  --shadow-sm: 0 2px 8px rgba(58, 36, 24, 0.08);
+  --shadow-md: 0 6px 18px rgba(58, 36, 24, 0.10);
+  --shadow-lg: 0 14px 34px rgba(58, 36, 24, 0.16);
+  --focus-ring: var(--sora);
+}
+html.dark :root, html.dark {
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.38);
+  --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 38px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Aksesibilitas: cincin fokus jelas untuk navigasi keyboard --- */
+button:focus-visible, [tabindex]:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 8px;
+}
+/* Sentuh nyaman di HP: semua tombol interaktif minimal ~40px, kecuali tombol ghost/ikon kecil bertanda .nm-btn-ghost/.nm-icon-btn-sm */
+button { min-height: 36px; }
+
+/* --- Shell aplikasi: melebar penuh di HP, dibatasi & ditengahkan di tablet/desktop --- */
+.nm-app-shell { margin-left: auto; margin-right: auto; width: 100%; }
+@media (min-width: 700px) {
+  .nm-app-shell { max-width: 660px; }
+}
+@media (min-width: 1024px) {
+  .nm-app-shell { max-width: 780px; padding-top: 1.75rem; padding-bottom: 1.75rem; }
+  .nm-app-shell .nm-root { padding: 1.4rem 1.6rem; }
+}
+@media (min-width: 700px) {
+  .nm-bottomnav-item { font-size: 11.5px; }
+  .nm-bottomnav-icon { width: 48px; }
+}
+@media (hover: hover) {
+  .nm-bottomnav-item:hover .nm-bottomnav-icon { background: var(--line); }
+  .nm-bottomnav-item.active:hover .nm-bottomnav-icon { background: var(--tab-color, var(--sakura)); }
+}
+
+/* --- Kartu bisa-diklik: sedikit terangkat saat hover (mouse), tetap menekan saat tap (HP) --- */
+@media (hover: hover) {
+  .nm-card-tap:hover { box-shadow: var(--shadow-md); border-color: var(--momiji); transform: translateY(-2px); }
+  .nm-card-tap:hover::after { opacity: 0.28; }
+}
+
+/* ============================= Tombol (.nm-btn) ============================= */
+.nm-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: 13.5px;
+  border-radius: var(--radius-md); padding: 11px 18px; min-height: 44px;
+  cursor: pointer; border: 2px solid transparent; white-space: nowrap;
+  transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+.nm-btn:active { transform: scale(0.96); }
+@media (hover: hover) { .nm-btn:hover:not(:disabled) { box-shadow: var(--shadow-sm); } }
+.nm-btn-primary { background: var(--momiji); color: #fff; }
+@media (hover: hover) { .nm-btn-primary:hover:not(:disabled) { filter: brightness(1.06); } }
+.nm-btn-secondary { background: var(--card-bg); color: var(--ink); border-color: var(--line); }
+@media (hover: hover) { .nm-btn-secondary:hover:not(:disabled) { border-color: var(--momiji); color: var(--momiji); } }
+.nm-btn-outline { background: var(--card-bg); color: var(--momiji); border-color: var(--momiji); }
+@media (hover: hover) { .nm-btn-outline:hover:not(:disabled) { background: var(--momiji-tint); } }
+.nm-btn-ghost { background: none; border: none; color: var(--text-secondary); padding: 6px 4px; min-height: 32px; }
+@media (hover: hover) { .nm-btn-ghost:hover:not(:disabled) { color: var(--momiji); } }
+.nm-btn:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; transform: none; }
+.nm-btn-block { width: 100%; }
+.nm-btn-sm { padding: 7px 12px; font-size: 12px; min-height: 34px; }
+
+/* ============================= Kartu pilihan jawaban (.nm-choice) ============================= */
+.nm-choice-list { display: flex; flex-direction: column; gap: 9px; }
+.nm-choice {
+  position: relative; display: flex; align-items: center; gap: 11px; width: 100%; text-align: left;
+  padding: 12px 14px; border-radius: var(--radius-md); border: 2px solid var(--line); background: var(--card-bg);
+  color: var(--ink); font-family: inherit; font-size: 13.5px; line-height: 1.55; cursor: pointer; min-height: 48px;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.nm-choice-badge {
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 11.5px; font-weight: 700; background: var(--paper); border: 2px solid var(--line); color: var(--text-secondary);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.nm-choice-text { flex: 1; }
+.nm-choice-check { flex-shrink: 0; color: var(--momiji); display: flex; }
+@media (hover: hover) {
+  .nm-choice:hover { border-color: var(--momiji); box-shadow: var(--shadow-xs); transform: translateX(2px); }
+  .nm-choice:hover .nm-choice-badge { border-color: var(--momiji); color: var(--momiji); }
+}
+.nm-choice:active { transform: scale(0.985); }
+.nm-choice-selected { border-color: var(--momiji); background: var(--momiji-tint); animation: nm-optionPulse 0.25s ease; }
+.nm-choice-selected .nm-choice-badge,
+.nm-choice.nm-choice-selected:hover .nm-choice-badge { background: var(--momiji); border-color: var(--momiji); color: #fff; }
+
+/* ============================= Progres soal (bar + grid nomor) ============================= */
+.nm-progress-summary { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.nm-progress-summary-label { font-size: 11px; font-weight: 700; color: var(--text-secondary); }
+.nm-progress-track { height: 8px; border-radius: 6px; background: var(--line); overflow: hidden; margin-bottom: 12px; }
+.nm-progress-fill { height: 100%; border-radius: 6px; background: var(--momiji); transition: width 0.4s cubic-bezier(0.34, 1.2, 0.64, 1); }
+
+.nm-navgrid-legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 10px; color: var(--text-secondary); margin-bottom: 8px; }
+.nm-navgrid-legend-item { display: flex; align-items: center; gap: 5px; }
+.nm-navgrid-swatch { width: 11px; height: 11px; border-radius: 4px; display: inline-block; flex-shrink: 0; }
+.nm-ujian-navdot { min-width: 34px; min-height: 34px; display: inline-flex; align-items: center; justify-content: center; position: relative; }
+@media (hover: hover) { .nm-ujian-navdot:hover { box-shadow: var(--shadow-xs); } }
+.nm-ujian-navdot-current { box-shadow: 0 0 0 3px var(--momiji-tint); }
+
+/* ============================= Timer chip (sticky supaya tetap terlihat) ============================= */
+.nm-timer-chip { position: sticky; top: 8px; z-index: 6; }
+
+/* ============================= Eyebrow label soal ============================= */
+.nm-q-eyebrow { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.nm-q-mondai-tag { display: inline-flex; align-items: center; font-size: 10.5px; font-weight: 700; color: #fff; background: var(--momiji); border-radius: 8px; padding: 3px 10px; white-space: nowrap; }
+.nm-q-counter { font-size: 11.5px; color: var(--text-secondary); font-weight: 700; }
+
+/* ============================= Audio player (choukai) ============================= */
+.nm-audioplayer { display: flex; align-items: center; gap: 10px; background: var(--card-bg); border: 2px solid var(--line);
+  border-radius: var(--radius-lg); padding: 10px 14px 10px 10px; box-shadow: var(--shadow-xs); }
+.nm-audioplayer-playbtn {
+  width: 42px; height: 42px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; color: #fff; box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.nm-audioplayer-playbtn:active { transform: scale(0.92); }
+@media (hover: hover) { .nm-audioplayer-playbtn:hover { filter: brightness(1.08); box-shadow: var(--shadow-sm); } }
+.nm-audioplayer-skipbtn {
+  width: 30px; height: 30px; border-radius: 50%; border: none; background: var(--paper); color: var(--text-secondary);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.12s ease;
+}
+.nm-audioplayer-skipbtn:active:not(:disabled) { transform: scale(0.88); }
+.nm-audioplayer-skipbtn:disabled { opacity: 0.35; cursor: default; }
+@media (hover: hover) { .nm-audioplayer-skipbtn:hover:not(:disabled) { background: var(--line); color: var(--ink); } }
+.nm-audioplayer-track { flex: 1; height: 20px; display: flex; align-items: center; cursor: pointer; min-width: 40px; }
+.nm-audioplayer-track-bg { width: 100%; height: 6px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.nm-audioplayer-track-fill { height: 100%; border-radius: 4px; }
+.nm-audioplayer-time { font-size: 10.5px; color: var(--text-secondary); flex-shrink: 0; min-width: 58px; font-variant-numeric: tabular-nums; }
+.nm-audioplayer-script-toggle {
+  display: inline-flex; align-items: center; gap: 5px; background: none; border: none; color: var(--sora);
+  font-family: 'Zen Maru Gothic', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; padding: 8px 0 0;
+}
+@media (hover: hover) { .nm-audioplayer-script-toggle:hover { text-decoration: underline; } }
+
+/* ============================= Grid section-picker (mojigoi/bunpou/choukai) ============================= */
+.nm-section-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 14px; }
+.nm-section-summary-item { background: var(--paper); border: 2px solid var(--line); border-radius: var(--radius-md); padding: 10px 6px; text-align: center; }
+.nm-section-summary-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+.nm-section-summary-count { font-size: 15px; font-weight: 700; margin: 0; }
+.nm-section-summary-label { font-size: 10px; color: var(--text-secondary); margin: 1px 0 0; }
+
+/* ============================= Responsif: tablet & desktop ============================= */
+@media (min-width: 700px) {
+  .nm-card { padding: 1.25rem 1.4rem; }
+  .nm-choice { padding: 13px 16px; font-size: 14px; }
+}
+@media (min-width: 1024px) {
+  body { font-size: 15px; }
+}
+
+/* Grid tahun ujian & level rapi di layar lebar juga (tetap sama di HP) */
+@media (min-width: 480px) {
+  .nm-yeargrid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+}
+
+/* ============================= Kuis pencocokan (tarik garis) ============================= */
+.nm-match-node {
+  display: flex; align-items: center; gap: 6px; padding: 11px 12px; border-radius: var(--radius-md);
+  border: 2px solid var(--line); background: var(--card-bg); min-height: 46px; font-size: 13.5px;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.18s ease, opacity 0.18s ease;
+}
+.nm-match-left { cursor: grab; touch-action: none; }
+.nm-match-left:active { cursor: grabbing; }
+.nm-match-right { justify-content: flex-start; }
+@media (hover: hover) {
+  .nm-match-left:not(.nm-match-done):hover { border-color: var(--momiji); box-shadow: var(--shadow-xs); transform: translateY(-1px); }
+}
+/* Kartu yang sedang ditarik terasa "terangkat" - miring tipis, membesar, bayangan lebih tebal */
+.nm-match-active {
+  border-color: var(--momiji); background: var(--momiji-tint);
+  transform: scale(1.05) rotate(-1.5deg) translateY(-3px);
+  box-shadow: var(--shadow-md); z-index: 2; position: relative;
+}
+/* Target yang sedang "didekati" saat menarik - menyala duluan sebagai preview sebelum dilepas */
+.nm-match-hover {
+  border-color: var(--momiji); background: var(--momiji-tint);
+  transform: scale(1.04); box-shadow: var(--shadow-sm);
+}
+.nm-match-done { border-color: var(--matcha); background: var(--matcha-tint); opacity: 0.75; }
+.nm-match-left.nm-match-done { cursor: default; }
+.nm-match-wrong { animation: nm-matchShake 0.38s cubic-bezier(0.36, 0.07, 0.19, 0.97); border-color: var(--sakura) !important; background: var(--sakura-tint) !important; }
+.nm-match-pop { animation: nm-matchPop 0.42s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes nm-matchShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px) rotate(-1deg); }
+  40% { transform: translateX(4px) rotate(1deg); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+@keyframes nm-matchPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.09); }
+  100% { transform: scale(1); }
+}
+.nm-match-line-pop { animation: nm-lineDraw 0.4s ease-out; transform-origin: center; }
+@keyframes nm-lineDraw {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.nm-match-line-fail { animation: nm-lineFail 0.38s ease-out; }
+@keyframes nm-lineFail {
+  0% { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+
+/* ============================= Latihan Menulis ============================= */
+.nm-wr-cell {
+  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  min-height: 58px; padding: 6px 2px; border-radius: var(--radius-md); border: 2px solid var(--line);
+  background: var(--card-bg); cursor: pointer; transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+@media (hover: hover) { .nm-wr-cell:hover { border-color: var(--sakura); transform: translateY(-2px); box-shadow: var(--shadow-xs); } }
+.nm-wr-cell:active { transform: scale(0.95); }
+.nm-wr-cell.done { border-color: var(--matcha); background: var(--matcha-tint); }
+.nm-wr-cell-check { position: absolute; top: 3px; right: 4px; color: var(--matcha); display: flex; }
+.nm-wr-stroke-in { animation: nm-wrIn 0.35s ease-out; }
+@keyframes nm-wrIn { 0% { opacity: 0.25; } 100% { opacity: 1; } }
+.nm-wr-hint { animation: nm-wrPulse 1.2s ease-in-out infinite; }
+@keyframes nm-wrPulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.85; } }
+.nm-wr-fail { animation: nm-lineFail 0.45s ease-out forwards; }
+
+/* ============================= Penyelarasan tema gelap ============================= */
+/* Latar tiap tab di mode gelap seragam (bukan beda hue per tab) */
+html.dark .nm-tab-wrap { background: var(--wash) !important; }
+html.dark .nm-bottomnav-item:not(.active) { color: var(--text-secondary); }
+html.dark .nm-card::after { opacity: 0.4; filter: saturate(0.5); }
+/* Kartu level di tab Learning: gelap dengan semburat warna levelnya, bukan blok warna terang penuh */
+html.dark .nm-lvlcard {
+  background: linear-gradient(150deg, color-mix(in srgb, var(--lc) 34%, var(--card-bg)) 0%, var(--card-bg) 90%) !important;
+  border: 2px solid color-mix(in srgb, var(--lc) 38%, var(--line));
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3) !important;
+}
+html.dark .nm-lvlpill {
+  background: color-mix(in srgb, var(--lc) 20%, var(--card-bg)) !important; color: var(--lc) !important;
+  border: 1.5px solid var(--lc);
+}
+html.dark .nm-lvlcard > svg { opacity: 0.28; }
+html.dark .nm-lvlmark { color: color-mix(in srgb, var(--lc) 26%, transparent) !important; }
+
+/* ============================= Tata letak DESKTOP / LAPTOP (≥ 1024px) =============================
+   Semua aturan di blok ini HANYA aktif di layar lebar. Tampilan HP dan tablet tidak berubah sama sekali.
+   - navigasi tetap di bawah, berbentuk gelembung (bubble) mengambang di tengah
+   - konten melebar (maks. 1320px) dan kartu disusun beberapa kolom */
+@media (min-width: 1024px) {
+  /* Rangka aplikasi */
+  .nm-app-shell {
+    max-width: none !important; width: auto !important;
+    margin: 0 !important; border-radius: 0 !important;
+    padding: 28px clamp(24px, 3vw, 48px) 120px !important;   /* ruang bawah untuk navigasi mengambang */
+  }
+  .nm-app-shell > .nm-root,
+  .nm-app-shell > .nm-tab-content {
+    width: 100%; max-width: 1320px; box-sizing: border-box;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+  /* panel konten mengikuti tinggi isinya (tidak lagi memanjang kosong sampai bawah layar) */
+  .nm-app-shell > .nm-tab-content { padding: 1.5rem !important; flex: 0 0 auto !important; }
+
+  /* Navigasi -> gelembung mengambang di bawah tengah */
+  .nm-bottomnav {
+    position: fixed; left: 50%; right: auto; bottom: 20px; top: auto; z-index: 40;
+    transform: translateX(-50%); width: auto; margin: 0; box-sizing: border-box;
+    flex-direction: row; justify-content: center; align-items: center; gap: 4px;
+    padding: 8px; border: 2px solid var(--line); border-radius: 999px;
+    background: color-mix(in srgb, var(--card-bg) 92%, transparent);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
+  }
+  .nm-bottomnav-item {
+    flex: none; flex-direction: row; justify-content: center; gap: 8px;
+    min-height: 44px; padding: 6px 16px 6px 6px; border-radius: 999px; font-size: 14px; white-space: nowrap;
+  }
+  .nm-bottomnav-item:not(.active) { color: var(--text-secondary); }
+  .nm-bottomnav-item.active { background: color-mix(in srgb, var(--tab-color, var(--sakura)) 14%, transparent); }
+  .nm-bottomnav-icon { flex: none; width: 40px; height: 32px; border-radius: 999px; }
+  .nm-bottomnav-item.active .nm-bottomnav-icon { border-radius: 999px; }
+
+  /* Beranda: roadmap & pintasan 4 kolom */
+  .nm-d-g4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+
+  /* Aksara: gojūon 5 kolom (a-i-u-e-o sebaris), dakuten/handakuten 5, yōon 6 */
+  .nm-d-g5, .nm-d-kana-dakuten, .nm-d-kana-handakuten { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+  .nm-d-kana-yoon { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+
+  /* Learning: kartu level & kategori 2 kolom, kanji 6 kolom */
+  .nm-d-c2 { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 16px !important; align-items: stretch; }
+  .nm-d-g6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+
+  /* Tracker: dasbor 2 kolom, tiap baris sama tinggi (tanpa celah kosong)
+     baris 1: Rutinitas | Kalender   baris 2: Statistik | Progres level   baris 3: Streak | Target */
+  .nm-d-masonry { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+  .nm-d-masonry > .nm-card { margin-bottom: 0 !important; }
+  .nm-t-rut    { grid-column: 1; grid-row: 1; }
+  .nm-t-cal    { grid-column: 2; grid-row: 1; }
+  .nm-t-stat   { grid-column: 1; grid-row: 2; }
+  .nm-t-lvl    { grid-column: 2; grid-row: 2; }
+  .nm-t-streak { grid-column: 1; grid-row: 3; }
+  .nm-t-goal   { grid-column: 2; grid-row: 3; }
+  /* kalender lebih ringkas di layar lebar: kotak tanggal tidak lagi persegi besar */
+  .nm-t-cal div[style*="aspect-ratio: 1"] { aspect-ratio: auto !important; height: 38px; }
+
+  /* Beranda: sapaan memakai lebar penuh — streak & target pindah ke sisi kanan */
+  .nm-home-hero > div:last-child { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 24px; align-items: center; }
+  .nm-home-hero > div:last-child > p { grid-column: 1; }
+  .nm-home-hero > div:last-child > div { grid-column: 2; grid-row: 1 / span 2; gap: 12px !important; flex-wrap: nowrap !important; }
+  .nm-home-hero > div:last-child > div > div { background: var(--paper); border: 2px solid var(--line); border-radius: 14px; padding: 10px 16px; }
+
+  /* Menu pilihan (Latihan, dll.): daftar kartu jadi 2 kolom; judul & tombol kembali tetap selebar penuh */
+  .nm-tab-content div[style*="flex-direction: column"]:has(> .nm-card-tap) {
+    display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch;
+  }
+  .nm-tab-content div[style*="flex-direction: column"]:has(> .nm-card-tap) > :not(.nm-card-tap) { grid-column: 1 / -1; }
+  .nm-tab-content div[style*="flex-direction: column"]:has(> .nm-card-tap) > button:not(.nm-card-tap) { justify-self: start; }
+  /* kalau jumlah pilihan ganjil, kartu terakhir melebar penuh supaya tidak ada sel kosong di kanan */
+  .nm-tab-content div[style*="flex-direction: column"]:has(> .nm-card-tap) > .nm-card-tap:nth-last-child(1 of .nm-card-tap):nth-child(odd of .nm-card-tap) { grid-column: 1 / -1; }
+}
+
+
+/* ============================= Flashcard kanji & kana ============================= */
+.nm-flash-overlay {
+  position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: rgba(40, 24, 16, 0.55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  animation: nm-flashIn 0.18s ease;
+}
+html.dark .nm-flash-overlay { background: rgba(5, 8, 20, 0.7); }
+.nm-flash-box { width: min(440px, 100%); display: flex; flex-direction: column; gap: 12px; }
+.nm-flash-head { display: flex; align-items: center; justify-content: space-between; color: #FFFFFF; font-weight: 700; font-size: 14px; }
+.nm-flash-close {
+  width: 36px; height: 36px; min-height: 36px; border-radius: 50%; border: none; cursor: pointer;
+  background: rgba(255, 255, 255, 0.92); color: #3A2418; font-size: 16px; font-weight: 700;
+}
+.nm-flash-card { position: relative; height: min(470px, calc(100vh - 190px)); min-height: 320px; perspective: 1400px; cursor: pointer; }
+.nm-flash-face {
+  position: absolute; inset: 0; box-sizing: border-box; overflow-y: auto;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  padding: 22px 20px; border-radius: 24px; background: var(--card-bg); border: 2px solid var(--line);
+  box-shadow: var(--shadow-lg); backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.nm-flash-front { transform: rotateY(0deg); }
+.nm-flash-back  { transform: rotateY(180deg); justify-content: flex-start; padding-top: 28px; }
+.nm-flash-card.is-flipped .nm-flash-front { transform: rotateY(-180deg); }
+.nm-flash-card.is-flipped .nm-flash-back  { transform: rotateY(0deg); }
+.nm-flash-hint { font-size: 12px; color: var(--text-secondary); margin: 14px 0 0; }
+.nm-flash-back .nm-flash-hint { margin-top: auto; padding-top: 12px; }
+.nm-flash-actions { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; }
+.nm-flash-btn {
+  min-height: 46px; padding: 8px 12px; border-radius: 14px; cursor: pointer; font-weight: 700; font-size: 13.5px; white-space: nowrap;
+  border: 2px solid var(--line); background: var(--card-bg); color: var(--ink);
+}
+.nm-flash-mark.is-on { background: var(--matcha); border-color: var(--matcha); color: #FFFFFF; }
+/* layar HP sempit: Sebelumnya & Berikutnya sebaris, tombol Tandai dikuasai selebar penuh di bawahnya */
+@media (max-width: 400px) {
+  .nm-flash-actions { grid-template-columns: 1fr 1fr; }
+  .nm-flash-mark { grid-column: 1 / -1; grid-row: 2; }
+  .nm-flash-card { height: min(470px, calc(100vh - 250px)); }
+}
+@keyframes nm-flashIn { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .nm-flash-face { transition: none; } .nm-flash-overlay { animation: none; } }

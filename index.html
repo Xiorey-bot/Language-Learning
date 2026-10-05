@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本語の道 — Nihongo Michi</title>
+  <link rel="stylesheet" href="style.css" />
+    <!-- Ikon & install (Nihongo Michi) -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#FF7A45" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Nihongo Michi" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!--
+    VERSI CEPAT: JSX sudah dikompilasi lebih dulu (folder dist/), jadi Babel tidak lagi dipakai di browser.
+    URUTAN SKRIP SENGAJA SAMA dengan versi lama:
+      1) skrip biasa dulu (React, ReactDOM, data goresan),
+      2) lalu skrip hasil kompilasi berurutan: icons.js -> data -> app.js.
+    (icons.js harus sebelum data-misc.js karena TABS di sana memakai ikon langsung.)
+    Sumber JSX asli tetap file di folder utama (icons.js, app.js, dst.). Kalau kamu mengubahnya,
+    kompilasi ulang dengan kompilasi.js supaya folder dist/ ikut diperbarui.
+  -->
+
+  <!-- React + ReactDOM (disajikan dari situs sendiri, tanpa unpkg) -->
+  <script src="vendor/react.production.min.js"></script>
+  <script src="vendor/react-dom.production.min.js"></script>
+
+  <!-- Data goresan untuk Latihan Menulis (skrip biasa; di versi lama juga jalan lebih dulu daripada skrip Babel) -->
+  <script src="nihongo-michi-data-writing.js"></script>
+
+  <!-- Ikon -->
+  <script src="dist/icons.js"></script>
+
+  <!-- Data aplikasi -->
+  <script src="dist/nihongo-michi-data-misc.js"></script>
+  <script src="dist/nihongo-michi-data-kanji.js"></script>
+  <script src="dist/nihongo-michi-data-vocab.js"></script>
+  <script src="dist/nihongo-michi-data-grammar.js"></script>
+  <script src="dist/nihongo-michi-data-reading.js"></script>
+  <script src="dist/nihongo-michi-data-choukai.js"></script>
+  <script src="dist/nihongo-michi-data-strokes.js"></script>
+  <script src="dist/nihongo-michi-data-ujian.js"></script>
+
+  <!-- Logic aplikasi utama -->
+  <script src="dist/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22780 @@
+"use strict";
+
+var VOCAB_CONTENT = {
+  "JLPT N2 — Kosakata Frekuensi Tinggi": [{
+    jp: "溢れる",
+    reading: "あふれる",
+    id: "meluap, tumpah ruah"
+  }, {
+    jp: "味わう",
+    reading: "あじわう",
+    id: "mencicipi, menikmati"
+  }, {
+    jp: "怪しい",
+    reading: "あやしい",
+    id: "mencurigakan"
+  }, {
+    jp: "売買",
+    reading: "ばいばい",
+    id: "jual beli"
+  }, {
+    jp: "膨大",
+    reading: "ぼうだい",
+    id: "sangat besar/luas"
+  }, {
+    jp: "防止",
+    reading: "ぼうし",
+    id: "pencegahan"
+  }, {
+    jp: "部品",
+    reading: "ぶひん",
+    id: "suku cadang/komponen"
+  }, {
+    jp: "分類",
+    reading: "ぶんるい",
+    id: "klasifikasi"
+  }, {
+    jp: "打つかる",
+    reading: "ぶつかる",
+    id: "menabrak, bertabrakan"
+  }, {
+    jp: "地上",
+    reading: "ちじょう",
+    id: "di atas tanah/permukaan"
+  }, {
+    jp: "誓う",
+    reading: "ちかう",
+    id: "bersumpah"
+  }, {
+    jp: "地帯",
+    reading: "ちたい",
+    id: "zona/kawasan"
+  }, {
+    jp: "地点",
+    reading: "ちてん",
+    id: "titik lokasi"
+  }, {
+    jp: "彫刻",
+    reading: "ちょうこく",
+    id: "ukiran/patung"
+  }, {
+    jp: "調整",
+    reading: "ちょうせい",
+    id: "penyesuaian"
+  }, {
+    jp: "中間",
+    reading: "ちゅうかん",
+    id: "tengah/pertengahan"
+  }, {
+    jp: "騙す",
+    reading: "だます",
+    id: "menipu"
+  }, {
+    jp: "段階",
+    reading: "だんかい",
+    id: "tahapan"
+  }, {
+    jp: "暖炉",
+    reading: "だんろ",
+    id: "perapian"
+  }, {
+    jp: "断定",
+    reading: "だんてい",
+    id: "kesimpulan tegas"
+  }, {
+    jp: "電波",
+    reading: "でんぱ",
+    id: "gelombang radio"
+  }, {
+    jp: "電力",
+    reading: "でんりょく",
+    id: "daya listrik"
+  }, {
+    jp: "伝染",
+    reading: "でんせん",
+    id: "penularan"
+  }, {
+    jp: "動作",
+    reading: "どうさ",
+    id: "gerakan/tindakan"
+  }, {
+    jp: "延長",
+    reading: "えんちょう",
+    id: "perpanjangan"
+  }, {
+    jp: "付近",
+    reading: "ふきん",
+    id: "sekitar/dekat"
+  }, {
+    jp: "複数",
+    reading: "ふくすう",
+    id: "jamak/lebih dari satu"
+  }, {
+    jp: "普及",
+    reading: "ふきゅう",
+    id: "penyebarluasan"
+  }, {
+    jp: "分別",
+    reading: "ふんべつ",
+    id: "kebijaksanaan"
+  }, {
+    jp: "外部",
+    reading: "がいぶ",
+    id: "bagian luar"
+  }, {
+    jp: "外見",
+    reading: "がいけん",
+    id: "penampilan luar"
+  }, {
+    jp: "願望",
+    reading: "がんぼう",
+    id: "hasrat/keinginan"
+  }, {
+    jp: "限度",
+    reading: "げんど",
+    id: "batas"
+  }, {
+    jp: "厳重",
+    reading: "げんじゅう",
+    id: "ketat/keras"
+  }, {
+    jp: "原理",
+    reading: "げんり",
+    id: "prinsip dasar"
+  }, {
+    jp: "儀式",
+    reading: "ぎしき",
+    id: "upacara/ritual"
+  }, {
+    jp: "合同",
+    reading: "ごうどう",
+    id: "gabungan/bersama"
+  }, {
+    jp: "強引",
+    reading: "ごういん",
+    id: "memaksa"
+  }, {
+    jp: "合理",
+    reading: "ごうり",
+    id: "rasionalitas"
+  }, {
+    jp: "合流",
+    reading: "ごうりゅう",
+    id: "bergabung/berkumpul"
+  }, {
+    jp: "行事",
+    reading: "ぎょうじ",
+    id: "acara tahunan"
+  }, {
+    jp: "派手",
+    reading: "はで",
+    id: "mencolok/flamboyan"
+  }, {
+    jp: "破片",
+    reading: "はへん",
+    id: "pecahan/serpihan"
+  }, {
+    jp: "発揮",
+    reading: "はっき",
+    id: "menunjukkan/memperlihatkan kemampuan"
+  }, {
+    jp: "反映",
+    reading: "はんえい",
+    id: "refleksi/cerminan"
+  }, {
+    jp: "判事",
+    reading: "はんじ",
+    id: "hakim"
+  }, {
+    jp: "発想",
+    reading: "はっそう",
+    id: "gagasan/ide"
+  }, {
+    jp: "発電",
+    reading: "はつでん",
+    id: "pembangkitan listrik"
+  }, {
+    jp: "外れる",
+    reading: "はずれる",
+    id: "lepas, meleset"
+  }, {
+    jp: "隔てる",
+    reading: "へだてる",
+    id: "memisahkan"
+  }, {
+    jp: "平凡",
+    reading: "へいぼん",
+    id: "biasa-biasa saja"
+  }, {
+    jp: "平気",
+    reading: "へいき",
+    id: "tidak peduli/tenang saja"
+  }, {
+    jp: "響く",
+    reading: "ひびく",
+    id: "bergema"
+  }, {
+    jp: "皮膚",
+    reading: "ひふ",
+    id: "kulit"
+  }, {
+    jp: "皮肉",
+    reading: "ひにく",
+    id: "sindiran"
+  }, {
+    jp: "広場",
+    reading: "ひろば",
+    id: "alun-alun"
+  }, {
+    jp: "本部",
+    reading: "ほんぶ",
+    id: "markas pusat"
+  }, {
+    jp: "本題",
+    reading: "ほんだい",
+    id: "topik utama"
+  }, {
+    jp: "本来",
+    reading: "ほんらい",
+    id: "pada dasarnya"
+  }, {
+    jp: "掘る",
+    reading: "ほる",
+    id: "menggali"
+  }, {
+    jp: "方面",
+    reading: "ほうめん",
+    id: "arah/bidang"
+  }, {
+    jp: "法則",
+    reading: "ほうそく",
+    id: "hukum/aturan alam"
+  }, {
+    jp: "意義",
+    reading: "いぎ",
+    id: "makna/signifikansi"
+  }, {
+    jp: "違法",
+    reading: "いほう",
+    id: "ilegal"
+  }, {
+    jp: "以降",
+    reading: "いこう",
+    id: "setelah/sejak"
+  }, {
+    jp: "遺産",
+    reading: "いさん",
+    id: "warisan"
+  }, {
+    jp: "一定",
+    reading: "いってい",
+    id: "tetap/konstan"
+  }, {
+    jp: "弱点",
+    reading: "じゃくてん",
+    id: "kelemahan"
+  }, {
+    jp: "実感",
+    reading: "じっかん",
+    id: "perasaan nyata"
+  }, {
+    jp: "自問",
+    reading: "じもん",
+    id: "bertanya pada diri sendiri"
+  }, {
+    jp: "実績",
+    reading: "じっせき",
+    id: "prestasi nyata"
+  }, {
+    jp: "自体",
+    reading: "じたい",
+    id: "itu sendiri"
+  }, {
+    jp: "実務",
+    reading: "じつむ",
+    id: "pekerjaan praktis"
+  }, {
+    jp: "実力",
+    reading: "じつりょく",
+    id: "kemampuan sesungguhnya"
+  }, {
+    jp: "蒸気",
+    reading: "じょうき",
+    id: "uap"
+  }, {
+    jp: "上級",
+    reading: "じょうきゅう",
+    id: "tingkat lanjut/senior"
+  }, {
+    jp: "循環",
+    reading: "じゅんかん",
+    id: "sirkulasi"
+  }, {
+    jp: "純粋",
+    reading: "じゅんすい",
+    id: "murni"
+  }, {
+    jp: "重点",
+    reading: "じゅうてん",
+    id: "poin penting"
+  }, {
+    jp: "過大",
+    reading: "かだい",
+    id: "berlebihan"
+  }, {
+    jp: "開放",
+    reading: "かいほう",
+    id: "dibuka/liberalisasi"
+  }, {
+    jp: "解放",
+    reading: "かいほう",
+    id: "pembebasan"
+  }, {
+    jp: "海上",
+    reading: "かいじょう",
+    id: "di laut"
+  }, {
+    jp: "解散",
+    reading: "かいさん",
+    id: "pembubaran"
+  }, {
+    jp: "解釈",
+    reading: "かいしゃく",
+    id: "interpretasi"
+  }, {
+    jp: "過剰",
+    reading: "かじょう",
+    id: "berlebihan"
+  }, {
+    jp: "各地",
+    reading: "かくち",
+    id: "berbagai tempat"
+  }, {
+    jp: "拡張",
+    reading: "かくちょう",
+    id: "perluasan"
+  }, {
+    jp: "観念",
+    reading: "かんねん",
+    id: "gagasan/konsep"
+  }, {
+    jp: "間接",
+    reading: "かんせつ",
+    id: "tidak langsung"
+  }, {
+    jp: "観測",
+    reading: "かんそく",
+    id: "pengamatan"
+  }, {
+    jp: "重ねる",
+    reading: "かさねる",
+    id: "menumpuk"
+  }, {
+    jp: "加速",
+    reading: "かそく",
+    id: "akselerasi"
+  }, {
+    jp: "仮定",
+    reading: "かてい",
+    id: "asumsi"
+  }, {
+    jp: "活力",
+    reading: "かつりょく",
+    id: "vitalitas"
+  }, {
+    jp: "可愛がる",
+    reading: "かわいがる",
+    id: "menyayangi"
+  }, {
+    jp: "為替",
+    reading: "かわせ",
+    id: "kurs/wesel"
+  }, {
+    jp: "課税",
+    reading: "かぜい",
+    id: "pengenaan pajak"
+  }, {
+    jp: "気配",
+    reading: "けはい",
+    id: "tanda-tanda/firasat"
+  }, {
+    jp: "警備",
+    reading: "けいび",
+    id: "penjagaan keamanan"
+  }, {
+    jp: "系統",
+    reading: "けいとう",
+    id: "sistem/garis keturunan"
+  }, {
+    jp: "継続",
+    reading: "けいぞく",
+    id: "kelanjutan"
+  }, {
+    jp: "謙虚",
+    reading: "けんきょ",
+    id: "rendah hati"
+  }, {
+    jp: "基盤",
+    reading: "きばん",
+    id: "fondasi/basis"
+  }, {
+    jp: "基地",
+    reading: "きち",
+    id: "pangkalan"
+  }, {
+    jp: "期限",
+    reading: "きげん",
+    id: "batas waktu"
+  }, {
+    jp: "禁じる",
+    reading: "きんじる",
+    id: "melarang"
+  }, {
+    jp: "刻む",
+    reading: "きざむ",
+    id: "mengukir, mencincang"
+  }, {
+    jp: "国王",
+    reading: "こくおう",
+    id: "raja"
+  }, {
+    jp: "国籍",
+    reading: "こくせき",
+    id: "kewarganegaraan"
+  }, {
+    jp: "広大",
+    reading: "こうだい",
+    id: "luas sekali"
+  }, {
+    jp: "高度",
+    reading: "こうど",
+    id: "ketinggian, tingkat tinggi"
+  }, {
+    jp: "公表",
+    reading: "こうひょう",
+    id: "pengumuman resmi"
+  }, {
+    jp: "好奇心",
+    reading: "こうきしん",
+    id: "rasa ingin tahu"
+  }, {
+    jp: "公正",
+    reading: "こうせい",
+    id: "keadilan"
+  }, {
+    jp: "公式",
+    reading: "こうしき",
+    id: "resmi/formal"
+  }, {
+    jp: "更新",
+    reading: "こうしん",
+    id: "pembaruan"
+  }, {
+    jp: "公衆",
+    reading: "こうしゅう",
+    id: "publik umum"
+  }, {
+    jp: "交代",
+    reading: "こうたい",
+    id: "pergantian"
+  }, {
+    jp: "肯定",
+    reading: "こうてい",
+    id: "penegasan/afirmasi"
+  }, {
+    jp: "配る",
+    reading: "くばる",
+    id: "membagikan"
+  }, {
+    jp: "唇",
+    reading: "くちびる",
+    id: "bibir"
+  }, {
+    jp: "工夫",
+    reading: "くふう",
+    id: "akal/kreativitas"
+  }, {
+    jp: "苦情",
+    reading: "くじょう",
+    id: "keluhan"
+  }, {
+    jp: "苦難",
+    reading: "くなん",
+    id: "penderitaan"
+  }, {
+    jp: "空想",
+    reading: "くうそう",
+    id: "khayalan"
+  }, {
+    jp: "崩れる",
+    reading: "くずれる",
+    id: "runtuh"
+  }, {
+    jp: "崩す",
+    reading: "くずす",
+    id: "menghancurkan"
+  }, {
+    jp: "教養",
+    reading: "きょうよう",
+    id: "pendidikan/budaya"
+  }, {
+    jp: "給与",
+    reading: "きゅうよ",
+    id: "gaji"
+  }, {
+    jp: "摩擦",
+    reading: "まさつ",
+    id: "gesekan/friksi"
+  }, {
+    jp: "纏める",
+    reading: "まとめる",
+    id: "merangkum"
+  }, {
+    jp: "迷信",
+    reading: "めいしん",
+    id: "takhayul"
+  }, {
+    jp: "惨め",
+    reading: "みじめ",
+    id: "menyedihkan"
+  }, {
+    jp: "見舞う",
+    reading: "みまう",
+    id: "menjenguk"
+  }, {
+    jp: "民間",
+    reading: "みんかん",
+    id: "swasta/sipil"
+  }, {
+    jp: "自ら",
+    reading: "みずから",
+    id: "diri sendiri"
+  }, {
+    jp: "持ち主",
+    reading: "もちぬし",
+    id: "pemilik"
+  }, {
+    jp: "儲ける",
+    reading: "もうける",
+    id: "meraih untung"
+  }, {
+    jp: "無限",
+    reading: "むげん",
+    id: "tak terbatas"
+  }, {
+    jp: "矛盾",
+    reading: "むじゅん",
+    id: "kontradiksi"
+  }, {
+    jp: "群れ",
+    reading: "むれ",
+    id: "kawanan/kelompok"
+  }, {
+    jp: "無数",
+    reading: "むすう",
+    id: "tak terhitung"
+  }, {
+    jp: "長引く",
+    reading: "ながびく",
+    id: "berlarut-larut"
+  }, {
+    jp: "殴る",
+    reading: "なぐる",
+    id: "memukul"
+  }, {
+    jp: "慰める",
+    reading: "なぐさめる",
+    id: "menghibur"
+  }, {
+    jp: "中身",
+    reading: "なかみ",
+    id: "isi"
+  }, {
+    jp: "狙い",
+    reading: "ねらい",
+    id: "sasaran/tujuan"
+  }, {
+    jp: "狙う",
+    reading: "ねらう",
+    id: "membidik"
+  }, {
+    jp: "鈍い",
+    reading: "にぶい",
+    id: "tumpul/lamban"
+  }, {
+    jp: "逃がす",
+    reading: "にがす",
+    id: "melepaskan"
+  }, {
+    jp: "憎む",
+    reading: "にくむ",
+    id: "membenci"
+  }, {
+    jp: "陥る",
+    reading: "おちいる",
+    id: "terjerumus"
+  }, {
+    jp: "脅かす",
+    reading: "おどかす",
+    id: "mengancam"
+  }, {
+    jp: "補う",
+    reading: "おぎなう",
+    id: "melengkapi/mengganti"
+  }, {
+    jp: "怠る",
+    reading: "おこたる",
+    id: "lalai"
+  }, {
+    jp: "思い込む",
+    reading: "おもいこむ",
+    id: "yakin sepenuhnya"
+  }, {
+    jp: "恩恵",
+    reading: "おんけい",
+    id: "berkat/manfaat"
+  }, {
+    jp: "抑える",
+    reading: "おさえる",
+    id: "menahan"
+  }, {
+    jp: "教わる",
+    reading: "おそわる",
+    id: "diajari"
+  }, {
+    jp: "大人しい",
+    reading: "おとなしい",
+    id: "penurut/kalem"
+  }, {
+    jp: "応用",
+    reading: "おうよう",
+    id: "penerapan praktis"
+  }, {
+    jp: "乱暴",
+    reading: "らんぼう",
+    id: "kasar/brutal"
+  }, {
+    jp: "例外",
+    reading: "れいがい",
+    id: "pengecualian"
+  }, {
+    jp: "連合",
+    reading: "れんごう",
+    id: "persatuan/aliansi"
+  }, {
+    jp: "利害",
+    reading: "りがい",
+    id: "untung-rugi"
+  }, {
+    jp: "臨時",
+    reading: "りんじ",
+    id: "sementara"
+  }, {
+    jp: "録音",
+    reading: "ろくおん",
+    id: "rekaman"
+  }, {
+    jp: "最大",
+    reading: "さいだい",
+    id: "terbesar"
+  }, {
+    jp: "再開",
+    reading: "さいかい",
+    id: "dimulai kembali"
+  }, {
+    jp: "災難",
+    reading: "さいなん",
+    id: "musibah"
+  }, {
+    jp: "探る",
+    reading: "さぐる",
+    id: "meraba/menyelidiki"
+  }, {
+    jp: "最新",
+    reading: "さいしん",
+    id: "terbaru"
+  }, {
+    jp: "成立",
+    reading: "せいりつ",
+    id: "terbentuk, terwujud"
+  }, {
+    jp: "性質",
+    reading: "せいしつ",
+    id: "sifat/karakter"
+  }, {
+    jp: "接近",
+    reading: "せっきん",
+    id: "mendekat"
+  }, {
+    jp: "迫る",
+    reading: "せまる",
+    id: "mendesak, mendekat"
+  }, {
+    jp: "宣伝",
+    reading: "せんでん",
+    id: "promosi/iklan"
+  }, {
+    jp: "線路",
+    reading: "せんろ",
+    id: "rel kereta"
+  }, {
+    jp: "先頭",
+    reading: "せんとう",
+    id: "garis depan/terdepan"
+  }, {
+    jp: "接する",
+    reading: "せっする",
+    id: "bersentuhan"
+  }, {
+    jp: "接続",
+    reading: "せつぞく",
+    id: "koneksi/sambungan"
+  }, {
+    jp: "社員",
+    reading: "しゃいん",
+    id: "karyawan perusahaan"
+  }, {
+    jp: "縛る",
+    reading: "しばる",
+    id: "mengikat"
+  }, {
+    jp: "紙幣",
+    reading: "しへい",
+    id: "uang kertas"
+  }, {
+    jp: "敷く",
+    reading: "しく",
+    id: "menghamparkan"
+  }, {
+    jp: "湿る",
+    reading: "しめる",
+    id: "menjadi lembap"
+  }, {
+    jp: "診断",
+    reading: "しんだん",
+    id: "diagnosis"
+  }, {
+    jp: "侵入",
+    reading: "しんにゅう",
+    id: "penerobosan"
+  }, {
+    jp: "深夜",
+    reading: "しんや",
+    id: "tengah malam"
+  }, {
+    jp: "執筆",
+    reading: "しっぴつ",
+    id: "menulis (karya)"
+  }, {
+    jp: "知り合い",
+    reading: "しりあい",
+    id: "kenalan"
+  }, {
+    jp: "素人",
+    reading: "しろうと",
+    id: "amatir"
+  }, {
+    jp: "姿勢",
+    reading: "しせい",
+    id: "sikap/postur"
+  }, {
+    jp: "商業",
+    reading: "しょうぎょう",
+    id: "perdagangan/komersial"
+  }, {
+    jp: "正面",
+    reading: "しょうめん",
+    id: "bagian depan"
+  }, {
+    jp: "焦点",
+    reading: "しょうてん",
+    id: "titik fokus"
+  }, {
+    jp: "縮小",
+    reading: "しゅくしょう",
+    id: "penyusutan"
+  }, {
+    jp: "周辺",
+    reading: "しゅうへん",
+    id: "sekitar/keliling"
+  }, {
+    jp: "就任",
+    reading: "しゅうにん",
+    id: "pelantikan jabatan"
+  }, {
+    jp: "修繕",
+    reading: "しゅうぜん",
+    id: "perbaikan"
+  }, {
+    jp: "祖先",
+    reading: "そせん",
+    id: "leluhur"
+  }, {
+    jp: "相互",
+    reading: "そうご",
+    id: "saling/timbal balik"
+  }, {
+    jp: "相違",
+    reading: "そうい",
+    id: "perbedaan"
+  }, {
+    jp: "倉庫",
+    reading: "そうこ",
+    id: "gudang"
+  }, {
+    jp: "想定",
+    reading: "そうてい",
+    id: "hipotesis/asumsi"
+  }, {
+    jp: "水素",
+    reading: "すいそ",
+    id: "hidrogen"
+  }, {
+    jp: "推定",
+    reading: "すいてい",
+    id: "dugaan/estimasi"
+  }, {
+    jp: "隙間",
+    reading: "すきま",
+    id: "celah"
+  }, {
+    jp: "耐える",
+    reading: "たえる",
+    id: "tahan/bertahan"
+  }, {
+    jp: "体系",
+    reading: "たいけい",
+    id: "sistem terstruktur"
+  }, {
+    jp: "対照",
+    reading: "たいしょう",
+    id: "kontras/perbandingan"
+  }, {
+    jp: "高める",
+    reading: "たかめる",
+    id: "meningkatkan"
+  }, {
+    jp: "滝",
+    reading: "たき",
+    id: "air terjun"
+  }, {
+    jp: "蓄える",
+    reading: "たくわえる",
+    id: "menyimpan/menabung"
+  }, {
+    jp: "短期",
+    reading: "たんき",
+    id: "jangka pendek"
+  }, {
+    jp: "頼り",
+    reading: "たより",
+    id: "sandaran/ketergantungan"
+  }, {
+    jp: "低下",
+    reading: "ていか",
+    id: "penurunan"
+  }, {
+    jp: "停止",
+    reading: "ていし",
+    id: "penghentian"
+  }, {
+    jp: "照らす",
+    reading: "てらす",
+    id: "menerangi"
+  }, {
+    jp: "止まる",
+    reading: "とどまる",
+    id: "berhenti, tetap tinggal"
+  }, {
+    jp: "特殊",
+    reading: "とくしゅ",
+    id: "khusus"
+  }, {
+    jp: "伴う",
+    reading: "ともなう",
+    id: "disertai"
+  }, {
+    jp: "整う",
+    reading: "ととのう",
+    id: "tertata rapi"
+  }, {
+    jp: "統一",
+    reading: "とういつ",
+    id: "penyatuan"
+  }, {
+    jp: "統計",
+    reading: "とうけい",
+    id: "statistik"
+  }, {
+    jp: "透明",
+    reading: "とうめい",
+    id: "transparan"
+  }, {
+    jp: "付き合う",
+    reading: "つきあう",
+    id: "bergaul, berkencan"
+  }, {
+    jp: "繋がる",
+    reading: "つながる",
+    id: "terhubung"
+  }, {
+    jp: "努める",
+    reading: "つとめる",
+    id: "berusaha keras"
+  }, {
+    jp: "通知",
+    reading: "つうち",
+    id: "pemberitahuan"
+  }, {
+    jp: "通貨",
+    reading: "つうか",
+    id: "mata uang"
+  }, {
+    jp: "通勤",
+    reading: "つうきん",
+    id: "perjalanan kerja"
+  }, {
+    jp: "通路",
+    reading: "つうろ",
+    id: "lorong/jalur"
+  }, {
+    jp: "通達",
+    reading: "つうたつ",
+    id: "surat edaran resmi"
+  }, {
+    jp: "通用",
+    reading: "つうよう",
+    id: "berlaku umum"
+  }, {
+    jp: "強み",
+    reading: "つよみ",
+    id: "kekuatan/keunggulan"
+  }, {
+    jp: "浮かぶ",
+    reading: "うかぶ",
+    id: "mengapung"
+  }, {
+    jp: "埋める",
+    reading: "うめる",
+    id: "mengubur/mengisi"
+  }, {
+    jp: "羨ましい",
+    reading: "うらやましい",
+    id: "iri"
+  }, {
+    jp: "売上",
+    reading: "うりあげ",
+    id: "hasil penjualan"
+  }, {
+    jp: "映る",
+    reading: "うつる",
+    id: "terpantul/terlihat"
+  }, {
+    jp: "役目",
+    reading: "やくめ",
+    id: "tugas/peran"
+  }, {
+    jp: "役人",
+    reading: "やくにん",
+    id: "pejabat pemerintah"
+  }, {
+    jp: "予備",
+    reading: "よび",
+    id: "cadangan"
+  }, {
+    jp: "予告",
+    reading: "よこく",
+    id: "pemberitahuan awal"
+  }, {
+    jp: "翌日",
+    reading: "よくじつ",
+    id: "hari berikutnya"
+  }, {
+    jp: "行方",
+    reading: "ゆくえ",
+    id: "keberadaan"
+  }, {
+    jp: "輸送",
+    reading: "ゆそう",
+    id: "pengangkutan"
+  }, {
+    jp: "前後",
+    reading: "ぜんご",
+    id: "sebelum-sesudah"
+  }, {
+    jp: "全般",
+    reading: "ぜんぱん",
+    id: "secara keseluruhan"
+  }, {
+    jp: "属する",
+    reading: "ぞくする",
+    id: "tergolong/termasuk"
+  }, {
+    jp: "続々",
+    reading: "ぞくぞく",
+    id: "berturut-turut"
+  }, {
+    jp: "増大",
+    reading: "ぞうだい",
+    id: "peningkatan besar"
+  }, {
+    jp: "頭脳",
+    reading: "ずのう",
+    id: "otak/kecerdasan"
+  }],
+  "Pekerjaan & Kantor": [{
+    jp: "会社員",
+    reading: "かいしゃいん",
+    id: "karyawan perusahaan"
+  }, {
+    jp: "仕事",
+    reading: "しごと",
+    id: "pekerjaan"
+  }, {
+    jp: "会議",
+    reading: "かいぎ",
+    id: "rapat"
+  }, {
+    jp: "給料",
+    reading: "きゅうりょう",
+    id: "gaji"
+  }, {
+    jp: "残業",
+    reading: "ざんぎょう",
+    id: "lembur"
+  }, {
+    jp: "休憩",
+    reading: "きゅうけい",
+    id: "istirahat"
+  }, {
+    jp: "社長",
+    reading: "しゃちょう",
+    id: "direktur perusahaan"
+  }, {
+    jp: "同僚",
+    reading: "どうりょう",
+    id: "rekan kerja"
+  }, {
+    jp: "面接",
+    reading: "めんせつ",
+    id: "wawancara"
+  }, {
+    jp: "履歴書",
+    reading: "りれきしょ",
+    id: "CV/riwayat hidup"
+  }, {
+    jp: "アルバイト",
+    reading: "あるばいと",
+    id: "kerja paruh waktu"
+  }, {
+    jp: "パート",
+    reading: "ぱーと",
+    id: "kerja paruh waktu (biasa ibu rumah tangga)"
+  }, {
+    jp: "正社員",
+    reading: "せいしゃいん",
+    id: "karyawan tetap"
+  }, {
+    jp: "契約社員",
+    reading: "けいやくしゃいん",
+    id: "karyawan kontrak"
+  }, {
+    jp: "部長",
+    reading: "ぶちょう",
+    id: "kepala departemen"
+  }, {
+    jp: "課長",
+    reading: "かちょう",
+    id: "kepala seksi"
+  }, {
+    jp: "係長",
+    reading: "かかりちょう",
+    id: "kepala unit"
+  }, {
+    jp: "社員",
+    reading: "しゃいん",
+    id: "karyawan"
+  }, {
+    jp: "上司",
+    reading: "じょうし",
+    id: "atasan"
+  }, {
+    jp: "部下",
+    reading: "ぶか",
+    id: "bawahan"
+  }, {
+    jp: "出張",
+    reading: "しゅっちょう",
+    id: "perjalanan dinas"
+  }, {
+    jp: "出勤",
+    reading: "しゅっきん",
+    id: "berangkat kerja"
+  }, {
+    jp: "退勤",
+    reading: "たいきん",
+    id: "pulang kerja"
+  }, {
+    jp: "欠勤",
+    reading: "けっきん",
+    id: "tidak masuk kerja"
+  }, {
+    jp: "遅刻",
+    reading: "ちこく",
+    id: "terlambat"
+  }, {
+    jp: "早退",
+    reading: "そうたい",
+    id: "pulang cepat"
+  }, {
+    jp: "有給休暇",
+    reading: "ゆうきゅうきゅうか",
+    id: "cuti berbayar"
+  }, {
+    jp: "昇給",
+    reading: "しょうきゅう",
+    id: "kenaikan gaji"
+  }, {
+    jp: "転勤",
+    reading: "てんきん",
+    id: "pindah tempat kerja"
+  }, {
+    jp: "就職",
+    reading: "しゅうしょく",
+    id: "mendapat pekerjaan"
+  }, {
+    jp: "就職活動",
+    reading: "しゅうしょくかつどう",
+    id: "mencari kerja"
+  }, {
+    jp: "名刺",
+    reading: "めいし",
+    id: "kartu nama"
+  }, {
+    jp: "書類",
+    reading: "しょるい",
+    id: "dokumen"
+  }, {
+    jp: "資料",
+    reading: "しりょう",
+    id: "bahan/materi"
+  }, {
+    jp: "打ち合わせ",
+    reading: "うちあわせ",
+    id: "pertemuan kerja"
+  }, {
+    jp: "締め切り",
+    reading: "しめきり",
+    id: "tenggat waktu"
+  }, {
+    jp: "残業代",
+    reading: "ざんぎょうだい",
+    id: "uang lembur"
+  }, {
+    jp: "ボーナス",
+    reading: "ぼーなす",
+    id: "bonus"
+  }, {
+    jp: "手当",
+    reading: "てあて",
+    id: "tunjangan"
+  }, {
+    jp: "経費",
+    reading: "けいひ",
+    id: "biaya operasional"
+  }, {
+    jp: "売り上げ",
+    reading: "うりあげ",
+    id: "penjualan/omzet"
+  }, {
+    jp: "契約",
+    reading: "けいやく",
+    id: "kontrak"
+  }, {
+    jp: "取引先",
+    reading: "とりひきさき",
+    id: "mitra bisnis/klien"
+  }, {
+    jp: "裁量",
+    reading: "さいりょう",
+    id: "wewenang/keleluasaan"
+  }],
+  "Kesehatan": [{
+    jp: "病気",
+    reading: "びょうき",
+    id: "sakit/penyakit"
+  }, {
+    jp: "熱",
+    reading: "ねつ",
+    id: "demam"
+  }, {
+    jp: "薬",
+    reading: "くすり",
+    id: "obat"
+  }, {
+    jp: "怪我",
+    reading: "けが",
+    id: "luka/cedera"
+  }, {
+    jp: "医者",
+    reading: "いしゃ",
+    id: "dokter"
+  }, {
+    jp: "看護師",
+    reading: "かんごし",
+    id: "perawat"
+  }, {
+    jp: "体温",
+    reading: "たいおん",
+    id: "suhu tubuh"
+  }, {
+    jp: "風邪",
+    reading: "かぜ",
+    id: "masuk angin/flu"
+  }, {
+    jp: "インフルエンザ",
+    reading: "いんふるえんざ",
+    id: "flu"
+  }, {
+    jp: "花粉症",
+    reading: "かふんしょう",
+    id: "alergi serbuk bunga"
+  }, {
+    jp: "アレルギー",
+    reading: "あれるぎー",
+    id: "alergi"
+  }, {
+    jp: "下痢",
+    reading: "げり",
+    id: "diare"
+  }, {
+    jp: "便秘",
+    reading: "べんぴ",
+    id: "sembelit"
+  }, {
+    jp: "咳",
+    reading: "せき",
+    id: "batuk"
+  }, {
+    jp: "くしゃみ",
+    reading: "くしゃみ",
+    id: "bersin"
+  }, {
+    jp: "鼻水",
+    reading: "はなみず",
+    id: "ingus"
+  }, {
+    jp: "めまい",
+    reading: "めまい",
+    id: "pusing"
+  }, {
+    jp: "吐き気",
+    reading: "はきけ",
+    id: "mual"
+  }, {
+    jp: "気分が悪い",
+    reading: "きぶんがわるい",
+    id: "merasa tidak enak badan"
+  }, {
+    jp: "体調",
+    reading: "たいちょう",
+    id: "kondisi tubuh"
+  }, {
+    jp: "体調不良",
+    reading: "たいちょうふりょう",
+    id: "kondisi tubuh kurang baik"
+  }, {
+    jp: "疲労",
+    reading: "ひろう",
+    id: "kelelahan"
+  }, {
+    jp: "ストレス",
+    reading: "すとれす",
+    id: "stres"
+  }, {
+    jp: "入院",
+    reading: "にゅういん",
+    id: "masuk rumah sakit"
+  }, {
+    jp: "退院",
+    reading: "たいいん",
+    id: "keluar rumah sakit"
+  }, {
+    jp: "手術",
+    reading: "しゅじゅつ",
+    id: "operasi"
+  }, {
+    jp: "注射",
+    reading: "ちゅうしゃ",
+    id: "suntikan"
+  }, {
+    jp: "検査",
+    reading: "けんさ",
+    id: "pemeriksaan"
+  }, {
+    jp: "診察",
+    reading: "しんさつ",
+    id: "pemeriksaan dokter"
+  }, {
+    jp: "治療",
+    reading: "ちりょう",
+    id: "pengobatan"
+  }, {
+    jp: "処方箋",
+    reading: "しょほうせん",
+    id: "resep obat"
+  }, {
+    jp: "薬局",
+    reading: "やっきょく",
+    id: "apotek"
+  }, {
+    jp: "救急車",
+    reading: "きゅうきゅうしゃ",
+    id: "ambulans"
+  }, {
+    jp: "救急",
+    reading: "きゅうきゅう",
+    id: "gawat darurat"
+  }, {
+    jp: "保険",
+    reading: "ほけん",
+    id: "asuransi"
+  }, {
+    jp: "保険証",
+    reading: "ほけんしょう",
+    id: "kartu asuransi"
+  }, {
+    jp: "健康",
+    reading: "けんこう",
+    id: "kesehatan"
+  }, {
+    jp: "栄養",
+    reading: "えいよう",
+    id: "gizi/nutrisi"
+  }, {
+    jp: "免疫力",
+    reading: "めんえきりょく",
+    id: "daya tahan tubuh"
+  }, {
+    jp: "体質",
+    reading: "たいしつ",
+    id: "konstitusi tubuh"
+  }],
+  "Teknologi & Komunikasi": [{
+    jp: "携帯電話",
+    reading: "けいたいでんわ",
+    id: "ponsel"
+  }, {
+    jp: "充電",
+    reading: "じゅうでん",
+    id: "mengisi daya"
+  }, {
+    jp: "画面",
+    reading: "がめん",
+    id: "layar"
+  }, {
+    jp: "送信",
+    reading: "そうしん",
+    id: "mengirim (pesan)"
+  }, {
+    jp: "受信",
+    reading: "じゅしん",
+    id: "menerima (pesan)"
+  }, {
+    jp: "印刷",
+    reading: "いんさつ",
+    id: "mencetak"
+  }, {
+    jp: "故障",
+    reading: "こしょう",
+    id: "rusak (mesin/alat)"
+  }, {
+    jp: "設定",
+    reading: "せってい",
+    id: "pengaturan"
+  }, {
+    jp: "インターネット",
+    reading: "いんたーねっと",
+    id: "internet"
+  }, {
+    jp: "ネット",
+    reading: "ねっと",
+    id: "internet (singkatan)"
+  }, {
+    jp: "ウェブサイト",
+    reading: "うぇぶさいと",
+    id: "situs web"
+  }, {
+    jp: "メール",
+    reading: "めーる",
+    id: "email"
+  }, {
+    jp: "アプリ",
+    reading: "あぷり",
+    id: "aplikasi"
+  }, {
+    jp: "ダウンロード",
+    reading: "だうんろーど",
+    id: "unduh"
+  }, {
+    jp: "アップロード",
+    reading: "あっぷろーど",
+    id: "unggah"
+  }, {
+    jp: "パスワード",
+    reading: "ぱすわーど",
+    id: "kata sandi"
+  }, {
+    jp: "アカウント",
+    reading: "あかうんと",
+    id: "akun"
+  }, {
+    jp: "登録",
+    reading: "とうろく",
+    id: "registrasi"
+  }, {
+    jp: "検索",
+    reading: "けんさく",
+    id: "pencarian"
+  }, {
+    jp: "更新",
+    reading: "こうしん",
+    id: "pembaruan"
+  }, {
+    jp: "削除",
+    reading: "さくじょ",
+    id: "menghapus"
+  }, {
+    jp: "保存",
+    reading: "ほぞん",
+    id: "menyimpan"
+  }, {
+    jp: "コピー",
+    reading: "こぴー",
+    id: "menyalin"
+  }, {
+    jp: "クリック",
+    reading: "くりっく",
+    id: "klik"
+  }, {
+    jp: "起動",
+    reading: "きどう",
+    id: "menyalakan sistem"
+  }, {
+    jp: "終了",
+    reading: "しゅうりょう",
+    id: "mengakhiri (sistem)"
+  }, {
+    jp: "接続",
+    reading: "せつぞく",
+    id: "koneksi"
+  }, {
+    jp: "オンライン",
+    reading: "おんらいん",
+    id: "daring/online"
+  }, {
+    jp: "動画",
+    reading: "どうが",
+    id: "video"
+  }, {
+    jp: "SNS",
+    reading: "えすえぬえす",
+    id: "media sosial"
+  }, {
+    jp: "普及",
+    reading: "ふきゅう",
+    id: "penyebaran/adopsi teknologi"
+  }, {
+    jp: "端末",
+    reading: "たんまつ",
+    id: "perangkat/terminal"
+  }],
+  "Rumah & Kehidupan Sehari-hari": [{
+    jp: "引っ越し",
+    reading: "ひっこし",
+    id: "pindah rumah"
+  }, {
+    jp: "家賃",
+    reading: "やちん",
+    id: "sewa rumah"
+  }, {
+    jp: "近所",
+    reading: "きんじょ",
+    id: "tetangga/sekitar"
+  }, {
+    jp: "掃除",
+    reading: "そうじ",
+    id: "membersihkan"
+  }, {
+    jp: "洗濯",
+    reading: "せんたく",
+    id: "mencuci baju"
+  }, {
+    jp: "片付ける",
+    reading: "かたづける",
+    id: "merapikan"
+  }, {
+    jp: "準備",
+    reading: "じゅんび",
+    id: "persiapan"
+  }, {
+    jp: "生活",
+    reading: "せいかつ",
+    id: "kehidupan sehari-hari"
+  }, {
+    jp: "大家",
+    reading: "おおや",
+    id: "pemilik rumah kontrakan"
+  }, {
+    jp: "不動産屋",
+    reading: "ふどうさんや",
+    id: "agen properti"
+  }, {
+    jp: "契約書",
+    reading: "けいやくしょ",
+    id: "surat kontrak"
+  }, {
+    jp: "敷金",
+    reading: "しききん",
+    id: "uang jaminan sewa"
+  }, {
+    jp: "礼金",
+    reading: "れいきん",
+    id: "uang terima kasih (sewa)"
+  }, {
+    jp: "管理費",
+    reading: "かんりひ",
+    id: "biaya pengelolaan"
+  }, {
+    jp: "光熱費",
+    reading: "こうねつひ",
+    id: "biaya listrik/air/gas"
+  }, {
+    jp: "水道代",
+    reading: "すいどうだい",
+    id: "biaya air"
+  }, {
+    jp: "電気代",
+    reading: "でんきだい",
+    id: "biaya listrik"
+  }, {
+    jp: "ガス代",
+    reading: "がすだい",
+    id: "biaya gas"
+  }, {
+    jp: "ゴミの日",
+    reading: "ごみのひ",
+    id: "hari buang sampah"
+  }, {
+    jp: "分別",
+    reading: "ぶんべつ",
+    id: "pemilahan (sampah)"
+  }, {
+    jp: "燃えるゴミ",
+    reading: "もえるごみ",
+    id: "sampah yang bisa dibakar"
+  }, {
+    jp: "燃えないゴミ",
+    reading: "もえないごみ",
+    id: "sampah yang tidak bisa dibakar"
+  }, {
+    jp: "近所付き合い",
+    reading: "きんじょづきあい",
+    id: "hubungan bertetangga"
+  }, {
+    jp: "自治会",
+    reading: "じちかい",
+    id: "perkumpulan warga"
+  }, {
+    jp: "留守",
+    reading: "るす",
+    id: "tidak ada di rumah"
+  }, {
+    jp: "留守番",
+    reading: "るすばん",
+    id: "menjaga rumah"
+  }, {
+    jp: "宅配便",
+    reading: "たくはいびん",
+    id: "jasa antar barang"
+  }, {
+    jp: "配達",
+    reading: "はいたつ",
+    id: "pengantaran"
+  }, {
+    jp: "届く",
+    reading: "とどく",
+    id: "sampai/terkirim"
+  }, {
+    jp: "郵便",
+    reading: "ゆうびん",
+    id: "pos"
+  }, {
+    jp: "切手",
+    reading: "きって",
+    id: "perangko"
+  }, {
+    jp: "封筒",
+    reading: "ふうとう",
+    id: "amplop"
+  }, {
+    jp: "はんこ",
+    reading: "はんこ",
+    id: "stempel/cap nama"
+  }, {
+    jp: "サイン",
+    reading: "さいん",
+    id: "tanda tangan"
+  }, {
+    jp: "印鑑",
+    reading: "いんかん",
+    id: "stempel resmi"
+  }, {
+    jp: "家事分担",
+    reading: "かじぶんたん",
+    id: "pembagian pekerjaan rumah"
+  }, {
+    jp: "模様替え",
+    reading: "もようがえ",
+    id: "menata ulang ruangan"
+  }],
+  "Pendidikan Lanjutan": [{
+    jp: "入学",
+    reading: "にゅうがく",
+    id: "masuk sekolah"
+  }, {
+    jp: "卒業",
+    reading: "そつぎょう",
+    id: "lulus"
+  }, {
+    jp: "成績",
+    reading: "せいせき",
+    id: "nilai/prestasi"
+  }, {
+    jp: "専門",
+    reading: "せんもん",
+    id: "bidang keahlian"
+  }, {
+    jp: "大学院",
+    reading: "だいがくいん",
+    id: "pascasarjana"
+  }, {
+    jp: "奨学金",
+    reading: "しょうがくきん",
+    id: "beasiswa"
+  }, {
+    jp: "授業料",
+    reading: "じゅぎょうりょう",
+    id: "biaya kuliah/sekolah"
+  }, {
+    jp: "学費",
+    reading: "がくひ",
+    id: "biaya pendidikan"
+  }, {
+    jp: "講義",
+    reading: "こうぎ",
+    id: "kuliah (mata kuliah)"
+  }, {
+    jp: "講師",
+    reading: "こうし",
+    id: "dosen/pengajar"
+  }, {
+    jp: "教授",
+    reading: "きょうじゅ",
+    id: "profesor"
+  }, {
+    jp: "研究",
+    reading: "けんきゅう",
+    id: "penelitian"
+  }, {
+    jp: "研究室",
+    reading: "けんきゅうしつ",
+    id: "ruang penelitian/lab"
+  }, {
+    jp: "論文",
+    reading: "ろんぶん",
+    id: "skripsi/tesis"
+  }, {
+    jp: "レポート",
+    reading: "れぽーと",
+    id: "laporan tugas"
+  }, {
+    jp: "発表",
+    reading: "はっぴょう",
+    id: "presentasi"
+  }, {
+    jp: "指導",
+    reading: "しどう",
+    id: "bimbingan"
+  }, {
+    jp: "単位",
+    reading: "たんい",
+    id: "SKS/kredit"
+  }, {
+    jp: "必修科目",
+    reading: "ひっしゅうかもく",
+    id: "mata kuliah wajib"
+  }, {
+    jp: "選択科目",
+    reading: "せんたくかもく",
+    id: "mata kuliah pilihan"
+  }, {
+    jp: "専攻",
+    reading: "せんこう",
+    id: "jurusan"
+  }, {
+    jp: "学部",
+    reading: "がくぶ",
+    id: "fakultas"
+  }, {
+    jp: "サークル",
+    reading: "さーくる",
+    id: "klub/UKM"
+  }, {
+    jp: "部活",
+    reading: "ぶかつ",
+    id: "klub ekstrakurikuler"
+  }, {
+    jp: "塾",
+    reading: "じゅく",
+    id: "bimbel"
+  }, {
+    jp: "予備校",
+    reading: "よびこう",
+    id: "sekolah persiapan ujian"
+  }, {
+    jp: "家庭教師",
+    reading: "かていきょうし",
+    id: "guru les privat"
+  }, {
+    jp: "模擬試験",
+    reading: "もぎしけん",
+    id: "ujian simulasi"
+  }, {
+    jp: "合格",
+    reading: "ごうかく",
+    id: "lulus ujian"
+  }, {
+    jp: "不合格",
+    reading: "ふごうかく",
+    id: "tidak lulus ujian"
+  }, {
+    jp: "受験",
+    reading: "じゅけん",
+    id: "mengikuti ujian masuk"
+  }, {
+    jp: "学力",
+    reading: "がくりょく",
+    id: "kemampuan akademik"
+  }, {
+    jp: "留学制度",
+    reading: "りゅうがくせいど",
+    id: "sistem studi luar negeri"
+  }],
+  "Kata Kerja Lanjutan": [{
+    jp: "集める",
+    reading: "あつめる",
+    id: "mengumpulkan"
+  }, {
+    jp: "捨てる",
+    reading: "すてる",
+    id: "membuang"
+  }, {
+    jp: "届ける",
+    reading: "とどける",
+    id: "mengantarkan"
+  }, {
+    jp: "運ぶ",
+    reading: "はこぶ",
+    id: "membawa/mengangkut"
+  }, {
+    jp: "包む",
+    reading: "つつむ",
+    id: "membungkus"
+  }, {
+    jp: "壊れる",
+    reading: "こわれる",
+    id: "rusak"
+  }, {
+    jp: "直す",
+    reading: "なおす",
+    id: "memperbaiki"
+  }, {
+    jp: "守る",
+    reading: "まもる",
+    id: "menjaga/mematuhi"
+  }, {
+    jp: "決める",
+    reading: "きめる",
+    id: "memutuskan"
+  }, {
+    jp: "続ける",
+    reading: "つづける",
+    id: "melanjutkan"
+  }, {
+    jp: "比べる",
+    reading: "くらべる",
+    id: "membandingkan"
+  }, {
+    jp: "増える",
+    reading: "ふえる",
+    id: "bertambah"
+  }, {
+    jp: "減る",
+    reading: "へる",
+    id: "berkurang"
+  }, {
+    jp: "変える",
+    reading: "かえる",
+    id: "mengubah"
+  }, {
+    jp: "育てる",
+    reading: "そだてる",
+    id: "membesarkan/merawat"
+  }, {
+    jp: "似合う",
+    reading: "にあう",
+    id: "cocok/pantas"
+  }, {
+    jp: "間に合う",
+    reading: "まにあう",
+    id: "tepat waktu/keburu"
+  }, {
+    jp: "遅れる",
+    reading: "おくれる",
+    id: "terlambat"
+  }, {
+    jp: "慌てる",
+    reading: "あわてる",
+    id: "panik/terburu-buru"
+  }, {
+    jp: "落とす",
+    reading: "おとす",
+    id: "menjatuhkan"
+  }, {
+    jp: "拾う",
+    reading: "ひろう",
+    id: "memungut"
+  }, {
+    jp: "探す",
+    reading: "さがす",
+    id: "mencari"
+  }, {
+    jp: "見つかる",
+    reading: "みつかる",
+    id: "ditemukan"
+  }, {
+    jp: "気づく",
+    reading: "きづく",
+    id: "menyadari"
+  }, {
+    jp: "気をつける",
+    reading: "きをつける",
+    id: "berhati-hati"
+  }, {
+    jp: "注意する",
+    reading: "ちゅういする",
+    id: "waspada/memperhatikan"
+  }, {
+    jp: "確認する",
+    reading: "かくにんする",
+    id: "memastikan"
+  }, {
+    jp: "用意する",
+    reading: "よういする",
+    id: "menyiapkan"
+  }, {
+    jp: "片付く",
+    reading: "かたづく",
+    id: "beres/rapi"
+  }, {
+    jp: "汚れる",
+    reading: "よごれる",
+    id: "menjadi kotor"
+  }, {
+    jp: "汚す",
+    reading: "よごす",
+    id: "mengotori"
+  }, {
+    jp: "濡れる",
+    reading: "ぬれる",
+    id: "basah"
+  }, {
+    jp: "濡らす",
+    reading: "ぬらす",
+    id: "membasahi"
+  }, {
+    jp: "乾く",
+    reading: "かわく",
+    id: "kering"
+  }, {
+    jp: "乾かす",
+    reading: "かわかす",
+    id: "mengeringkan"
+  }, {
+    jp: "冷える",
+    reading: "ひえる",
+    id: "menjadi dingin"
+  }, {
+    jp: "冷やす",
+    reading: "ひやす",
+    id: "mendinginkan"
+  }, {
+    jp: "温める",
+    reading: "あたためる",
+    id: "menghangatkan"
+  }, {
+    jp: "沸く",
+    reading: "わく",
+    id: "mendidih"
+  }, {
+    jp: "沸かす",
+    reading: "わかす",
+    id: "merebus/mendidihkan"
+  }, {
+    jp: "炒める",
+    reading: "いためる",
+    id: "menumis"
+  }, {
+    jp: "煮る",
+    reading: "にる",
+    id: "merebus dengan bumbu"
+  }, {
+    jp: "蒸す",
+    reading: "むす",
+    id: "mengukus"
+  }, {
+    jp: "揚げる",
+    reading: "あげる",
+    id: "menggoreng"
+  }, {
+    jp: "刻む",
+    reading: "きざむ",
+    id: "mencincang"
+  }, {
+    jp: "混ぜる",
+    reading: "まぜる",
+    id: "mencampur"
+  }, {
+    jp: "配る",
+    reading: "くばる",
+    id: "membagikan"
+  }, {
+    jp: "渡す",
+    reading: "わたす",
+    id: "menyerahkan"
+  }, {
+    jp: "受け取る",
+    reading: "うけとる",
+    id: "menerima"
+  }, {
+    jp: "申し込む",
+    reading: "もうしこむ",
+    id: "mendaftar"
+  }, {
+    jp: "申請する",
+    reading: "しんせいする",
+    id: "mengajukan permohonan"
+  }, {
+    jp: "提出する",
+    reading: "ていしゅつする",
+    id: "menyerahkan dokumen"
+  }, {
+    jp: "提案する",
+    reading: "ていあんする",
+    id: "mengajukan usul"
+  }, {
+    jp: "断る",
+    reading: "ことわる",
+    id: "menolak"
+  }, {
+    jp: "許す",
+    reading: "ゆるす",
+    id: "mengizinkan/memaafkan"
+  }, {
+    jp: "禁止する",
+    reading: "きんしする",
+    id: "melarang"
+  }, {
+    jp: "納得する",
+    reading: "なっとくする",
+    id: "memahami dan setuju"
+  }, {
+    jp: "理解する",
+    reading: "りかいする",
+    id: "memahami"
+  }, {
+    jp: "説明する",
+    reading: "せつめいする",
+    id: "menjelaskan"
+  }, {
+    jp: "紹介する",
+    reading: "しょうかいする",
+    id: "memperkenalkan"
+  }, {
+    jp: "案内する",
+    reading: "あんないする",
+    id: "memandu"
+  }, {
+    jp: "招待する",
+    reading: "しょうたいする",
+    id: "mengundang"
+  }, {
+    jp: "誘う",
+    reading: "さそう",
+    id: "mengajak"
+  }, {
+    jp: "祝う",
+    reading: "いわう",
+    id: "merayakan"
+  }, {
+    jp: "泊まる",
+    reading: "とまる",
+    id: "menginap"
+  }, {
+    jp: "訪ねる",
+    reading: "たずねる",
+    id: "mengunjungi"
+  }, {
+    jp: "訪問する",
+    reading: "ほうもんする",
+    id: "berkunjung"
+  }, {
+    jp: "到着する",
+    reading: "とうちゃくする",
+    id: "tiba"
+  }, {
+    jp: "出発する",
+    reading: "しゅっぱつする",
+    id: "berangkat"
+  }, {
+    jp: "帰国する",
+    reading: "きこくする",
+    id: "pulang ke negara asal"
+  }, {
+    jp: "入国する",
+    reading: "にゅうこくする",
+    id: "masuk negara"
+  }, {
+    jp: "出国する",
+    reading: "しゅっこくする",
+    id: "keluar negara"
+  }, {
+    jp: "両替する",
+    reading: "りょうがえする",
+    id: "menukar uang"
+  }, {
+    jp: "観光する",
+    reading: "かんこうする",
+    id: "berwisata"
+  }, {
+    jp: "眺める",
+    reading: "ながめる",
+    id: "memandang"
+  }, {
+    jp: "広がる",
+    reading: "ひろがる",
+    id: "meluas"
+  }, {
+    jp: "広げる",
+    reading: "ひろげる",
+    id: "membentangkan"
+  }, {
+    jp: "伸びる",
+    reading: "のびる",
+    id: "memanjang/berkembang"
+  }, {
+    jp: "伸ばす",
+    reading: "のばす",
+    id: "memanjangkan"
+  }, {
+    jp: "縮む",
+    reading: "ちぢむ",
+    id: "menyusut"
+  }, {
+    jp: "縮める",
+    reading: "ちぢめる",
+    id: "menyusutkan"
+  }, {
+    jp: "進む",
+    reading: "すすむ",
+    id: "maju"
+  }, {
+    jp: "進める",
+    reading: "すすめる",
+    id: "memajukan"
+  }, {
+    jp: "戻る",
+    reading: "もどる",
+    id: "kembali"
+  }, {
+    jp: "戻す",
+    reading: "もどす",
+    id: "mengembalikan"
+  }, {
+    jp: "移る",
+    reading: "うつる",
+    id: "berpindah"
+  }, {
+    jp: "移す",
+    reading: "うつす",
+    id: "memindahkan"
+  }, {
+    jp: "変わる",
+    reading: "かわる",
+    id: "berubah"
+  }, {
+    jp: "起こる",
+    reading: "おこる",
+    id: "terjadi"
+  }, {
+    jp: "起こす",
+    reading: "おこす",
+    id: "membangunkan/menyebabkan"
+  }, {
+    jp: "割れる",
+    reading: "われる",
+    id: "pecah"
+  }, {
+    jp: "割る",
+    reading: "わる",
+    id: "memecahkan"
+  }, {
+    jp: "折れる",
+    reading: "おれる",
+    id: "patah"
+  }, {
+    jp: "折る",
+    reading: "おる",
+    id: "mematahkan/melipat"
+  }, {
+    jp: "切れる",
+    reading: "きれる",
+    id: "putus/terputus"
+  }, {
+    jp: "つながる",
+    reading: "つながる",
+    id: "tersambung"
+  }, {
+    jp: "つなぐ",
+    reading: "つなぐ",
+    id: "menyambungkan"
+  }],
+  "Sifat & Kondisi Lanjutan": [{
+    jp: "不便",
+    reading: "ふべん",
+    id: "tidak praktis"
+  }, {
+    jp: "大切",
+    reading: "たいせつ",
+    id: "penting"
+  }, {
+    jp: "必要",
+    reading: "ひつよう",
+    id: "perlu"
+  }, {
+    jp: "十分",
+    reading: "じゅうぶん",
+    id: "cukup"
+  }, {
+    jp: "複雑",
+    reading: "ふくざつ",
+    id: "rumit"
+  }, {
+    jp: "簡単",
+    reading: "かんたん",
+    id: "mudah/sederhana"
+  }, {
+    jp: "丁寧",
+    reading: "ていねい",
+    id: "sopan, teliti"
+  }, {
+    jp: "熱心",
+    reading: "ねっしん",
+    id: "tekun, antusias"
+  }, {
+    jp: "真面目",
+    reading: "まじめ",
+    id: "serius/rajin"
+  }, {
+    jp: "上品",
+    reading: "じょうひん",
+    id: "elegan/berkelas"
+  }, {
+    jp: "下品",
+    reading: "げひん",
+    id: "kasar/vulgar"
+  }, {
+    jp: "派手",
+    reading: "はで",
+    id: "mencolok"
+  }, {
+    jp: "地味",
+    reading: "じみ",
+    id: "sederhana/kalem"
+  }, {
+    jp: "豊か",
+    reading: "ゆたか",
+    id: "kaya/berlimpah"
+  }, {
+    jp: "貧しい",
+    reading: "まずしい",
+    id: "miskin"
+  }, {
+    jp: "盛ん",
+    reading: "さかん",
+    id: "berkembang pesat/populer"
+  }, {
+    jp: "有効",
+    reading: "ゆうこう",
+    id: "berlaku/efektif"
+  }, {
+    jp: "無効",
+    reading: "むこう",
+    id: "tidak berlaku"
+  }, {
+    jp: "確実",
+    reading: "かくじつ",
+    id: "pasti"
+  }, {
+    jp: "不確実",
+    reading: "ふかくじつ",
+    id: "tidak pasti"
+  }, {
+    jp: "明確",
+    reading: "めいかく",
+    id: "jelas"
+  }, {
+    jp: "積極的",
+    reading: "せっきょくてき",
+    id: "proaktif"
+  }, {
+    jp: "消極的",
+    reading: "しょうきょくてき",
+    id: "pasif"
+  }, {
+    jp: "具体的",
+    reading: "ぐたいてき",
+    id: "konkret"
+  }, {
+    jp: "抽象的",
+    reading: "ちゅうしょうてき",
+    id: "abstrak"
+  }, {
+    jp: "一般的",
+    reading: "いっぱんてき",
+    id: "umum"
+  }, {
+    jp: "特殊",
+    reading: "とくしゅ",
+    id: "khusus"
+  }, {
+    jp: "正常",
+    reading: "せいじょう",
+    id: "normal"
+  }, {
+    jp: "異常",
+    reading: "いじょう",
+    id: "abnormal"
+  }, {
+    jp: "安定",
+    reading: "あんてい",
+    id: "stabil"
+  }, {
+    jp: "不安定",
+    reading: "ふあんてい",
+    id: "tidak stabil"
+  }, {
+    jp: "公平",
+    reading: "こうへい",
+    id: "adil"
+  }, {
+    jp: "不公平",
+    reading: "ふこうへい",
+    id: "tidak adil"
+  }, {
+    jp: "自由",
+    reading: "じゆう",
+    id: "bebas"
+  }, {
+    jp: "可能",
+    reading: "かのう",
+    id: "memungkinkan"
+  }, {
+    jp: "不可能",
+    reading: "ふかのう",
+    id: "tidak mungkin"
+  }, {
+    jp: "面倒",
+    reading: "めんどう",
+    id: "merepotkan"
+  }, {
+    jp: "邪魔",
+    reading: "じゃま",
+    id: "mengganggu"
+  }, {
+    jp: "危険",
+    reading: "きけん",
+    id: "berbahaya"
+  }, {
+    jp: "安全",
+    reading: "あんぜん",
+    id: "aman"
+  }, {
+    jp: "清潔",
+    reading: "せいけつ",
+    id: "bersih/higienis"
+  }, {
+    jp: "不潔",
+    reading: "ふけつ",
+    id: "tidak higienis"
+  }, {
+    jp: "柔軟",
+    reading: "じゅうなん",
+    id: "fleksibel"
+  }, {
+    jp: "頑丈",
+    reading: "がんじょう",
+    id: "kokoh"
+  }],
+  "Keluarga": [{
+    jp: "家族",
+    reading: "かぞく",
+    id: "keluarga"
+  }, {
+    jp: "父",
+    reading: "ちち",
+    id: "ayah (punya sendiri)"
+  }, {
+    jp: "母",
+    reading: "はは",
+    id: "ibu (punya sendiri)"
+  }, {
+    jp: "兄",
+    reading: "あに",
+    id: "kakak laki-laki"
+  }, {
+    jp: "姉",
+    reading: "あね",
+    id: "kakak perempuan"
+  }, {
+    jp: "弟",
+    reading: "おとうと",
+    id: "adik laki-laki"
+  }, {
+    jp: "妹",
+    reading: "いもうと",
+    id: "adik perempuan"
+  }, {
+    jp: "子供",
+    reading: "こども",
+    id: "anak"
+  }, {
+    jp: "おじいさん",
+    reading: "おじいさん",
+    id: "kakek"
+  }, {
+    jp: "おばあさん",
+    reading: "おばあさん",
+    id: "nenek"
+  }, {
+    jp: "両親",
+    reading: "りょうしん",
+    id: "orang tua"
+  }, {
+    jp: "兄弟",
+    reading: "きょうだい",
+    id: "saudara kandung"
+  }, {
+    jp: "大人",
+    reading: "おとな",
+    id: "dewasa"
+  }, {
+    jp: "男の子",
+    reading: "おとこのこ",
+    id: "anak laki-laki"
+  }, {
+    jp: "女の子",
+    reading: "おんなのこ",
+    id: "anak perempuan"
+  }, {
+    jp: "皆さん",
+    reading: "みなさん",
+    id: "semua orang"
+  }, {
+    jp: "奥さん",
+    reading: "おくさん",
+    id: "istri (orang lain)"
+  }, {
+    jp: "ご主人",
+    reading: "ごしゅじん",
+    id: "suami (orang lain)"
+  }, {
+    jp: "祖父",
+    reading: "そふ",
+    id: "kakek"
+  }, {
+    jp: "祖母",
+    reading: "そぼ",
+    id: "nenek"
+  }, {
+    jp: "叔父",
+    reading: "おじ",
+    id: "paman"
+  }, {
+    jp: "叔母",
+    reading: "おば",
+    id: "bibi"
+  }, {
+    jp: "いとこ",
+    reading: "いとこ",
+    id: "sepupu"
+  }, {
+    jp: "孫",
+    reading: "まご",
+    id: "cucu"
+  }, {
+    jp: "夫",
+    reading: "おっと",
+    id: "suami"
+  }, {
+    jp: "妻",
+    reading: "つま",
+    id: "istri"
+  }, {
+    jp: "息子",
+    reading: "むすこ",
+    id: "anak laki-laki"
+  }, {
+    jp: "娘",
+    reading: "むすめ",
+    id: "anak perempuan"
+  }, {
+    jp: "赤ちゃん",
+    reading: "あかちゃん",
+    id: "bayi"
+  }, {
+    jp: "双子",
+    reading: "ふたご",
+    id: "anak kembar"
+  }, {
+    jp: "家内",
+    reading: "かない",
+    id: "istri (formal, milik sendiri)"
+  }, {
+    jp: "主人",
+    reading: "しゅじん",
+    id: "suami (formal, milik sendiri)"
+  }, {
+    jp: "一人っ子",
+    reading: "ひとりっこ",
+    id: "anak tunggal"
+  }, {
+    jp: "長男",
+    reading: "ちょうなん",
+    id: "anak laki-laki tertua"
+  }, {
+    jp: "長女",
+    reading: "ちょうじょ",
+    id: "anak perempuan tertua"
+  }, {
+    jp: "次男",
+    reading: "じなん",
+    id: "anak laki-laki kedua"
+  }, {
+    jp: "親戚",
+    reading: "しんせき",
+    id: "kerabat/saudara"
+  }, {
+    jp: "ご両親",
+    reading: "ごりょうしん",
+    id: "orang tua (sopan, milik orang lain)"
+  }, {
+    jp: "血縁関係",
+    reading: "けつえんかんけい",
+    id: "hubungan darah"
+  }, {
+    jp: "養子",
+    reading: "ようし",
+    id: "anak angkat"
+  }],
+  "Angka": [{
+    jp: "一",
+    reading: "いち",
+    id: "1"
+  }, {
+    jp: "二",
+    reading: "に",
+    id: "2"
+  }, {
+    jp: "三",
+    reading: "さん",
+    id: "3"
+  }, {
+    jp: "四",
+    reading: "よん / し",
+    id: "4"
+  }, {
+    jp: "五",
+    reading: "ご",
+    id: "5"
+  }, {
+    jp: "六",
+    reading: "ろく",
+    id: "6"
+  }, {
+    jp: "七",
+    reading: "なな / しち",
+    id: "7"
+  }, {
+    jp: "八",
+    reading: "はち",
+    id: "8"
+  }, {
+    jp: "九",
+    reading: "きゅう / く",
+    id: "9"
+  }, {
+    jp: "十",
+    reading: "じゅう",
+    id: "10"
+  }, {
+    jp: "百",
+    reading: "ひゃく",
+    id: "100"
+  }, {
+    jp: "千",
+    reading: "せん",
+    id: "1.000"
+  }, {
+    jp: "万",
+    reading: "まん",
+    id: "10.000"
+  }, {
+    jp: "一つ",
+    reading: "ひとつ",
+    id: "satu (benda)"
+  }, {
+    jp: "二つ",
+    reading: "ふたつ",
+    id: "dua (benda)"
+  }, {
+    jp: "三つ",
+    reading: "みっつ",
+    id: "tiga (benda)"
+  }, {
+    jp: "四つ",
+    reading: "よっつ",
+    id: "empat (benda)"
+  }, {
+    jp: "五つ",
+    reading: "いつつ",
+    id: "lima (benda)"
+  }, {
+    jp: "六つ",
+    reading: "むっつ",
+    id: "enam (benda)"
+  }, {
+    jp: "七つ",
+    reading: "ななつ",
+    id: "tujuh (benda)"
+  }, {
+    jp: "八つ",
+    reading: "やっつ",
+    id: "delapan (benda)"
+  }, {
+    jp: "九つ",
+    reading: "ここのつ",
+    id: "sembilan (benda)"
+  }, {
+    jp: "十一",
+    reading: "じゅういち",
+    id: "11"
+  }, {
+    jp: "十二",
+    reading: "じゅうに",
+    id: "12"
+  }, {
+    jp: "十三",
+    reading: "じゅうさん",
+    id: "13"
+  }, {
+    jp: "十四",
+    reading: "じゅうよん",
+    id: "14"
+  }, {
+    jp: "十五",
+    reading: "じゅうご",
+    id: "15"
+  }, {
+    jp: "十六",
+    reading: "じゅうろく",
+    id: "16"
+  }, {
+    jp: "十七",
+    reading: "じゅうなな",
+    id: "17"
+  }, {
+    jp: "十八",
+    reading: "じゅうはち",
+    id: "18"
+  }, {
+    jp: "十九",
+    reading: "じゅうきゅう",
+    id: "19"
+  }, {
+    jp: "二十",
+    reading: "にじゅう",
+    id: "20"
+  }, {
+    jp: "三十",
+    reading: "さんじゅう",
+    id: "30"
+  }, {
+    jp: "四十",
+    reading: "よんじゅう",
+    id: "40"
+  }, {
+    jp: "五十",
+    reading: "ごじゅう",
+    id: "50"
+  }, {
+    jp: "六十",
+    reading: "ろくじゅう",
+    id: "60"
+  }, {
+    jp: "七十",
+    reading: "ななじゅう",
+    id: "70"
+  }, {
+    jp: "八十",
+    reading: "はちじゅう",
+    id: "80"
+  }, {
+    jp: "九十",
+    reading: "きゅうじゅう",
+    id: "90"
+  }, {
+    jp: "二十歳",
+    reading: "はたち",
+    id: "20 tahun (usia)"
+  }, {
+    jp: "何歳",
+    reading: "なんさい",
+    id: "berapa umur"
+  }, {
+    jp: "一番",
+    reading: "いちばん",
+    id: "nomor satu / paling"
+  }, {
+    jp: "何回",
+    reading: "なんかい",
+    id: "berapa kali"
+  }, {
+    jp: "何番目",
+    reading: "なんばんめ",
+    id: "urutan keberapa"
+  }, {
+    jp: "半分",
+    reading: "はんぶん",
+    id: "setengah"
+  }, {
+    jp: "倍",
+    reading: "ばい",
+    id: "kali lipat"
+  }, {
+    jp: "番号",
+    reading: "ばんごう",
+    id: "nomor"
+  }, {
+    jp: "一番目",
+    reading: "いちばんめ",
+    id: "yang pertama"
+  }, {
+    jp: "最初",
+    reading: "さいしょ",
+    id: "pertama-tama"
+  }, {
+    jp: "最後",
+    reading: "さいご",
+    id: "terakhir"
+  }, {
+    jp: "桁",
+    reading: "けた",
+    id: "digit angka"
+  }, {
+    jp: "割合",
+    reading: "わりあい",
+    id: "proporsi/rasio"
+  }],
+  "Waktu": [{
+    jp: "今日",
+    reading: "きょう",
+    id: "hari ini"
+  }, {
+    jp: "明日",
+    reading: "あした",
+    id: "besok"
+  }, {
+    jp: "昨日",
+    reading: "きのう",
+    id: "kemarin"
+  }, {
+    jp: "今",
+    reading: "いま",
+    id: "sekarang"
+  }, {
+    jp: "朝",
+    reading: "あさ",
+    id: "pagi"
+  }, {
+    jp: "昼",
+    reading: "ひる",
+    id: "siang"
+  }, {
+    jp: "夜",
+    reading: "よる",
+    id: "malam"
+  }, {
+    jp: "週間",
+    reading: "しゅうかん",
+    id: "minggu (durasi)"
+  }, {
+    jp: "午前",
+    reading: "ごぜん",
+    id: "pagi (AM)"
+  }, {
+    jp: "午後",
+    reading: "ごご",
+    id: "siang (PM)"
+  }, {
+    jp: "今朝",
+    reading: "けさ",
+    id: "tadi pagi"
+  }, {
+    jp: "今晩",
+    reading: "こんばん",
+    id: "malam ini"
+  }, {
+    jp: "今週",
+    reading: "こんしゅう",
+    id: "minggu ini"
+  }, {
+    jp: "今月",
+    reading: "こんげつ",
+    id: "bulan ini"
+  }, {
+    jp: "今年",
+    reading: "ことし",
+    id: "tahun ini"
+  }, {
+    jp: "来週",
+    reading: "らいしゅう",
+    id: "minggu depan"
+  }, {
+    jp: "来月",
+    reading: "らいげつ",
+    id: "bulan depan"
+  }, {
+    jp: "来年",
+    reading: "らいねん",
+    id: "tahun depan"
+  }, {
+    jp: "先週",
+    reading: "せんしゅう",
+    id: "minggu lalu"
+  }, {
+    jp: "先月",
+    reading: "せんげつ",
+    id: "bulan lalu"
+  }, {
+    jp: "去年",
+    reading: "きょねん",
+    id: "tahun lalu"
+  }, {
+    jp: "時間",
+    reading: "じかん",
+    id: "waktu, durasi jam"
+  }, {
+    jp: "分",
+    reading: "ふん",
+    id: "menit"
+  }, {
+    jp: "半",
+    reading: "はん",
+    id: "setengah (jam)"
+  }, {
+    jp: "明後日",
+    reading: "あさって",
+    id: "lusa"
+  }, {
+    jp: "一昨日",
+    reading: "おととい",
+    id: "kemarin lusa"
+  }, {
+    jp: "再来週",
+    reading: "さらいしゅう",
+    id: "dua minggu lagi"
+  }, {
+    jp: "再来月",
+    reading: "さらいげつ",
+    id: "dua bulan lagi"
+  }, {
+    jp: "毎日",
+    reading: "まいにち",
+    id: "setiap hari"
+  }, {
+    jp: "毎朝",
+    reading: "まいあさ",
+    id: "setiap pagi"
+  }, {
+    jp: "毎晩",
+    reading: "まいばん",
+    id: "setiap malam"
+  }, {
+    jp: "毎週",
+    reading: "まいしゅう",
+    id: "setiap minggu"
+  }, {
+    jp: "毎月",
+    reading: "まいつき",
+    id: "setiap bulan"
+  }, {
+    jp: "毎年",
+    reading: "まいとし",
+    id: "setiap tahun"
+  }, {
+    jp: "秒",
+    reading: "びょう",
+    id: "detik"
+  }, {
+    jp: "週末",
+    reading: "しゅうまつ",
+    id: "akhir pekan"
+  }, {
+    jp: "誕生日",
+    reading: "たんじょうび",
+    id: "ulang tahun"
+  }, {
+    jp: "さっき",
+    reading: "さっき",
+    id: "barusan"
+  }, {
+    jp: "これから",
+    reading: "これから",
+    id: "mulai sekarang"
+  }, {
+    jp: "最近",
+    reading: "さいきん",
+    id: "akhir-akhir ini"
+  }, {
+    jp: "時刻",
+    reading: "じこく",
+    id: "waktu (jam tepatnya)"
+  }, {
+    jp: "期間",
+    reading: "きかん",
+    id: "periode"
+  }, {
+    jp: "以前",
+    reading: "いぜん",
+    id: "sebelumnya"
+  }, {
+    jp: "以後",
+    reading: "いご",
+    id: "setelah ini"
+  }, {
+    jp: "将来",
+    reading: "しょうらい",
+    id: "masa depan"
+  }, {
+    jp: "刻一刻",
+    reading: "こくいっこく",
+    id: "dari waktu ke waktu"
+  }, {
+    jp: "瞬時に",
+    reading: "しゅんじに",
+    id: "dalam sekejap"
+  }],
+  "Makanan": [{
+    jp: "ご飯",
+    reading: "ごはん",
+    id: "nasi / makanan"
+  }, {
+    jp: "パン",
+    reading: "パン",
+    id: "roti"
+  }, {
+    jp: "水",
+    reading: "みず",
+    id: "air"
+  }, {
+    jp: "魚",
+    reading: "さかな",
+    id: "ikan"
+  }, {
+    jp: "肉",
+    reading: "にく",
+    id: "daging"
+  }, {
+    jp: "野菜",
+    reading: "やさい",
+    id: "sayur"
+  }, {
+    jp: "果物",
+    reading: "くだもの",
+    id: "buah"
+  }, {
+    jp: "卵",
+    reading: "たまご",
+    id: "telur"
+  }, {
+    jp: "お茶",
+    reading: "おちゃ",
+    id: "teh"
+  }, {
+    jp: "牛乳",
+    reading: "ぎゅうにゅう",
+    id: "susu"
+  }, {
+    jp: "塩",
+    reading: "しお",
+    id: "garam"
+  }, {
+    jp: "砂糖",
+    reading: "さとう",
+    id: "gula"
+  }, {
+    jp: "醤油",
+    reading: "しょうゆ",
+    id: "kecap asin"
+  }, {
+    jp: "お菓子",
+    reading: "おかし",
+    id: "kue, permen"
+  }, {
+    jp: "朝ご飯",
+    reading: "あさごはん",
+    id: "sarapan"
+  }, {
+    jp: "昼ご飯",
+    reading: "ひるごはん",
+    id: "makan siang"
+  }, {
+    jp: "晩ご飯",
+    reading: "ばんごはん",
+    id: "makan malam"
+  }, {
+    jp: "飲み物",
+    reading: "のみもの",
+    id: "minuman"
+  }, {
+    jp: "食べ物",
+    reading: "たべもの",
+    id: "makanan"
+  }, {
+    jp: "牛肉",
+    reading: "ぎゅうにく",
+    id: "daging sapi"
+  }, {
+    jp: "豚肉",
+    reading: "ぶたにく",
+    id: "daging babi"
+  }, {
+    jp: "鶏肉",
+    reading: "とりにく",
+    id: "daging ayam"
+  }, {
+    jp: "ラーメン",
+    reading: "らーめん",
+    id: "ramen"
+  }, {
+    jp: "寿司",
+    reading: "すし",
+    id: "sushi"
+  }, {
+    jp: "天ぷら",
+    reading: "てんぷら",
+    id: "tempura"
+  }, {
+    jp: "カレー",
+    reading: "かれー",
+    id: "kari"
+  }, {
+    jp: "味噌汁",
+    reading: "みそしる",
+    id: "sup miso"
+  }, {
+    jp: "豆腐",
+    reading: "とうふ",
+    id: "tahu"
+  }, {
+    jp: "納豆",
+    reading: "なっとう",
+    id: "natto"
+  }, {
+    jp: "弁当",
+    reading: "べんとう",
+    id: "bekal makan"
+  }, {
+    jp: "おにぎり",
+    reading: "おにぎり",
+    id: "onigiri (nasi kepal)"
+  }, {
+    jp: "うどん",
+    reading: "うどん",
+    id: "udon"
+  }, {
+    jp: "スープ",
+    reading: "すーぷ",
+    id: "sup"
+  }, {
+    jp: "サラダ",
+    reading: "さらだ",
+    id: "salad"
+  }, {
+    jp: "デザート",
+    reading: "でざーと",
+    id: "makanan penutup"
+  }, {
+    jp: "ケーキ",
+    reading: "けーき",
+    id: "kue"
+  }, {
+    jp: "アイスクリーム",
+    reading: "あいすくりーむ",
+    id: "es krim"
+  }, {
+    jp: "チョコレート",
+    reading: "ちょこれーと",
+    id: "cokelat"
+  }, {
+    jp: "コーヒー",
+    reading: "こーひー",
+    id: "kopi"
+  }, {
+    jp: "紅茶",
+    reading: "こうちゃ",
+    id: "teh hitam"
+  }, {
+    jp: "ジュース",
+    reading: "じゅーす",
+    id: "jus"
+  }, {
+    jp: "ビール",
+    reading: "びーる",
+    id: "bir"
+  }, {
+    jp: "お酒",
+    reading: "おさけ",
+    id: "minuman beralkohol"
+  }, {
+    jp: "りんご",
+    reading: "りんご",
+    id: "apel"
+  }, {
+    jp: "バナナ",
+    reading: "ばなな",
+    id: "pisang"
+  }, {
+    jp: "いちご",
+    reading: "いちご",
+    id: "stroberi"
+  }, {
+    jp: "トマト",
+    reading: "とまと",
+    id: "tomat"
+  }, {
+    jp: "にんじん",
+    reading: "にんじん",
+    id: "wortel"
+  }, {
+    jp: "たまねぎ",
+    reading: "たまねぎ",
+    id: "bawang bombay"
+  }, {
+    jp: "すき焼き",
+    reading: "すきやき",
+    id: "sukiyaki"
+  }, {
+    jp: "しゃぶしゃぶ",
+    reading: "しゃぶしゃぶ",
+    id: "shabu-shabu"
+  }, {
+    jp: "餃子",
+    reading: "ぎょうざ",
+    id: "pangsit goreng"
+  }, {
+    jp: "唐揚げ",
+    reading: "からあげ",
+    id: "ayam goreng ala Jepang"
+  }, {
+    jp: "牛丼",
+    reading: "ぎゅうどん",
+    id: "gyudon"
+  }, {
+    jp: "親子丼",
+    reading: "おやこどん",
+    id: "oyakodon"
+  }, {
+    jp: "定食",
+    reading: "ていしょく",
+    id: "set makan"
+  }, {
+    jp: "おかず",
+    reading: "おかず",
+    id: "lauk pauk"
+  }, {
+    jp: "ソース",
+    reading: "そーす",
+    id: "saus"
+  }, {
+    jp: "マヨネーズ",
+    reading: "まよねーず",
+    id: "mayones"
+  }, {
+    jp: "ケチャップ",
+    reading: "けちゃっぷ",
+    id: "saus tomat"
+  }, {
+    jp: "バター",
+    reading: "ばたー",
+    id: "mentega"
+  }, {
+    jp: "チーズ",
+    reading: "ちーず",
+    id: "keju"
+  }, {
+    jp: "ヨーグルト",
+    reading: "よーぐると",
+    id: "yogurt"
+  }, {
+    jp: "はちみつ",
+    reading: "はちみつ",
+    id: "madu"
+  }],
+  "Sekolah": [{
+    jp: "学校",
+    reading: "がっこう",
+    id: "sekolah"
+  }, {
+    jp: "先生",
+    reading: "せんせい",
+    id: "guru"
+  }, {
+    jp: "学生",
+    reading: "がくせい",
+    id: "murid / mahasiswa"
+  }, {
+    jp: "教室",
+    reading: "きょうしつ",
+    id: "ruang kelas"
+  }, {
+    jp: "本",
+    reading: "ほん",
+    id: "buku"
+  }, {
+    jp: "勉強",
+    reading: "べんきょう",
+    id: "belajar"
+  }, {
+    jp: "宿題",
+    reading: "しゅくだい",
+    id: "pekerjaan rumah"
+  }, {
+    jp: "試験",
+    reading: "しけん",
+    id: "ujian"
+  }, {
+    jp: "授業",
+    reading: "じゅぎょう",
+    id: "pelajaran"
+  }, {
+    jp: "辞書",
+    reading: "じしょ",
+    id: "kamus"
+  }, {
+    jp: "鉛筆",
+    reading: "えんぴつ",
+    id: "pensil"
+  }, {
+    jp: "ノート",
+    reading: "ノート",
+    id: "buku catatan"
+  }, {
+    jp: "質問",
+    reading: "しつもん",
+    id: "pertanyaan"
+  }, {
+    jp: "大学",
+    reading: "だいがく",
+    id: "universitas"
+  }, {
+    jp: "生徒",
+    reading: "せいと",
+    id: "murid"
+  }, {
+    jp: "教科書",
+    reading: "きょうかしょ",
+    id: "buku pelajaran"
+  }, {
+    jp: "消しゴム",
+    reading: "けしごむ",
+    id: "penghapus"
+  }, {
+    jp: "定規",
+    reading: "じょうぎ",
+    id: "penggaris"
+  }, {
+    jp: "かばん",
+    reading: "かばん",
+    id: "tas"
+  }, {
+    jp: "クラス",
+    reading: "くらす",
+    id: "kelas"
+  }, {
+    jp: "クラスメート",
+    reading: "くらすめーと",
+    id: "teman sekelas"
+  }, {
+    jp: "留学生",
+    reading: "りゅうがくせい",
+    id: "mahasiswa asing"
+  }, {
+    jp: "先輩",
+    reading: "せんぱい",
+    id: "senior"
+  }, {
+    jp: "後輩",
+    reading: "こうはい",
+    id: "junior"
+  }, {
+    jp: "休み",
+    reading: "やすみ",
+    id: "libur"
+  }, {
+    jp: "夏休み",
+    reading: "なつやすみ",
+    id: "libur musim panas"
+  }, {
+    jp: "冬休み",
+    reading: "ふゆやすみ",
+    id: "libur musim dingin"
+  }, {
+    jp: "黒板",
+    reading: "こくばん",
+    id: "papan tulis"
+  }, {
+    jp: "図書室",
+    reading: "としょしつ",
+    id: "ruang perpustakaan"
+  }, {
+    jp: "職員室",
+    reading: "しょくいんしつ",
+    id: "ruang guru"
+  }, {
+    jp: "テスト",
+    reading: "てすと",
+    id: "tes"
+  }, {
+    jp: "時間割",
+    reading: "じかんわり",
+    id: "jadwal pelajaran"
+  }, {
+    jp: "点数",
+    reading: "てんすう",
+    id: "skor"
+  }, {
+    jp: "問題",
+    reading: "もんだい",
+    id: "soal/masalah"
+  }, {
+    jp: "答え",
+    reading: "こたえ",
+    id: "jawaban"
+  }, {
+    jp: "正しい",
+    reading: "ただしい",
+    id: "benar"
+  }, {
+    jp: "間違い",
+    reading: "まちがい",
+    id: "kesalahan"
+  }, {
+    jp: "質問する",
+    reading: "しつもんする",
+    id: "bertanya"
+  }, {
+    jp: "発表する",
+    reading: "はっぴょうする",
+    id: "presentasi"
+  }, {
+    jp: "グループ",
+    reading: "ぐるーぷ",
+    id: "kelompok"
+  }, {
+    jp: "チーム",
+    reading: "ちーむ",
+    id: "tim"
+  }, {
+    jp: "黒板消し",
+    reading: "こくばんけし",
+    id: "penghapus papan tulis"
+  }, {
+    jp: "入試",
+    reading: "にゅうし",
+    id: "ujian masuk"
+  }, {
+    jp: "学級",
+    reading: "がっきゅう",
+    id: "kelas sekolah"
+  }],
+  "Arah": [{
+    jp: "右",
+    reading: "みぎ",
+    id: "kanan"
+  }, {
+    jp: "左",
+    reading: "ひだり",
+    id: "kiri"
+  }, {
+    jp: "上",
+    reading: "うえ",
+    id: "atas"
+  }, {
+    jp: "下",
+    reading: "した",
+    id: "bawah"
+  }, {
+    jp: "前",
+    reading: "まえ",
+    id: "depan"
+  }, {
+    jp: "後ろ",
+    reading: "うしろ",
+    id: "belakang"
+  }, {
+    jp: "中",
+    reading: "なか",
+    id: "dalam / tengah"
+  }, {
+    jp: "外",
+    reading: "そと",
+    id: "luar"
+  }, {
+    jp: "隣",
+    reading: "となり",
+    id: "sebelah"
+  }, {
+    jp: "そば",
+    reading: "そば",
+    id: "dekat"
+  }, {
+    jp: "向こう",
+    reading: "むこう",
+    id: "seberang sana"
+  }, {
+    jp: "東",
+    reading: "ひがし",
+    id: "timur"
+  }, {
+    jp: "西",
+    reading: "にし",
+    id: "barat"
+  }, {
+    jp: "南",
+    reading: "みなみ",
+    id: "selatan"
+  }, {
+    jp: "北",
+    reading: "きた",
+    id: "utara"
+  }, {
+    jp: "近く",
+    reading: "ちかく",
+    id: "dekat"
+  }, {
+    jp: "遠く",
+    reading: "とおく",
+    id: "jauh"
+  }, {
+    jp: "まっすぐ",
+    reading: "まっすぐ",
+    id: "lurus"
+  }, {
+    jp: "角",
+    reading: "かど",
+    id: "sudut/tikungan"
+  }, {
+    jp: "横",
+    reading: "よこ",
+    id: "samping"
+  }, {
+    jp: "間",
+    reading: "あいだ",
+    id: "antara"
+  }, {
+    jp: "斜め",
+    reading: "ななめ",
+    id: "diagonal/miring"
+  }, {
+    jp: "突き当たり",
+    reading: "つきあたり",
+    id: "ujung jalan (buntu)"
+  }, {
+    jp: "向かい",
+    reading: "むかい",
+    id: "seberang"
+  }, {
+    jp: "そちら",
+    reading: "そちら",
+    id: "arah situ"
+  }, {
+    jp: "こちら",
+    reading: "こちら",
+    id: "arah sini"
+  }, {
+    jp: "方角",
+    reading: "ほうがく",
+    id: "arah mata angin"
+  }, {
+    jp: "逆方向",
+    reading: "ぎゃくほうこう",
+    id: "arah berlawanan"
+  }],
+  "Warna": [{
+    jp: "青い",
+    reading: "あおい",
+    id: "biru"
+  }, {
+    jp: "赤い",
+    reading: "あかい",
+    id: "merah"
+  }, {
+    jp: "黄色い",
+    reading: "きいろい",
+    id: "kuning"
+  }, {
+    jp: "黒い",
+    reading: "くろい",
+    id: "hitam"
+  }, {
+    jp: "白い",
+    reading: "しろい",
+    id: "putih"
+  }, {
+    jp: "茶色",
+    reading: "ちゃいろ",
+    id: "coklat"
+  }, {
+    jp: "緑",
+    reading: "みどり",
+    id: "hijau"
+  }, {
+    jp: "紫",
+    reading: "むらさき",
+    id: "ungu"
+  }, {
+    jp: "ピンク",
+    reading: "ぴんく",
+    id: "pink"
+  }, {
+    jp: "オレンジ",
+    reading: "おれんじ",
+    id: "oranye"
+  }, {
+    jp: "グレー",
+    reading: "ぐれー",
+    id: "abu-abu"
+  }, {
+    jp: "水色",
+    reading: "みずいろ",
+    id: "biru muda"
+  }, {
+    jp: "金色",
+    reading: "きんいろ",
+    id: "warna emas"
+  }, {
+    jp: "銀色",
+    reading: "ぎんいろ",
+    id: "warna perak"
+  }, {
+    jp: "濃い",
+    reading: "こい",
+    id: "pekat/tua (warna)"
+  }, {
+    jp: "薄い",
+    reading: "うすい",
+    id: "pudar/muda (warna)"
+  }, {
+    jp: "色",
+    reading: "いろ",
+    id: "warna"
+  }, {
+    jp: "色々",
+    reading: "いろいろ",
+    id: "bermacam-macam warna"
+  }, {
+    jp: "真っ黒",
+    reading: "まっくろ",
+    id: "hitam pekat"
+  }, {
+    jp: "真っ白",
+    reading: "まっしろ",
+    id: "putih bersih"
+  }, {
+    jp: "配色",
+    reading: "はいしょく",
+    id: "kombinasi warna"
+  }, {
+    jp: "無色",
+    reading: "むしょく",
+    id: "tanpa warna"
+  }],
+  "Tempat": [{
+    jp: "会社",
+    reading: "かいしゃ",
+    id: "perusahaan"
+  }, {
+    jp: "銀行",
+    reading: "ぎんこう",
+    id: "bank"
+  }, {
+    jp: "病院",
+    reading: "びょういん",
+    id: "rumah sakit"
+  }, {
+    jp: "郵便局",
+    reading: "ゆうびんきょく",
+    id: "kantor pos"
+  }, {
+    jp: "図書館",
+    reading: "としょかん",
+    id: "perpustakaan"
+  }, {
+    jp: "公園",
+    reading: "こうえん",
+    id: "taman"
+  }, {
+    jp: "喫茶店",
+    reading: "きっさてん",
+    id: "kedai kopi"
+  }, {
+    jp: "デパート",
+    reading: "デパート",
+    id: "mal / dept. store"
+  }, {
+    jp: "レストラン",
+    reading: "レストラン",
+    id: "restoran"
+  }, {
+    jp: "ホテル",
+    reading: "ホテル",
+    id: "hotel"
+  }, {
+    jp: "映画館",
+    reading: "えいがかん",
+    id: "bioskop"
+  }, {
+    jp: "大使館",
+    reading: "たいしかん",
+    id: "kedutaan"
+  }, {
+    jp: "動物園",
+    reading: "どうぶつえん",
+    id: "kebun binatang"
+  }, {
+    jp: "美術館",
+    reading: "びじゅつかん",
+    id: "galeri seni"
+  }, {
+    jp: "博物館",
+    reading: "はくぶつかん",
+    id: "museum"
+  }, {
+    jp: "スーパー",
+    reading: "すーぱー",
+    id: "supermarket"
+  }, {
+    jp: "コンビニ",
+    reading: "こんびに",
+    id: "minimarket"
+  }, {
+    jp: "本屋",
+    reading: "ほんや",
+    id: "toko buku"
+  }, {
+    jp: "花屋",
+    reading: "はなや",
+    id: "toko bunga"
+  }, {
+    jp: "パン屋",
+    reading: "ぱんや",
+    id: "toko roti"
+  }, {
+    jp: "肉屋",
+    reading: "にくや",
+    id: "toko daging"
+  }, {
+    jp: "魚屋",
+    reading: "さかなや",
+    id: "toko ikan"
+  }, {
+    jp: "八百屋",
+    reading: "やおや",
+    id: "toko sayur"
+  }, {
+    jp: "教会",
+    reading: "きょうかい",
+    id: "gereja"
+  }, {
+    jp: "お寺",
+    reading: "おてら",
+    id: "kuil (Buddha)"
+  }, {
+    jp: "神社",
+    reading: "じんじゃ",
+    id: "kuil (Shinto)"
+  }, {
+    jp: "市役所",
+    reading: "しやくしょ",
+    id: "balai kota"
+  }, {
+    jp: "会議室",
+    reading: "かいぎしつ",
+    id: "ruang rapat"
+  }, {
+    jp: "公衆電話",
+    reading: "こうしゅうでんわ",
+    id: "telepon umum"
+  }, {
+    jp: "交差点",
+    reading: "こうさてん",
+    id: "persimpangan"
+  }, {
+    jp: "遊園地",
+    reading: "ゆうえんち",
+    id: "taman hiburan"
+  }, {
+    jp: "プール",
+    reading: "ぷーる",
+    id: "kolam renang"
+  }, {
+    jp: "ジム",
+    reading: "じむ",
+    id: "gym"
+  }, {
+    jp: "市場",
+    reading: "いちば",
+    id: "pasar"
+  }, {
+    jp: "駐輪場",
+    reading: "ちゅうりんじょう",
+    id: "tempat parkir sepeda"
+  }, {
+    jp: "拠点",
+    reading: "きょてん",
+    id: "basis/markas"
+  }, {
+    jp: "敷地",
+    reading: "しきち",
+    id: "lahan/area properti"
+  }],
+  "Rumah & Benda": [{
+    jp: "家",
+    reading: "いえ",
+    id: "rumah"
+  }, {
+    jp: "部屋",
+    reading: "へや",
+    id: "kamar"
+  }, {
+    jp: "テレビ",
+    reading: "テレビ",
+    id: "televisi"
+  }, {
+    jp: "椅子",
+    reading: "いす",
+    id: "kursi"
+  }, {
+    jp: "机",
+    reading: "つくえ",
+    id: "meja"
+  }, {
+    jp: "鞄",
+    reading: "かばん",
+    id: "tas"
+  }, {
+    jp: "傘",
+    reading: "かさ",
+    id: "payung"
+  }, {
+    jp: "時計",
+    reading: "とけい",
+    id: "jam"
+  }, {
+    jp: "ドア",
+    reading: "ドア",
+    id: "pintu"
+  }, {
+    jp: "窓",
+    reading: "まど",
+    id: "jendela"
+  }, {
+    jp: "ベッド",
+    reading: "ベッド",
+    id: "kasur"
+  }, {
+    jp: "本棚",
+    reading: "ほんだな",
+    id: "rak buku"
+  }, {
+    jp: "電話",
+    reading: "でんわ",
+    id: "telepon"
+  }, {
+    jp: "新聞",
+    reading: "しんぶん",
+    id: "koran"
+  }, {
+    jp: "雑誌",
+    reading: "ざっし",
+    id: "majalah"
+  }, {
+    jp: "手紙",
+    reading: "てがみ",
+    id: "surat"
+  }, {
+    jp: "写真",
+    reading: "しゃしん",
+    id: "foto"
+  }, {
+    jp: "鍵",
+    reading: "かぎ",
+    id: "kunci"
+  }, {
+    jp: "台所",
+    reading: "だいどころ",
+    id: "dapur"
+  }, {
+    jp: "お風呂",
+    reading: "おふろ",
+    id: "kamar mandi (bak mandi)"
+  }, {
+    jp: "トイレ",
+    reading: "といれ",
+    id: "toilet"
+  }, {
+    jp: "玄関",
+    reading: "げんかん",
+    id: "pintu masuk rumah"
+  }, {
+    jp: "庭",
+    reading: "にわ",
+    id: "halaman/kebun"
+  }, {
+    jp: "階段",
+    reading: "かいだん",
+    id: "tangga"
+  }, {
+    jp: "エレベーター",
+    reading: "えれべーたー",
+    id: "lift"
+  }, {
+    jp: "冷蔵庫",
+    reading: "れいぞうこ",
+    id: "kulkas"
+  }, {
+    jp: "洗濯機",
+    reading: "せんたくき",
+    id: "mesin cuci"
+  }, {
+    jp: "エアコン",
+    reading: "えあこん",
+    id: "AC"
+  }, {
+    jp: "電気",
+    reading: "でんき",
+    id: "listrik/lampu"
+  }, {
+    jp: "ガス",
+    reading: "がす",
+    id: "gas"
+  }, {
+    jp: "石鹸",
+    reading: "せっけん",
+    id: "sabun"
+  }, {
+    jp: "タオル",
+    reading: "たおる",
+    id: "handuk"
+  }, {
+    jp: "歯ブラシ",
+    reading: "はぶらし",
+    id: "sikat gigi"
+  }, {
+    jp: "コップ",
+    reading: "こっぷ",
+    id: "gelas"
+  }, {
+    jp: "お皿",
+    reading: "おさら",
+    id: "piring"
+  }, {
+    jp: "箸",
+    reading: "はし",
+    id: "sumpit"
+  }, {
+    jp: "スプーン",
+    reading: "すぷーん",
+    id: "sendok"
+  }, {
+    jp: "フォーク",
+    reading: "ふぉーく",
+    id: "garpu"
+  }, {
+    jp: "ゴミ箱",
+    reading: "ごみばこ",
+    id: "tempat sampah"
+  }, {
+    jp: "カレンダー",
+    reading: "かれんだー",
+    id: "kalender"
+  }, {
+    jp: "ソファー",
+    reading: "そふぁー",
+    id: "sofa"
+  }, {
+    jp: "テーブル",
+    reading: "てーぶる",
+    id: "meja (gaya barat)"
+  }, {
+    jp: "カーテン",
+    reading: "かーてん",
+    id: "gorden"
+  }, {
+    jp: "布団",
+    reading: "ふとん",
+    id: "futon"
+  }, {
+    jp: "枕",
+    reading: "まくら",
+    id: "bantal"
+  }, {
+    jp: "毛布",
+    reading: "もうふ",
+    id: "selimut"
+  }, {
+    jp: "ライト",
+    reading: "らいと",
+    id: "lampu (senter/lampu kecil)"
+  }, {
+    jp: "電池",
+    reading: "でんち",
+    id: "baterai"
+  }, {
+    jp: "リモコン",
+    reading: "りもこん",
+    id: "remote"
+  }, {
+    jp: "掃除機",
+    reading: "そうじき",
+    id: "penyedot debu"
+  }, {
+    jp: "ゴミ",
+    reading: "ごみ",
+    id: "sampah"
+  }, {
+    jp: "ラジオ",
+    reading: "らじお",
+    id: "radio"
+  }, {
+    jp: "パソコン",
+    reading: "ぱそこん",
+    id: "komputer"
+  }, {
+    jp: "スマホ",
+    reading: "すまほ",
+    id: "smartphone"
+  }, {
+    jp: "充電器",
+    reading: "じゅうでんき",
+    id: "charger"
+  }, {
+    jp: "消耗品",
+    reading: "しょうもうひん",
+    id: "barang habis pakai"
+  }],
+  "Kata Sifat": [{
+    jp: "大きい",
+    reading: "おおきい",
+    id: "besar"
+  }, {
+    jp: "小さい",
+    reading: "ちいさい",
+    id: "kecil"
+  }, {
+    jp: "新しい",
+    reading: "あたらしい",
+    id: "baru"
+  }, {
+    jp: "古い",
+    reading: "ふるい",
+    id: "lama, tua"
+  }, {
+    jp: "高い",
+    reading: "たかい",
+    id: "tinggi, mahal"
+  }, {
+    jp: "安い",
+    reading: "やすい",
+    id: "murah"
+  }, {
+    jp: "いい",
+    reading: "いい",
+    id: "bagus"
+  }, {
+    jp: "悪い",
+    reading: "わるい",
+    id: "buruk"
+  }, {
+    jp: "忙しい",
+    reading: "いそがしい",
+    id: "sibuk"
+  }, {
+    jp: "痛い",
+    reading: "いたい",
+    id: "sakit"
+  }, {
+    jp: "面白い",
+    reading: "おもしろい",
+    id: "menarik"
+  }, {
+    jp: "つまらない",
+    reading: "つまらない",
+    id: "membosankan"
+  }, {
+    jp: "難しい",
+    reading: "むずかしい",
+    id: "sulit"
+  }, {
+    jp: "優しい",
+    reading: "やさしい",
+    id: "ramah, mudah"
+  }, {
+    jp: "元気",
+    reading: "げんき",
+    id: "sehat, semangat"
+  }, {
+    jp: "静か",
+    reading: "しずか",
+    id: "tenang"
+  }, {
+    jp: "にぎやか",
+    reading: "にぎやか",
+    id: "ramai"
+  }, {
+    jp: "きれい",
+    reading: "きれい",
+    id: "cantik, bersih"
+  }, {
+    jp: "便利",
+    reading: "べんり",
+    id: "praktis"
+  }, {
+    jp: "上手",
+    reading: "じょうず",
+    id: "pandai"
+  }, {
+    jp: "下手",
+    reading: "へた",
+    id: "tidak pandai"
+  }, {
+    jp: "好き",
+    reading: "すき",
+    id: "suka"
+  }, {
+    jp: "嫌い",
+    reading: "きらい",
+    id: "tidak suka"
+  }, {
+    jp: "楽しい",
+    reading: "たのしい",
+    id: "menyenangkan"
+  }, {
+    jp: "危ない",
+    reading: "あぶない",
+    id: "berbahaya"
+  }, {
+    jp: "暗い",
+    reading: "くらい",
+    id: "gelap"
+  }, {
+    jp: "明るい",
+    reading: "あかるい",
+    id: "terang/ceria"
+  }, {
+    jp: "弱い",
+    reading: "よわい",
+    id: "lemah"
+  }, {
+    jp: "強い",
+    reading: "つよい",
+    id: "kuat"
+  }, {
+    jp: "遠い",
+    reading: "とおい",
+    id: "jauh"
+  }, {
+    jp: "近い",
+    reading: "ちかい",
+    id: "dekat"
+  }, {
+    jp: "広い",
+    reading: "ひろい",
+    id: "luas"
+  }, {
+    jp: "狭い",
+    reading: "せまい",
+    id: "sempit"
+  }, {
+    jp: "重い",
+    reading: "おもい",
+    id: "berat"
+  }, {
+    jp: "軽い",
+    reading: "かるい",
+    id: "ringan"
+  }, {
+    jp: "太い",
+    reading: "ふとい",
+    id: "gemuk/tebal"
+  }, {
+    jp: "細い",
+    reading: "ほそい",
+    id: "kurus/tipis"
+  }, {
+    jp: "長い",
+    reading: "ながい",
+    id: "panjang"
+  }, {
+    jp: "短い",
+    reading: "みじかい",
+    id: "pendek"
+  }, {
+    jp: "早い",
+    reading: "はやい",
+    id: "cepat/awal"
+  }, {
+    jp: "遅い",
+    reading: "おそい",
+    id: "lambat/telat"
+  }, {
+    jp: "有名",
+    reading: "ゆうめい",
+    id: "terkenal"
+  }, {
+    jp: "ハンサム",
+    reading: "はんさむ",
+    id: "tampan"
+  }, {
+    jp: "親切",
+    reading: "しんせつ",
+    id: "baik hati/ramah"
+  }, {
+    jp: "大丈夫",
+    reading: "だいじょうぶ",
+    id: "tidak apa-apa"
+  }, {
+    jp: "特別",
+    reading: "とくべつ",
+    id: "spesial"
+  }, {
+    jp: "普通",
+    reading: "ふつう",
+    id: "biasa"
+  }, {
+    jp: "苦手",
+    reading: "にがて",
+    id: "tidak jago/kurang suka"
+  }, {
+    jp: "得意",
+    reading: "とくい",
+    id: "jago/mahir"
+  }, {
+    jp: "圧倒的",
+    reading: "あっとうてき",
+    id: "luar biasa/dominan"
+  }, {
+    jp: "画期的",
+    reading: "かっきてき",
+    id: "inovatif/epik"
+  }],
+  "Kata Kerja Dasar": [{
+    jp: "食べる",
+    reading: "たべる",
+    id: "makan"
+  }, {
+    jp: "飲む",
+    reading: "のむ",
+    id: "minum"
+  }, {
+    jp: "行く",
+    reading: "いく",
+    id: "pergi"
+  }, {
+    jp: "来る",
+    reading: "くる",
+    id: "datang"
+  }, {
+    jp: "見る",
+    reading: "みる",
+    id: "melihat"
+  }, {
+    jp: "聞く",
+    reading: "きく",
+    id: "mendengar"
+  }, {
+    jp: "話す",
+    reading: "はなす",
+    id: "berbicara"
+  }, {
+    jp: "読む",
+    reading: "よむ",
+    id: "membaca"
+  }, {
+    jp: "書く",
+    reading: "かく",
+    id: "menulis"
+  }, {
+    jp: "買う",
+    reading: "かう",
+    id: "membeli"
+  }, {
+    jp: "会う",
+    reading: "あう",
+    id: "bertemu"
+  }, {
+    jp: "開ける",
+    reading: "あける",
+    id: "membuka"
+  }, {
+    jp: "遊ぶ",
+    reading: "あそぶ",
+    id: "bermain"
+  }, {
+    jp: "洗う",
+    reading: "あらう",
+    id: "mencuci"
+  }, {
+    jp: "歩く",
+    reading: "あるく",
+    id: "berjalan"
+  }, {
+    jp: "ある",
+    reading: "ある",
+    id: "ada (benda)"
+  }, {
+    jp: "いる",
+    reading: "いる",
+    id: "ada (makhluk hidup)"
+  }, {
+    jp: "起きる",
+    reading: "おきる",
+    id: "bangun"
+  }, {
+    jp: "置く",
+    reading: "おく",
+    id: "meletakkan"
+  }, {
+    jp: "送る",
+    reading: "おくる",
+    id: "mengirim"
+  }, {
+    jp: "教える",
+    reading: "おしえる",
+    id: "mengajar"
+  }, {
+    jp: "泳ぐ",
+    reading: "およぐ",
+    id: "berenang"
+  }, {
+    jp: "終わる",
+    reading: "おわる",
+    id: "selesai"
+  }, {
+    jp: "貸す",
+    reading: "かす",
+    id: "meminjamkan"
+  }, {
+    jp: "借りる",
+    reading: "かりる",
+    id: "meminjam"
+  }, {
+    jp: "消す",
+    reading: "けす",
+    id: "mematikan"
+  }, {
+    jp: "困る",
+    reading: "こまる",
+    id: "kesulitan"
+  }, {
+    jp: "死ぬ",
+    reading: "しぬ",
+    id: "mati"
+  }, {
+    jp: "知る",
+    reading: "しる",
+    id: "mengetahui"
+  }, {
+    jp: "住む",
+    reading: "すむ",
+    id: "tinggal"
+  }, {
+    jp: "座る",
+    reading: "すわる",
+    id: "duduk"
+  }, {
+    jp: "立つ",
+    reading: "たつ",
+    id: "berdiri"
+  }, {
+    jp: "使う",
+    reading: "つかう",
+    id: "memakai"
+  }, {
+    jp: "疲れる",
+    reading: "つかれる",
+    id: "lelah"
+  }, {
+    jp: "着く",
+    reading: "つく",
+    id: "tiba"
+  }, {
+    jp: "作る",
+    reading: "つくる",
+    id: "membuat"
+  }, {
+    jp: "出来る",
+    reading: "できる",
+    id: "bisa"
+  }, {
+    jp: "出る",
+    reading: "でる",
+    id: "keluar"
+  }, {
+    jp: "取る",
+    reading: "とる",
+    id: "mengambil"
+  }, {
+    jp: "習う",
+    reading: "ならう",
+    id: "belajar"
+  }, {
+    jp: "忘れる",
+    reading: "わすれる",
+    id: "lupa"
+  }, {
+    jp: "分かる",
+    reading: "わかる",
+    id: "mengerti"
+  }, {
+    jp: "渡る",
+    reading: "わたる",
+    id: "menyeberang"
+  }, {
+    jp: "働く",
+    reading: "はたらく",
+    id: "bekerja"
+  }, {
+    jp: "走る",
+    reading: "はしる",
+    id: "berlari"
+  }, {
+    jp: "始まる",
+    reading: "はじまる",
+    id: "dimulai"
+  }, {
+    jp: "言う",
+    reading: "いう",
+    id: "berkata"
+  }, {
+    jp: "思う",
+    reading: "おもう",
+    id: "berpikir"
+  }, {
+    jp: "待つ",
+    reading: "まつ",
+    id: "menunggu"
+  }, {
+    jp: "呼ぶ",
+    reading: "よぶ",
+    id: "memanggil"
+  }, {
+    jp: "選ぶ",
+    reading: "えらぶ",
+    id: "memilih"
+  }, {
+    jp: "触る",
+    reading: "さわる",
+    id: "menyentuh"
+  }, {
+    jp: "押す",
+    reading: "おす",
+    id: "mendorong"
+  }, {
+    jp: "引く",
+    reading: "ひく",
+    id: "menarik"
+  }, {
+    jp: "倒れる",
+    reading: "たおれる",
+    id: "jatuh/roboh"
+  }, {
+    jp: "壊す",
+    reading: "こわす",
+    id: "merusak"
+  }, {
+    jp: "治る",
+    reading: "なおる",
+    id: "sembuh"
+  }, {
+    jp: "調べる",
+    reading: "しらべる",
+    id: "memeriksa"
+  }, {
+    jp: "続く",
+    reading: "つづく",
+    id: "berlanjut"
+  }, {
+    jp: "始める",
+    reading: "はじめる",
+    id: "memulai"
+  }, {
+    jp: "伝える",
+    reading: "つたえる",
+    id: "menyampaikan"
+  }, {
+    jp: "見せる",
+    reading: "みせる",
+    id: "memperlihatkan"
+  }, {
+    jp: "見つける",
+    reading: "みつける",
+    id: "menemukan"
+  }, {
+    jp: "覚える",
+    reading: "おぼえる",
+    id: "mengingat/menghafal"
+  }, {
+    jp: "泣く",
+    reading: "なく",
+    id: "menangis"
+  }, {
+    jp: "笑う",
+    reading: "わらう",
+    id: "tertawa"
+  }, {
+    jp: "怒る",
+    reading: "おこる",
+    id: "marah"
+  }, {
+    jp: "喜ぶ",
+    reading: "よろこぶ",
+    id: "senang/gembira"
+  }, {
+    jp: "掃除する",
+    reading: "そうじする",
+    id: "membersihkan"
+  }, {
+    jp: "洗濯する",
+    reading: "せんたくする",
+    id: "mencuci baju"
+  }, {
+    jp: "料理する",
+    reading: "りょうりする",
+    id: "memasak"
+  }, {
+    jp: "買い物する",
+    reading: "かいものする",
+    id: "berbelanja"
+  }, {
+    jp: "散歩する",
+    reading: "さんぽする",
+    id: "jalan-jalan"
+  }, {
+    jp: "勉強する",
+    reading: "べんきょうする",
+    id: "belajar"
+  }, {
+    jp: "入る",
+    reading: "はいる",
+    id: "masuk"
+  }, {
+    jp: "出す",
+    reading: "だす",
+    id: "mengeluarkan"
+  }, {
+    jp: "上がる",
+    reading: "あがる",
+    id: "naik"
+  }, {
+    jp: "下がる",
+    reading: "さがる",
+    id: "turun"
+  }, {
+    jp: "開く",
+    reading: "あく",
+    id: "terbuka"
+  }, {
+    jp: "閉まる",
+    reading: "しまる",
+    id: "tertutup"
+  }, {
+    jp: "閉める",
+    reading: "しめる",
+    id: "menutup"
+  }, {
+    jp: "入れる",
+    reading: "いれる",
+    id: "memasukkan"
+  }, {
+    jp: "出かける",
+    reading: "でかける",
+    id: "pergi keluar"
+  }, {
+    jp: "帰る",
+    reading: "かえる",
+    id: "pulang"
+  }, {
+    jp: "迎える",
+    reading: "むかえる",
+    id: "menjemput"
+  }, {
+    jp: "連れる",
+    reading: "つれる",
+    id: "membawa (orang)"
+  }, {
+    jp: "乗り換える",
+    reading: "のりかえる",
+    id: "pindah kendaraan"
+  }, {
+    jp: "急ぐ",
+    reading: "いそぐ",
+    id: "buru-buru"
+  }],
+  "Hari & Bulan": [{
+    jp: "月曜日",
+    reading: "げつようび",
+    id: "Senin"
+  }, {
+    jp: "火曜日",
+    reading: "かようび",
+    id: "Selasa"
+  }, {
+    jp: "水曜日",
+    reading: "すいようび",
+    id: "Rabu"
+  }, {
+    jp: "木曜日",
+    reading: "もくようび",
+    id: "Kamis"
+  }, {
+    jp: "金曜日",
+    reading: "きんようび",
+    id: "Jumat"
+  }, {
+    jp: "土曜日",
+    reading: "どようび",
+    id: "Sabtu"
+  }, {
+    jp: "日曜日",
+    reading: "にちようび",
+    id: "Minggu"
+  }, {
+    jp: "一月",
+    reading: "いちがつ",
+    id: "Januari"
+  }, {
+    jp: "二月",
+    reading: "にがつ",
+    id: "Februari"
+  }, {
+    jp: "三月",
+    reading: "さんがつ",
+    id: "Maret"
+  }, {
+    jp: "四月",
+    reading: "しがつ",
+    id: "April"
+  }, {
+    jp: "五月",
+    reading: "ごがつ",
+    id: "Mei"
+  }, {
+    jp: "六月",
+    reading: "ろくがつ",
+    id: "Juni"
+  }, {
+    jp: "七月",
+    reading: "しちがつ",
+    id: "Juli"
+  }, {
+    jp: "八月",
+    reading: "はちがつ",
+    id: "Agustus"
+  }, {
+    jp: "九月",
+    reading: "くがつ",
+    id: "September"
+  }, {
+    jp: "十月",
+    reading: "じゅうがつ",
+    id: "Oktober"
+  }, {
+    jp: "十一月",
+    reading: "じゅういちがつ",
+    id: "November"
+  }, {
+    jp: "十二月",
+    reading: "じゅうにがつ",
+    id: "Desember"
+  }, {
+    jp: "一日",
+    reading: "ついたち",
+    id: "tanggal 1"
+  }, {
+    jp: "二日",
+    reading: "ふつか",
+    id: "tanggal 2"
+  }, {
+    jp: "三日",
+    reading: "みっか",
+    id: "tanggal 3"
+  }, {
+    jp: "四日",
+    reading: "よっか",
+    id: "tanggal 4"
+  }, {
+    jp: "五日",
+    reading: "いつか",
+    id: "tanggal 5"
+  }, {
+    jp: "六日",
+    reading: "むいか",
+    id: "tanggal 6"
+  }, {
+    jp: "七日",
+    reading: "なのか",
+    id: "tanggal 7"
+  }, {
+    jp: "八日",
+    reading: "ようか",
+    id: "tanggal 8"
+  }, {
+    jp: "九日",
+    reading: "ここのか",
+    id: "tanggal 9"
+  }, {
+    jp: "十日",
+    reading: "とおか",
+    id: "tanggal 10"
+  }, {
+    jp: "二十日",
+    reading: "はつか",
+    id: "tanggal 20"
+  }],
+  "Pakaian": [{
+    jp: "シャツ",
+    reading: "シャツ",
+    id: "kemeja"
+  }, {
+    jp: "ズボン",
+    reading: "ズボン",
+    id: "celana"
+  }, {
+    jp: "靴",
+    reading: "くつ",
+    id: "sepatu"
+  }, {
+    jp: "靴下",
+    reading: "くつした",
+    id: "kaos kaki"
+  }, {
+    jp: "上着",
+    reading: "うわぎ",
+    id: "jaket"
+  }, {
+    jp: "帽子",
+    reading: "ぼうし",
+    id: "topi"
+  }, {
+    jp: "ネクタイ",
+    reading: "ネクタイ",
+    id: "dasi"
+  }, {
+    jp: "スカート",
+    reading: "スカート",
+    id: "rok"
+  }, {
+    jp: "コート",
+    reading: "コート",
+    id: "mantel"
+  }, {
+    jp: "眼鏡",
+    reading: "めがね",
+    id: "kacamata"
+  }, {
+    jp: "セーター",
+    reading: "せーたー",
+    id: "sweater"
+  }, {
+    jp: "パジャマ",
+    reading: "ぱじゃま",
+    id: "piyama"
+  }, {
+    jp: "下着",
+    reading: "したぎ",
+    id: "pakaian dalam"
+  }, {
+    jp: "手袋",
+    reading: "てぶくろ",
+    id: "sarung tangan"
+  }, {
+    jp: "マフラー",
+    reading: "まふらー",
+    id: "syal"
+  }, {
+    jp: "サンダル",
+    reading: "さんだる",
+    id: "sandal"
+  }, {
+    jp: "ベルト",
+    reading: "べると",
+    id: "ikat pinggang"
+  }, {
+    jp: "財布",
+    reading: "さいふ",
+    id: "dompet"
+  }, {
+    jp: "指輪",
+    reading: "ゆびわ",
+    id: "cincin"
+  }, {
+    jp: "ネックレス",
+    reading: "ねっくれす",
+    id: "kalung"
+  }, {
+    jp: "ジーンズ",
+    reading: "じーんず",
+    id: "celana jeans"
+  }, {
+    jp: "Tシャツ",
+    reading: "てぃーしゃつ",
+    id: "kaos"
+  }, {
+    jp: "水着",
+    reading: "みずぎ",
+    id: "baju renang"
+  }, {
+    jp: "制服",
+    reading: "せいふく",
+    id: "seragam"
+  }, {
+    jp: "着物",
+    reading: "きもの",
+    id: "kimono"
+  }, {
+    jp: "着こなし",
+    reading: "きこなし",
+    id: "gaya berpakaian"
+  }, {
+    jp: "素材感",
+    reading: "そざいかん",
+    id: "kesan bahan pakaian"
+  }],
+  "Tubuh": [{
+    jp: "頭",
+    reading: "あたま",
+    id: "kepala"
+  }, {
+    jp: "顔",
+    reading: "かお",
+    id: "wajah"
+  }, {
+    jp: "お腹",
+    reading: "おなか",
+    id: "perut"
+  }, {
+    jp: "背",
+    reading: "せい",
+    id: "tinggi badan"
+  }, {
+    jp: "目",
+    reading: "め",
+    id: "mata"
+  }, {
+    jp: "耳",
+    reading: "みみ",
+    id: "telinga"
+  }, {
+    jp: "口",
+    reading: "くち",
+    id: "mulut"
+  }, {
+    jp: "手",
+    reading: "て",
+    id: "tangan"
+  }, {
+    jp: "足",
+    reading: "あし",
+    id: "kaki"
+  }, {
+    jp: "鼻",
+    reading: "はな",
+    id: "hidung"
+  }, {
+    jp: "歯",
+    reading: "は",
+    id: "gigi"
+  }, {
+    jp: "髪",
+    reading: "かみ",
+    id: "rambut"
+  }, {
+    jp: "首",
+    reading: "くび",
+    id: "leher"
+  }, {
+    jp: "肩",
+    reading: "かた",
+    id: "bahu"
+  }, {
+    jp: "腕",
+    reading: "うで",
+    id: "lengan"
+  }, {
+    jp: "指",
+    reading: "ゆび",
+    id: "jari"
+  }, {
+    jp: "膝",
+    reading: "ひざ",
+    id: "lutut"
+  }, {
+    jp: "眉",
+    reading: "まゆ",
+    id: "alis"
+  }, {
+    jp: "喉",
+    reading: "のど",
+    id: "tenggorokan"
+  }, {
+    jp: "体",
+    reading: "からだ",
+    id: "badan/tubuh"
+  }, {
+    jp: "爪",
+    reading: "つめ",
+    id: "kuku"
+  }, {
+    jp: "血",
+    reading: "ち",
+    id: "darah"
+  }, {
+    jp: "声",
+    reading: "こえ",
+    id: "suara"
+  }, {
+    jp: "体重",
+    reading: "たいじゅう",
+    id: "berat badan"
+  }, {
+    jp: "身長",
+    reading: "しんちょう",
+    id: "tinggi badan"
+  }, {
+    jp: "汗",
+    reading: "あせ",
+    id: "keringat"
+  }, {
+    jp: "体力",
+    reading: "たいりょく",
+    id: "stamina fisik"
+  }, {
+    jp: "姿勢",
+    reading: "しせい",
+    id: "postur tubuh"
+  }],
+  "Kata Tanya": [{
+    jp: "何",
+    reading: "なに / なん",
+    id: "apa"
+  }, {
+    jp: "いつ",
+    reading: "いつ",
+    id: "kapan"
+  }, {
+    jp: "どこ",
+    reading: "どこ",
+    id: "di mana"
+  }, {
+    jp: "だれ",
+    reading: "だれ",
+    id: "siapa"
+  }, {
+    jp: "どう",
+    reading: "どう",
+    id: "bagaimana"
+  }, {
+    jp: "どうして",
+    reading: "どうして",
+    id: "mengapa"
+  }, {
+    jp: "いくつ",
+    reading: "いくつ",
+    id: "berapa banyak / umur berapa"
+  }, {
+    jp: "いくら",
+    reading: "いくら",
+    id: "berapa harganya"
+  }, {
+    jp: "どちら",
+    reading: "どちら",
+    id: "yang mana (sopan)"
+  }, {
+    jp: "どの",
+    reading: "どの",
+    id: "yang mana"
+  }, {
+    jp: "どれ",
+    reading: "どれ",
+    id: "yang mana (benda)"
+  }, {
+    jp: "どんな",
+    reading: "どんな",
+    id: "seperti apa"
+  }, {
+    jp: "なぜ",
+    reading: "なぜ",
+    id: "mengapa"
+  }, {
+    jp: "どうやって",
+    reading: "どうやって",
+    id: "bagaimana caranya"
+  }, {
+    jp: "どのくらい",
+    reading: "どのくらい",
+    id: "seberapa/berapa lama"
+  }, {
+    jp: "何時",
+    reading: "なんじ",
+    id: "jam berapa"
+  }, {
+    jp: "何人",
+    reading: "なんにん",
+    id: "berapa orang"
+  }, {
+    jp: "何ゆえ",
+    reading: "なにゆえ",
+    id: "mengapa (formal/sastra)"
+  }, {
+    jp: "いずれ",
+    reading: "いずれ",
+    id: "cepat atau lambat"
+  }],
+  "Aktivitas & Hobi": [{
+    jp: "音楽",
+    reading: "おんがく",
+    id: "musik"
+  }, {
+    jp: "映画",
+    reading: "えいが",
+    id: "film"
+  }, {
+    jp: "スポーツ",
+    reading: "スポーツ",
+    id: "olahraga"
+  }, {
+    jp: "散歩",
+    reading: "さんぽ",
+    id: "jalan-jalan"
+  }, {
+    jp: "旅行",
+    reading: "りょこう",
+    id: "bepergian"
+  }, {
+    jp: "歌",
+    reading: "うた",
+    id: "lagu"
+  }, {
+    jp: "歌う",
+    reading: "うたう",
+    id: "bernyanyi"
+  }, {
+    jp: "読書",
+    reading: "どくしょ",
+    id: "membaca buku"
+  }, {
+    jp: "ゲーム",
+    reading: "げーむ",
+    id: "permainan/game"
+  }, {
+    jp: "料理",
+    reading: "りょうり",
+    id: "memasak"
+  }, {
+    jp: "ダンス",
+    reading: "だんす",
+    id: "menari"
+  }, {
+    jp: "カラオケ",
+    reading: "からおけ",
+    id: "karaoke"
+  }, {
+    jp: "釣り",
+    reading: "つり",
+    id: "memancing"
+  }, {
+    jp: "登山",
+    reading: "とざん",
+    id: "mendaki gunung"
+  }, {
+    jp: "キャンプ",
+    reading: "きゃんぷ",
+    id: "berkemah"
+  }, {
+    jp: "サッカー",
+    reading: "さっかー",
+    id: "sepak bola"
+  }, {
+    jp: "テニス",
+    reading: "てにす",
+    id: "tenis"
+  }, {
+    jp: "野球",
+    reading: "やきゅう",
+    id: "bisbol"
+  }, {
+    jp: "水泳",
+    reading: "すいえい",
+    id: "renang"
+  }, {
+    jp: "ピアノ",
+    reading: "ぴあの",
+    id: "piano"
+  }, {
+    jp: "ギター",
+    reading: "ぎたー",
+    id: "gitar"
+  }, {
+    jp: "絵",
+    reading: "え",
+    id: "lukisan/gambar"
+  }, {
+    jp: "旅行する",
+    reading: "りょこうする",
+    id: "bepergian"
+  }, {
+    jp: "運動",
+    reading: "うんどう",
+    id: "olahraga"
+  }, {
+    jp: "運動する",
+    reading: "うんどうする",
+    id: "berolahraga"
+  }, {
+    jp: "趣味",
+    reading: "しゅみ",
+    id: "hobi"
+  }, {
+    jp: "楽器",
+    reading: "がっき",
+    id: "alat musik"
+  }, {
+    jp: "コンサート",
+    reading: "こんさーと",
+    id: "konser"
+  }, {
+    jp: "展覧会",
+    reading: "てんらんかい",
+    id: "pameran"
+  }, {
+    jp: "収集",
+    reading: "しゅうしゅう",
+    id: "mengoleksi"
+  }, {
+    jp: "没頭",
+    reading: "ぼっとう",
+    id: "tenggelam dalam kegiatan"
+  }],
+  "Uang & Belanja": [{
+    jp: "お金",
+    reading: "おかね",
+    id: "uang"
+  }, {
+    jp: "買い物",
+    reading: "かいもの",
+    id: "belanja"
+  }, {
+    jp: "円",
+    reading: "えん",
+    id: "yen"
+  }, {
+    jp: "レジ",
+    reading: "れじ",
+    id: "kasir"
+  }, {
+    jp: "レシート",
+    reading: "れしーと",
+    id: "struk belanja"
+  }, {
+    jp: "お釣り",
+    reading: "おつり",
+    id: "uang kembalian"
+  }, {
+    jp: "値段",
+    reading: "ねだん",
+    id: "harga"
+  }, {
+    jp: "安売り",
+    reading: "やすうり",
+    id: "obral"
+  }, {
+    jp: "セール",
+    reading: "せーる",
+    id: "diskon/sale"
+  }, {
+    jp: "割引",
+    reading: "わりびき",
+    id: "potongan harga"
+  }, {
+    jp: "現金",
+    reading: "げんきん",
+    id: "uang tunai"
+  }, {
+    jp: "カード",
+    reading: "かーど",
+    id: "kartu (kredit/debit)"
+  }, {
+    jp: "無料",
+    reading: "むりょう",
+    id: "gratis"
+  }, {
+    jp: "有料",
+    reading: "ゆうりょう",
+    id: "berbayar"
+  }, {
+    jp: "お金持ち",
+    reading: "おかねもち",
+    id: "orang kaya"
+  }, {
+    jp: "貯金",
+    reading: "ちょきん",
+    id: "menabung"
+  }, {
+    jp: "両替",
+    reading: "りょうがえ",
+    id: "menukar uang"
+  }, {
+    jp: "支払う",
+    reading: "しはらう",
+    id: "membayar"
+  }, {
+    jp: "払う",
+    reading: "はらう",
+    id: "membayar"
+  }, {
+    jp: "無駄遣い",
+    reading: "むだづかい",
+    id: "pemborosan"
+  }, {
+    jp: "節約",
+    reading: "せつやく",
+    id: "hemat"
+  }, {
+    jp: "家計",
+    reading: "かけい",
+    id: "keuangan rumah tangga"
+  }, {
+    jp: "倹約",
+    reading: "けんやく",
+    id: "berhemat"
+  }],
+  "Negara, Bahasa & Orang": [{
+    jp: "日本",
+    reading: "にほん",
+    id: "Jepang"
+  }, {
+    jp: "日本人",
+    reading: "にほんじん",
+    id: "orang Jepang"
+  }, {
+    jp: "日本語",
+    reading: "にほんご",
+    id: "bahasa Jepang"
+  }, {
+    jp: "インドネシア",
+    reading: "いんどねしあ",
+    id: "Indonesia"
+  }, {
+    jp: "インドネシア人",
+    reading: "いんどねしあじん",
+    id: "orang Indonesia"
+  }, {
+    jp: "インドネシア語",
+    reading: "いんどねしあご",
+    id: "bahasa Indonesia"
+  }, {
+    jp: "アメリカ",
+    reading: "あめりか",
+    id: "Amerika"
+  }, {
+    jp: "英語",
+    reading: "えいご",
+    id: "bahasa Inggris"
+  }, {
+    jp: "中国",
+    reading: "ちゅうごく",
+    id: "Tiongkok"
+  }, {
+    jp: "中国語",
+    reading: "ちゅうごくご",
+    id: "bahasa Mandarin"
+  }, {
+    jp: "韓国",
+    reading: "かんこく",
+    id: "Korea"
+  }, {
+    jp: "韓国語",
+    reading: "かんこくご",
+    id: "bahasa Korea"
+  }, {
+    jp: "フランス",
+    reading: "ふらんす",
+    id: "Prancis"
+  }, {
+    jp: "ドイツ",
+    reading: "どいつ",
+    id: "Jerman"
+  }, {
+    jp: "イギリス",
+    reading: "いぎりす",
+    id: "Inggris (negara)"
+  }, {
+    jp: "外国",
+    reading: "がいこく",
+    id: "luar negeri"
+  }, {
+    jp: "外国人",
+    reading: "がいこくじん",
+    id: "orang asing"
+  }, {
+    jp: "国",
+    reading: "くに",
+    id: "negara"
+  }, {
+    jp: "名前",
+    reading: "なまえ",
+    id: "nama"
+  }, {
+    jp: "皆",
+    reading: "みな",
+    id: "semua orang"
+  }, {
+    jp: "世界",
+    reading: "せかい",
+    id: "dunia"
+  }, {
+    jp: "文化",
+    reading: "ぶんか",
+    id: "budaya"
+  }, {
+    jp: "習慣",
+    reading: "しゅうかん",
+    id: "kebiasaan"
+  }, {
+    jp: "留学",
+    reading: "りゅうがく",
+    id: "belajar di luar negeri"
+  }, {
+    jp: "挨拶",
+    reading: "あいさつ",
+    id: "salam/sapaan"
+  }, {
+    jp: "なぜなら",
+    reading: "なぜなら",
+    id: "karena (penghubung alasan)"
+  }, {
+    jp: "いかが",
+    reading: "いかが",
+    id: "bagaimana (sopan)"
+  }, {
+    jp: "どのように",
+    reading: "どのように",
+    id: "dengan cara bagaimana"
+  }, {
+    jp: "何のために",
+    reading: "なんのために",
+    id: "untuk apa"
+  }, {
+    jp: "鮮やか",
+    reading: "あざやか",
+    id: "warna cerah/mencolok"
+  }, {
+    jp: "外交",
+    reading: "がいこう",
+    id: "diplomasi"
+  }, {
+    jp: "大陸",
+    reading: "たいりく",
+    id: "benua"
+  }, {
+    jp: "曖昧",
+    reading: "あいまい",
+    id: "ambigu, tidak jelas"
+  }, {
+    jp: "大幅",
+    reading: "おおはば",
+    id: "secara besar-besaran"
+  }, {
+    jp: "約",
+    reading: "やく",
+    id: "kira-kira"
+  }, {
+    jp: "収納",
+    reading: "しゅうのう",
+    id: "penyimpanan"
+  }, {
+    jp: "透明",
+    reading: "とうめい",
+    id: "transparan"
+  }, {
+    jp: "いくつも",
+    reading: "いくつも",
+    id: "berbagai macam"
+  }, {
+    jp: "どうすれば",
+    reading: "どうすれば",
+    id: "bagaimana caranya (agar)"
+  }, {
+    jp: "色彩",
+    reading: "しきさい",
+    id: "warna-warni"
+  }, {
+    jp: "薄い色",
+    reading: "うすいいろ",
+    id: "warna pudar/muda"
+  }, {
+    jp: "節約家",
+    reading: "せつやくか",
+    id: "orang yang hemat"
+  }, {
+    jp: "浪費",
+    reading: "ろうひ",
+    id: "pemborosan"
+  }, {
+    jp: "色合い",
+    reading: "いろあい",
+    id: "corak warna"
+  }, {
+    jp: "原色",
+    reading: "げんしょく",
+    id: "warna primer"
+  }, {
+    jp: "国民性",
+    reading: "こくみんせい",
+    id: "karakter nasional"
+  }, {
+    jp: "多国籍",
+    reading: "たこくせき",
+    id: "multinasional"
+  }],
+  "Pekerjaan & Profesi Dasar": [{
+    jp: "店員",
+    reading: "てんいん",
+    id: "pegawai toko"
+  }, {
+    jp: "警察官",
+    reading: "けいさつかん",
+    id: "polisi"
+  }, {
+    jp: "消防士",
+    reading: "しょうぼうし",
+    id: "pemadam kebakaran"
+  }, {
+    jp: "料理人",
+    reading: "りょうりにん",
+    id: "koki"
+  }, {
+    jp: "歌手",
+    reading: "かしゅ",
+    id: "penyanyi"
+  }, {
+    jp: "俳優",
+    reading: "はいゆう",
+    id: "aktor"
+  }, {
+    jp: "画家",
+    reading: "がか",
+    id: "pelukis"
+  }, {
+    jp: "主婦",
+    reading: "しゅふ",
+    id: "ibu rumah tangga"
+  }, {
+    jp: "エンジニア",
+    reading: "えんじにあ",
+    id: "insinyur"
+  }, {
+    jp: "パイロット",
+    reading: "ぱいろっと",
+    id: "pilot"
+  }, {
+    jp: "農家",
+    reading: "のうか",
+    id: "petani"
+  }, {
+    jp: "公務員",
+    reading: "こうむいん",
+    id: "pegawai negeri"
+  }, {
+    jp: "自営業",
+    reading: "じえいぎょう",
+    id: "wirausaha"
+  }, {
+    jp: "フリーランス",
+    reading: "フリーランス",
+    id: "pekerja lepas"
+  }, {
+    jp: "転職",
+    reading: "てんしょく",
+    id: "pindah kerja"
+  }, {
+    jp: "退職",
+    reading: "たいしょく",
+    id: "pensiun/berhenti kerja"
+  }, {
+    jp: "昇進",
+    reading: "しょうしん",
+    id: "promosi jabatan"
+  }, {
+    jp: "採用",
+    reading: "さいよう",
+    id: "perekrutan"
+  }, {
+    jp: "経歴",
+    reading: "けいれき",
+    id: "riwayat karier"
+  }, {
+    jp: "職場",
+    reading: "しょくば",
+    id: "tempat kerja"
+  }, {
+    jp: "業務",
+    reading: "ぎょうむ",
+    id: "tugas pekerjaan"
+  }, {
+    jp: "面接官",
+    reading: "めんせつかん",
+    id: "pewawancara"
+  }, {
+    jp: "研修",
+    reading: "けんしゅう",
+    id: "pelatihan kerja"
+  }, {
+    jp: "兼業",
+    reading: "けんぎょう",
+    id: "kerja sampingan"
+  }, {
+    jp: "職業選択",
+    reading: "しょくぎょうせんたく",
+    id: "pemilihan karier"
+  }, {
+    jp: "配属",
+    reading: "はいぞく",
+    id: "penempatan kerja"
+  }, {
+    jp: "勤務地",
+    reading: "きんむち",
+    id: "lokasi kerja"
+  }],
+  "Alam & Bencana": [{
+    jp: "森林",
+    reading: "しんりん",
+    id: "hutan"
+  }, {
+    jp: "砂漠",
+    reading: "さばく",
+    id: "gurun"
+  }, {
+    jp: "海岸",
+    reading: "かいがん",
+    id: "pantai"
+  }, {
+    jp: "岬",
+    reading: "みさき",
+    id: "tanjung"
+  }, {
+    jp: "谷",
+    reading: "たに",
+    id: "lembah"
+  }, {
+    jp: "滝",
+    reading: "たき",
+    id: "air terjun"
+  }, {
+    jp: "自然保護",
+    reading: "しぜんほご",
+    id: "konservasi alam"
+  }, {
+    jp: "天然",
+    reading: "てんねん",
+    id: "alami"
+  }, {
+    jp: "人工",
+    reading: "じんこう",
+    id: "buatan manusia"
+  }, {
+    jp: "鉱物",
+    reading: "こうぶつ",
+    id: "mineral"
+  }, {
+    jp: "石油",
+    reading: "せきゆ",
+    id: "minyak bumi"
+  }, {
+    jp: "石炭",
+    reading: "せきたん",
+    id: "batu bara"
+  }, {
+    jp: "太陽光発電",
+    reading: "たいようこうはつでん",
+    id: "pembangkit listrik tenaga surya"
+  }, {
+    jp: "風力発電",
+    reading: "ふうりょくはつでん",
+    id: "pembangkit listrik tenaga angin"
+  }, {
+    jp: "波",
+    reading: "なみ",
+    id: "ombak"
+  }, {
+    jp: "地形",
+    reading: "ちけい",
+    id: "bentang alam"
+  }, {
+    jp: "気候",
+    reading: "きこう",
+    id: "iklim"
+  }, {
+    jp: "被害",
+    reading: "ひがい",
+    id: "kerusakan/korban"
+  }, {
+    jp: "復旧",
+    reading: "ふっきゅう",
+    id: "pemulihan pasca-bencana"
+  }, {
+    jp: "防災",
+    reading: "ぼうさい",
+    id: "mitigasi bencana"
+  }, {
+    jp: "避難所",
+    reading: "ひなんじょ",
+    id: "tempat pengungsian"
+  }, {
+    jp: "災害対策",
+    reading: "さいがいたいさく",
+    id: "penanggulangan bencana"
+  }, {
+    jp: "余震",
+    reading: "よしん",
+    id: "gempa susulan"
+  }],
+  "Masyarakat & Hubungan Sosial": [{
+    jp: "社会",
+    reading: "しゃかい",
+    id: "masyarakat"
+  }, {
+    jp: "社会人",
+    reading: "しゃかいじん",
+    id: "orang dewasa yang sudah bekerja"
+  }, {
+    jp: "市民",
+    reading: "しみん",
+    id: "warga negara/kota"
+  }, {
+    jp: "住民",
+    reading: "じゅうみん",
+    id: "penduduk"
+  }, {
+    jp: "高齢者",
+    reading: "こうれいしゃ",
+    id: "lansia"
+  }, {
+    jp: "若者",
+    reading: "わかもの",
+    id: "anak muda"
+  }, {
+    jp: "子育て",
+    reading: "こそだて",
+    id: "mengasuh anak"
+  }, {
+    jp: "育児",
+    reading: "いくじ",
+    id: "pengasuhan anak"
+  }, {
+    jp: "介護",
+    reading: "かいご",
+    id: "perawatan lansia"
+  }, {
+    jp: "福祉",
+    reading: "ふくし",
+    id: "kesejahteraan sosial"
+  }, {
+    jp: "ボランティア",
+    reading: "ぼらんてぃあ",
+    id: "relawan"
+  }, {
+    jp: "募金",
+    reading: "ぼきん",
+    id: "penggalangan dana"
+  }, {
+    jp: "寄付",
+    reading: "きふ",
+    id: "donasi"
+  }, {
+    jp: "差別",
+    reading: "さべつ",
+    id: "diskriminasi"
+  }, {
+    jp: "偏見",
+    reading: "へんけん",
+    id: "prasangka"
+  }, {
+    jp: "平等",
+    reading: "びょうどう",
+    id: "kesetaraan"
+  }, {
+    jp: "権利",
+    reading: "けんり",
+    id: "hak"
+  }, {
+    jp: "義務",
+    reading: "ぎむ",
+    id: "kewajiban"
+  }, {
+    jp: "責任",
+    reading: "せきにん",
+    id: "tanggung jawab"
+  }, {
+    jp: "規則",
+    reading: "きそく",
+    id: "aturan"
+  }, {
+    jp: "法律",
+    reading: "ほうりつ",
+    id: "hukum"
+  }, {
+    jp: "違法",
+    reading: "いほう",
+    id: "ilegal"
+  }, {
+    jp: "合法",
+    reading: "ごうほう",
+    id: "legal"
+  }, {
+    jp: "犯罪",
+    reading: "はんざい",
+    id: "kejahatan"
+  }, {
+    jp: "裁判",
+    reading: "さいばん",
+    id: "persidangan"
+  }, {
+    jp: "選挙",
+    reading: "せんきょ",
+    id: "pemilihan umum"
+  }, {
+    jp: "政治",
+    reading: "せいじ",
+    id: "politik"
+  }, {
+    jp: "政府",
+    reading: "せいふ",
+    id: "pemerintah"
+  }, {
+    jp: "孤立",
+    reading: "こりつ",
+    id: "terisolasi"
+  }, {
+    jp: "絆",
+    reading: "きずな",
+    id: "ikatan (hubungan)"
+  }, {
+    jp: "地域社会",
+    reading: "ちいきしゃかい",
+    id: "masyarakat lokal"
+  }, {
+    jp: "助け合い",
+    reading: "たすけあい",
+    id: "saling membantu"
+  }],
+  "Waktu & Rencana Lanjutan": [{
+    jp: "予定表",
+    reading: "よていひょう",
+    id: "jadwal rencana"
+  }, {
+    jp: "スケジュール",
+    reading: "すけじゅーる",
+    id: "jadwal"
+  }, {
+    jp: "期限",
+    reading: "きげん",
+    id: "batas waktu"
+  }, {
+    jp: "延期",
+    reading: "えんき",
+    id: "penundaan"
+  }, {
+    jp: "中止",
+    reading: "ちゅうし",
+    id: "pembatalan"
+  }, {
+    jp: "中断",
+    reading: "ちゅうだん",
+    id: "jeda/terhenti"
+  }, {
+    jp: "継続",
+    reading: "けいぞく",
+    id: "kelanjutan"
+  }, {
+    jp: "一時的",
+    reading: "いちじてき",
+    id: "sementara"
+  }, {
+    jp: "永久",
+    reading: "えいきゅう",
+    id: "abadi/selamanya"
+  }, {
+    jp: "定期的",
+    reading: "ていきてき",
+    id: "berkala/rutin"
+  }, {
+    jp: "不定期",
+    reading: "ふていき",
+    id: "tidak rutin"
+  }, {
+    jp: "臨時",
+    reading: "りんじ",
+    id: "darurat/sementara khusus"
+  }, {
+    jp: "急に",
+    reading: "きゅうに",
+    id: "secara tiba-tiba"
+  }, {
+    jp: "突然",
+    reading: "とつぜん",
+    id: "tiba-tiba"
+  }, {
+    jp: "やっと",
+    reading: "やっと",
+    id: "akhirnya"
+  }, {
+    jp: "ようやく",
+    reading: "ようやく",
+    id: "akhirnya (formal)"
+  }, {
+    jp: "そろそろ",
+    reading: "そろそろ",
+    id: "sebentar lagi"
+  }, {
+    jp: "いよいよ",
+    reading: "いよいよ",
+    id: "akhirnya tiba (momen penting)"
+  }, {
+    jp: "とうとう",
+    reading: "とうとう",
+    id: "akhirnya (setelah lama)"
+  }, {
+    jp: "しばらく",
+    reading: "しばらく",
+    id: "sebentar/beberapa waktu"
+  }, {
+    jp: "当分",
+    reading: "とうぶん",
+    id: "untuk sementara ini"
+  }, {
+    jp: "過去",
+    reading: "かこ",
+    id: "masa lalu"
+  }, {
+    jp: "当面",
+    reading: "とうめん",
+    id: "untuk saat ini"
+  }, {
+    jp: "見込み",
+    reading: "みこみ",
+    id: "perkiraan/prospek"
+  }, {
+    jp: "暫定",
+    reading: "ざんてい",
+    id: "sementara"
+  }, {
+    jp: "長期的",
+    reading: "ちょうきてき",
+    id: "jangka panjang"
+  }],
+  "Belanja & Layanan Publik": [{
+    jp: "銀行口座",
+    reading: "ぎんこうこうざ",
+    id: "rekening bank"
+  }, {
+    jp: "通帳",
+    reading: "つうちょう",
+    id: "buku tabungan"
+  }, {
+    jp: "振込",
+    reading: "ふりこみ",
+    id: "transfer uang"
+  }, {
+    jp: "引き出す",
+    reading: "ひきだす",
+    id: "menarik uang tunai"
+  }, {
+    jp: "預ける",
+    reading: "あずける",
+    id: "menitipkan/menyimpan uang"
+  }, {
+    jp: "残高",
+    reading: "ざんだか",
+    id: "saldo"
+  }, {
+    jp: "窓口",
+    reading: "まどぐち",
+    id: "loket"
+  }, {
+    jp: "手続き",
+    reading: "てつづき",
+    id: "prosedur administrasi"
+  }, {
+    jp: "申込書",
+    reading: "もうしこみしょ",
+    id: "formulir pendaftaran"
+  }, {
+    jp: "証明書",
+    reading: "しょうめいしょ",
+    id: "surat keterangan"
+  }, {
+    jp: "住民票",
+    reading: "じゅうみんひょう",
+    id: "surat keterangan domisili"
+  }, {
+    jp: "パスポート",
+    reading: "ぱすぽーと",
+    id: "paspor"
+  }, {
+    jp: "ビザ",
+    reading: "びざ",
+    id: "visa"
+  }, {
+    jp: "在留カード",
+    reading: "ざいりゅうかーど",
+    id: "kartu izin tinggal"
+  }, {
+    jp: "役所",
+    reading: "やくしょ",
+    id: "kantor pemerintahan"
+  }, {
+    jp: "届け出",
+    reading: "とどけで",
+    id: "pelaporan resmi"
+  }, {
+    jp: "保証人",
+    reading: "ほしょうにん",
+    id: "penjamin"
+  }, {
+    jp: "配送",
+    reading: "はいそう",
+    id: "pengiriman barang"
+  }, {
+    jp: "返品",
+    reading: "へんぴん",
+    id: "pengembalian barang"
+  }, {
+    jp: "交換",
+    reading: "こうかん",
+    id: "penukaran barang"
+  }, {
+    jp: "返金",
+    reading: "へんきん",
+    id: "pengembalian uang"
+  }, {
+    jp: "苦情",
+    reading: "くじょう",
+    id: "keluhan"
+  }, {
+    jp: "公共料金",
+    reading: "こうきょうりょうきん",
+    id: "tagihan utilitas publik"
+  }, {
+    jp: "申請書",
+    reading: "しんせいしょ",
+    id: "formulir permohonan"
+  }, {
+    jp: "行政サービス",
+    reading: "ぎょうせいサービス",
+    id: "layanan administrasi"
+  }, {
+    jp: "窓口業務",
+    reading: "まどぐちぎょうむ",
+    id: "layanan loket"
+  }, {
+    jp: "市民サービス",
+    reading: "しみんサービス",
+    id: "layanan warga"
+  }, {
+    jp: "受付時間",
+    reading: "うけつけじかん",
+    id: "jam pelayanan"
+  }],
+  "Perjalanan & Wisata Lanjutan": [{
+    jp: "観光地",
+    reading: "かんこうち",
+    id: "tempat wisata"
+  }, {
+    jp: "名所",
+    reading: "めいしょ",
+    id: "tempat terkenal"
+  }, {
+    jp: "名物",
+    reading: "めいぶつ",
+    id: "makanan/oleh-oleh khas"
+  }, {
+    jp: "お土産",
+    reading: "おみやげ",
+    id: "oleh-oleh"
+  }, {
+    jp: "旅館",
+    reading: "りょかん",
+    id: "penginapan tradisional Jepang"
+  }, {
+    jp: "民宿",
+    reading: "みんしゅく",
+    id: "penginapan rumah warga"
+  }, {
+    jp: "予約",
+    reading: "よやく",
+    id: "reservasi"
+  }, {
+    jp: "キャンセル",
+    reading: "きゃんせる",
+    id: "pembatalan reservasi"
+  }, {
+    jp: "日程",
+    reading: "にってい",
+    id: "jadwal perjalanan"
+  }, {
+    jp: "ツアー",
+    reading: "つあー",
+    id: "tur wisata"
+  }, {
+    jp: "ガイド",
+    reading: "がいど",
+    id: "pemandu wisata"
+  }, {
+    jp: "案内所",
+    reading: "あんないじょ",
+    id: "pusat informasi"
+  }, {
+    jp: "両替所",
+    reading: "りょうがえじょ",
+    id: "tempat penukaran uang"
+  }, {
+    jp: "免税店",
+    reading: "めんぜいてん",
+    id: "toko bebas pajak"
+  }, {
+    jp: "展示",
+    reading: "てんじ",
+    id: "pameran barang"
+  }, {
+    jp: "入場料",
+    reading: "にゅうじょうりょう",
+    id: "biaya masuk"
+  }, {
+    jp: "休館日",
+    reading: "きゅうかんび",
+    id: "hari tutup (museum dsb)"
+  }, {
+    jp: "営業時間",
+    reading: "えいぎょうじかん",
+    id: "jam operasional"
+  }, {
+    jp: "定休日",
+    reading: "ていきゅうび",
+    id: "hari libur toko/tempat usaha"
+  }, {
+    jp: "温泉",
+    reading: "おんせん",
+    id: "onsen/pemandian air panas"
+  }, {
+    jp: "景色",
+    reading: "けしき",
+    id: "pemandangan"
+  }, {
+    jp: "日帰り",
+    reading: "ひがえり",
+    id: "pulang hari tanpa menginap"
+  }, {
+    jp: "パッケージツアー",
+    reading: "パッケージツアー",
+    id: "paket wisata"
+  }, {
+    jp: "穴場",
+    reading: "あなば",
+    id: "tempat tersembunyi yang bagus"
+  }, {
+    jp: "現地ガイド",
+    reading: "げんちガイド",
+    id: "pemandu lokal"
+  }, {
+    jp: "絶景",
+    reading: "ぜっけい",
+    id: "pemandangan luar biasa"
+  }],
+  "Pikiran, Pendapat & Ekspresi": [{
+    jp: "意見",
+    reading: "いけん",
+    id: "pendapat"
+  }, {
+    jp: "考え",
+    reading: "かんがえ",
+    id: "pemikiran"
+  }, {
+    jp: "提案",
+    reading: "ていあん",
+    id: "usulan"
+  }, {
+    jp: "議論",
+    reading: "ぎろん",
+    id: "diskusi/debat"
+  }, {
+    jp: "討論",
+    reading: "とうろん",
+    id: "debat formal"
+  }, {
+    jp: "結論",
+    reading: "けつろん",
+    id: "kesimpulan"
+  }, {
+    jp: "根拠",
+    reading: "こんきょ",
+    id: "dasar/alasan"
+  }, {
+    jp: "理由",
+    reading: "りゆう",
+    id: "alasan"
+  }, {
+    jp: "原因",
+    reading: "げんいん",
+    id: "penyebab"
+  }, {
+    jp: "結果",
+    reading: "けっか",
+    id: "hasil"
+  }, {
+    jp: "効果",
+    reading: "こうか",
+    id: "efek"
+  }, {
+    jp: "目的",
+    reading: "もくてき",
+    id: "tujuan"
+  }, {
+    jp: "目標",
+    reading: "もくひょう",
+    id: "target"
+  }, {
+    jp: "方針",
+    reading: "ほうしん",
+    id: "kebijakan/arah"
+  }, {
+    jp: "方法",
+    reading: "ほうほう",
+    id: "cara/metode"
+  }, {
+    jp: "手段",
+    reading: "しゅだん",
+    id: "sarana/cara"
+  }, {
+    jp: "条件",
+    reading: "じょうけん",
+    id: "syarat"
+  }, {
+    jp: "状況",
+    reading: "じょうきょう",
+    id: "situasi"
+  }, {
+    jp: "状態",
+    reading: "じょうたい",
+    id: "keadaan"
+  }, {
+    jp: "場合",
+    reading: "ばあい",
+    id: "kasus/situasi tertentu"
+  }, {
+    jp: "可能性",
+    reading: "かのうせい",
+    id: "kemungkinan"
+  }, {
+    jp: "印象",
+    reading: "いんしょう",
+    id: "kesan"
+  }, {
+    jp: "イメージ",
+    reading: "いめーじ",
+    id: "citra/gambaran"
+  }, {
+    jp: "評価",
+    reading: "ひょうか",
+    id: "penilaian"
+  }, {
+    jp: "批判",
+    reading: "ひはん",
+    id: "kritik"
+  }, {
+    jp: "反応",
+    reading: "はんのう",
+    id: "reaksi"
+  }, {
+    jp: "見解",
+    reading: "けんかい",
+    id: "pandangan/pendapat"
+  }, {
+    jp: "主張",
+    reading: "しゅちょう",
+    id: "klaim/argumen"
+  }],
+  "Ukuran, Jumlah & Perbandingan": [{
+    jp: "以上",
+    reading: "いじょう",
+    id: "lebih dari"
+  }, {
+    jp: "以下",
+    reading: "いか",
+    id: "kurang dari/di bawah"
+  }, {
+    jp: "以内",
+    reading: "いない",
+    id: "dalam batas"
+  }, {
+    jp: "未満",
+    reading: "みまん",
+    id: "kurang dari (batas)"
+  }, {
+    jp: "だいたい",
+    reading: "だいたい",
+    id: "kira-kira"
+  }, {
+    jp: "ほぼ",
+    reading: "ほぼ",
+    id: "hampir"
+  }, {
+    jp: "ほとんど",
+    reading: "ほとんど",
+    id: "hampir semua"
+  }, {
+    jp: "全部",
+    reading: "ぜんぶ",
+    id: "semua"
+  }, {
+    jp: "一部",
+    reading: "いちぶ",
+    id: "sebagian"
+  }, {
+    jp: "大部分",
+    reading: "だいぶぶん",
+    id: "sebagian besar"
+  }, {
+    jp: "全体",
+    reading: "ぜんたい",
+    id: "keseluruhan"
+  }, {
+    jp: "平均",
+    reading: "へいきん",
+    id: "rata-rata"
+  }, {
+    jp: "最大",
+    reading: "さいだい",
+    id: "maksimum"
+  }, {
+    jp: "最小",
+    reading: "さいしょう",
+    id: "minimum"
+  }, {
+    jp: "最高",
+    reading: "さいこう",
+    id: "tertinggi/terbaik"
+  }, {
+    jp: "最低",
+    reading: "さいてい",
+    id: "terendah/terburuk"
+  }, {
+    jp: "増加",
+    reading: "ぞうか",
+    id: "peningkatan"
+  }, {
+    jp: "減少",
+    reading: "げんしょう",
+    id: "penurunan"
+  }, {
+    jp: "パーセント",
+    reading: "ぱーせんと",
+    id: "persen"
+  }, {
+    jp: "差",
+    reading: "さ",
+    id: "selisih"
+  }, {
+    jp: "約半分",
+    reading: "やくはんぶん",
+    id: "kira-kira setengah"
+  }, {
+    jp: "かなり",
+    reading: "かなり",
+    id: "cukup banyak"
+  }, {
+    jp: "最大限",
+    reading: "さいだいげん",
+    id: "maksimal"
+  }, {
+    jp: "同程度",
+    reading: "どうていど",
+    id: "tingkat yang sama"
+  }],
+  // --- N3 tambahan ---
+  "Politik & Pemerintahan": [{
+    jp: "国会",
+    reading: "こっかい",
+    id: "parlemen, DPR"
+  }, {
+    jp: "大臣",
+    reading: "だいじん",
+    id: "menteri"
+  }, {
+    jp: "首相",
+    reading: "しゅしょう",
+    id: "perdana menteri"
+  }, {
+    jp: "憲法",
+    reading: "けんぽう",
+    id: "konstitusi, UUD"
+  }, {
+    jp: "政策",
+    reading: "せいさく",
+    id: "kebijakan"
+  }, {
+    jp: "国民",
+    reading: "こくみん",
+    id: "warga negara"
+  }, {
+    jp: "議員",
+    reading: "ぎいん",
+    id: "anggota dewan"
+  }, {
+    jp: "投票",
+    reading: "とうひょう",
+    id: "pemungutan suara"
+  }, {
+    jp: "民主主義",
+    reading: "みんしゅしゅぎ",
+    id: "demokrasi"
+  }, {
+    jp: "制度",
+    reading: "せいど",
+    id: "sistem"
+  }, {
+    jp: "改革",
+    reading: "かいかく",
+    id: "reformasi"
+  }, {
+    jp: "条約",
+    reading: "じょうやく",
+    id: "perjanjian, traktat"
+  }, {
+    jp: "対策",
+    reading: "たいさく",
+    id: "langkah penanggulangan"
+  }, {
+    jp: "抗議",
+    reading: "こうぎ",
+    id: "protes"
+  }, {
+    jp: "反対",
+    reading: "はんたい",
+    id: "menentang"
+  }, {
+    jp: "賛成",
+    reading: "さんせい",
+    id: "setuju"
+  }, {
+    jp: "演説",
+    reading: "えんぜつ",
+    id: "pidato"
+  }, {
+    jp: "交渉",
+    reading: "こうしょう",
+    id: "negosiasi"
+  }, {
+    jp: "与党",
+    reading: "よとう",
+    id: "partai berkuasa"
+  }, {
+    jp: "野党",
+    reading: "やとう",
+    id: "partai oposisi"
+  }, {
+    jp: "選挙権",
+    reading: "せんきょけん",
+    id: "hak pilih"
+  }],
+  "Hukum & Kriminal": [{
+    jp: "裁判所",
+    reading: "さいばんしょ",
+    id: "gedung pengadilan"
+  }, {
+    jp: "裁判官",
+    reading: "さいばんかん",
+    id: "hakim"
+  }, {
+    jp: "弁護士",
+    reading: "べんごし",
+    id: "pengacara"
+  }, {
+    jp: "検察官",
+    reading: "けんさつかん",
+    id: "jaksa"
+  }, {
+    jp: "警察",
+    reading: "けいさつ",
+    id: "polisi"
+  }, {
+    jp: "犯人",
+    reading: "はんにん",
+    id: "pelaku kejahatan"
+  }, {
+    jp: "被害者",
+    reading: "ひがいしゃ",
+    id: "korban"
+  }, {
+    jp: "容疑者",
+    reading: "ようぎしゃ",
+    id: "tersangka"
+  }, {
+    jp: "逮捕",
+    reading: "たいほ",
+    id: "penangkapan"
+  }, {
+    jp: "証拠",
+    reading: "しょうこ",
+    id: "bukti"
+  }, {
+    jp: "証人",
+    reading: "しょうにん",
+    id: "saksi"
+  }, {
+    jp: "判決",
+    reading: "はんけつ",
+    id: "putusan"
+  }, {
+    jp: "有罪",
+    reading: "ゆうざい",
+    id: "bersalah"
+  }, {
+    jp: "無罪",
+    reading: "むざい",
+    id: "tidak bersalah"
+  }, {
+    jp: "刑務所",
+    reading: "けいむしょ",
+    id: "penjara"
+  }, {
+    jp: "罰金",
+    reading: "ばっきん",
+    id: "denda"
+  }, {
+    jp: "訴訟",
+    reading: "そしょう",
+    id: "gugatan"
+  }, {
+    jp: "盗難",
+    reading: "とうなん",
+    id: "pencurian"
+  }, {
+    jp: "詐欺",
+    reading: "さぎ",
+    id: "penipuan"
+  }],
+  "Kesehatan Mental & Fisik Lanjutan": [{
+    jp: "精神",
+    reading: "せいしん",
+    id: "jiwa, mental"
+  }, {
+    jp: "症状",
+    reading: "しょうじょう",
+    id: "gejala"
+  }, {
+    jp: "予防",
+    reading: "よぼう",
+    id: "pencegahan"
+  }, {
+    jp: "健康診断",
+    reading: "けんこうしんだん",
+    id: "medical check-up"
+  }, {
+    jp: "免疫",
+    reading: "めんえき",
+    id: "imun"
+  }, {
+    jp: "睡眠",
+    reading: "すいみん",
+    id: "tidur"
+  }, {
+    jp: "リラックス",
+    reading: "りらっくす",
+    id: "relaksasi"
+  }, {
+    jp: "運動不足",
+    reading: "うんどうぶそく",
+    id: "kurang olahraga"
+  }, {
+    jp: "生活習慣",
+    reading: "せいかつしゅうかん",
+    id: "pola hidup"
+  }, {
+    jp: "バランス",
+    reading: "ばらんす",
+    id: "keseimbangan"
+  }, {
+    jp: "回復",
+    reading: "かいふく",
+    id: "pemulihan"
+  }, {
+    jp: "養生",
+    reading: "ようじょう",
+    id: "menjaga kesehatan"
+  }, {
+    jp: "うつ病",
+    reading: "うつびょう",
+    id: "depresi"
+  }, {
+    jp: "睡眠不足",
+    reading: "すいみんぶそく",
+    id: "kurang tidur"
+  }, {
+    jp: "燃え尽き症候群",
+    reading: "もえつきしょうこうぐん",
+    id: "burnout"
+  }, {
+    jp: "心療内科",
+    reading: "しんりょうないか",
+    id: "klinik psikosomatik"
+  }, {
+    jp: "依存症",
+    reading: "いぞんしょう",
+    id: "kecanduan"
+  }, {
+    jp: "回復力",
+    reading: "かいふくりょく",
+    id: "daya pulih"
+  }, {
+    jp: "心のケア",
+    reading: "こころのケア",
+    id: "perawatan kesehatan mental"
+  }, {
+    jp: "持病",
+    reading: "じびょう",
+    id: "penyakit kronis"
+  }],
+  "Pendidikan & Karir": [{
+    jp: "進学",
+    reading: "しんがく",
+    id: "melanjutkan sekolah"
+  }, {
+    jp: "資格",
+    reading: "しかく",
+    id: "kualifikasi, sertifikasi"
+  }, {
+    jp: "進路",
+    reading: "しんろ",
+    id: "arah karier/pendidikan"
+  }, {
+    jp: "履修",
+    reading: "りしゅう",
+    id: "pengambilan mata kuliah"
+  }],
+  "Hubungan Interpersonal": [{
+    jp: "信頼",
+    reading: "しんらい",
+    id: "kepercayaan"
+  }, {
+    jp: "誤解",
+    reading: "ごかい",
+    id: "kesalahpahaman"
+  }, {
+    jp: "対立",
+    reading: "たいりつ",
+    id: "konflik, pertentangan"
+  }, {
+    jp: "協力",
+    reading: "きょうりょく",
+    id: "kerja sama"
+  }, {
+    jp: "相談",
+    reading: "そうだん",
+    id: "konsultasi, curhat"
+  }, {
+    jp: "説得",
+    reading: "せっとく",
+    id: "membujuk"
+  }, {
+    jp: "謝罪",
+    reading: "しゃざい",
+    id: "permintaan maaf"
+  }, {
+    jp: "仲直り",
+    reading: "なかなおり",
+    id: "berbaikan"
+  }, {
+    jp: "付き合う",
+    reading: "つきあう",
+    id: "berpacaran, bergaul"
+  }, {
+    jp: "別れる",
+    reading: "わかれる",
+    id: "berpisah"
+  }, {
+    jp: "結婚",
+    reading: "けっこん",
+    id: "menikah"
+  }, {
+    jp: "離婚",
+    reading: "りこん",
+    id: "bercerai"
+  }, {
+    jp: "礼儀",
+    reading: "れいぎ",
+    id: "sopan santun"
+  }, {
+    jp: "マナー",
+    reading: "まなー",
+    id: "tata krama"
+  }, {
+    jp: "遠慮",
+    reading: "えんりょ",
+    id: "sungkan"
+  }, {
+    jp: "気を使う",
+    reading: "きをつかう",
+    id: "berhati-hati pada perasaan orang lain"
+  }, {
+    jp: "世話",
+    reading: "せわ",
+    id: "merawat, mengurus"
+  }, {
+    jp: "お互い",
+    reading: "おたがい",
+    id: "saling"
+  }, {
+    jp: "本音",
+    reading: "ほんね",
+    id: "perasaan sebenarnya"
+  }, {
+    jp: "建前",
+    reading: "たてまえ",
+    id: "basa-basi formal"
+  }, {
+    jp: "疎遠",
+    reading: "そえん",
+    id: "menjauh (hubungan)"
+  }, {
+    jp: "絶交",
+    reading: "ぜっこう",
+    id: "memutuskan hubungan pertemanan"
+  }, {
+    jp: "仲間外れ",
+    reading: "なかまはずれ",
+    id: "dikucilkan"
+  }, {
+    jp: "いじめ",
+    reading: "いじめ",
+    id: "perundungan"
+  }, {
+    jp: "仲間意識",
+    reading: "なかまいしき",
+    id: "rasa kebersamaan"
+  }, {
+    jp: "義理",
+    reading: "ぎり",
+    id: "kewajiban sosial/budi"
+  }, {
+    jp: "恩",
+    reading: "おん",
+    id: "budi baik yang diterima"
+  }, {
+    jp: "恩返し",
+    reading: "おんがえし",
+    id: "membalas budi"
+  }, {
+    jp: "お節介",
+    reading: "おせっかい",
+    id: "ikut campur berlebihan"
+  }, {
+    jp: "八方美人",
+    reading: "はっぽうびじん",
+    id: "orang yang berusaha disukai semua orang"
+  }, {
+    jp: "気を遣う",
+    reading: "きをつかう",
+    id: "memperhatikan perasaan orang lain"
+  }],
+  "Media & Hiburan": [{
+    jp: "出演",
+    reading: "しゅつえん",
+    id: "tampil di acara"
+  }, {
+    jp: "人気",
+    reading: "にんき",
+    id: "populer"
+  }, {
+    jp: "芸能人",
+    reading: "げいのうじん",
+    id: "artis"
+  }, {
+    jp: "演技",
+    reading: "えんぎ",
+    id: "akting"
+  }, {
+    jp: "監督",
+    reading: "かんとく",
+    id: "sutradara"
+  }, {
+    jp: "脚本",
+    reading: "きゃくほん",
+    id: "skenario"
+  }, {
+    jp: "主人公",
+    reading: "しゅじんこう",
+    id: "tokoh utama"
+  }, {
+    jp: "あらすじ",
+    reading: "あらすじ",
+    id: "ringkasan cerita"
+  }, {
+    jp: "評判",
+    reading: "ひょうばん",
+    id: "reputasi, ulasan"
+  }, {
+    jp: "配信",
+    reading: "はいしん",
+    id: "streaming"
+  }, {
+    jp: "作家",
+    reading: "さっか",
+    id: "penulis"
+  }, {
+    jp: "小説",
+    reading: "しょうせつ",
+    id: "novel"
+  }, {
+    jp: "漫画",
+    reading: "まんが",
+    id: "komik"
+  }, {
+    jp: "配信サービス",
+    reading: "はいしんさーびす",
+    id: "layanan streaming"
+  }, {
+    jp: "有料会員",
+    reading: "ゆうりょうかいいん",
+    id: "member berbayar"
+  }, {
+    jp: "字幕",
+    reading: "じまく",
+    id: "subtitle"
+  }, {
+    jp: "吹き替え",
+    reading: "ふきかえ",
+    id: "dubbing/sulih suara"
+  }, {
+    jp: "原作ファン",
+    reading: "げんさくふぁん",
+    id: "penggemar karya asli"
+  }, {
+    jp: "ネタバレ",
+    reading: "ねたばれ",
+    id: "spoiler"
+  }, {
+    jp: "続編",
+    reading: "ぞくへん",
+    id: "sekuel"
+  }, {
+    jp: "前編",
+    reading: "ぜんぺん",
+    id: "bagian pertama (cerita)"
+  }, {
+    jp: "後編",
+    reading: "こうへん",
+    id: "bagian kedua (cerita)"
+  }, {
+    jp: "興行収入",
+    reading: "こうぎょうしゅうにゅう",
+    id: "pendapatan box office"
+  }, {
+    jp: "人気番組",
+    reading: "にんきばんぐみ",
+    id: "acara populer"
+  }],
+  "Olahraga & Kompetisi": [{
+    jp: "大会",
+    reading: "たいかい",
+    id: "kejuaraan, turnamen"
+  }, {
+    jp: "優勝",
+    reading: "ゆうしょう",
+    id: "juara"
+  }, {
+    jp: "敗北",
+    reading: "はいぼく",
+    id: "kekalahan"
+  }, {
+    jp: "記録",
+    reading: "きろく",
+    id: "rekor"
+  }, {
+    jp: "選手",
+    reading: "せんしゅ",
+    id: "atlet"
+  }, {
+    jp: "応援",
+    reading: "おうえん",
+    id: "dukungan, semangat"
+  }, {
+    jp: "実力",
+    reading: "じつりょく",
+    id: "kemampuan sebenarnya"
+  }, {
+    jp: "練習試合",
+    reading: "れんしゅうじあい",
+    id: "pertandingan latihan"
+  }, {
+    jp: "反則",
+    reading: "はんそく",
+    id: "pelanggaran"
+  }, {
+    jp: "審判",
+    reading: "しんぱん",
+    id: "wasit"
+  }, {
+    jp: "得点",
+    reading: "とくてん",
+    id: "skor"
+  }, {
+    jp: "引き分け",
+    reading: "ひきわけ",
+    id: "seri, imbang"
+  }, {
+    jp: "根性",
+    reading: "こんじょう",
+    id: "semangat juang"
+  }, {
+    jp: "挑戦",
+    reading: "ちょうせん",
+    id: "tantangan"
+  }, {
+    jp: "達成",
+    reading: "たっせい",
+    id: "pencapaian"
+  }, {
+    jp: "体力測定",
+    reading: "たいりょくそくてい",
+    id: "tes kebugaran"
+  }, {
+    jp: "柔軟性",
+    reading: "じゅうなんせい",
+    id: "fleksibilitas tubuh"
+  }, {
+    jp: "瞬発力",
+    reading: "しゅんぱつりょく",
+    id: "kekuatan eksplosif"
+  }, {
+    jp: "戦術",
+    reading: "せんじゅつ",
+    id: "taktik"
+  }, {
+    jp: "戦略",
+    reading: "せんりゃく",
+    id: "strategi"
+  }, {
+    jp: "控え選手",
+    reading: "ひかえせんしゅ",
+    id: "pemain cadangan"
+  }, {
+    jp: "交代",
+    reading: "こうたい",
+    id: "pergantian pemain"
+  }, {
+    jp: "延長戦",
+    reading: "えんちょうせん",
+    id: "perpanjangan waktu"
+  }, {
+    jp: "応援団",
+    reading: "おうえんだん",
+    id: "kelompok pendukung"
+  }, {
+    jp: "チームワーク",
+    reading: "チームワーク",
+    id: "kerja sama tim"
+  }],
+  "Seni & Sastra": [{
+    jp: "文学",
+    reading: "ぶんがく",
+    id: "sastra"
+  }, {
+    jp: "詩",
+    reading: "し",
+    id: "puisi"
+  }, {
+    jp: "小説家",
+    reading: "しょうせつか",
+    id: "novelis"
+  }, {
+    jp: "作品",
+    reading: "さくひん",
+    id: "karya"
+  }, {
+    jp: "表現",
+    reading: "ひょうげん",
+    id: "ekspresi"
+  }, {
+    jp: "描写",
+    reading: "びょうしゃ",
+    id: "penggambaran"
+  }, {
+    jp: "比喩",
+    reading: "ひゆ",
+    id: "perumpamaan"
+  }, {
+    jp: "美術",
+    reading: "びじゅつ",
+    id: "seni rupa"
+  }, {
+    jp: "彫刻",
+    reading: "ちょうこく",
+    id: "patung, ukiran"
+  }, {
+    jp: "絵画",
+    reading: "かいが",
+    id: "lukisan"
+  }, {
+    jp: "音楽会",
+    reading: "おんがくかい",
+    id: "konser musik"
+  }, {
+    jp: "演奏",
+    reading: "えんそう",
+    id: "pertunjukan musik"
+  }, {
+    jp: "舞台",
+    reading: "ぶたい",
+    id: "panggung"
+  }, {
+    jp: "演劇",
+    reading: "えんげき",
+    id: "teater, drama"
+  }, {
+    jp: "鑑賞",
+    reading: "かんしょう",
+    id: "mengapresiasi seni"
+  }, {
+    jp: "創作",
+    reading: "そうさく",
+    id: "karya cipta"
+  }, {
+    jp: "才能",
+    reading: "さいのう",
+    id: "bakat"
+  }, {
+    jp: "表現力",
+    reading: "ひょうげんりょく",
+    id: "daya ekspresi"
+  }, {
+    jp: "視聴者",
+    reading: "しちょうしゃ",
+    id: "penonton (TV)"
+  }, {
+    jp: "信頼関係",
+    reading: "しんらいかんけい",
+    id: "hubungan saling percaya"
+  }],
+  "Rumah Tangga & Masyarakat Lanjutan": [{
+    jp: "地域",
+    reading: "ちいき",
+    id: "wilayah, daerah"
+  }, {
+    jp: "ゴミ出し",
+    reading: "ごみだし",
+    id: "membuang sampah"
+  }, {
+    jp: "騒音",
+    reading: "そうおん",
+    id: "kebisingan"
+  }, {
+    jp: "高齢化",
+    reading: "こうれいか",
+    id: "penuaan populasi"
+  }, {
+    jp: "少子化",
+    reading: "しょうしか",
+    id: "penurunan angka kelahiran"
+  }, {
+    jp: "育児休暇",
+    reading: "いくじきゅうか",
+    id: "cuti mengasuh anak"
+  }, {
+    jp: "共働き",
+    reading: "ともばたらき",
+    id: "suami istri sama-sama bekerja"
+  }, {
+    jp: "家事",
+    reading: "かじ",
+    id: "pekerjaan rumah tangga"
+  }, {
+    jp: "自立",
+    reading: "じりつ",
+    id: "mandiri"
+  }, {
+    jp: "独立",
+    reading: "どくりつ",
+    id: "kemandirian, kemerdekaan"
+  }, {
+    jp: "支援",
+    reading: "しえん",
+    id: "dukungan, bantuan"
+  }, {
+    jp: "格差",
+    reading: "かくさ",
+    id: "kesenjangan"
+  }, {
+    jp: "回覧板",
+    reading: "かいらんばん",
+    id: "papan edaran warga"
+  }, {
+    jp: "近隣トラブル",
+    reading: "きんりんトラブル",
+    id: "masalah dengan tetangga"
+  }, {
+    jp: "世帯主",
+    reading: "せたいぬし",
+    id: "kepala rumah tangga"
+  }, {
+    jp: "回覧",
+    reading: "かいらん",
+    id: "edaran informasi warga"
+  }],
+  "Sains & Penelitian": [{
+    jp: "科学",
+    reading: "かがく",
+    id: "ilmu pengetahuan"
+  }, {
+    jp: "実験",
+    reading: "じっけん",
+    id: "eksperimen"
+  }, {
+    jp: "観察",
+    reading: "かんさつ",
+    id: "pengamatan"
+  }, {
+    jp: "仮説",
+    reading: "かせつ",
+    id: "hipotesis"
+  }, {
+    jp: "理論",
+    reading: "りろん",
+    id: "teori"
+  }, {
+    jp: "証明",
+    reading: "しょうめい",
+    id: "pembuktian"
+  }, {
+    jp: "発見",
+    reading: "はっけん",
+    id: "penemuan"
+  }, {
+    jp: "発明",
+    reading: "はつめい",
+    id: "penemuan, inovasi"
+  }, {
+    jp: "技術",
+    reading: "ぎじゅつ",
+    id: "teknologi"
+  }, {
+    jp: "分析",
+    reading: "ぶんせき",
+    id: "analisis"
+  }, {
+    jp: "データ",
+    reading: "でーた",
+    id: "data"
+  }, {
+    jp: "統計",
+    reading: "とうけい",
+    id: "statistik"
+  }, {
+    jp: "進化",
+    reading: "しんか",
+    id: "evolusi"
+  }, {
+    jp: "遺伝子",
+    reading: "いでんし",
+    id: "gen"
+  }, {
+    jp: "細胞",
+    reading: "さいぼう",
+    id: "sel"
+  }, {
+    jp: "元素",
+    reading: "げんそ",
+    id: "unsur kimia"
+  }, {
+    jp: "化学",
+    reading: "かがく",
+    id: "kimia"
+  }, {
+    jp: "物理",
+    reading: "ぶつり",
+    id: "fisika"
+  }, {
+    jp: "生物",
+    reading: "せいぶつ",
+    id: "biologi, makhluk hidup"
+  }, {
+    jp: "宇宙",
+    reading: "うちゅう",
+    id: "luar angkasa"
+  }, {
+    jp: "惑星",
+    reading: "わくせい",
+    id: "planet"
+  }, {
+    jp: "重力",
+    reading: "じゅうりょく",
+    id: "gravitasi"
+  }, {
+    jp: "実証",
+    reading: "じっしょう",
+    id: "pembuktian empiris"
+  }, {
+    jp: "実用化",
+    reading: "じつようか",
+    id: "penerapan praktis"
+  }, {
+    jp: "応用",
+    reading: "おうよう",
+    id: "aplikasi/penerapan"
+  }, {
+    jp: "基礎研究",
+    reading: "きそけんきゅう",
+    id: "penelitian dasar"
+  }, {
+    jp: "開発",
+    reading: "かいはつ",
+    id: "pengembangan"
+  }, {
+    jp: "試作品",
+    reading: "しさくひん",
+    id: "prototipe"
+  }, {
+    jp: "サンプル",
+    reading: "さんぷる",
+    id: "sampel"
+  }, {
+    jp: "測定",
+    reading: "そくてい",
+    id: "pengukuran"
+  }, {
+    jp: "顕微鏡",
+    reading: "けんびきょう",
+    id: "mikroskop"
+  }, {
+    jp: "突然変異",
+    reading: "とつぜんへんい",
+    id: "mutasi"
+  }, {
+    jp: "検証",
+    reading: "けんしょう",
+    id: "verifikasi"
+  }, {
+    jp: "データ分析",
+    reading: "データぶんせき",
+    id: "analisis data"
+  }],
+  "Teknologi Lanjutan & Internet": [{
+    jp: "ネットワーク",
+    reading: "ねっとわーく",
+    id: "jaringan"
+  }, {
+    jp: "データベース",
+    reading: "でーたべーす",
+    id: "basis data"
+  }, {
+    jp: "ソフトウェア",
+    reading: "そふとうぇあ",
+    id: "perangkat lunak"
+  }, {
+    jp: "ハードウェア",
+    reading: "はーどうぇあ",
+    id: "perangkat keras"
+  }, {
+    jp: "人工知能",
+    reading: "じんこうちのう",
+    id: "kecerdasan buatan, AI"
+  }, {
+    jp: "プログラム",
+    reading: "ぷろぐらむ",
+    id: "program"
+  }, {
+    jp: "システム",
+    reading: "しすてむ",
+    id: "sistem"
+  }, {
+    jp: "セキュリティ",
+    reading: "せきゅりてぃ",
+    id: "keamanan"
+  }, {
+    jp: "個人情報",
+    reading: "こじんじょうほう",
+    id: "data pribadi"
+  }, {
+    jp: "漏洩",
+    reading: "ろうえい",
+    id: "kebocoran data"
+  }, {
+    jp: "ウイルス",
+    reading: "ういるす",
+    id: "virus komputer"
+  }, {
+    jp: "クラウド",
+    reading: "くらうど",
+    id: "cloud"
+  }, {
+    jp: "アップデート",
+    reading: "あっぷでーと",
+    id: "pembaruan"
+  }, {
+    jp: "通信",
+    reading: "つうしん",
+    id: "komunikasi, telekomunikasi"
+  }, {
+    jp: "デジタル化",
+    reading: "でじたるか",
+    id: "digitalisasi"
+  }, {
+    jp: "自動化",
+    reading: "じどうか",
+    id: "otomatisasi"
+  }, {
+    jp: "量子コンピュータ",
+    reading: "りょうしこんぴゅーた",
+    id: "komputer kuantum"
+  }, {
+    jp: "ブロックチェーン",
+    reading: "ぶろっくちぇーん",
+    id: "blockchain"
+  }, {
+    jp: "仮想通貨",
+    reading: "かそうつうか",
+    id: "mata uang kripto"
+  }, {
+    jp: "自動運転",
+    reading: "じどううんてん",
+    id: "kendaraan otonom"
+  }, {
+    jp: "ドローン",
+    reading: "どろーん",
+    id: "drone"
+  }, {
+    jp: "音声認識",
+    reading: "おんせいにんしき",
+    id: "pengenalan suara"
+  }, {
+    jp: "画像認識",
+    reading: "がぞうにんしき",
+    id: "pengenalan gambar"
+  }, {
+    jp: "機械学習",
+    reading: "きかいがくしゅう",
+    id: "machine learning"
+  }, {
+    jp: "バーチャル",
+    reading: "ばーちゃる",
+    id: "virtual"
+  }, {
+    jp: "ウイルス対策",
+    reading: "ういるすたいさく",
+    id: "proteksi virus (komputer)"
+  }, {
+    jp: "ファイアウォール",
+    reading: "ふぁいあうぉーる",
+    id: "firewall"
+  }, {
+    jp: "システム障害",
+    reading: "しすてむしょうがい",
+    id: "gangguan sistem"
+  }, {
+    jp: "匿名性",
+    reading: "とくめいせい",
+    id: "anonimitas"
+  }, {
+    jp: "情報漏洩",
+    reading: "じょうほうろうえい",
+    id: "kebocoran data"
+  }, {
+    jp: "遠隔操作",
+    reading: "えんかくそうさ",
+    id: "kendali jarak jauh"
+  }],
+  "Filsafat & Pemikiran": [{
+    jp: "哲学",
+    reading: "てつがく",
+    id: "filsafat"
+  }, {
+    jp: "思想",
+    reading: "しそう",
+    id: "pemikiran, ideologi"
+  }, {
+    jp: "概念",
+    reading: "がいねん",
+    id: "konsep"
+  }, {
+    jp: "論理",
+    reading: "ろんり",
+    id: "logika"
+  }, {
+    jp: "存在",
+    reading: "そんざい",
+    id: "eksistensi"
+  }, {
+    jp: "本質",
+    reading: "ほんしつ",
+    id: "esensi"
+  }, {
+    jp: "価値",
+    reading: "かち",
+    id: "nilai"
+  }, {
+    jp: "真実",
+    reading: "しんじつ",
+    id: "kebenaran"
+  }, {
+    jp: "矛盾",
+    reading: "むじゅん",
+    id: "kontradiksi"
+  }, {
+    jp: "客観的",
+    reading: "きゃっかんてき",
+    id: "objektif"
+  }, {
+    jp: "主観的",
+    reading: "しゅかんてき",
+    id: "subjektif"
+  }, {
+    jp: "前提",
+    reading: "ぜんてい",
+    id: "premis, asumsi"
+  }, {
+    jp: "疑問",
+    reading: "ぎもん",
+    id: "keraguan, pertanyaan"
+  }, {
+    jp: "倫理",
+    reading: "りんり",
+    id: "etika"
+  }, {
+    jp: "論理的",
+    reading: "ろんりてき",
+    id: "logis"
+  }, {
+    jp: "暗号化",
+    reading: "あんごうか",
+    id: "enkripsi"
+  }, {
+    jp: "実験結果",
+    reading: "じっけんけっか",
+    id: "hasil eksperimen"
+  }],
+  "Psikologi & Perilaku": [{
+    jp: "心理",
+    reading: "しんり",
+    id: "psikologi"
+  }, {
+    jp: "行動",
+    reading: "こうどう",
+    id: "perilaku"
+  }, {
+    jp: "性格",
+    reading: "せいかく",
+    id: "karakter, kepribadian"
+  }, {
+    jp: "意識",
+    reading: "いしき",
+    id: "kesadaran"
+  }, {
+    jp: "欲求",
+    reading: "よっきゅう",
+    id: "keinginan, dorongan"
+  }, {
+    jp: "動機",
+    reading: "どうき",
+    id: "motivasi"
+  }, {
+    jp: "刺激",
+    reading: "しげき",
+    id: "rangsangan, stimulus"
+  }, {
+    jp: "記憶",
+    reading: "きおく",
+    id: "ingatan"
+  }, {
+    jp: "認識",
+    reading: "にんしき",
+    id: "pengenalan, persepsi"
+  }, {
+    jp: "判断",
+    reading: "はんだん",
+    id: "penilaian, keputusan"
+  }, {
+    jp: "用心",
+    reading: "ようじん",
+    id: "kehati-hatian"
+  }, {
+    jp: "傾向",
+    reading: "けいこう",
+    id: "kecenderungan"
+  }, {
+    jp: "先入観",
+    reading: "せんにゅうかん",
+    id: "prasangka"
+  }, {
+    jp: "性格診断",
+    reading: "せいかくしんだん",
+    id: "tes kepribadian"
+  }, {
+    jp: "内向的",
+    reading: "ないこうてき",
+    id: "introvert"
+  }, {
+    jp: "外向的",
+    reading: "がいこうてき",
+    id: "ekstrovert"
+  }, {
+    jp: "完璧主義",
+    reading: "かんぺきしゅぎ",
+    id: "perfeksionisme"
+  }, {
+    jp: "楽観的",
+    reading: "らっかんてき",
+    id: "optimis"
+  }, {
+    jp: "悲観的",
+    reading: "ひかんてき",
+    id: "pesimis"
+  }, {
+    jp: "防衛本能",
+    reading: "ぼうえいほんのう",
+    id: "insting bertahan"
+  }, {
+    jp: "本能的",
+    reading: "ほんのうてき",
+    id: "secara naluri"
+  }, {
+    jp: "錯覚",
+    reading: "さっかく",
+    id: "ilusi/salah persepsi"
+  }, {
+    jp: "行動パターン",
+    reading: "こうどうパターン",
+    id: "pola perilaku"
+  }],
+  "Geografi & Wilayah": [{
+    jp: "地理",
+    reading: "ちり",
+    id: "geografi"
+  }, {
+    jp: "平野",
+    reading: "へいや",
+    id: "dataran"
+  }, {
+    jp: "高原",
+    reading: "こうげん",
+    id: "dataran tinggi"
+  }, {
+    jp: "海岸線",
+    reading: "かいがんせん",
+    id: "garis pantai"
+  }, {
+    jp: "気候帯",
+    reading: "きこうたい",
+    id: "zona iklim"
+  }, {
+    jp: "緯度",
+    reading: "いど",
+    id: "garis lintang"
+  }, {
+    jp: "経度",
+    reading: "けいど",
+    id: "garis bujur"
+  }, {
+    jp: "国境線",
+    reading: "こっきょうせん",
+    id: "garis perbatasan"
+  }, {
+    jp: "領土",
+    reading: "りょうど",
+    id: "wilayah teritorial"
+  }, {
+    jp: "首都",
+    reading: "しゅと",
+    id: "ibu kota"
+  }, {
+    jp: "人口密度",
+    reading: "じんこうみつど",
+    id: "kepadatan penduduk"
+  }, {
+    jp: "面積",
+    reading: "めんせき",
+    id: "luas wilayah"
+  }, {
+    jp: "距離",
+    reading: "きょり",
+    id: "jarak"
+  }, {
+    jp: "標高",
+    reading: "ひょうこう",
+    id: "ketinggian"
+  }, {
+    jp: "三角州",
+    reading: "さんかくす",
+    id: "delta sungai"
+  }, {
+    jp: "河口",
+    reading: "かこう",
+    id: "muara sungai"
+  }, {
+    jp: "海峡",
+    reading: "かいきょう",
+    id: "selat"
+  }, {
+    jp: "諸島",
+    reading: "しょとう",
+    id: "gugusan pulau"
+  }, {
+    jp: "内陸",
+    reading: "ないりく",
+    id: "pedalaman"
+  }, {
+    jp: "沿岸",
+    reading: "えんがん",
+    id: "pesisir"
+  }, {
+    jp: "北半球",
+    reading: "きたはんきゅう",
+    id: "belahan bumi utara"
+  }, {
+    jp: "南半球",
+    reading: "みなみはんきゅう",
+    id: "belahan bumi selatan"
+  }, {
+    jp: "赤道",
+    reading: "せきどう",
+    id: "garis khatulistiwa"
+  }, {
+    jp: "境界線",
+    reading: "きょうかいせん",
+    id: "garis batas wilayah"
+  }],
+  "Sejarah & Peradaban": [{
+    jp: "時代",
+    reading: "じだい",
+    id: "zaman, era"
+  }, {
+    jp: "古代",
+    reading: "こだい",
+    id: "zaman kuno"
+  }, {
+    jp: "中世",
+    reading: "ちゅうせい",
+    id: "abad pertengahan"
+  }, {
+    jp: "近代",
+    reading: "きんだい",
+    id: "zaman modern awal"
+  }, {
+    jp: "現代",
+    reading: "げんだい",
+    id: "zaman modern, sekarang"
+  }, {
+    jp: "王朝",
+    reading: "おうちょう",
+    id: "dinasti"
+  }, {
+    jp: "戦争",
+    reading: "せんそう",
+    id: "perang"
+  }, {
+    jp: "革命",
+    reading: "かくめい",
+    id: "revolusi"
+  }, {
+    jp: "統一",
+    reading: "とういつ",
+    id: "penyatuan, unifikasi"
+  }, {
+    jp: "植民地",
+    reading: "しょくみんち",
+    id: "koloni"
+  }, {
+    jp: "遺産",
+    reading: "いさん",
+    id: "warisan"
+  }, {
+    jp: "発掘",
+    reading: "はっくつ",
+    id: "penggalian arkeologi"
+  }, {
+    jp: "史跡",
+    reading: "しせき",
+    id: "situs sejarah"
+  }, {
+    jp: "年表",
+    reading: "ねんぴょう",
+    id: "garis waktu sejarah"
+  }, {
+    jp: "起源",
+    reading: "きげん",
+    id: "asal-usul"
+  }, {
+    jp: "縄文時代",
+    reading: "じょうもんじだい",
+    id: "zaman Jomon"
+  }, {
+    jp: "弥生時代",
+    reading: "やよいじだい",
+    id: "zaman Yayoi"
+  }, {
+    jp: "平安時代",
+    reading: "へいあんじだい",
+    id: "zaman Heian"
+  }, {
+    jp: "鎌倉時代",
+    reading: "かまくらじだい",
+    id: "zaman Kamakura"
+  }, {
+    jp: "室町時代",
+    reading: "むろまちじだい",
+    id: "zaman Muromachi"
+  }, {
+    jp: "侍",
+    reading: "さむらい",
+    id: "samurai"
+  }, {
+    jp: "武士",
+    reading: "ぶし",
+    id: "kesatria/prajurit"
+  }, {
+    jp: "将軍",
+    reading: "しょうぐん",
+    id: "shogun"
+  }, {
+    jp: "天皇",
+    reading: "てんのう",
+    id: "kaisar Jepang"
+  }, {
+    jp: "鎖国",
+    reading: "さこく",
+    id: "politik isolasi negara"
+  }, {
+    jp: "開国",
+    reading: "かいこく",
+    id: "pembukaan negara"
+  }, {
+    jp: "植民地時代",
+    reading: "しょくみんちじだい",
+    id: "zaman kolonial"
+  }, {
+    jp: "戦後",
+    reading: "せんご",
+    id: "pasca-perang"
+  }, {
+    jp: "復興",
+    reading: "ふっこう",
+    id: "rekonstruksi/pemulihan"
+  }, {
+    jp: "時代背景",
+    reading: "じだいはいけい",
+    id: "latar belakang zaman"
+  }, {
+    jp: "繁栄",
+    reading: "はんえい",
+    id: "kemakmuran"
+  }, {
+    jp: "近代化",
+    reading: "きんだいか",
+    id: "modernisasi"
+  }],
+  "Agama & Kepercayaan": [{
+    jp: "神",
+    reading: "かみ",
+    id: "dewa, Tuhan (Shinto)"
+  }, {
+    jp: "仏",
+    reading: "ほとけ",
+    id: "Buddha"
+  }, {
+    jp: "聖書",
+    reading: "せいしょ",
+    id: "kitab suci, Alkitab"
+  }, {
+    jp: "祈る",
+    reading: "いのる",
+    id: "berdoa"
+  }, {
+    jp: "信じる",
+    reading: "しんじる",
+    id: "percaya"
+  }, {
+    jp: "巡礼",
+    reading: "じゅんれい",
+    id: "ziarah"
+  }, {
+    jp: "精神的",
+    reading: "せいしんてき",
+    id: "spiritual"
+  }, {
+    jp: "魂",
+    reading: "たましい",
+    id: "jiwa, roh"
+  }, {
+    jp: "運命",
+    reading: "うんめい",
+    id: "takdir"
+  }, {
+    jp: "奇跡",
+    reading: "きせき",
+    id: "keajaiban"
+  }, {
+    jp: "寺院",
+    reading: "じいん",
+    id: "kuil (Buddha)"
+  }, {
+    jp: "神殿",
+    reading: "しんでん",
+    id: "kuil suci"
+  }, {
+    jp: "お守り",
+    reading: "おまもり",
+    id: "jimat"
+  }, {
+    jp: "おみくじ",
+    reading: "おみくじ",
+    id: "ramalan nasib kertas"
+  }, {
+    jp: "初詣",
+    reading: "はつもうで",
+    id: "kunjungan kuil pertama tahun baru"
+  }, {
+    jp: "お経",
+    reading: "おきょう",
+    id: "sutra/mantra Buddha"
+  }, {
+    jp: "修行",
+    reading: "しゅぎょう",
+    id: "latihan spiritual"
+  }, {
+    jp: "悟り",
+    reading: "さとり",
+    id: "pencerahan"
+  }, {
+    jp: "輪廻",
+    reading: "りんね",
+    id: "reinkarnasi"
+  }, {
+    jp: "天国",
+    reading: "てんごく",
+    id: "surga"
+  }, {
+    jp: "地獄",
+    reading: "じごく",
+    id: "neraka"
+  }, {
+    jp: "神様",
+    reading: "かみさま",
+    id: "dewa/Tuhan"
+  }, {
+    jp: "仏様",
+    reading: "ほとけさま",
+    id: "Buddha"
+  }, {
+    jp: "願掛け",
+    reading: "がんかけ",
+    id: "bernazar"
+  }, {
+    jp: "信者",
+    reading: "しんじゃ",
+    id: "pemeluk agama"
+  }],
+  "Formalitas Bisnis & Perjalanan Dinas": [{
+    jp: "敬語",
+    reading: "けいご",
+    id: "bahasa hormat"
+  }, {
+    jp: "商談",
+    reading: "しょうだん",
+    id: "negosiasi bisnis"
+  }, {
+    jp: "見積もり",
+    reading: "みつもり",
+    id: "penawaran harga"
+  }, {
+    jp: "提案書",
+    reading: "ていあんしょ",
+    id: "proposal"
+  }, {
+    jp: "報告書",
+    reading: "ほうこくしょ",
+    id: "laporan"
+  }, {
+    jp: "出席",
+    reading: "しゅっせき",
+    id: "kehadiran"
+  }, {
+    jp: "欠席",
+    reading: "けっせき",
+    id: "ketidakhadiran"
+  }, {
+    jp: "議事録",
+    reading: "ぎじろく",
+    id: "notulen rapat"
+  }, {
+    jp: "御中",
+    reading: "おんちゅう",
+    id: "kepada Yth (surat institusi)"
+  }, {
+    jp: "様",
+    reading: "さま",
+    id: "Bapak/Ibu (sapaan hormat)"
+  }, {
+    jp: "各位",
+    reading: "かくい",
+    id: "Yth. semua"
+  }, {
+    jp: "先方",
+    reading: "せんぽう",
+    id: "pihak lawan bicara/klien"
+  }, {
+    jp: "弊社",
+    reading: "へいしゃ",
+    id: "perusahaan kami (merendah)"
+  }, {
+    jp: "貴社",
+    reading: "きしゃ",
+    id: "perusahaan Anda (hormat)"
+  }, {
+    jp: "担当者",
+    reading: "たんとうしゃ",
+    id: "penanggung jawab"
+  }, {
+    jp: "窓口担当",
+    reading: "まどぐちたんとう",
+    id: "petugas kontak"
+  }, {
+    jp: "出張費",
+    reading: "しゅっちょうひ",
+    id: "biaya dinas"
+  }, {
+    jp: "名刺交換",
+    reading: "めいしこうかん",
+    id: "tukar kartu nama"
+  }],
+  "Makanan & Kuliner Lanjutan": [{
+    jp: "食材",
+    reading: "しょくざい",
+    id: "bahan makanan"
+  }, {
+    jp: "調味料",
+    reading: "ちょうみりょう",
+    id: "bumbu"
+  }, {
+    jp: "だし",
+    reading: "だし",
+    id: "kaldu"
+  }, {
+    jp: "発酵",
+    reading: "はっこう",
+    id: "fermentasi"
+  }, {
+    jp: "栄養価",
+    reading: "えいようか",
+    id: "nilai gizi"
+  }, {
+    jp: "賞味期限",
+    reading: "しょうみきげん",
+    id: "tanggal kedaluwarsa"
+  }, {
+    jp: "食欲",
+    reading: "しょくよく",
+    id: "nafsu makan"
+  }, {
+    jp: "味覚",
+    reading: "みかく",
+    id: "indra perasa"
+  }, {
+    jp: "食感",
+    reading: "しょっかん",
+    id: "tekstur makanan"
+  }, {
+    jp: "盛り付け",
+    reading: "もりつけ",
+    id: "penataan hidangan"
+  }, {
+    jp: "レシピ",
+    reading: "れしぴ",
+    id: "resep"
+  }, {
+    jp: "調理",
+    reading: "ちょうり",
+    id: "memasak, pengolahan"
+  }, {
+    jp: "外食",
+    reading: "がいしょく",
+    id: "makan di luar"
+  }, {
+    jp: "自炊",
+    reading: "じすい",
+    id: "memasak sendiri"
+  }, {
+    jp: "食生活",
+    reading: "しょくせいかつ",
+    id: "pola makan"
+  }, {
+    jp: "グルメ",
+    reading: "ぐるめ",
+    id: "pecinta kuliner"
+  }, {
+    jp: "名産",
+    reading: "めいさん",
+    id: "produk khas daerah"
+  }, {
+    jp: "郷土料理",
+    reading: "きょうどりょうり",
+    id: "masakan khas daerah"
+  }, {
+    jp: "栄養素",
+    reading: "えいようそ",
+    id: "zat gizi"
+  }, {
+    jp: "食文化",
+    reading: "しょくぶんか",
+    id: "budaya kuliner"
+  }, {
+    jp: "素材",
+    reading: "そざい",
+    id: "bahan mentah"
+  }, {
+    jp: "味付け",
+    reading: "あじつけ",
+    id: "bumbu rasa"
+  }, {
+    jp: "旬",
+    reading: "しゅん",
+    id: "musim panen terbaik"
+  }, {
+    jp: "食べ放題",
+    reading: "たべほうだい",
+    id: "makan sepuasnya"
+  }, {
+    jp: "盛り合わせ",
+    reading: "もりあわせ",
+    id: "hidangan campuran"
+  }],
+  "Fashion & Penampilan": [{
+    jp: "流行",
+    reading: "りゅうこう",
+    id: "tren, mode"
+  }, {
+    jp: "おしゃれ",
+    reading: "おしゃれ",
+    id: "modis, bergaya"
+  }, {
+    jp: "服装",
+    reading: "ふくそう",
+    id: "pakaian, penampilan"
+  }, {
+    jp: "センス",
+    reading: "せんす",
+    id: "selera, gaya"
+  }, {
+    jp: "デザイン",
+    reading: "でざいん",
+    id: "desain"
+  }, {
+    jp: "サイズ",
+    reading: "さいず",
+    id: "ukuran"
+  }, {
+    jp: "着用",
+    reading: "ちゃくよう",
+    id: "pemakaian"
+  }, {
+    jp: "個性",
+    reading: "こせい",
+    id: "keunikan, kepribadian"
+  }, {
+    jp: "清潔感",
+    reading: "せいけつかん",
+    id: "kesan bersih, rapi"
+  }, {
+    jp: "化粧",
+    reading: "けしょう",
+    id: "make-up"
+  }, {
+    jp: "美容",
+    reading: "びよう",
+    id: "kecantikan"
+  }, {
+    jp: "髪型",
+    reading: "かみがた",
+    id: "gaya rambut"
+  }, {
+    jp: "アクセサリー",
+    reading: "あくせさりー",
+    id: "aksesori"
+  }, {
+    jp: "ブランド",
+    reading: "ぶらんど",
+    id: "merek"
+  }, {
+    jp: "ファッション",
+    reading: "ふぁっしょん",
+    id: "fesyen"
+  }, {
+    jp: "スタイリスト",
+    reading: "すたいりすと",
+    id: "penata gaya"
+  }, {
+    jp: "流行遅れ",
+    reading: "りゅうこうおくれ",
+    id: "ketinggalan mode"
+  }, {
+    jp: "着回し",
+    reading: "きまわし",
+    id: "memakai ulang dengan variasi"
+  }, {
+    jp: "小物",
+    reading: "こもの",
+    id: "aksesori kecil"
+  }, {
+    jp: "生地",
+    reading: "きじ",
+    id: "kain/bahan tekstil"
+  }, {
+    jp: "縫製",
+    reading: "ほうせい",
+    id: "penjahitan"
+  }, {
+    jp: "裾上げ",
+    reading: "すそあげ",
+    id: "memendekkan bawahan pakaian"
+  }, {
+    jp: "シワ",
+    reading: "しわ",
+    id: "kerutan pakaian"
+  }, {
+    jp: "洗濯表示",
+    reading: "せんたくひょうじ",
+    id: "label petunjuk cuci"
+  }, {
+    jp: "クリーニング",
+    reading: "くりーにんぐ",
+    id: "dry cleaning"
+  }, {
+    jp: "身だしなみ",
+    reading: "みだしなみ",
+    id: "kerapian penampilan"
+  }],
+  "Militer & Keamanan Nasional": [{
+    jp: "軍隊",
+    reading: "ぐんたい",
+    id: "militer"
+  }, {
+    jp: "兵士",
+    reading: "へいし",
+    id: "prajurit"
+  }, {
+    jp: "防衛",
+    reading: "ぼうえい",
+    id: "pertahanan"
+  }, {
+    jp: "安全保障",
+    reading: "あんぜんほしょう",
+    id: "keamanan nasional"
+  }, {
+    jp: "武器",
+    reading: "ぶき",
+    id: "senjata"
+  }, {
+    jp: "攻撃",
+    reading: "こうげき",
+    id: "serangan"
+  }, {
+    jp: "防御",
+    reading: "ぼうぎょ",
+    id: "pertahanan diri"
+  }, {
+    jp: "テロ",
+    reading: "てろ",
+    id: "terorisme"
+  }, {
+    jp: "侵略",
+    reading: "しんりゃく",
+    id: "invasi"
+  }, {
+    jp: "停戦",
+    reading: "ていせん",
+    id: "gencatan senjata"
+  }, {
+    jp: "平和維持",
+    reading: "へいわいじ",
+    id: "penjaga perdamaian"
+  }, {
+    jp: "軍事",
+    reading: "ぐんじ",
+    id: "kemiliteran"
+  }, {
+    jp: "危機",
+    reading: "きき",
+    id: "krisis"
+  }, {
+    jp: "同盟",
+    reading: "どうめい",
+    id: "aliansi"
+  }, {
+    jp: "中立",
+    reading: "ちゅうりつ",
+    id: "netral"
+  }, {
+    jp: "自衛隊",
+    reading: "じえいたい",
+    id: "pasukan bela diri Jepang"
+  }, {
+    jp: "戦闘",
+    reading: "せんとう",
+    id: "pertempuran"
+  }, {
+    jp: "領空",
+    reading: "りょうくう",
+    id: "wilayah udara negara"
+  }, {
+    jp: "軍事演習",
+    reading: "ぐんじえんしゅう",
+    id: "latihan militer"
+  }, {
+    jp: "スパイ",
+    reading: "すぱい",
+    id: "mata-mata"
+  }, {
+    jp: "徴兵",
+    reading: "ちょうへい",
+    id: "wajib militer"
+  }, {
+    jp: "軍事力",
+    reading: "ぐんじりょく",
+    id: "kekuatan militer"
+  }],
+  "Kesehatan Masyarakat & Kedokteran": [{
+    jp: "感染症",
+    reading: "かんせんしょう",
+    id: "penyakit menular"
+  }, {
+    jp: "予防接種",
+    reading: "よぼうせっしゅ",
+    id: "vaksinasi"
+  }, {
+    jp: "ワクチン",
+    reading: "わくちん",
+    id: "vaksin"
+  }, {
+    jp: "感染",
+    reading: "かんせん",
+    id: "infeksi"
+  }, {
+    jp: "医療",
+    reading: "いりょう",
+    id: "layanan medis"
+  }, {
+    jp: "診断",
+    reading: "しんだん",
+    id: "diagnosis"
+  }, {
+    jp: "処方",
+    reading: "しょほう",
+    id: "resep obat"
+  }, {
+    jp: "手当て",
+    reading: "てあて",
+    id: "pertolongan, tunjangan"
+  }, {
+    jp: "応急処置",
+    reading: "おうきゅうしょち",
+    id: "pertolongan pertama"
+  }, {
+    jp: "看護",
+    reading: "かんご",
+    id: "keperawatan"
+  }, {
+    jp: "介護施設",
+    reading: "かいごしせつ",
+    id: "panti perawatan"
+  }, {
+    jp: "障害者",
+    reading: "しょうがいしゃ",
+    id: "penyandang disabilitas"
+  }, {
+    jp: "福祉施設",
+    reading: "ふくししせつ",
+    id: "fasilitas kesejahteraan"
+  }, {
+    jp: "保健所",
+    reading: "ほけんじょ",
+    id: "puskesmas, dinas kesehatan"
+  }, {
+    jp: "衛生",
+    reading: "えいせい",
+    id: "higienitas, sanitasi"
+  }, {
+    jp: "検疫",
+    reading: "けんえき",
+    id: "karantina"
+  }, {
+    jp: "流行病",
+    reading: "りゅうこうびょう",
+    id: "wabah penyakit"
+  }, {
+    jp: "パンデミック",
+    reading: "ぱんでみっく",
+    id: "pandemi"
+  }, {
+    jp: "抗生物質",
+    reading: "こうせいぶっしつ",
+    id: "antibiotik"
+  }, {
+    jp: "外科",
+    reading: "げか",
+    id: "bedah"
+  }, {
+    jp: "内科",
+    reading: "ないか",
+    id: "penyakit dalam"
+  }, {
+    jp: "小児科",
+    reading: "しょうにか",
+    id: "dokter anak"
+  }, {
+    jp: "産婦人科",
+    reading: "さんふじんか",
+    id: "kandungan"
+  }, {
+    jp: "処置",
+    reading: "しょち",
+    id: "tindakan medis"
+  }, {
+    jp: "手術室",
+    reading: "しゅじゅつしつ",
+    id: "ruang operasi"
+  }, {
+    jp: "集中治療室",
+    reading: "しゅうちゅうちりょうしつ",
+    id: "ICU"
+  }, {
+    jp: "疫学",
+    reading: "えきがく",
+    id: "epidemiologi"
+  }, {
+    jp: "潜伏期間",
+    reading: "せんぷくきかん",
+    id: "masa inkubasi"
+  }, {
+    jp: "隔離",
+    reading: "かくり",
+    id: "isolasi/karantina"
+  }, {
+    jp: "集団感染",
+    reading: "しゅうだんかんせん",
+    id: "penularan kelompok"
+  }, {
+    jp: "院内感染",
+    reading: "いんないかんせん",
+    id: "infeksi nosokomial"
+  }, {
+    jp: "既往症",
+    reading: "きおうしょう",
+    id: "riwayat penyakit"
+  }, {
+    jp: "臓器",
+    reading: "ぞうき",
+    id: "organ tubuh"
+  }, {
+    jp: "移植",
+    reading: "いしょく",
+    id: "transplantasi"
+  }, {
+    jp: "献血",
+    reading: "けんけつ",
+    id: "donor darah"
+  }],
+  "Pertanian & Perikanan": [{
+    jp: "農業",
+    reading: "のうぎょう",
+    id: "pertanian"
+  }, {
+    jp: "漁業",
+    reading: "ぎょぎょう",
+    id: "perikanan"
+  }, {
+    jp: "漁師",
+    reading: "りょうし",
+    id: "nelayan"
+  }, {
+    jp: "収穫",
+    reading: "しゅうかく",
+    id: "panen"
+  }, {
+    jp: "栽培",
+    reading: "さいばい",
+    id: "budidaya tanam"
+  }, {
+    jp: "肥料",
+    reading: "ひりょう",
+    id: "pupuk"
+  }, {
+    jp: "農薬",
+    reading: "のうやく",
+    id: "pestisida"
+  }, {
+    jp: "灌漑",
+    reading: "かんがい",
+    id: "irigasi"
+  }, {
+    jp: "田んぼ",
+    reading: "たんぼ",
+    id: "sawah"
+  }, {
+    jp: "畑",
+    reading: "はたけ",
+    id: "ladang"
+  }, {
+    jp: "家畜",
+    reading: "かちく",
+    id: "ternak"
+  }, {
+    jp: "養殖",
+    reading: "ようしょく",
+    id: "budidaya perikanan"
+  }, {
+    jp: "収穫量",
+    reading: "しゅうかくりょう",
+    id: "hasil panen"
+  }, {
+    jp: "品種",
+    reading: "ひんしゅ",
+    id: "varietas"
+  }, {
+    jp: "自給自足",
+    reading: "じきゅうじそく",
+    id: "swasembada"
+  }, {
+    jp: "田畑",
+    reading: "たはた",
+    id: "sawah dan ladang"
+  }, {
+    jp: "耕作",
+    reading: "こうさく",
+    id: "penggarapan lahan"
+  }, {
+    jp: "品種改良",
+    reading: "ひんしゅかいりょう",
+    id: "pemuliaan varietas"
+  }, {
+    jp: "食料自給率",
+    reading: "しょくりょうじきゅうりつ",
+    id: "tingkat swasembada pangan"
+  }, {
+    jp: "養殖業",
+    reading: "ようしょくぎょう",
+    id: "industri budidaya"
+  }],
+  "Industri & Manufaktur": [{
+    jp: "工場",
+    reading: "こうじょう",
+    id: "pabrik"
+  }, {
+    jp: "製造",
+    reading: "せいぞう",
+    id: "manufaktur, pembuatan"
+  }, {
+    jp: "生産性",
+    reading: "せいさんせい",
+    id: "produktivitas"
+  }, {
+    jp: "品質管理",
+    reading: "ひんしつかんり",
+    id: "kontrol kualitas"
+  }, {
+    jp: "検品",
+    reading: "けんぴん",
+    id: "pemeriksaan produk"
+  }, {
+    jp: "部品",
+    reading: "ぶひん",
+    id: "komponen, suku cadang"
+  }, {
+    jp: "機械",
+    reading: "きかい",
+    id: "mesin"
+  }, {
+    jp: "設備",
+    reading: "せつび",
+    id: "fasilitas, peralatan"
+  }, {
+    jp: "効率",
+    reading: "こうりつ",
+    id: "efisiensi"
+  }, {
+    jp: "原材料",
+    reading: "げんざいりょう",
+    id: "bahan baku"
+  }, {
+    jp: "加工",
+    reading: "かこう",
+    id: "pengolahan"
+  }, {
+    jp: "組み立て",
+    reading: "くみたて",
+    id: "perakitan"
+  }, {
+    jp: "出荷",
+    reading: "しゅっか",
+    id: "pengiriman barang"
+  }, {
+    jp: "在庫",
+    reading: "ざいこ",
+    id: "stok, persediaan"
+  }, {
+    jp: "不良品",
+    reading: "ふりょうひん",
+    id: "barang cacat"
+  }, {
+    jp: "労働力",
+    reading: "ろうどうりょく",
+    id: "tenaga kerja"
+  }, {
+    jp: "製造業",
+    reading: "せいぞうぎょう",
+    id: "industri manufaktur"
+  }, {
+    jp: "生産ライン",
+    reading: "せいさんらいん",
+    id: "lini produksi"
+  }, {
+    jp: "製品",
+    reading: "せいひん",
+    id: "produk jadi"
+  }, {
+    jp: "大量生産",
+    reading: "たいりょうせいさん",
+    id: "produksi massal"
+  }, {
+    jp: "外注",
+    reading: "がいちゅう",
+    id: "alih daya (outsourcing)"
+  }, {
+    jp: "納期",
+    reading: "のうき",
+    id: "tenggat pengiriman"
+  }, {
+    jp: "発注",
+    reading: "はっちゅう",
+    id: "pemesanan barang"
+  }, {
+    jp: "受注",
+    reading: "じゅちゅう",
+    id: "penerimaan pesanan"
+  }, {
+    jp: "リコール",
+    reading: "りこーる",
+    id: "penarikan produk"
+  }, {
+    jp: "特許取得",
+    reading: "とっきょしゅとく",
+    id: "perolehan hak paten"
+  }, {
+    jp: "試験運転",
+    reading: "しけんうんてん",
+    id: "uji coba operasi"
+  }, {
+    jp: "量産",
+    reading: "りょうさん",
+    id: "produksi massal"
+  }],
+  "Perdagangan Internasional & Globalisasi": [{
+    jp: "国際化",
+    reading: "こくさいか",
+    id: "internasionalisasi"
+  }, {
+    jp: "グローバル化",
+    reading: "ぐろーばるか",
+    id: "globalisasi"
+  }, {
+    jp: "多国籍企業",
+    reading: "たこくせききぎょう",
+    id: "perusahaan multinasional"
+  }, {
+    jp: "関税",
+    reading: "かんぜい",
+    id: "bea cukai, tarif"
+  }, {
+    jp: "自由貿易",
+    reading: "じゆうぼうえき",
+    id: "perdagangan bebas"
+  }, {
+    jp: "経済協力",
+    reading: "けいざいきょうりょく",
+    id: "kerja sama ekonomi"
+  }, {
+    jp: "為替レート",
+    reading: "かわせれーと",
+    id: "nilai tukar"
+  }, {
+    jp: "輸送",
+    reading: "ゆそう",
+    id: "pengangkutan"
+  }, {
+    jp: "通関",
+    reading: "つうかん",
+    id: "bea cukai, kepabeanan"
+  }, {
+    jp: "国際競争",
+    reading: "こくさいきょうそう",
+    id: "kompetisi internasional"
+  }, {
+    jp: "提携",
+    reading: "ていけい",
+    id: "kemitraan"
+  }, {
+    jp: "合弁",
+    reading: "ごうべん",
+    id: "usaha patungan"
+  }, {
+    jp: "貿易摩擦",
+    reading: "ぼうえきまさつ",
+    id: "gesekan dagang"
+  }, {
+    jp: "経済連携",
+    reading: "けいざいれんけい",
+    id: "kemitraan ekonomi"
+  }, {
+    jp: "輸出入",
+    reading: "ゆしゅつにゅう",
+    id: "ekspor-impor"
+  }, {
+    jp: "関税障壁",
+    reading: "かんぜいしょうへき",
+    id: "hambatan tarif"
+  }, {
+    jp: "国際競争力",
+    reading: "こくさいきょうそうりょく",
+    id: "daya saing internasional"
+  }, {
+    jp: "海外進出",
+    reading: "かいがいしんしゅつ",
+    id: "ekspansi ke luar negeri"
+  }, {
+    jp: "現地法人",
+    reading: "げんちほうじん",
+    id: "badan hukum lokal (cabang asing)"
+  }, {
+    jp: "サプライチェーン",
+    reading: "さぷらいちぇーん",
+    id: "rantai pasokan"
+  }, {
+    jp: "経済制裁",
+    reading: "けいざいせいさい",
+    id: "sanksi ekonomi"
+  }, {
+    jp: "市場開放",
+    reading: "しじょうかいほう",
+    id: "pembukaan pasar"
+  }],
+  "Demografi & Kependudukan": [{
+    jp: "人口",
+    reading: "じんこう",
+    id: "populasi"
+  }, {
+    jp: "出生率",
+    reading: "しゅっしょうりつ",
+    id: "angka kelahiran"
+  }, {
+    jp: "死亡率",
+    reading: "しぼうりつ",
+    id: "angka kematian"
+  }, {
+    jp: "平均寿命",
+    reading: "へいきんじゅみょう",
+    id: "harapan hidup rata-rata"
+  }, {
+    jp: "移民",
+    reading: "いみん",
+    id: "imigran, migrasi"
+  }, {
+    jp: "都市化",
+    reading: "としか",
+    id: "urbanisasi"
+  }, {
+    jp: "過疎化",
+    reading: "かそか",
+    id: "depopulasi desa"
+  }, {
+    jp: "世代",
+    reading: "せだい",
+    id: "generasi"
+  }, {
+    jp: "労働人口",
+    reading: "ろうどうじんこう",
+    id: "populasi usia kerja"
+  }, {
+    jp: "高齢社会",
+    reading: "こうれいしゃかい",
+    id: "masyarakat lansia"
+  }, {
+    jp: "出産",
+    reading: "しゅっさん",
+    id: "persalinan"
+  }, {
+    jp: "人口減少",
+    reading: "じんこうげんしょう",
+    id: "penurunan populasi"
+  }, {
+    jp: "世帯",
+    reading: "せたい",
+    id: "rumah tangga"
+  }, {
+    jp: "単身",
+    reading: "たんしん",
+    id: "hidup sendiri, lajang"
+  }, {
+    jp: "人口統計",
+    reading: "じんこうとうけい",
+    id: "statistik kependudukan"
+  }, {
+    jp: "難民",
+    reading: "なんみん",
+    id: "pengungsi"
+  }, {
+    jp: "生産年齢人口",
+    reading: "せいさんねんれいじんこう",
+    id: "populasi usia produktif"
+  }, {
+    jp: "都市集中",
+    reading: "とししゅうちゅう",
+    id: "konsentrasi urban"
+  }, {
+    jp: "人口動態",
+    reading: "じんこうどうたい",
+    id: "dinamika populasi"
+  }, {
+    jp: "単身世帯",
+    reading: "たんしんせたい",
+    id: "rumah tangga lajang"
+  }],
+  "Etika Kerja & Profesionalisme": [{
+    jp: "義務感",
+    reading: "ぎむかん",
+    id: "rasa kewajiban"
+  }, {
+    jp: "誠実",
+    reading: "せいじつ",
+    id: "jujur, tulus"
+  }, {
+    jp: "信用",
+    reading: "しんよう",
+    id: "kredibilitas, kepercayaan"
+  }, {
+    jp: "効率的",
+    reading: "こうりつてき",
+    id: "efisien"
+  }, {
+    jp: "生産的",
+    reading: "せいさんてき",
+    id: "produktif"
+  }, {
+    jp: "協調性",
+    reading: "きょうちょうせい",
+    id: "kemampuan bekerja sama"
+  }, {
+    jp: "リーダーシップ",
+    reading: "りーだーしっぷ",
+    id: "kepemimpinan"
+  }, {
+    jp: "主体性",
+    reading: "しゅたいせい",
+    id: "inisiatif, kemandirian"
+  }, {
+    jp: "向上心",
+    reading: "こうじょうしん",
+    id: "semangat berkembang"
+  }, {
+    jp: "妥協",
+    reading: "だきょう",
+    id: "kompromi"
+  }, {
+    jp: "不正",
+    reading: "ふせい",
+    id: "kecurangan"
+  }, {
+    jp: "汚職",
+    reading: "おしょく",
+    id: "korupsi"
+  }, {
+    jp: "倫理観",
+    reading: "りんりかん",
+    id: "pandangan etika"
+  }, {
+    jp: "説明責任",
+    reading: "せつめいせきにん",
+    id: "akuntabilitas"
+  }, {
+    jp: "プロ意識",
+    reading: "ぷろいしき",
+    id: "kesadaran profesional"
+  }, {
+    jp: "責任感",
+    reading: "せきにんかん",
+    id: "rasa tanggung jawab"
+  }, {
+    jp: "報連相",
+    reading: "ほうれんそう",
+    id: "lapor-hubungi-konsultasi (etika kerja Jepang)"
+  }, {
+    jp: "職業倫理",
+    reading: "しょくぎょうりんり",
+    id: "etika profesi"
+  }, {
+    jp: "コンプライアンス",
+    reading: "こんぷらいあんす",
+    id: "kepatuhan aturan"
+  }, {
+    jp: "ハラスメント",
+    reading: "はらすめんと",
+    id: "pelecehan (di tempat kerja)"
+  }, {
+    jp: "公私混同",
+    reading: "こうしこんどう",
+    id: "mencampur urusan pribadi & pekerjaan"
+  }, {
+    jp: "裏表がない",
+    reading: "うらおもてがない",
+    id: "tidak bermuka dua"
+  }, {
+    jp: "几帳面さ",
+    reading: "きちょうめんさ",
+    id: "ketelitian"
+  }, {
+    jp: "部下育成",
+    reading: "ぶかいくせい",
+    id: "pembinaan bawahan"
+  }, {
+    jp: "業務改善",
+    reading: "ぎょうむかいぜん",
+    id: "perbaikan proses kerja"
+  }, {
+    jp: "誠意",
+    reading: "せいい",
+    id: "itikad baik"
+  }],
+  "Konflik & Resolusi": [{
+    jp: "衝突",
+    reading: "しょうとつ",
+    id: "benturan, tabrakan"
+  }, {
+    jp: "紛争",
+    reading: "ふんそう",
+    id: "konflik, perselisihan"
+  }, {
+    jp: "対話",
+    reading: "たいわ",
+    id: "dialog"
+  }, {
+    jp: "妥結",
+    reading: "だけつ",
+    id: "kesepakatan tercapai"
+  }, {
+    jp: "仲裁",
+    reading: "ちゅうさい",
+    id: "mediasi, arbitrase"
+  }, {
+    jp: "和解",
+    reading: "わかい",
+    id: "rekonsiliasi, perdamaian"
+  }, {
+    jp: "譲歩",
+    reading: "じょうほ",
+    id: "konsesi, mengalah"
+  }, {
+    jp: "意地",
+    reading: "いじ",
+    id: "keras kepala, harga diri"
+  }, {
+    jp: "妥協案",
+    reading: "だきょうあん",
+    id: "usulan kompromi"
+  }, {
+    jp: "話し合い",
+    reading: "はなしあい",
+    id: "perundingan"
+  }, {
+    jp: "解決策",
+    reading: "かいけつさく",
+    id: "solusi"
+  }, {
+    jp: "緊張緩和",
+    reading: "きんちょうかんわ",
+    id: "peredaan ketegangan"
+  }, {
+    jp: "停止",
+    reading: "ていし",
+    id: "penghentian"
+  }, {
+    jp: "休戦",
+    reading: "きゅうせん",
+    id: "gencatan senjata"
+  }, {
+    jp: "調停",
+    reading: "ちょうてい",
+    id: "penengahan sengketa"
+  }, {
+    jp: "合意",
+    reading: "ごうい",
+    id: "kesepakatan"
+  }, {
+    jp: "停戦協定",
+    reading: "ていせんきょうてい",
+    id: "perjanjian gencatan senjata"
+  }, {
+    jp: "和平",
+    reading: "わへい",
+    id: "perdamaian"
+  }, {
+    jp: "加害者",
+    reading: "かがいしゃ",
+    id: "pelaku kejahatan"
+  }, {
+    jp: "報復",
+    reading: "ほうふく",
+    id: "pembalasan"
+  }, {
+    jp: "非難",
+    reading: "ひなん",
+    id: "kecaman"
+  }, {
+    jp: "譴責",
+    reading: "けんせき",
+    id: "teguran resmi"
+  }, {
+    jp: "仲直りする",
+    reading: "なかなおりする",
+    id: "berbaikan (verba)"
+  }, {
+    jp: "水掛け論",
+    reading: "みずかけろん",
+    id: "perdebatan tanpa ujung"
+  }, {
+    jp: "譲る",
+    reading: "ゆずる",
+    id: "mengalah/memberi jalan"
+  }],
+  "Bahasa & Linguistik": [{
+    jp: "言語",
+    reading: "げんご",
+    id: "bahasa"
+  }, {
+    jp: "方言",
+    reading: "ほうげん",
+    id: "dialek"
+  }, {
+    jp: "発音",
+    reading: "はつおん",
+    id: "pengucapan"
+  }, {
+    jp: "文法",
+    reading: "ぶんぽう",
+    id: "tata bahasa"
+  }, {
+    jp: "語彙",
+    reading: "ごい",
+    id: "kosakata"
+  }, {
+    jp: "翻訳",
+    reading: "ほんやく",
+    id: "terjemahan"
+  }, {
+    jp: "通訳",
+    reading: "つうやく",
+    id: "juru bahasa, interpretasi"
+  }, {
+    jp: "母語",
+    reading: "ぼご",
+    id: "bahasa ibu"
+  }, {
+    jp: "外国語",
+    reading: "がいこくご",
+    id: "bahasa asing"
+  }, {
+    jp: "略語",
+    reading: "りゃくご",
+    id: "singkatan"
+  }, {
+    jp: "方言差",
+    reading: "ほうげんさ",
+    id: "perbedaan dialek"
+  }, {
+    jp: "意味",
+    reading: "いみ",
+    id: "arti, makna"
+  }, {
+    jp: "誤訳",
+    reading: "ごやく",
+    id: "kesalahan terjemahan"
+  }, {
+    jp: "敬語表現",
+    reading: "けいごひょうげん",
+    id: "ungkapan bahasa hormat"
+  }, {
+    jp: "直訳",
+    reading: "ちょくやく",
+    id: "terjemahan harfiah"
+  }, {
+    jp: "意訳",
+    reading: "いやく",
+    id: "terjemahan bebas"
+  }, {
+    jp: "バイリンガル",
+    reading: "ばいりんがる",
+    id: "dwibahasa"
+  }, {
+    jp: "敬称",
+    reading: "けいしょう",
+    id: "gelar hormat"
+  }, {
+    jp: "造語",
+    reading: "ぞうご",
+    id: "kata ciptaan baru"
+  }],
+  "Astronomi & Fenomena Langit": [{
+    jp: "天体",
+    reading: "てんたい",
+    id: "benda langit"
+  }, {
+    jp: "太陽系",
+    reading: "たいようけい",
+    id: "tata surya"
+  }, {
+    jp: "銀河",
+    reading: "ぎんが",
+    id: "galaksi"
+  }, {
+    jp: "衛星",
+    reading: "えいせい",
+    id: "satelit"
+  }, {
+    jp: "彗星",
+    reading: "すいせい",
+    id: "komet"
+  }, {
+    jp: "日食",
+    reading: "にっしょく",
+    id: "gerhana matahari"
+  }, {
+    jp: "月食",
+    reading: "げっしょく",
+    id: "gerhana bulan"
+  }, {
+    jp: "流れ星",
+    reading: "ながれぼし",
+    id: "bintang jatuh"
+  }, {
+    jp: "宇宙船",
+    reading: "うちゅうせん",
+    id: "pesawat luar angkasa"
+  }, {
+    jp: "探査",
+    reading: "たんさ",
+    id: "eksplorasi"
+  }, {
+    jp: "天文学",
+    reading: "てんもんがく",
+    id: "astronomi"
+  }, {
+    jp: "ブラックホール",
+    reading: "ぶらっくほーる",
+    id: "lubang hitam"
+  }, {
+    jp: "軌道",
+    reading: "きどう",
+    id: "orbit"
+  }, {
+    jp: "望遠鏡",
+    reading: "ぼうえんきょう",
+    id: "teleskop"
+  }, {
+    jp: "恒星",
+    reading: "こうせい",
+    id: "bintang tetap"
+  }, {
+    jp: "天の川",
+    reading: "あまのがわ",
+    id: "galaksi Bima Sakti"
+  }, {
+    jp: "宇宙飛行士",
+    reading: "うちゅうひこうし",
+    id: "astronaut"
+  }, {
+    jp: "観測所",
+    reading: "かんそくじょ",
+    id: "observatorium"
+  }],
+  "Arsitektur & Tata Kota": [{
+    jp: "建築",
+    reading: "けんちく",
+    id: "arsitektur"
+  }, {
+    jp: "建物",
+    reading: "たてもの",
+    id: "bangunan"
+  }, {
+    jp: "設計",
+    reading: "せっけい",
+    id: "desain, rancangan"
+  }, {
+    jp: "都市計画",
+    reading: "としけいかく",
+    id: "perencanaan kota"
+  }, {
+    jp: "高層ビル",
+    reading: "こうそうびる",
+    id: "gedung pencakar langit"
+  }, {
+    jp: "住宅街",
+    reading: "じゅうたくがい",
+    id: "kawasan permukiman"
+  }, {
+    jp: "商業地区",
+    reading: "しょうぎょうちく",
+    id: "kawasan komersial"
+  }, {
+    jp: "再開発",
+    reading: "さいかいはつ",
+    id: "pembangunan kembali"
+  }, {
+    jp: "景観",
+    reading: "けいかん",
+    id: "pemandangan kota, lanskap"
+  }, {
+    jp: "公共施設",
+    reading: "こうきょうしせつ",
+    id: "fasilitas umum"
+  }, {
+    jp: "インフラ整備",
+    reading: "いんふらせいび",
+    id: "pembangunan infrastruktur"
+  }, {
+    jp: "耐震",
+    reading: "たいしん",
+    id: "tahan gempa"
+  }, {
+    jp: "老朽化",
+    reading: "ろうきゅうか",
+    id: "keusangan bangunan"
+  }, {
+    jp: "緑地",
+    reading: "りょくち",
+    id: "ruang hijau"
+  }, {
+    jp: "建材",
+    reading: "けんざい",
+    id: "material bangunan"
+  }, {
+    jp: "設計図",
+    reading: "せっけいず",
+    id: "cetak biru/gambar rancangan"
+  }, {
+    jp: "施工",
+    reading: "せこう",
+    id: "pelaksanaan konstruksi"
+  }, {
+    jp: "区画整理",
+    reading: "くかくせいり",
+    id: "penataan lahan kota"
+  }, {
+    jp: "居住区",
+    reading: "きょじゅうく",
+    id: "kawasan hunian"
+  }],
+  "Waktu Luang & Rekreasi": [{
+    jp: "娯楽",
+    reading: "ごらく",
+    id: "hiburan"
+  }, {
+    jp: "気晴らし",
+    reading: "きばらし",
+    id: "penyegaran pikiran"
+  }, {
+    jp: "レジャー",
+    reading: "れじゃー",
+    id: "leisure, waktu santai"
+  }, {
+    jp: "ドライブ",
+    reading: "どらいぶ",
+    id: "berkendara jalan-jalan"
+  }, {
+    jp: "花見",
+    reading: "はなみ",
+    id: "melihat bunga sakura"
+  }, {
+    jp: "紅葉狩り",
+    reading: "もみじがり",
+    id: "melihat daun musim gugur"
+  }, {
+    jp: "息抜き",
+    reading: "いきぬき",
+    id: "menyegarkan diri"
+  }, {
+    jp: "娯楽施設",
+    reading: "ごらくしせつ",
+    id: "fasilitas hiburan"
+  }, {
+    jp: "観光",
+    reading: "かんこう",
+    id: "wisata"
+  }, {
+    jp: "保養",
+    reading: "ほよう",
+    id: "rekreasi kesehatan"
+  }, {
+    jp: "休日",
+    reading: "きゅうじつ",
+    id: "hari libur"
+  }, {
+    jp: "余暇",
+    reading: "よか",
+    id: "waktu senggang"
+  }, {
+    jp: "行楽",
+    reading: "こうらく",
+    id: "rekreasi luar ruang"
+  }, {
+    jp: "休養",
+    reading: "きゅうよう",
+    id: "istirahat pemulihan"
+  }, {
+    jp: "リフレッシュ",
+    reading: "りふれっしゅ",
+    id: "penyegaran diri"
+  }, {
+    jp: "気分転換",
+    reading: "きぶんてんかん",
+    id: "mengubah suasana hati"
+  }, {
+    jp: "趣味活動",
+    reading: "しゅみかつどう",
+    id: "kegiatan hobi"
+  }, {
+    jp: "野外活動",
+    reading: "やがいかつどう",
+    id: "kegiatan luar ruangan"
+  }, {
+    jp: "温泉旅行",
+    reading: "おんせんりょこう",
+    id: "wisata onsen"
+  }, {
+    jp: "日帰り旅行",
+    reading: "ひがえりりょこう",
+    id: "wisata satu hari"
+  }],
+  "Perbankan & Transaksi Sehari-hari": [{
+    jp: "口座",
+    reading: "こうざ",
+    id: "rekening"
+  }, {
+    jp: "預金",
+    reading: "よきん",
+    id: "simpanan"
+  }, {
+    jp: "振り込む",
+    reading: "ふりこむ",
+    id: "transfer uang"
+  }, {
+    jp: "暗証番号",
+    reading: "あんしょうばんごう",
+    id: "PIN"
+  }, {
+    jp: "ATM",
+    reading: "えーてぃーえむ",
+    id: "ATM"
+  }, {
+    jp: "手数料",
+    reading: "てすうりょう",
+    id: "biaya administrasi"
+  }, {
+    jp: "クレジットカード",
+    reading: "くれじっとかーど",
+    id: "kartu kredit"
+  }, {
+    jp: "デビットカード",
+    reading: "でびっとかーど",
+    id: "kartu debit"
+  }, {
+    jp: "ローン",
+    reading: "ろーん",
+    id: "pinjaman"
+  }, {
+    jp: "利子",
+    reading: "りし",
+    id: "bunga"
+  }, {
+    jp: "分割払い",
+    reading: "ぶんかつばらい",
+    id: "cicilan"
+  }, {
+    jp: "一括払い",
+    reading: "いっかつばらい",
+    id: "pembayaran sekaligus"
+  }, {
+    jp: "送金",
+    reading: "そうきん",
+    id: "pengiriman uang"
+  }, {
+    jp: "口座振替",
+    reading: "こうざふりかえ",
+    id: "transfer otomatis dari rekening"
+  }, {
+    jp: "自動引き落とし",
+    reading: "じどうひきおとし",
+    id: "penarikan otomatis"
+  }, {
+    jp: "為替送金",
+    reading: "かわせそうきん",
+    id: "transfer valuta asing"
+  }, {
+    jp: "キャッシュカード",
+    reading: "きゃっしゅかーど",
+    id: "kartu debit"
+  }, {
+    jp: "定期預金",
+    reading: "ていきよきん",
+    id: "deposito berjangka"
+  }, {
+    jp: "普通預金",
+    reading: "ふつうよきん",
+    id: "tabungan biasa"
+  }, {
+    jp: "融資審査",
+    reading: "ゆうしんさ",
+    id: "penilaian pengajuan kredit"
+  }],
+  "Pajak & Administrasi Publik": [{
+    jp: "申請",
+    reading: "しんせい",
+    id: "pengajuan, permohonan"
+  }, {
+    jp: "確定申告",
+    reading: "かくていしんこく",
+    id: "pelaporan pajak tahunan"
+  }, {
+    jp: "年金",
+    reading: "ねんきん",
+    id: "dana pensiun"
+  }, {
+    jp: "保険料",
+    reading: "ほけんりょう",
+    id: "premi asuransi"
+  }, {
+    jp: "補助金",
+    reading: "ほじょきん",
+    id: "subsidi"
+  }, {
+    jp: "免除",
+    reading: "めんじょ",
+    id: "pembebasan, pengecualian"
+  }, {
+    jp: "源泉徴収",
+    reading: "げんせんちょうしゅう",
+    id: "pemotongan pajak di sumber"
+  }, {
+    jp: "納税",
+    reading: "のうぜい",
+    id: "pembayaran pajak"
+  }, {
+    jp: "脱税",
+    reading: "だつぜい",
+    id: "penggelapan pajak"
+  }, {
+    jp: "控除",
+    reading: "こうじょ",
+    id: "potongan pajak"
+  }, {
+    jp: "扶養家族",
+    reading: "ふようかぞく",
+    id: "tanggungan keluarga"
+  }, {
+    jp: "住民税",
+    reading: "じゅうみんぜい",
+    id: "pajak penduduk daerah"
+  }, {
+    jp: "固定資産税",
+    reading: "こていしさんぜい",
+    id: "pajak properti"
+  }, {
+    jp: "行政手続き",
+    reading: "ぎょうせいてつづき",
+    id: "prosedur administrasi pemerintah"
+  }, {
+    jp: "戸籍",
+    reading: "こせき",
+    id: "akta keluarga (Jepang)"
+  }, {
+    jp: "マイナンバー",
+    reading: "まいなんばー",
+    id: "nomor identitas pribadi (Jepang)"
+  }, {
+    jp: "役場",
+    reading: "やくば",
+    id: "kantor kelurahan"
+  }],
+  "Energi & Sumber Daya Alam": [{
+    jp: "天然ガス",
+    reading: "てんねんガス",
+    id: "gas alam"
+  }, {
+    jp: "原子力",
+    reading: "げんしりょく",
+    id: "tenaga nuklir"
+  }, {
+    jp: "太陽光",
+    reading: "たいようこう",
+    id: "tenaga surya"
+  }, {
+    jp: "風力",
+    reading: "ふうりょく",
+    id: "tenaga angin"
+  }, {
+    jp: "水力",
+    reading: "すいりょく",
+    id: "tenaga air"
+  }, {
+    jp: "発電",
+    reading: "はつでん",
+    id: "pembangkit listrik"
+  }, {
+    jp: "電力",
+    reading: "でんりょく",
+    id: "daya listrik"
+  }, {
+    jp: "省エネ",
+    reading: "しょうエネ",
+    id: "hemat energi"
+  }, {
+    jp: "消費量",
+    reading: "しょうひりょう",
+    id: "jumlah konsumsi"
+  }, {
+    jp: "埋蔵量",
+    reading: "まいぞうりょう",
+    id: "cadangan sumber daya"
+  }, {
+    jp: "枯渇",
+    reading: "こかつ",
+    id: "kehabisan, menipis"
+  }, {
+    jp: "代替エネルギー",
+    reading: "だいたいエネルギー",
+    id: "energi alternatif"
+  }, {
+    jp: "火力発電",
+    reading: "かりょくはつでん",
+    id: "pembangkit listrik tenaga termal"
+  }, {
+    jp: "水力発電",
+    reading: "すいりょくはつでん",
+    id: "pembangkit listrik tenaga air"
+  }, {
+    jp: "燃料電池",
+    reading: "ねんりょうでんち",
+    id: "sel bahan bakar"
+  }, {
+    jp: "省資源",
+    reading: "しょうしげん",
+    id: "penghematan sumber daya"
+  }, {
+    jp: "採掘",
+    reading: "さいくつ",
+    id: "penambangan"
+  }, {
+    jp: "エネルギー政策",
+    reading: "えねるぎーせいさく",
+    id: "kebijakan energi"
+  }, {
+    jp: "電力供給",
+    reading: "でんりょくきょうきゅう",
+    id: "pasokan listrik"
+  }, {
+    jp: "停電",
+    reading: "ていでん",
+    id: "pemadaman listrik"
+  }, {
+    jp: "再生エネルギー",
+    reading: "さいせいエネルギー",
+    id: "energi terbarukan"
+  }],
+  "Surat Menyurat & Komunikasi Formal": [{
+    jp: "拝啓",
+    reading: "はいけい",
+    id: "salam pembuka surat formal"
+  }, {
+    jp: "敬具",
+    reading: "けいぐ",
+    id: "salam penutup surat formal"
+  }, {
+    jp: "宛先",
+    reading: "あてさき",
+    id: "alamat tujuan"
+  }, {
+    jp: "差出人",
+    reading: "さしだしにん",
+    id: "pengirim"
+  }, {
+    jp: "添付",
+    reading: "てんぷ",
+    id: "lampiran"
+  }, {
+    jp: "件名",
+    reading: "けんめい",
+    id: "subjek email"
+  }, {
+    jp: "返信",
+    reading: "へんしん",
+    id: "balasan"
+  }, {
+    jp: "転送",
+    reading: "てんそう",
+    id: "meneruskan pesan"
+  }, {
+    jp: "署名",
+    reading: "しょめい",
+    id: "tanda tangan, signature"
+  }, {
+    jp: "時候の挨拶",
+    reading: "じこうのあいさつ",
+    id: "salam musiman dalam surat"
+  }, {
+    jp: "案内状",
+    reading: "あんないじょう",
+    id: "surat undangan informasi"
+  }, {
+    jp: "挨拶状",
+    reading: "あいさつじょう",
+    id: "kartu ucapan"
+  }, {
+    jp: "お礼状",
+    reading: "おれいじょう",
+    id: "surat ucapan terima kasih"
+  }, {
+    jp: "詫び状",
+    reading: "わびじょう",
+    id: "surat permohonan maaf"
+  }, {
+    jp: "見積書",
+    reading: "みつもりしょ",
+    id: "surat penawaran harga"
+  }, {
+    jp: "請求書",
+    reading: "せいきゅうしょ",
+    id: "faktur/tagihan"
+  }, {
+    jp: "領収書",
+    reading: "りょうしゅうしょ",
+    id: "kwitansi"
+  }, {
+    jp: "添付ファイル",
+    reading: "てんぷふぁいる",
+    id: "lampiran file"
+  }, {
+    jp: "書留",
+    reading: "かきとめ",
+    id: "surat tercatat"
+  }, {
+    jp: "担当課",
+    reading: "たんとうか",
+    id: "divisi penanggung jawab"
+  }],
+  "Pernikahan & Upacara Keluarga": [{
+    jp: "結婚式",
+    reading: "けっこんしき",
+    id: "upacara pernikahan"
+  }, {
+    jp: "婚約",
+    reading: "こんやく",
+    id: "pertunangan"
+  }, {
+    jp: "新郎",
+    reading: "しんろう",
+    id: "pengantin pria"
+  }, {
+    jp: "新婦",
+    reading: "しんぷ",
+    id: "pengantin wanita"
+  }, {
+    jp: "披露宴",
+    reading: "ひろうえん",
+    id: "resepsi pernikahan"
+  }, {
+    jp: "招待状",
+    reading: "しょうたいじょう",
+    id: "undangan"
+  }, {
+    jp: "祝福",
+    reading: "しゅくふく",
+    id: "ucapan selamat, berkah"
+  }, {
+    jp: "お祝い",
+    reading: "おいわい",
+    id: "perayaan, hadiah"
+  }, {
+    jp: "出産祝い",
+    reading: "しゅっさんいわい",
+    id: "hadiah kelahiran"
+  }, {
+    jp: "七五三",
+    reading: "しちごさん",
+    id: "perayaan anak usia 3-5-7 tahun"
+  }, {
+    jp: "成人式",
+    reading: "せいじんしき",
+    id: "upacara kedewasaan"
+  }, {
+    jp: "記念日",
+    reading: "きねんび",
+    id: "hari peringatan"
+  }, {
+    jp: "家族行事",
+    reading: "かぞくぎょうじ",
+    id: "acara keluarga"
+  }, {
+    jp: "プロポーズ",
+    reading: "ぷろぽーず",
+    id: "lamaran"
+  }, {
+    jp: "仲人",
+    reading: "なこうど",
+    id: "mak comblang/perantara pernikahan"
+  }, {
+    jp: "お見合い",
+    reading: "おみあい",
+    id: "perjodohan"
+  }, {
+    jp: "結納",
+    reading: "ゆいのう",
+    id: "pertukaran seserahan"
+  }, {
+    jp: "祝儀",
+    reading: "しゅうぎ",
+    id: "uang hadiah pernikahan"
+  }, {
+    jp: "お宮参り",
+    reading: "おみやまいり",
+    id: "kunjungan kuil bayi baru lahir"
+  }, {
+    jp: "再婚",
+    reading: "さいこん",
+    id: "menikah lagi"
+  }, {
+    jp: "夫婦生活",
+    reading: "ふうふせいかつ",
+    id: "kehidupan berumah tangga"
+  }],
+  "Duka & Pemakaman": [{
+    jp: "葬式",
+    reading: "そうしき",
+    id: "upacara pemakaman"
+  }, {
+    jp: "お悔やみ",
+    reading: "おくやみ",
+    id: "belasungkawa"
+  }, {
+    jp: "喪服",
+    reading: "もふく",
+    id: "pakaian berkabung"
+  }, {
+    jp: "遺族",
+    reading: "いぞく",
+    id: "keluarga yang ditinggalkan"
+  }, {
+    jp: "焼香",
+    reading: "しょうこう",
+    id: "membakar dupa"
+  }, {
+    jp: "お墓",
+    reading: "おはか",
+    id: "makam"
+  }, {
+    jp: "供養",
+    reading: "くよう",
+    id: "mendoakan arwah"
+  }, {
+    jp: "命日",
+    reading: "めいにち",
+    id: "hari peringatan kematian"
+  }, {
+    jp: "冥福",
+    reading: "めいふく",
+    id: "kedamaian di akhirat"
+  }, {
+    jp: "弔問",
+    reading: "ちょうもん",
+    id: "melayat"
+  }, {
+    jp: "香典",
+    reading: "こうでん",
+    id: "uang belasungkawa"
+  }, {
+    jp: "喪中",
+    reading: "もちゅう",
+    id: "masa berkabung"
+  }, {
+    jp: "葬儀",
+    reading: "そうぎ",
+    id: "upacara duka formal"
+  }, {
+    jp: "お通夜",
+    reading: "おつや",
+    id: "malam berkabung"
+  }, {
+    jp: "火葬",
+    reading: "かそう",
+    id: "kremasi"
+  }, {
+    jp: "埋葬",
+    reading: "まいそう",
+    id: "penguburan"
+  }, {
+    jp: "墓",
+    reading: "はか",
+    id: "makam"
+  }, {
+    jp: "お墓参り",
+    reading: "おはかまいり",
+    id: "ziarah kubur"
+  }, {
+    jp: "遺体",
+    reading: "いたい",
+    id: "jenazah"
+  }, {
+    jp: "哀悼",
+    reading: "あいとう",
+    id: "dukacita"
+  }, {
+    jp: "冥福を祈る",
+    reading: "めいふくをいのる",
+    id: "mendoakan arwah"
+  }, {
+    jp: "遺言",
+    reading: "ゆいごん",
+    id: "surat wasiat"
+  }, {
+    jp: "相続",
+    reading: "そうぞく",
+    id: "warisan"
+  }, {
+    jp: "形見",
+    reading: "かたみ",
+    id: "kenang-kenangan (dari yang telah tiada)"
+  }],
+  "Perumahan & Sewa": [{
+    jp: "賃貸",
+    reading: "ちんたい",
+    id: "sewa"
+  }, {
+    jp: "契約更新",
+    reading: "けいやくこうしん",
+    id: "perpanjangan kontrak"
+  }, {
+    jp: "入居",
+    reading: "にゅうきょ",
+    id: "pindah masuk"
+  }, {
+    jp: "退去",
+    reading: "たいきょ",
+    id: "pindah keluar"
+  }, {
+    jp: "間取り",
+    reading: "まどり",
+    id: "denah ruangan"
+  }, {
+    jp: "築年数",
+    reading: "ちくねんすう",
+    id: "usia bangunan"
+  }, {
+    jp: "マンション",
+    reading: "まんしょん",
+    id: "apartemen"
+  }, {
+    jp: "アパート",
+    reading: "あぱーと",
+    id: "apartemen sederhana"
+  }, {
+    jp: "一戸建て",
+    reading: "いっこだて",
+    id: "rumah tapak"
+  }, {
+    jp: "不動産",
+    reading: "ふどうさん",
+    id: "properti, real estat"
+  }, {
+    jp: "持ち家",
+    reading: "もちいえ",
+    id: "rumah milik sendiri"
+  }, {
+    jp: "新築",
+    reading: "しんちく",
+    id: "bangunan baru"
+  }, {
+    jp: "中古",
+    reading: "ちゅうこ",
+    id: "bekas/second"
+  }, {
+    jp: "大家さん",
+    reading: "おおやさん",
+    id: "pemilik kontrakan (sapaan)"
+  }, {
+    jp: "更新料",
+    reading: "こうしんりょう",
+    id: "biaya perpanjangan sewa"
+  }, {
+    jp: "原状回復",
+    reading: "げんじょうかいふく",
+    id: "pemulihan kondisi awal (rumah sewa)"
+  }, {
+    jp: "賃貸契約",
+    reading: "ちんたいけいやく",
+    id: "kontrak sewa"
+  }, {
+    jp: "同居",
+    reading: "どうきょ",
+    id: "tinggal bersama"
+  }, {
+    jp: "一人暮らし",
+    reading: "ひとりぐらし",
+    id: "hidup sendiri (mandiri)"
+  }, {
+    jp: "ルームシェア",
+    reading: "るーむしぇあ",
+    id: "berbagi kamar/tempat tinggal"
+  }],
+  "Ketertiban Umum & Lalu Lintas": [{
+    jp: "交通違反",
+    reading: "こうつういはん",
+    id: "pelanggaran lalu lintas"
+  }, {
+    jp: "信号無視",
+    reading: "しんごうむし",
+    id: "melanggar lampu lalu lintas"
+  }, {
+    jp: "スピード違反",
+    reading: "すぴーどいはん",
+    id: "pelanggaran kecepatan"
+  }, {
+    jp: "免許停止",
+    reading: "めんきょていし",
+    id: "pencabutan sementara SIM"
+  }, {
+    jp: "反則金",
+    reading: "はんそくきん",
+    id: "denda pelanggaran"
+  }, {
+    jp: "交通標識",
+    reading: "こうつうひょうしき",
+    id: "rambu lalu lintas"
+  }, {
+    jp: "歩行者",
+    reading: "ほこうしゃ",
+    id: "pejalan kaki"
+  }, {
+    jp: "取り締まり",
+    reading: "とりしまり",
+    id: "razia, penegakan aturan"
+  }, {
+    jp: "秩序",
+    reading: "ちつじょ",
+    id: "ketertiban"
+  }, {
+    jp: "迷惑行為",
+    reading: "めいわくこうい",
+    id: "perilaku mengganggu"
+  }, {
+    jp: "交通ルール",
+    reading: "こうつうるーる",
+    id: "aturan lalu lintas"
+  }, {
+    jp: "違反切符",
+    reading: "いはんきっぷ",
+    id: "surat tilang"
+  }, {
+    jp: "駐車禁止",
+    reading: "ちゅうしゃきんし",
+    id: "dilarang parkir"
+  }, {
+    jp: "一時停止",
+    reading: "いちじていし",
+    id: "berhenti sejenak"
+  }, {
+    jp: "徐行",
+    reading: "じょこう",
+    id: "melaju pelan-pelan"
+  }, {
+    jp: "追い越し",
+    reading: "おいこし",
+    id: "menyalip"
+  }, {
+    jp: "シートベルト",
+    reading: "しーとべると",
+    id: "sabuk pengaman"
+  }, {
+    jp: "飲酒運転",
+    reading: "いんしゅうんてん",
+    id: "mengemudi dalam keadaan mabuk"
+  }, {
+    jp: "交通渋滞",
+    reading: "こうつうじゅうたい",
+    id: "kemacetan lalu lintas"
+  }, {
+    jp: "公共マナー",
+    reading: "こうきょうまなー",
+    id: "tata krama umum"
+  }, {
+    jp: "マナー違反",
+    reading: "まなーいはん",
+    id: "pelanggaran etika sosial"
+  }, {
+    jp: "交通規則",
+    reading: "こうつうきそく",
+    id: "peraturan lalu lintas"
+  }],
+  "Manajemen Waktu & Produktivitas": [{
+    jp: "効率化",
+    reading: "こうりつか",
+    id: "efisiensi kerja"
+  }, {
+    jp: "時間管理",
+    reading: "じかんかんり",
+    id: "manajemen waktu"
+  }, {
+    jp: "優先順位",
+    reading: "ゆうせんじゅんい",
+    id: "prioritas"
+  }, {
+    jp: "期日",
+    reading: "きじつ",
+    id: "tanggal jatuh tempo"
+  }, {
+    jp: "進捗",
+    reading: "しんちょく",
+    id: "kemajuan, progres"
+  }, {
+    jp: "段取り",
+    reading: "だんどり",
+    id: "persiapan, perencanaan langkah"
+  }, {
+    jp: "効果的",
+    reading: "こうかてき",
+    id: "efektif"
+  }, {
+    jp: "無駄",
+    reading: "むだ",
+    id: "sia-sia, pemborosan"
+  }, {
+    jp: "先延ばし",
+    reading: "さきのばし",
+    id: "menunda"
+  }, {
+    jp: "集中力",
+    reading: "しゅうちゅうりょく",
+    id: "daya konsentrasi"
+  }, {
+    jp: "タスク",
+    reading: "たすく",
+    id: "tugas"
+  }, {
+    jp: "達成度",
+    reading: "たっせいど",
+    id: "tingkat pencapaian"
+  }, {
+    jp: "生産性向上",
+    reading: "せいさんせいこうじょう",
+    id: "peningkatan produktivitas"
+  }, {
+    jp: "タイムマネジメント",
+    reading: "たいむまねじめんと",
+    id: "manajemen waktu"
+  }, {
+    jp: "マルチタスク",
+    reading: "まるちたすく",
+    id: "multitasking"
+  }, {
+    jp: "目標達成",
+    reading: "もくひょうたっせい",
+    id: "pencapaian target"
+  }, {
+    jp: "計画的",
+    reading: "けいかくてき",
+    id: "terencana"
+  }, {
+    jp: "時間厳守",
+    reading: "じかんげんしゅ",
+    id: "tepat waktu (disiplin)"
+  }, {
+    jp: "有効活用",
+    reading: "ゆうこうかつよう",
+    id: "pemanfaatan efektif"
+  }],
+  "Restoran & Pelayanan Pelanggan": [{
+    jp: "接客",
+    reading: "せっきゃく",
+    id: "pelayanan pelanggan"
+  }, {
+    jp: "お客様",
+    reading: "おきゃくさま",
+    id: "pelanggan, tamu"
+  }, {
+    jp: "注文",
+    reading: "ちゅうもん",
+    id: "pesanan"
+  }, {
+    jp: "予約席",
+    reading: "よやくせき",
+    id: "kursi reservasi"
+  }, {
+    jp: "メニュー",
+    reading: "めにゅー",
+    id: "menu"
+  }, {
+    jp: "おすすめ",
+    reading: "おすすめ",
+    id: "rekomendasi"
+  }, {
+    jp: "苦情処理",
+    reading: "くじょうしょり",
+    id: "penanganan keluhan"
+  }, {
+    jp: "サービス料",
+    reading: "さーびすりょう",
+    id: "biaya layanan"
+  }, {
+    jp: "接客態度",
+    reading: "せっきゃくたいど",
+    id: "sikap pelayanan"
+  }, {
+    jp: "混雑",
+    reading: "こんざつ",
+    id: "keramaian, padat"
+  }, {
+    jp: "満席",
+    reading: "まんせき",
+    id: "penuh, tidak ada kursi"
+  }, {
+    jp: "待ち時間",
+    reading: "まちじかん",
+    id: "waktu tunggu"
+  }, {
+    jp: "テイクアウト",
+    reading: "ていくあうと",
+    id: "bawa pulang"
+  }, {
+    jp: "常連客",
+    reading: "じょうれんきゃく",
+    id: "pelanggan tetap"
+  }, {
+    jp: "お品書き",
+    reading: "おしながき",
+    id: "daftar menu"
+  }, {
+    jp: "お通し",
+    reading: "おとおし",
+    id: "hidangan pembuka wajib (izakaya)"
+  }, {
+    jp: "お会計",
+    reading: "おかいけい",
+    id: "pembayaran di restoran"
+  }, {
+    jp: "クレーム対応",
+    reading: "くれーむたいおう",
+    id: "penanganan komplain"
+  }, {
+    jp: "常備",
+    reading: "じょうび",
+    id: "selalu tersedia"
+  }],
+  "Ilmu Sosial & Antropologi": [{
+    jp: "社会構造",
+    reading: "しゃかいこうぞう",
+    id: "struktur sosial"
+  }, {
+    jp: "階級",
+    reading: "かいきゅう",
+    id: "kelas sosial"
+  }, {
+    jp: "価値体系",
+    reading: "かちたいけい",
+    id: "sistem nilai"
+  }, {
+    jp: "民族",
+    reading: "みんぞく",
+    id: "etnis/suku bangsa"
+  }, {
+    jp: "多文化共生",
+    reading: "たぶんかきょうせい",
+    id: "koeksistensi multikultural"
+  }, {
+    jp: "同化",
+    reading: "どうか",
+    id: "asimilasi"
+  }, {
+    jp: "アイデンティティ",
+    reading: "あいでんてぃてぃ",
+    id: "identitas"
+  }, {
+    jp: "社会規範",
+    reading: "しゃかいきはん",
+    id: "norma sosial"
+  }, {
+    jp: "集団心理",
+    reading: "しゅうだんしんり",
+    id: "psikologi kelompok"
+  }, {
+    jp: "世代間格差",
+    reading: "せだいかんかくさ",
+    id: "kesenjangan antar-generasi"
+  }, {
+    jp: "価値観の多様化",
+    reading: "かちかんのたようか",
+    id: "diversifikasi nilai"
+  }, {
+    jp: "因習",
+    reading: "いんしゅう",
+    id: "kebiasaan lama yang mengekang"
+  }, {
+    jp: "固定観念",
+    reading: "こていかんねん",
+    id: "stereotip/pandangan tetap"
+  }, {
+    jp: "慣習法",
+    reading: "かんしゅうほう",
+    id: "hukum adat"
+  }, {
+    jp: "同胞",
+    reading: "どうほう",
+    id: "sesama kompatriot"
+  }, {
+    jp: "文化相対主義",
+    reading: "ぶんかそうたいしゅぎ",
+    id: "relativisme budaya"
+  }, {
+    jp: "民族性",
+    reading: "みんぞくせい",
+    id: "identitas etnis"
+  }],
+  "Kesenian Pertunjukan": [{
+    jp: "役者",
+    reading: "やくしゃ",
+    id: "aktor panggung"
+  }, {
+    jp: "台詞",
+    reading: "せりふ",
+    id: "dialog naskah"
+  }, {
+    jp: "演出",
+    reading: "えんしゅつ",
+    id: "penyutradaraan pertunjukan"
+  }, {
+    jp: "公演",
+    reading: "こうえん",
+    id: "pertunjukan/pementasan"
+  }, {
+    jp: "観客",
+    reading: "かんきゃく",
+    id: "penonton"
+  }, {
+    jp: "拍手",
+    reading: "はくしゅ",
+    id: "tepuk tangan"
+  }, {
+    jp: "舞踊",
+    reading: "ぶよう",
+    id: "tari tradisional"
+  }, {
+    jp: "音楽祭",
+    reading: "おんがくさい",
+    id: "festival musik"
+  }, {
+    jp: "オーケストラ",
+    reading: "おーけすとら",
+    id: "orkestra"
+  }, {
+    jp: "楽団",
+    reading: "がくだん",
+    id: "kelompok orkestra/musik"
+  }, {
+    jp: "指揮者",
+    reading: "しきしゃ",
+    id: "konduktor"
+  }, {
+    jp: "独奏",
+    reading: "どくそう",
+    id: "solo instrumen"
+  }, {
+    jp: "合唱",
+    reading: "がっしょう",
+    id: "paduan suara"
+  }, {
+    jp: "幕",
+    reading: "まく",
+    id: "babak (drama)"
+  }, {
+    jp: "脚光を浴びる",
+    reading: "きゃっこうをあびる",
+    id: "menjadi sorotan"
+  }, {
+    jp: "演目",
+    reading: "えんもく",
+    id: "judul repertoar pertunjukan"
+  }, {
+    jp: "主役",
+    reading: "しゅやく",
+    id: "peran utama"
+  }],
+  "Idiom & Ungkapan Sehari-hari Tambahan": [{
+    jp: "頭が痛い",
+    reading: "あたまがいたい",
+    id: "pusing memikirkan sesuatu (idiom)"
+  }, {
+    jp: "肩の荷が下りる",
+    reading: "かたのにがおりる",
+    id: "lega dari beban"
+  }, {
+    jp: "腹を割って話す",
+    reading: "はらをわってはなす",
+    id: "berbicara dari hati ke hati"
+  }, {
+    jp: "口が滑る",
+    reading: "くちがすべる",
+    id: "keceplosan bicara"
+  }, {
+    jp: "目が回る",
+    reading: "めがまわる",
+    id: "sangat sibuk (idiom)"
+  }, {
+    jp: "手を抜く",
+    reading: "てをぬく",
+    id: "bermalas-malasan dalam kerja"
+  }, {
+    jp: "気が合う",
+    reading: "きがあう",
+    id: "cocok/sejalan dengan seseorang"
+  }, {
+    jp: "水に流す",
+    reading: "みずにながす",
+    id: "melupakan/memaafkan masa lalu"
+  }, {
+    jp: "耳が痛い",
+    reading: "みみがいたい",
+    id: "tersindir (idiom)"
+  }, {
+    jp: "骨が折れる",
+    reading: "ほねがおれる",
+    id: "sangat melelahkan (idiom)"
+  }, {
+    jp: "顔が広い",
+    reading: "かおがひろい",
+    id: "punya banyak koneksi"
+  }, {
+    jp: "腰が重い",
+    reading: "こしがおもい",
+    id: "malas bergerak/memulai sesuatu"
+  }, {
+    jp: "価値観の違い",
+    reading: "かちかんのちがい",
+    id: "perbedaan nilai/pandangan"
+  }, {
+    jp: "集団",
+    reading: "しゅうだん",
+    id: "kelompok/kolektif"
+  }, {
+    jp: "同調圧力",
+    reading: "どうちょうあつりょく",
+    id: "tekanan untuk menyesuaikan diri"
+  }, {
+    jp: "多様性",
+    reading: "たようせい",
+    id: "keberagaman"
+  }, {
+    jp: "世代間",
+    reading: "せだいかん",
+    id: "antar-generasi"
+  }, {
+    jp: "共同体",
+    reading: "きょうどうたい",
+    id: "komunitas"
+  }, {
+    jp: "練習",
+    reading: "れんしゅう",
+    id: "latihan"
+  }, {
+    jp: "発表会",
+    reading: "はっぴょうかい",
+    id: "acara pentas"
+  }, {
+    jp: "音響",
+    reading: "おんきょう",
+    id: "tata suara"
+  }, {
+    jp: "照明",
+    reading: "しょうめい",
+    id: "pencahayaan panggung"
+  }, {
+    jp: "先住民",
+    reading: "せんじゅうみん",
+    id: "penduduk asli"
+  }, {
+    jp: "部族",
+    reading: "ぶぞく",
+    id: "suku bangsa"
+  }, {
+    jp: "血縁",
+    reading: "けつえん",
+    id: "hubungan darah/kekerabatan"
+  }, {
+    jp: "観劇",
+    reading: "かんげき",
+    id: "menonton teater"
+  }, {
+    jp: "台本",
+    reading: "だいほん",
+    id: "naskah pertunjukan"
+  }, {
+    jp: "衣装",
+    reading: "いしょう",
+    id: "kostum panggung"
+  }, {
+    jp: "即興",
+    reading: "そっきょう",
+    id: "improvisasi"
+  }, {
+    jp: "報道陣",
+    reading: "ほうどうじん",
+    id: "awak media"
+  }, {
+    jp: "建築家",
+    reading: "けんちくか",
+    id: "arsitek"
+  }, {
+    jp: "都市部",
+    reading: "としぶ",
+    id: "wilayah perkotaan"
+  }, {
+    jp: "過疎",
+    reading: "かそ",
+    id: "depopulasi (pedesaan)"
+  }, {
+    jp: "持ち帰り",
+    reading: "もちかえり",
+    id: "bawa pulang"
+  }, {
+    jp: "優先する",
+    reading: "ゆうせんする",
+    id: "memprioritaskan"
+  }, {
+    jp: "式場",
+    reading: "しきじょう",
+    id: "gedung pernikahan"
+  }, {
+    jp: "違和感",
+    reading: "いわかん",
+    id: "rasa janggal"
+  }, {
+    jp: "責任を持つ",
+    reading: "せきにんをもつ",
+    id: "bertanggung jawab"
+  }, {
+    jp: "最新情報",
+    reading: "さいしんじょうほう",
+    id: "informasi terkini"
+  }, {
+    jp: "多忙",
+    reading: "たぼう",
+    id: "sangat sibuk"
+  }, {
+    jp: "複雑な気持ち",
+    reading: "ふくざつなきもち",
+    id: "perasaan campur aduk"
+  }, {
+    jp: "習俗",
+    reading: "しゅうぞく",
+    id: "kebiasaan sosial"
+  }, {
+    jp: "階層",
+    reading: "かいそう",
+    id: "hierarki/lapisan sosial"
+  }, {
+    jp: "客席",
+    reading: "きゃくせき",
+    id: "kursi penonton"
+  }, {
+    jp: "幕間",
+    reading: "まくあい",
+    id: "jeda antar babak"
+  }, {
+    jp: "時事問題",
+    reading: "じじもんだい",
+    id: "isu terkini"
+  }, {
+    jp: "天体観測",
+    reading: "てんたいかんそく",
+    id: "pengamatan benda langit"
+  }, {
+    jp: "表記",
+    reading: "ひょうき",
+    id: "penulisan/notasi"
+  }, {
+    jp: "下げる",
+    reading: "さげる",
+    id: "mengangkat piring kotor"
+  }, {
+    jp: "能率",
+    reading: "のうりつ",
+    id: "efisiensi kerja"
+  }, {
+    jp: "同時進行",
+    reading: "どうじしんこう",
+    id: "dikerjakan bersamaan"
+  }, {
+    jp: "縁談",
+    reading: "えんだん",
+    id: "perjodohan"
+  }, {
+    jp: "誓い",
+    reading: "ちかい",
+    id: "janji/sumpah"
+  }, {
+    jp: "経済協定",
+    reading: "けいざいきょうてい",
+    id: "perjanjian ekonomi"
+  }, {
+    jp: "波止場",
+    reading: "はとば",
+    id: "dermaga"
+  }, {
+    jp: "口座番号",
+    reading: "こうざばんごう",
+    id: "nomor rekening"
+  }, {
+    jp: "引き落とし",
+    reading: "ひきおとし",
+    id: "potongan otomatis"
+  }, {
+    jp: "同封",
+    reading: "どうふう",
+    id: "dilampirkan"
+  }, {
+    jp: "問い合わせ",
+    reading: "といあわせ",
+    id: "pertanyaan/inquiry"
+  }, {
+    jp: "風土",
+    reading: "ふうど",
+    id: "kondisi alam & budaya setempat"
+  }, {
+    jp: "興行",
+    reading: "こうぎょう",
+    id: "pertunjukan komersial"
+  }, {
+    jp: "千秋楽",
+    reading: "せんしゅうらく",
+    id: "pertunjukan terakhir"
+  }, {
+    jp: "号外",
+    reading: "ごうがい",
+    id: "edisi khusus koran"
+  }, {
+    jp: "裏話",
+    reading: "うらばなし",
+    id: "cerita di balik layar"
+  }, {
+    jp: "公転",
+    reading: "こうてん",
+    id: "revolusi (planet)"
+  }, {
+    jp: "自転",
+    reading: "じてん",
+    id: "rotasi (planet)"
+  }, {
+    jp: "語源",
+    reading: "ごげん",
+    id: "asal kata/etimologi"
+  }, {
+    jp: "核家族",
+    reading: "かくかぞく",
+    id: "keluarga inti"
+  }, {
+    jp: "独居",
+    reading: "どっきょ",
+    id: "tinggal sendiri"
+  }, {
+    jp: "行列",
+    reading: "ぎょうれつ",
+    id: "antrean"
+  }, {
+    jp: "看板メニュー",
+    reading: "かんばんメニュー",
+    id: "menu andalan"
+  }, {
+    jp: "後回し",
+    reading: "あとまわし",
+    id: "ditunda"
+  }, {
+    jp: "水産業",
+    reading: "すいさんぎょう",
+    id: "industri perikanan"
+  }, {
+    jp: "天然資源",
+    reading: "てんねんしげん",
+    id: "sumber daya alam"
+  }, {
+    jp: "貨物",
+    reading: "かもつ",
+    id: "kargo"
+  }, {
+    jp: "納骨",
+    reading: "のうこつ",
+    id: "penguburan abu jenazah"
+  }],
+  "Perjalanan Luar Negeri & Imigrasi": [{
+    jp: "入国審査",
+    reading: "にゅうこくしんさ",
+    id: "pemeriksaan imigrasi masuk"
+  }, {
+    jp: "税関",
+    reading: "ぜいかん",
+    id: "bea cukai"
+  }, {
+    jp: "滞在許可",
+    reading: "たいざいきょか",
+    id: "izin tinggal"
+  }, {
+    jp: "査証",
+    reading: "さしょう",
+    id: "visa (formal)"
+  }, {
+    jp: "永住権",
+    reading: "えいじゅうけん",
+    id: "izin tinggal permanen"
+  }, {
+    jp: "帰化",
+    reading: "きか",
+    id: "naturalisasi"
+  }, {
+    jp: "国籍",
+    reading: "こくせき",
+    id: "kewarganegaraan"
+  }, {
+    jp: "時差ぼけ",
+    reading: "じさぼけ",
+    id: "jet lag"
+  }, {
+    jp: "海外赴任",
+    reading: "かいがいふにん",
+    id: "penugasan kerja luar negeri"
+  }, {
+    jp: "駐在員",
+    reading: "ちゅうざいいん",
+    id: "staf yang ditempatkan di luar negeri"
+  }, {
+    jp: "移住",
+    reading: "いじゅう",
+    id: "migrasi/pindah negara"
+  }, {
+    jp: "現地採用",
+    reading: "げんちさいよう",
+    id: "perekrutan lokal (luar negeri)"
+  }, {
+    jp: "外国人労働者",
+    reading: "がいこくじんろうどうしゃ",
+    id: "pekerja asing"
+  }],
+  "Manajemen Proyek & Rapat": [{
+    jp: "会議進行",
+    reading: "かいぎしんこう",
+    id: "memimpin rapat"
+  }, {
+    jp: "議題",
+    reading: "ぎだい",
+    id: "agenda rapat"
+  }, {
+    jp: "進捗状況",
+    reading: "しんちょくじょうきょう",
+    id: "status kemajuan"
+  }, {
+    jp: "プロジェクト管理",
+    reading: "ぷろじぇくとかんり",
+    id: "manajemen proyek"
+  }, {
+    jp: "納品",
+    reading: "のうひん",
+    id: "penyerahan hasil kerja"
+  }, {
+    jp: "見直し",
+    reading: "みなおし",
+    id: "peninjauan ulang"
+  }, {
+    jp: "修正案",
+    reading: "しゅうせいあん",
+    id: "usulan revisi"
+  }, {
+    jp: "合意形成",
+    reading: "ごういけいせい",
+    id: "pembentukan kesepakatan"
+  }, {
+    jp: "役割分担",
+    reading: "やくわりぶんたん",
+    id: "pembagian peran"
+  }, {
+    jp: "フィードバック",
+    reading: "ふぃーどばっく",
+    id: "umpan balik"
+  }, {
+    jp: "振り返り",
+    reading: "ふりかえり",
+    id: "evaluasi/refleksi"
+  }, {
+    jp: "承認",
+    reading: "しょうにん",
+    id: "persetujuan"
+  }, {
+    jp: "見直す",
+    reading: "みなおす",
+    id: "meninjau ulang"
+  }, {
+    jp: "荷物検査",
+    reading: "にもつけんさ",
+    id: "pemeriksaan bagasi"
+  }, {
+    jp: "領事館",
+    reading: "りょうじかん",
+    id: "konsulat"
+  }, {
+    jp: "滞在期間",
+    reading: "たいざいきかん",
+    id: "durasi tinggal"
+  }, {
+    jp: "出国",
+    reading: "しゅっこく",
+    id: "keberangkatan ke luar negeri"
+  }, {
+    jp: "時差",
+    reading: "じさ",
+    id: "perbedaan zona waktu"
+  }, {
+    jp: "パスポート更新",
+    reading: "パスポートこうしん",
+    id: "perpanjangan paspor"
+  }, {
+    jp: "現地時間",
+    reading: "げんちじかん",
+    id: "waktu setempat"
+  }, {
+    jp: "入国管理局",
+    reading: "にゅうこくかんりきょく",
+    id: "kantor imigrasi"
+  }, {
+    jp: "外国人登録",
+    reading: "がいこくじんとうろく",
+    id: "registrasi orang asing"
+  }, {
+    jp: "観光ビザ",
+    reading: "かんこうビザ",
+    id: "visa wisata"
+  }, {
+    jp: "進行役",
+    reading: "しんこうやく",
+    id: "moderator/pemandu rapat"
+  }],
+  "Sikap & Karakter Sehari-hari": [{
+    jp: "几帳面",
+    reading: "きちょうめん",
+    id: "teliti/rapi"
+  }, {
+    jp: "おおざっぱ",
+    reading: "おおざっぱ",
+    id: "ceroboh/kasar dalam mengerjakan"
+  }, {
+    jp: "せっかち",
+    reading: "せっかち",
+    id: "tidak sabaran"
+  }, {
+    jp: "のんき",
+    reading: "のんき",
+    id: "santai/tidak khawatiran"
+  }, {
+    jp: "マイペース",
+    reading: "まいぺーす",
+    id: "bekerja sesuai ritme sendiri"
+  }, {
+    jp: "負けず嫌い",
+    reading: "まけずぎらい",
+    id: "tidak suka kalah"
+  }, {
+    jp: "お人好し",
+    reading: "おひとよし",
+    id: "terlalu baik hati (mudah dimanfaatkan)"
+  }, {
+    jp: "涙もろい",
+    reading: "なみだもろい",
+    id: "gampang menangis"
+  }, {
+    jp: "怒りっぽい",
+    reading: "おこりっぽい",
+    id: "gampang marah"
+  }, {
+    jp: "飽きっぽい",
+    reading: "あきっぽい",
+    id: "mudah bosan"
+  }, {
+    jp: "几帳面すぎる",
+    reading: "きちょうめんすぎる",
+    id: "terlalu perfeksionis"
+  }, {
+    jp: "大雑把",
+    reading: "おおざっぱ",
+    id: "ceroboh, kasar (kerja)"
+  }, {
+    jp: "大人しい",
+    reading: "おとなしい",
+    id: "pendiam, kalem"
+  }, {
+    jp: "楽天的",
+    reading: "らくてんてき",
+    id: "optimis"
+  }, {
+    jp: "臆病",
+    reading: "おくびょう",
+    id: "penakut"
+  }],
+  "Belanja Daring & E-commerce": [{
+    jp: "ネットショッピング",
+    reading: "ねっとしょっぴんぐ",
+    id: "belanja daring"
+  }, {
+    jp: "通販",
+    reading: "つうはん",
+    id: "belanja lewat katalog/online"
+  }, {
+    jp: "カート",
+    reading: "かーと",
+    id: "keranjang belanja"
+  }, {
+    jp: "決済",
+    reading: "けっさい",
+    id: "pembayaran (transaksi)"
+  }, {
+    jp: "送料無料",
+    reading: "そうりょうむりょう",
+    id: "gratis ongkir"
+  }, {
+    jp: "配送日",
+    reading: "はいそうび",
+    id: "tanggal pengiriman"
+  }, {
+    jp: "在庫切れ",
+    reading: "ざいこぎれ",
+    id: "stok habis"
+  }, {
+    jp: "口コミ",
+    reading: "くちこみ",
+    id: "ulasan dari mulut ke mulut"
+  }, {
+    jp: "評価レビュー",
+    reading: "ひょうかれびゅー",
+    id: "ulasan penilaian"
+  }, {
+    jp: "偽物",
+    reading: "にせもの",
+    id: "barang palsu"
+  }, {
+    jp: "配送料",
+    reading: "はいそうりょう",
+    id: "biaya pengiriman"
+  }, {
+    jp: "注文番号",
+    reading: "ちゅうもんばんごう",
+    id: "nomor pesanan"
+  }, {
+    jp: "レビュー",
+    reading: "レビュー",
+    id: "ulasan produk"
+  }, {
+    jp: "追跡番号",
+    reading: "ついせきばんごう",
+    id: "nomor lacak paket"
+  }, {
+    jp: "割引コード",
+    reading: "わりびきコード",
+    id: "kode diskon"
+  }, {
+    jp: "会員登録",
+    reading: "かいいんとうろく",
+    id: "registrasi keanggotaan"
+  }, {
+    jp: "即日発送",
+    reading: "そくじつはっそう",
+    id: "pengiriman hari itu juga"
+  }, {
+    jp: "実店舗",
+    reading: "じつてんぽ",
+    id: "toko fisik"
+  }, {
+    jp: "比較サイト",
+    reading: "ひかくサイト",
+    id: "situs pembanding harga"
+  }, {
+    jp: "最安値",
+    reading: "さいやすね",
+    id: "harga termurah"
+  }],
+  "Ekspresi Frekuensi & Kepastian": [{
+    jp: "めったに",
+    reading: "めったに",
+    id: "jarang sekali"
+  }, {
+    jp: "たまに",
+    reading: "たまに",
+    id: "kadang-kadang"
+  }, {
+    jp: "しょっちゅう",
+    reading: "しょっちゅう",
+    id: "sering sekali (informal)"
+  }, {
+    jp: "案の定",
+    reading: "あんのじょう",
+    id: "seperti yang sudah diduga"
+  }, {
+    jp: "まさか",
+    reading: "まさか",
+    id: "masa sih/tak disangka"
+  }, {
+    jp: "もしかしたら",
+    reading: "もしかしたら",
+    id: "mungkin saja"
+  }, {
+    jp: "いずれにせよ",
+    reading: "いずれにせよ",
+    id: "bagaimanapun juga"
+  }, {
+    jp: "どうやら",
+    reading: "どうやら",
+    id: "sepertinya"
+  }, {
+    jp: "あいにく",
+    reading: "あいにく",
+    id: "sayangnya"
+  }, {
+    jp: "せっかく",
+    reading: "せっかく",
+    id: "dengan susah payah (sayang jika sia-sia)"
+  }, {
+    jp: "必ずしも",
+    reading: "かならずしも",
+    id: "belum tentu (dengan negatif)"
+  }, {
+    jp: "いつのまにか",
+    reading: "いつのまにか",
+    id: "tanpa disadari"
+  }, {
+    jp: "しばしば",
+    reading: "しばしば",
+    id: "sering kali"
+  }, {
+    jp: "たまたま",
+    reading: "たまたま",
+    id: "kebetulan"
+  }, {
+    jp: "確実に",
+    reading: "かくじつに",
+    id: "dengan pasti"
+  }, {
+    jp: "おそらく",
+    reading: "おそらく",
+    id: "mungkin/kemungkinan besar"
+  }, {
+    jp: "案外",
+    reading: "あんがい",
+    id: "di luar dugaan"
+  }, {
+    jp: "次第に",
+    reading: "しだいに",
+    id: "secara bertahap"
+  }, {
+    jp: "徐々に",
+    reading: "じょじょに",
+    id: "perlahan-lahan"
+  }, {
+    jp: "ますます",
+    reading: "ますます",
+    id: "semakin"
+  }, {
+    jp: "わりと",
+    reading: "わりと",
+    id: "cukup/relatif"
+  }, {
+    jp: "さすがに",
+    reading: "さすがに",
+    id: "memang benar (seperti dugaan)"
+  }, {
+    jp: "極めて",
+    reading: "きわめて",
+    id: "sangat/amat"
+  }, {
+    jp: "いかなる",
+    reading: "いかなる",
+    id: "apapun (formal)"
+  }],
+  "Cuaca & Fenomena Alam": [{
+    jp: "天気",
+    reading: "てんき",
+    id: "cuaca"
+  }, {
+    jp: "雨",
+    reading: "あめ",
+    id: "hujan"
+  }, {
+    jp: "曇り",
+    reading: "くもり",
+    id: "mendung / berawan"
+  }, {
+    jp: "晴れ",
+    reading: "はれ",
+    id: "cerah"
+  }, {
+    jp: "風",
+    reading: "かぜ",
+    id: "angin"
+  }, {
+    jp: "寒い",
+    reading: "さむい",
+    id: "dingin"
+  }, {
+    jp: "暑い",
+    reading: "あつい",
+    id: "panas"
+  }, {
+    jp: "涼しい",
+    reading: "すずしい",
+    id: "sejuk"
+  }, {
+    jp: "雪",
+    reading: "ゆき",
+    id: "salju"
+  }, {
+    jp: "春",
+    reading: "はる",
+    id: "musim semi"
+  }, {
+    jp: "夏",
+    reading: "なつ",
+    id: "musim panas"
+  }, {
+    jp: "秋",
+    reading: "あき",
+    id: "musim gugur"
+  }, {
+    jp: "冬",
+    reading: "ふゆ",
+    id: "musim dingin"
+  }, {
+    jp: "曇る",
+    reading: "くもる",
+    id: "mendung"
+  }, {
+    jp: "晴れる",
+    reading: "はれる",
+    id: "menjadi cerah"
+  }, {
+    jp: "降る",
+    reading: "ふる",
+    id: "turun (hujan/salju)"
+  }, {
+    jp: "吹く",
+    reading: "ふく",
+    id: "bertiup (angin)"
+  }, {
+    jp: "暖かい",
+    reading: "あたたかい",
+    id: "hangat"
+  }, {
+    jp: "冷たい",
+    reading: "つめたい",
+    id: "dingin (sentuhan)"
+  }, {
+    jp: "桜",
+    reading: "さくら",
+    id: "bunga sakura"
+  }, {
+    jp: "梅雨",
+    reading: "つゆ",
+    id: "musim hujan (Jepang)"
+  }, {
+    jp: "天気予報",
+    reading: "てんきよほう",
+    id: "ramalan cuaca"
+  }, {
+    jp: "虹",
+    reading: "にじ",
+    id: "pelangi"
+  }, {
+    jp: "四季",
+    reading: "しき",
+    id: "empat musim"
+  }, {
+    jp: "氷",
+    reading: "こおり",
+    id: "es"
+  }, {
+    jp: "季節感",
+    reading: "きせつかん",
+    id: "kesan musiman"
+  }, {
+    jp: "梅雨前線",
+    reading: "つゆぜんせん",
+    id: "front hujan musim (Jepang)"
+  }, {
+    jp: "木枯らし",
+    reading: "こがらし",
+    id: "angin dingin awal musim dingin"
+  }, {
+    jp: "小春日和",
+    reading: "こはるびより",
+    id: "cuaca hangat di musim gugur/dingin"
+  }, {
+    jp: "花冷え",
+    reading: "はなびえ",
+    id: "dingin mendadak saat musim bunga"
+  }, {
+    jp: "残暑",
+    reading: "ざんしょ",
+    id: "panas sisa musim panas"
+  }, {
+    jp: "初雪",
+    reading: "はつゆき",
+    id: "salju pertama"
+  }, {
+    jp: "蒸し暑い",
+    reading: "むしあつい",
+    id: "panas lembap"
+  }, {
+    jp: "肌寒い",
+    reading: "はだざむい",
+    id: "dingin menusuk kulit"
+  }, {
+    jp: "大雪",
+    reading: "おおゆき",
+    id: "salju lebat"
+  }, {
+    jp: "猛暑",
+    reading: "もうしょ",
+    id: "panas terik ekstrem"
+  }, {
+    jp: "台風の目",
+    reading: "たいふうのめ",
+    id: "mata topan"
+  }, {
+    jp: "湿気",
+    reading: "しっけ",
+    id: "kelembapan udara"
+  }, {
+    jp: "冷え込む",
+    reading: "ひえこむ",
+    id: "udara mendadak dingin"
+  }, {
+    jp: "穏やか",
+    reading: "おだやか",
+    id: "(cuaca) tenang/cerah"
+  }, {
+    jp: "荒れる",
+    reading: "あれる",
+    id: "(cuaca) memburuk/mengganas"
+  }, {
+    jp: "暖冬",
+    reading: "だんとう",
+    id: "musim dingin yang hangat"
+  }, {
+    jp: "冷夏",
+    reading: "れいか",
+    id: "musim panas yang dingin"
+  }, {
+    jp: "局地的",
+    reading: "きょくちてき",
+    id: "bersifat lokal (cuaca)"
+  }, {
+    jp: "観測",
+    reading: "かんそく",
+    id: "pengamatan (cuaca)"
+  }, {
+    jp: "季節外れ",
+    reading: "きせつはずれ",
+    id: "tidak sesuai musim"
+  }, {
+    jp: "寒波",
+    reading: "かんぱ",
+    id: "gelombang dingin"
+  }, {
+    jp: "台風",
+    reading: "たいふう",
+    id: "topan"
+  }, {
+    jp: "湿度",
+    reading: "しつど",
+    id: "kelembapan"
+  }, {
+    jp: "気温",
+    reading: "きおん",
+    id: "suhu udara"
+  }, {
+    jp: "霧",
+    reading: "きり",
+    id: "kabut"
+  }, {
+    jp: "雷",
+    reading: "かみなり",
+    id: "petir"
+  }, {
+    jp: "地震",
+    reading: "じしん",
+    id: "gempa bumi"
+  }, {
+    jp: "洪水",
+    reading: "こうずい",
+    id: "banjir"
+  }, {
+    jp: "津波",
+    reading: "つなみ",
+    id: "tsunami"
+  }, {
+    jp: "噴火",
+    reading: "ふんか",
+    id: "letusan gunung berapi"
+  }, {
+    jp: "土砂崩れ",
+    reading: "どしゃくずれ",
+    id: "tanah longsor"
+  }, {
+    jp: "災害",
+    reading: "さいがい",
+    id: "bencana"
+  }, {
+    jp: "避難",
+    reading: "ひなん",
+    id: "mengungsi"
+  }, {
+    jp: "警報",
+    reading: "けいほう",
+    id: "peringatan"
+  }, {
+    jp: "注意報",
+    reading: "ちゅういほう",
+    id: "peringatan dini"
+  }, {
+    jp: "環境",
+    reading: "かんきょう",
+    id: "lingkungan"
+  }, {
+    jp: "汚染",
+    reading: "おせん",
+    id: "polusi"
+  }, {
+    jp: "温暖化",
+    reading: "おんだんか",
+    id: "pemanasan global"
+  }, {
+    jp: "資源",
+    reading: "しげん",
+    id: "sumber daya"
+  }, {
+    jp: "エネルギー",
+    reading: "えねるぎー",
+    id: "energi"
+  }, {
+    jp: "リサイクル",
+    reading: "りさいくる",
+    id: "daur ulang"
+  }, {
+    jp: "乾燥",
+    reading: "かんそう",
+    id: "kering"
+  }, {
+    jp: "にわか雨",
+    reading: "にわかあめ",
+    id: "hujan gerimis mendadak"
+  }, {
+    jp: "異常気象",
+    reading: "いじょうきしょう",
+    id: "cuaca ekstrem/anomali"
+  }, {
+    jp: "天候不順",
+    reading: "てんこうふじゅん",
+    id: "cuaca tidak menentu"
+  }, {
+    jp: "熱帯夜",
+    reading: "ねったいや",
+    id: "malam tropis panas"
+  }, {
+    jp: "大雨",
+    reading: "おおあめ",
+    id: "hujan lebat"
+  }, {
+    jp: "竜巻",
+    reading: "たつまき",
+    id: "tornado"
+  }, {
+    jp: "霜",
+    reading: "しも",
+    id: "embun beku"
+  }, {
+    jp: "氷点下",
+    reading: "ひょうてんか",
+    id: "di bawah titik beku"
+  }, {
+    jp: "猛烈",
+    reading: "もうれつ",
+    id: "sangat dahsyat"
+  }, {
+    jp: "前線",
+    reading: "ぜんせん",
+    id: "front cuaca"
+  }, {
+    jp: "気圧",
+    reading: "きあつ",
+    id: "tekanan udara"
+  }, {
+    jp: "干ばつ",
+    reading: "かんばつ",
+    id: "kekeringan"
+  }, {
+    jp: "火山噴火",
+    reading: "かざんふんか",
+    id: "letusan gunung berapi"
+  }, {
+    jp: "氷河",
+    reading: "ひょうが",
+    id: "gletser"
+  }, {
+    jp: "信仰",
+    reading: "しんこう",
+    id: "keyakinan agama"
+  }, {
+    jp: "寺",
+    reading: "てら",
+    id: "kuil Buddha"
+  }, {
+    jp: "盆地",
+    reading: "ぼんち",
+    id: "dataran cekung/lembah"
+  }, {
+    jp: "半島",
+    reading: "はんとう",
+    id: "semenanjung"
+  }, {
+    jp: "無意識",
+    reading: "むいしき",
+    id: "tidak sadar"
+  }, {
+    jp: "習性",
+    reading: "しゅうせい",
+    id: "kebiasaan alami"
+  }, {
+    jp: "文明",
+    reading: "ぶんめい",
+    id: "peradaban"
+  }, {
+    jp: "遺跡",
+    reading: "いせき",
+    id: "situs peninggalan sejarah"
+  }],
+  "Transportasi & Infrastruktur": [{
+    jp: "電車",
+    reading: "でんしゃ",
+    id: "kereta"
+  }, {
+    jp: "自転車",
+    reading: "じてんしゃ",
+    id: "sepeda"
+  }, {
+    jp: "車",
+    reading: "くるま",
+    id: "mobil"
+  }, {
+    jp: "バス",
+    reading: "バス",
+    id: "bus"
+  }, {
+    jp: "タクシー",
+    reading: "タクシー",
+    id: "taksi"
+  }, {
+    jp: "飛行機",
+    reading: "ひこうき",
+    id: "pesawat"
+  }, {
+    jp: "駅",
+    reading: "えき",
+    id: "stasiun"
+  }, {
+    jp: "切符",
+    reading: "きっぷ",
+    id: "tiket"
+  }, {
+    jp: "地下鉄",
+    reading: "ちかてつ",
+    id: "kereta bawah tanah"
+  }, {
+    jp: "道",
+    reading: "みち",
+    id: "jalan"
+  }, {
+    jp: "交番",
+    reading: "こうばん",
+    id: "pos polisi"
+  }, {
+    jp: "橋",
+    reading: "はし",
+    id: "jembatan"
+  }, {
+    jp: "新幹線",
+    reading: "しんかんせん",
+    id: "shinkansen"
+  }, {
+    jp: "船",
+    reading: "ふね",
+    id: "kapal"
+  }, {
+    jp: "トラック",
+    reading: "とらっく",
+    id: "truk"
+  }, {
+    jp: "オートバイ",
+    reading: "おーとばい",
+    id: "motor"
+  }, {
+    jp: "乗る",
+    reading: "のる",
+    id: "naik (kendaraan)"
+  }, {
+    jp: "降りる",
+    reading: "おりる",
+    id: "turun (dari kendaraan)"
+  }, {
+    jp: "運転する",
+    reading: "うんてんする",
+    id: "mengemudi"
+  }, {
+    jp: "踏切",
+    reading: "ふみきり",
+    id: "palang kereta"
+  }, {
+    jp: "空港",
+    reading: "くうこう",
+    id: "bandara"
+  }, {
+    jp: "港",
+    reading: "みなと",
+    id: "pelabuhan"
+  }, {
+    jp: "停留所",
+    reading: "ていりゅうじょ",
+    id: "halte bus"
+  }, {
+    jp: "運賃",
+    reading: "うんちん",
+    id: "ongkos naik kendaraan"
+  }, {
+    jp: "時刻表",
+    reading: "じこくひょう",
+    id: "jadwal kendaraan"
+  }, {
+    jp: "乗り換え",
+    reading: "のりかえ",
+    id: "transit/ganti moda"
+  }, {
+    jp: "特急",
+    reading: "とっきゅう",
+    id: "kereta cepat terbatas"
+  }, {
+    jp: "急行",
+    reading: "きゅうこう",
+    id: "kereta cepat"
+  }, {
+    jp: "各駅停車",
+    reading: "かくえきていしゃ",
+    id: "kereta berhenti tiap stasiun"
+  }, {
+    jp: "運転手",
+    reading: "うんてんしゅ",
+    id: "supir"
+  }, {
+    jp: "渋滞",
+    reading: "じゅうたい",
+    id: "macet"
+  }, {
+    jp: "事故",
+    reading: "じこ",
+    id: "kecelakaan"
+  }, {
+    jp: "信号",
+    reading: "しんごう",
+    id: "lampu lalu lintas"
+  }, {
+    jp: "駐車場",
+    reading: "ちゅうしゃじょう",
+    id: "tempat parkir"
+  }, {
+    jp: "乗車券",
+    reading: "じょうしゃけん",
+    id: "tiket naik"
+  }, {
+    jp: "定期券",
+    reading: "ていきけん",
+    id: "tiket berlangganan"
+  }, {
+    jp: "片道",
+    reading: "かたみち",
+    id: "sekali jalan"
+  }, {
+    jp: "往復",
+    reading: "おうふく",
+    id: "pulang pergi"
+  }, {
+    jp: "遅延",
+    reading: "ちえん",
+    id: "keterlambatan"
+  }, {
+    jp: "運休",
+    reading: "うんきゅう",
+    id: "pembatalan operasi (kendaraan)"
+  }, {
+    jp: "満員",
+    reading: "まんいん",
+    id: "penuh sesak"
+  }, {
+    jp: "自由席",
+    reading: "じゆうせき",
+    id: "kursi bebas"
+  }, {
+    jp: "指定席",
+    reading: "していせき",
+    id: "kursi reservasi"
+  }, {
+    jp: "高速道路",
+    reading: "こうそくどうろ",
+    id: "jalan tol"
+  }, {
+    jp: "一方通行",
+    reading: "いっぽうつうこう",
+    id: "jalan satu arah"
+  }, {
+    jp: "横断歩道",
+    reading: "おうだんほどう",
+    id: "zebra cross"
+  }, {
+    jp: "歩道橋",
+    reading: "ほどうきょう",
+    id: "jembatan penyeberangan"
+  }, {
+    jp: "免許",
+    reading: "めんきょ",
+    id: "SIM (izin mengemudi)"
+  }, {
+    jp: "免許証",
+    reading: "めんきょしょう",
+    id: "kartu SIM"
+  }, {
+    jp: "違反",
+    reading: "いはん",
+    id: "pelanggaran"
+  }, {
+    jp: "駐車違反",
+    reading: "ちゅうしゃいはん",
+    id: "pelanggaran parkir"
+  }, {
+    jp: "燃料",
+    reading: "ねんりょう",
+    id: "bahan bakar"
+  }, {
+    jp: "運行状況",
+    reading: "うんこうじょうきょう",
+    id: "status operasional (kereta/bus)"
+  }, {
+    jp: "遅延証明書",
+    reading: "ちえんしょうめいしょ",
+    id: "surat keterangan keterlambatan"
+  }, {
+    jp: "搭乗",
+    reading: "とうじょう",
+    id: "naik pesawat"
+  }, {
+    jp: "離陸",
+    reading: "りりく",
+    id: "lepas landas"
+  }, {
+    jp: "着陸",
+    reading: "ちゃくりく",
+    id: "mendarat"
+  }, {
+    jp: "欠航",
+    reading: "けっこう",
+    id: "penerbangan dibatalkan"
+  }, {
+    jp: "乗客",
+    reading: "じょうきゃく",
+    id: "penumpang"
+  }, {
+    jp: "客船",
+    reading: "きゃくせん",
+    id: "kapal penumpang"
+  }, {
+    jp: "貨物船",
+    reading: "かもつせん",
+    id: "kapal kargo"
+  }, {
+    jp: "航海",
+    reading: "こうかい",
+    id: "pelayaran"
+  }, {
+    jp: "燃費",
+    reading: "ねんぴ",
+    id: "efisiensi bahan bakar"
+  }, {
+    jp: "直行便",
+    reading: "ちょっこうびん",
+    id: "penerbangan langsung"
+  }, {
+    jp: "甲板",
+    reading: "かんぱん",
+    id: "dek kapal"
+  }, {
+    jp: "滑走路",
+    reading: "かっそうろ",
+    id: "landasan pacu"
+  }, {
+    jp: "搭乗券",
+    reading: "とうじょうけん",
+    id: "boarding pass"
+  }, {
+    jp: "乗り継ぎ",
+    reading: "のりつぎ",
+    id: "transit penerbangan"
+  }, {
+    jp: "手荷物",
+    reading: "てにもつ",
+    id: "bagasi tangan"
+  }, {
+    jp: "預け荷物",
+    reading: "あずけにもつ",
+    id: "bagasi terdaftar"
+  }, {
+    jp: "客室乗務員",
+    reading: "きゃくしつじょうむいん",
+    id: "pramugari/a"
+  }, {
+    jp: "フェリー",
+    reading: "ふぇりー",
+    id: "kapal feri"
+  }, {
+    jp: "出航",
+    reading: "しゅっこう",
+    id: "keberangkatan kapal"
+  }, {
+    jp: "寄港",
+    reading: "きこう",
+    id: "singgah di pelabuhan"
+  }, {
+    jp: "船便",
+    reading: "ふなびん",
+    id: "kiriman lewat kapal laut"
+  }, {
+    jp: "航空券",
+    reading: "こうくうけん",
+    id: "tiket pesawat"
+  }, {
+    jp: "インフラ",
+    reading: "いんふら",
+    id: "infrastruktur"
+  }, {
+    jp: "整備",
+    reading: "せいび",
+    id: "perawatan, pemeliharaan"
+  }, {
+    jp: "トンネル",
+    reading: "とんねる",
+    id: "terowongan"
+  }, {
+    jp: "建設",
+    reading: "けんせつ",
+    id: "konstruksi"
+  }, {
+    jp: "工事",
+    reading: "こうじ",
+    id: "proyek konstruksi"
+  }, {
+    jp: "交通量",
+    reading: "こうつうりょう",
+    id: "volume lalu lintas"
+  }, {
+    jp: "通行止め",
+    reading: "つうこうどめ",
+    id: "jalan ditutup"
+  }, {
+    jp: "迂回",
+    reading: "うかい",
+    id: "jalan memutar"
+  }, {
+    jp: "道路整備",
+    reading: "どうろせいび",
+    id: "perbaikan jalan"
+  }, {
+    jp: "交通網",
+    reading: "こうつうもう",
+    id: "jaringan transportasi"
+  }, {
+    jp: "鉄道網",
+    reading: "てつどうもう",
+    id: "jaringan rel kereta"
+  }, {
+    jp: "公共交通機関",
+    reading: "こうきょうこうつうきかん",
+    id: "transportasi umum"
+  }, {
+    jp: "バリアフリー",
+    reading: "ばりあふりー",
+    id: "aksesibilitas difabel"
+  }, {
+    jp: "橋梁",
+    reading: "きょうりょう",
+    id: "jembatan (formal)"
+  }, {
+    jp: "耐久性",
+    reading: "たいきゅうせい",
+    id: "daya tahan struktur"
+  }, {
+    jp: "道路工事",
+    reading: "どうろこうじ",
+    id: "perbaikan jalan"
+  }],
+  "Ekonomi & Bisnis": [{
+    jp: "経済",
+    reading: "けいざい",
+    id: "ekonomi"
+  }, {
+    jp: "貿易",
+    reading: "ぼうえき",
+    id: "perdagangan"
+  }, {
+    jp: "輸出",
+    reading: "ゆしゅつ",
+    id: "ekspor"
+  }, {
+    jp: "輸入",
+    reading: "ゆにゅう",
+    id: "impor"
+  }, {
+    jp: "物価",
+    reading: "ぶっか",
+    id: "harga barang"
+  }, {
+    jp: "景気",
+    reading: "けいき",
+    id: "kondisi ekonomi"
+  }, {
+    jp: "消費",
+    reading: "しょうひ",
+    id: "konsumsi"
+  }, {
+    jp: "投資",
+    reading: "とうし",
+    id: "investasi"
+  }, {
+    jp: "不況",
+    reading: "ふきょう",
+    id: "resesi"
+  }, {
+    jp: "好況",
+    reading: "こうきょう",
+    id: "ekonomi sedang baik"
+  }, {
+    jp: "株式",
+    reading: "かぶしき",
+    id: "saham"
+  }, {
+    jp: "損失",
+    reading: "そんしつ",
+    id: "kerugian"
+  }, {
+    jp: "収入",
+    reading: "しゅうにゅう",
+    id: "pendapatan"
+  }, {
+    jp: "支出",
+    reading: "ししゅつ",
+    id: "pengeluaran"
+  }, {
+    jp: "予算",
+    reading: "よさん",
+    id: "anggaran"
+  }, {
+    jp: "消費税",
+    reading: "しょうひぜい",
+    id: "pajak konsumsi"
+  }, {
+    jp: "賃金",
+    reading: "ちんぎん",
+    id: "upah"
+  }, {
+    jp: "借金",
+    reading: "しゃっきん",
+    id: "utang"
+  }, {
+    jp: "融資",
+    reading: "ゆうし",
+    id: "pembiayaan, pinjaman"
+  }, {
+    jp: "企業",
+    reading: "きぎょう",
+    id: "perusahaan"
+  }, {
+    jp: "経営",
+    reading: "けいえい",
+    id: "manajemen bisnis"
+  }, {
+    jp: "生産",
+    reading: "せいさん",
+    id: "produksi"
+  }, {
+    jp: "消費者",
+    reading: "しょうひしゃ",
+    id: "konsumen"
+  }, {
+    jp: "為替",
+    reading: "かわせ",
+    id: "kurs mata uang"
+  }, {
+    jp: "インフレ",
+    reading: "いんふれ",
+    id: "inflasi"
+  }, {
+    jp: "金利",
+    reading: "きんり",
+    id: "suku bunga"
+  }, {
+    jp: "預金金利",
+    reading: "よきんきんり",
+    id: "bunga simpanan"
+  }, {
+    jp: "住宅ローン",
+    reading: "じゅうたくろーん",
+    id: "KPR"
+  }, {
+    jp: "自己資金",
+    reading: "じこしきん",
+    id: "modal sendiri"
+  }, {
+    jp: "資産運用",
+    reading: "しさんうんよう",
+    id: "manajemen aset"
+  }, {
+    jp: "退職金",
+    reading: "たいしょくきん",
+    id: "pesangon"
+  }, {
+    jp: "不景気",
+    reading: "ふけいき",
+    id: "resesi"
+  }, {
+    jp: "デフレ",
+    reading: "でふれ",
+    id: "deflasi"
+  }, {
+    jp: "株",
+    reading: "かぶ",
+    id: "saham"
+  }, {
+    jp: "株価",
+    reading: "かぶか",
+    id: "harga saham"
+  }, {
+    jp: "貯蓄",
+    reading: "ちょちく",
+    id: "tabungan"
+  }, {
+    jp: "返済",
+    reading: "へんさい",
+    id: "pembayaran kembali hutang"
+  }, {
+    jp: "利息",
+    reading: "りそく",
+    id: "bunga uang"
+  }, {
+    jp: "税金",
+    reading: "ぜいきん",
+    id: "pajak"
+  }, {
+    jp: "所得税",
+    reading: "しょとくぜい",
+    id: "pajak penghasilan"
+  }, {
+    jp: "経営者",
+    reading: "けいえいしゃ",
+    id: "pengusaha/direktur"
+  }, {
+    jp: "起業",
+    reading: "きぎょう",
+    id: "memulai usaha"
+  }, {
+    jp: "起業家",
+    reading: "きぎょうか",
+    id: "wirausahawan"
+  }, {
+    jp: "需要",
+    reading: "じゅよう",
+    id: "permintaan (ekonomi)"
+  }, {
+    jp: "供給",
+    reading: "きょうきゅう",
+    id: "penawaran (ekonomi)"
+  }, {
+    jp: "競争",
+    reading: "きょうそう",
+    id: "persaingan"
+  }, {
+    jp: "倒産",
+    reading: "とうさん",
+    id: "bangkrut"
+  }, {
+    jp: "黒字",
+    reading: "くろじ",
+    id: "untung (neraca positif)"
+  }, {
+    jp: "損益分岐点",
+    reading: "そんえきぶんきてん",
+    id: "titik impas"
+  }, {
+    jp: "投資家",
+    reading: "とうしか",
+    id: "investor"
+  }, {
+    jp: "株式市場",
+    reading: "かぶしきしじょう",
+    id: "pasar saham"
+  }, {
+    jp: "企業提携",
+    reading: "きぎょうていけい",
+    id: "kemitraan perusahaan"
+  }, {
+    jp: "合併",
+    reading: "がっぺい",
+    id: "merger"
+  }, {
+    jp: "買収",
+    reading: "ばいしゅう",
+    id: "akuisisi"
+  }, {
+    jp: "新規事業",
+    reading: "しんきじぎょう",
+    id: "bisnis baru"
+  }, {
+    jp: "市場調査",
+    reading: "しじょうちょうさ",
+    id: "riset pasar"
+  }, {
+    jp: "業績",
+    reading: "ぎょうせき",
+    id: "kinerja bisnis"
+  }],
+  "Lingkungan & Alam": [{
+    jp: "自然",
+    reading: "しぜん",
+    id: "alam"
+  }, {
+    jp: "保護",
+    reading: "ほご",
+    id: "perlindungan"
+  }, {
+    jp: "影響",
+    reading: "えいきょう",
+    id: "pengaruh, dampak"
+  }, {
+    jp: "地球温暖化",
+    reading: "ちきゅうおんだんか",
+    id: "pemanasan global"
+  }, {
+    jp: "排気ガス",
+    reading: "はいきガス",
+    id: "gas buang"
+  }, {
+    jp: "再生可能",
+    reading: "さいせいかのう",
+    id: "dapat diperbarui"
+  }, {
+    jp: "絶滅",
+    reading: "ぜつめつ",
+    id: "kepunahan"
+  }, {
+    jp: "森林伐採",
+    reading: "しんりんばっさい",
+    id: "penebangan hutan"
+  }, {
+    jp: "生態系",
+    reading: "せいたいけい",
+    id: "ekosistem"
+  }, {
+    jp: "温室効果",
+    reading: "おんしつこうか",
+    id: "efek rumah kaca"
+  }, {
+    jp: "気候変動",
+    reading: "きこうへんどう",
+    id: "perubahan iklim"
+  }, {
+    jp: "自然災害",
+    reading: "しぜんさいがい",
+    id: "bencana alam"
+  }, {
+    jp: "火山",
+    reading: "かざん",
+    id: "gunung berapi"
+  }, {
+    jp: "環境保護",
+    reading: "かんきょうほご",
+    id: "perlindungan lingkungan"
+  }, {
+    jp: "持続可能",
+    reading: "じぞくかのう",
+    id: "berkelanjutan"
+  }, {
+    jp: "生物多様性",
+    reading: "せいぶつたようせい",
+    id: "keanekaragaman hayati"
+  }, {
+    jp: "利益",
+    reading: "りえき",
+    id: "keuntungan"
+  }, {
+    jp: "赤字",
+    reading: "あかじ",
+    id: "defisit"
+  }, {
+    jp: "山",
+    reading: "やま",
+    id: "gunung"
+  }, {
+    jp: "川",
+    reading: "かわ",
+    id: "sungai"
+  }, {
+    jp: "海",
+    reading: "うみ",
+    id: "laut"
+  }, {
+    jp: "空",
+    reading: "そら",
+    id: "langit"
+  }, {
+    jp: "星",
+    reading: "ほし",
+    id: "bintang"
+  }, {
+    jp: "太陽",
+    reading: "たいよう",
+    id: "matahari"
+  }, {
+    jp: "月",
+    reading: "つき",
+    id: "bulan"
+  }, {
+    jp: "花",
+    reading: "はな",
+    id: "bunga"
+  }, {
+    jp: "木",
+    reading: "き",
+    id: "pohon"
+  }, {
+    jp: "葉",
+    reading: "は",
+    id: "daun"
+  }, {
+    jp: "草",
+    reading: "くさ",
+    id: "rumput"
+  }, {
+    jp: "虫",
+    reading: "むし",
+    id: "serangga"
+  }, {
+    jp: "鳥",
+    reading: "とり",
+    id: "burung"
+  }, {
+    jp: "湖",
+    reading: "みずうみ",
+    id: "danau"
+  }, {
+    jp: "島",
+    reading: "しま",
+    id: "pulau"
+  }, {
+    jp: "野生動物",
+    reading: "やせいどうぶつ",
+    id: "satwa liar"
+  }, {
+    jp: "土壌",
+    reading: "どじょう",
+    id: "tanah/lapisan bumi"
+  }, {
+    jp: "大気",
+    reading: "たいき",
+    id: "atmosfer"
+  }, {
+    jp: "食物連鎖",
+    reading: "しょくもつれんさ",
+    id: "rantai makanan"
+  }, {
+    jp: "循環",
+    reading: "じゅんかん",
+    id: "siklus/sirkulasi"
+  }, {
+    jp: "汚水",
+    reading: "おすい",
+    id: "air limbah"
+  }],
+  "Berita & Media": [{
+    jp: "ニュース",
+    reading: "ニュース",
+    id: "berita"
+  }, {
+    jp: "記事",
+    reading: "きじ",
+    id: "artikel"
+  }, {
+    jp: "報道",
+    reading: "ほうどう",
+    id: "liputan/pemberitaan"
+  }, {
+    jp: "事件",
+    reading: "じけん",
+    id: "insiden/kejadian"
+  }, {
+    jp: "情報",
+    reading: "じょうほう",
+    id: "informasi"
+  }, {
+    jp: "取材",
+    reading: "しゅざい",
+    id: "peliputan"
+  }, {
+    jp: "話題",
+    reading: "わだい",
+    id: "topik hangat"
+  }, {
+    jp: "新聞社",
+    reading: "しんぶんしゃ",
+    id: "perusahaan koran"
+  }, {
+    jp: "記者",
+    reading: "きしゃ",
+    id: "wartawan"
+  }, {
+    jp: "放送",
+    reading: "ほうそう",
+    id: "siaran"
+  }, {
+    jp: "番組",
+    reading: "ばんぐみ",
+    id: "acara (TV/radio)"
+  }, {
+    jp: "中継",
+    reading: "ちゅうけい",
+    id: "siaran langsung"
+  }, {
+    jp: "広告",
+    reading: "こうこく",
+    id: "iklan"
+  }, {
+    jp: "コマーシャル",
+    reading: "こまーしゃる",
+    id: "iklan komersial"
+  }, {
+    jp: "週刊誌",
+    reading: "しゅうかんし",
+    id: "majalah mingguan"
+  }, {
+    jp: "出版",
+    reading: "しゅっぱん",
+    id: "penerbitan"
+  }, {
+    jp: "発行",
+    reading: "はっこう",
+    id: "penerbitan (formal)"
+  }, {
+    jp: "情報源",
+    reading: "じょうほうげん",
+    id: "sumber informasi"
+  }, {
+    jp: "世論",
+    reading: "よろん",
+    id: "opini publik"
+  }, {
+    jp: "インタビュー",
+    reading: "いんたびゅー",
+    id: "wawancara"
+  }, {
+    jp: "編集",
+    reading: "へんしゅう",
+    id: "penyuntingan"
+  }, {
+    jp: "編集者",
+    reading: "へんしゅうしゃ",
+    id: "editor"
+  }, {
+    jp: "テレビ局",
+    reading: "てれびきょく",
+    id: "stasiun TV"
+  }, {
+    jp: "視聴率",
+    reading: "しちょうりつ",
+    id: "rating tontonan"
+  }, {
+    jp: "生放送",
+    reading: "なまほうそう",
+    id: "siaran langsung (live)"
+  }, {
+    jp: "匿名",
+    reading: "とくめい",
+    id: "anonim"
+  }, {
+    jp: "速報",
+    reading: "そくほう",
+    id: "berita terkini/breaking news"
+  }, {
+    jp: "見出し",
+    reading: "みだし",
+    id: "judul berita"
+  }, {
+    jp: "特集",
+    reading: "とくしゅう",
+    id: "liputan khusus"
+  }, {
+    jp: "社説",
+    reading: "しゃせつ",
+    id: "editorial"
+  }, {
+    jp: "世論調査",
+    reading: "よろんちょうさ",
+    id: "jajak pendapat"
+  }, {
+    jp: "記者会見",
+    reading: "きしゃかいけん",
+    id: "konferensi pers"
+  }, {
+    jp: "事態",
+    reading: "じたい",
+    id: "situasi/keadaan"
+  }, {
+    jp: "騒動",
+    reading: "そうどう",
+    id: "kekacauan/keributan"
+  }, {
+    jp: "事情",
+    reading: "じじょう",
+    id: "keadaan/latar belakang"
+  }, {
+    jp: "動向",
+    reading: "どうこう",
+    id: "tren perkembangan"
+  }, {
+    jp: "現状",
+    reading: "げんじょう",
+    id: "kondisi saat ini"
+  }, {
+    jp: "今後の見通し",
+    reading: "こんごのみとおし",
+    id: "prospek ke depan"
+  }, {
+    jp: "波紋を呼ぶ",
+    reading: "はもんをよぶ",
+    id: "menimbulkan kehebohan"
+  }, {
+    jp: "物議を醸す",
+    reading: "ぶつぎをかもす",
+    id: "menimbulkan kontroversi"
+  }, {
+    jp: "騒然",
+    reading: "そうぜん",
+    id: "suasana gempar"
+  }, {
+    jp: "波紋",
+    reading: "はもん",
+    id: "riak/dampak sosial"
+  }],
+  "Budaya & Tradisi": [{
+    jp: "伝統",
+    reading: "でんとう",
+    id: "tradisi"
+  }, {
+    jp: "芸術",
+    reading: "げいじゅつ",
+    id: "seni"
+  }, {
+    jp: "祭り",
+    reading: "まつり",
+    id: "festival"
+  }, {
+    jp: "宗教",
+    reading: "しゅうきょう",
+    id: "agama"
+  }, {
+    jp: "価値観",
+    reading: "かちかん",
+    id: "nilai/pandangan hidup"
+  }, {
+    jp: "歴史",
+    reading: "れきし",
+    id: "sejarah"
+  }, {
+    jp: "風習",
+    reading: "ふうしゅう",
+    id: "kebiasaan, adat"
+  }, {
+    jp: "行事",
+    reading: "ぎょうじ",
+    id: "acara, perayaan"
+  }, {
+    jp: "儀式",
+    reading: "ぎしき",
+    id: "upacara"
+  }, {
+    jp: "伝統芸能",
+    reading: "でんとうげいのう",
+    id: "seni tradisional"
+  }, {
+    jp: "茶道",
+    reading: "さどう",
+    id: "upacara minum teh"
+  }, {
+    jp: "華道",
+    reading: "かどう",
+    id: "seni merangkai bunga"
+  }, {
+    jp: "参拝",
+    reading: "さんぱい",
+    id: "berdoa di kuil"
+  }, {
+    jp: "年中行事",
+    reading: "ねんちゅうぎょうじ",
+    id: "acara tahunan"
+  }, {
+    jp: "伝説",
+    reading: "でんせつ",
+    id: "legenda"
+  }, {
+    jp: "神話",
+    reading: "しんわ",
+    id: "mitologi"
+  }, {
+    jp: "民話",
+    reading: "みんわ",
+    id: "cerita rakyat"
+  }, {
+    jp: "風景",
+    reading: "ふうけい",
+    id: "pemandangan"
+  }, {
+    jp: "世界遺産",
+    reading: "せかいいさん",
+    id: "warisan dunia"
+  }, {
+    jp: "継承",
+    reading: "けいしょう",
+    id: "pewarisan"
+  }, {
+    jp: "風俗",
+    reading: "ふうぞく",
+    id: "adat kebiasaan"
+  }],
+  "Perasaan & Emosi": [{
+    jp: "感情",
+    reading: "かんじょう",
+    id: "emosi"
+  }, {
+    jp: "不安",
+    reading: "ふあん",
+    id: "cemas"
+  }, {
+    jp: "感動",
+    reading: "かんどう",
+    id: "tersentuh, terharu"
+  }, {
+    jp: "満足",
+    reading: "まんぞく",
+    id: "puas"
+  }, {
+    jp: "期待",
+    reading: "きたい",
+    id: "harapan"
+  }, {
+    jp: "誇り",
+    reading: "ほこり",
+    id: "kebanggaan"
+  }, {
+    jp: "後悔",
+    reading: "こうかい",
+    id: "penyesalan"
+  }, {
+    jp: "興味",
+    reading: "きょうみ",
+    id: "minat"
+  }, {
+    jp: "嬉しい",
+    reading: "うれしい",
+    id: "senang"
+  }, {
+    jp: "悲しい",
+    reading: "かなしい",
+    id: "sedih"
+  }, {
+    jp: "寂しい",
+    reading: "さびしい",
+    id: "kesepian"
+  }, {
+    jp: "怖い",
+    reading: "こわい",
+    id: "takut"
+  }, {
+    jp: "恥ずかしい",
+    reading: "はずかしい",
+    id: "malu"
+  }, {
+    jp: "心配",
+    reading: "しんぱい",
+    id: "khawatir"
+  }, {
+    jp: "安心",
+    reading: "あんしん",
+    id: "lega, tenang"
+  }, {
+    jp: "緊張",
+    reading: "きんちょう",
+    id: "gugup, tegang"
+  }, {
+    jp: "残念",
+    reading: "ざんねん",
+    id: "disayangkan"
+  }, {
+    jp: "驚く",
+    reading: "おどろく",
+    id: "terkejut"
+  }, {
+    jp: "がっかり",
+    reading: "がっかり",
+    id: "kecewa"
+  }, {
+    jp: "腹が立つ",
+    reading: "はらがたつ",
+    id: "jengkel/marah"
+  }, {
+    jp: "腹立たしい",
+    reading: "はらだたしい",
+    id: "menjengkelkan"
+  }, {
+    jp: "イライラ",
+    reading: "いらいら",
+    id: "kesal/gelisah"
+  }, {
+    jp: "不満",
+    reading: "ふまん",
+    id: "tidak puas"
+  }, {
+    jp: "興奮",
+    reading: "こうふん",
+    id: "bersemangat"
+  }, {
+    jp: "退屈",
+    reading: "たいくつ",
+    id: "bosan"
+  }, {
+    jp: "懐かしい",
+    reading: "なつかしい",
+    id: "rindu (kenangan)"
+  }, {
+    jp: "羨ましい",
+    reading: "うらやましい",
+    id: "iri"
+  }, {
+    jp: "自信",
+    reading: "じしん",
+    id: "percaya diri"
+  }, {
+    jp: "落ち込む",
+    reading: "おちこむ",
+    id: "putus asa/down"
+  }, {
+    jp: "やる気",
+    reading: "やるき",
+    id: "motivasi/semangat"
+  }, {
+    jp: "無理する",
+    reading: "むりする",
+    id: "memaksakan diri"
+  }, {
+    jp: "我慢する",
+    reading: "がまんする",
+    id: "menahan diri/sabar"
+  }, {
+    jp: "気にする",
+    reading: "きにする",
+    id: "mempedulikan"
+  }, {
+    jp: "気になる",
+    reading: "きになる",
+    id: "penasaran/khawatir"
+  }, {
+    jp: "喜び",
+    reading: "よろこび",
+    id: "kegembiraan"
+  }, {
+    jp: "怒り",
+    reading: "いかり",
+    id: "kemarahan"
+  }, {
+    jp: "悲しみ",
+    reading: "かなしみ",
+    id: "kesedihan"
+  }, {
+    jp: "感謝",
+    reading: "かんしゃ",
+    id: "rasa terima kasih"
+  }, {
+    jp: "恐怖",
+    reading: "きょうふ",
+    id: "ketakutan"
+  }, {
+    jp: "幸せ",
+    reading: "しあわせ",
+    id: "bahagia"
+  }, {
+    jp: "虚しい",
+    reading: "むなしい",
+    id: "hampa"
+  }, {
+    jp: "愛着",
+    reading: "あいちゃく",
+    id: "kelekatan/rasa sayang"
+  }, {
+    jp: "嫉妬",
+    reading: "しっと",
+    id: "cemburu, iri"
+  }, {
+    jp: "満足感",
+    reading: "まんぞくかん",
+    id: "rasa puas"
+  }, {
+    jp: "達成感",
+    reading: "たっせいかん",
+    id: "rasa pencapaian"
+  }, {
+    jp: "罪悪感",
+    reading: "ざいあくかん",
+    id: "rasa bersalah"
+  }, {
+    jp: "劣等感",
+    reading: "れっとうかん",
+    id: "rasa rendah diri"
+  }, {
+    jp: "優越感",
+    reading: "ゆうえつかん",
+    id: "rasa superior"
+  }, {
+    jp: "焦り",
+    reading: "あせり",
+    id: "kepanikan, ketergesaan"
+  }, {
+    jp: "苛立ち",
+    reading: "いらだち",
+    id: "kekesalan"
+  }, {
+    jp: "戸惑い",
+    reading: "とまどい",
+    id: "kebingungan"
+  }, {
+    jp: "遠慮がち",
+    reading: "えんりょがち",
+    id: "cenderung sungkan"
+  }, {
+    jp: "図々しい",
+    reading: "ずうずうしい",
+    id: "tidak tahu malu, lancang"
+  }, {
+    jp: "謙虚",
+    reading: "けんきょ",
+    id: "rendah hati"
+  }, {
+    jp: "傲慢",
+    reading: "ごうまん",
+    id: "sombong"
+  }, {
+    jp: "素直",
+    reading: "すなお",
+    id: "jujur, polos"
+  }, {
+    jp: "頑固",
+    reading: "がんこ",
+    id: "keras kepala"
+  }, {
+    jp: "冷静",
+    reading: "れいせい",
+    id: "tenang, kepala dingin"
+  }, {
+    jp: "見栄",
+    reading: "みえ",
+    id: "gengsi"
+  }, {
+    jp: "見栄っ張り",
+    reading: "みえっぱり",
+    id: "suka jaim/gengsi"
+  }, {
+    jp: "空気を読む",
+    reading: "くうきをよむ",
+    id: "membaca situasi"
+  }, {
+    jp: "気遣い",
+    reading: "きづかい",
+    id: "perhatian kepada orang lain"
+  }, {
+    jp: "思いやり",
+    reading: "おもいやり",
+    id: "empati/kepedulian"
+  }, {
+    jp: "わがまま",
+    reading: "わがまま",
+    id: "egois/manja"
+  }, {
+    jp: "神経質",
+    reading: "しんけいしつ",
+    id: "gampang cemas/sensitif"
+  }, {
+    jp: "鈍感",
+    reading: "どんかん",
+    id: "kurang peka"
+  }, {
+    jp: "葛藤",
+    reading: "かっとう",
+    id: "konflik batin"
+  }, {
+    jp: "羨望",
+    reading: "せんぼう",
+    id: "iri hati"
+  }],
+  "Bisnis formal": [{
+    jp: "取締役",
+    reading: "とりしまりやく",
+    id: "direktur"
+  }, {
+    jp: "株主",
+    reading: "かぶぬし",
+    id: "pemegang saham"
+  }, {
+    jp: "総会",
+    reading: "そうかい",
+    id: "rapat umum"
+  }, {
+    jp: "議決権",
+    reading: "ぎけつけん",
+    id: "hak suara"
+  }, {
+    jp: "決算",
+    reading: "けっさん",
+    id: "laporan keuangan tahunan"
+  }, {
+    jp: "損益",
+    reading: "そんえき",
+    id: "untung rugi"
+  }, {
+    jp: "提携先",
+    reading: "ていけいさき",
+    id: "mitra kerja sama"
+  }, {
+    jp: "出資者",
+    reading: "しゅっししゃ",
+    id: "investor"
+  }, {
+    jp: "経営陣",
+    reading: "けいえいじん",
+    id: "jajaran direksi"
+  }, {
+    jp: "人事異動",
+    reading: "じんじいどう",
+    id: "mutasi, rotasi jabatan"
+  }, {
+    jp: "内定",
+    reading: "ないてい",
+    id: "tawaran kerja diterima"
+  }, {
+    jp: "昇格",
+    reading: "しょうかく",
+    id: "kenaikan jabatan"
+  }, {
+    jp: "左遷",
+    reading: "させん",
+    id: "penurunan jabatan"
+  }, {
+    jp: "定年",
+    reading: "ていねん",
+    id: "usia pensiun"
+  }, {
+    jp: "引き継ぎ",
+    reading: "ひきつぎ",
+    id: "serah terima tugas"
+  }, {
+    jp: "稟議",
+    reading: "りんぎ",
+    id: "persetujuan berjenjang"
+  }, {
+    jp: "根回し",
+    reading: "ねまわし",
+    id: "lobi informal sebelum rapat"
+  }, {
+    jp: "業務提携",
+    reading: "ぎょうむていけい",
+    id: "kerja sama bisnis"
+  }, {
+    jp: "損害賠償",
+    reading: "そんがいばいしょう",
+    id: "ganti rugi"
+  }, {
+    jp: "訴訟リスク",
+    reading: "そしょうリスク",
+    id: "risiko litigasi"
+  }, {
+    jp: "独占禁止法",
+    reading: "どくせんきんしほう",
+    id: "undang-undang antimonopoli"
+  }, {
+    jp: "与信",
+    reading: "よしん",
+    id: "pemberian kredit"
+  }, {
+    jp: "与信枠",
+    reading: "よしんわく",
+    id: "limit kredit"
+  }, {
+    jp: "財務諸表",
+    reading: "ざいむしょひょう",
+    id: "laporan keuangan"
+  }, {
+    jp: "資本金",
+    reading: "しほんきん",
+    id: "modal dasar"
+  }, {
+    jp: "株主総会",
+    reading: "かぶぬしそうかい",
+    id: "RUPS"
+  }, {
+    jp: "損益計算書",
+    reading: "そんえきけいさんしょ",
+    id: "laporan laba rugi"
+  }, {
+    jp: "市場占有率",
+    reading: "しじょうせんゆうりつ",
+    id: "pangsa pasar"
+  }, {
+    jp: "企業統治",
+    reading: "きぎょうとうち",
+    id: "tata kelola perusahaan"
+  }, {
+    jp: "取締役会",
+    reading: "とりしまりやくかい",
+    id: "dewan direksi"
+  }, {
+    jp: "合併吸収",
+    reading: "がっぺいきゅうしゅう",
+    id: "merger dan akuisisi"
+  }, {
+    jp: "資金調達",
+    reading: "しきんちょうたつ",
+    id: "penggalangan dana"
+  }, {
+    jp: "債務超過",
+    reading: "さいむちょうか",
+    id: "insolvensi"
+  }, {
+    jp: "減価償却",
+    reading: "げんかしょうきゃく",
+    id: "penyusutan aset"
+  }, {
+    jp: "内部統制",
+    reading: "ないぶとうせい",
+    id: "kontrol internal"
+  }, {
+    jp: "事業承継",
+    reading: "じぎょうしょうけい",
+    id: "suksesi bisnis"
+  }, {
+    jp: "持株会社",
+    reading: "もちかぶがいしゃ",
+    id: "perusahaan induk"
+  }, {
+    jp: "経費削減",
+    reading: "けいひさくげん",
+    id: "pemotongan biaya"
+  }, {
+    jp: "在庫管理",
+    reading: "ざいこかんり",
+    id: "manajemen persediaan"
+  }, {
+    jp: "役員会",
+    reading: "やくいんかい",
+    id: "rapat dewan direksi"
+  }, {
+    jp: "経営破綻",
+    reading: "けいえいはたん",
+    id: "kebangkrutan usaha"
+  }, {
+    jp: "事業継承",
+    reading: "じぎょうけいしょう",
+    id: "suksesi bisnis"
+  }, {
+    jp: "業務委託",
+    reading: "ぎょうむいたく",
+    id: "alih daya tugas"
+  }, {
+    jp: "人事評価",
+    reading: "じんじひょうか",
+    id: "penilaian kinerja karyawan"
+  }, {
+    jp: "労使関係",
+    reading: "ろうしかんけい",
+    id: "hubungan buruh-manajemen"
+  }, {
+    jp: "経営資源",
+    reading: "けいえいしげん",
+    id: "sumber daya perusahaan"
+  }, {
+    jp: "収益構造",
+    reading: "しゅうえきこうぞう",
+    id: "struktur pendapatan"
+  }, {
+    jp: "事業拡大",
+    reading: "じぎょうかくだい",
+    id: "ekspansi usaha"
+  }, {
+    jp: "経営破産",
+    reading: "けいえいはさん",
+    id: "kepailitan usaha"
+  }, {
+    jp: "株式公開",
+    reading: "かぶしきこうかい",
+    id: "penawaran saham publik (IPO)"
+  }, {
+    jp: "経営統合",
+    reading: "けいえいとうごう",
+    id: "integrasi manajemen"
+  }, {
+    jp: "経営分析",
+    reading: "けいえいぶんせき",
+    id: "analisis manajemen"
+  }, {
+    jp: "収益改善",
+    reading: "しゅうえきかいぜん",
+    id: "perbaikan profitabilitas"
+  }, {
+    jp: "業務提案",
+    reading: "ぎょうむていあん",
+    id: "usulan operasional"
+  }, {
+    jp: "労働生産性",
+    reading: "ろうどうせいさんせい",
+    id: "produktivitas tenaga kerja"
+  }, {
+    jp: "経営陣交代",
+    reading: "けいえいじんこうたい",
+    id: "pergantian jajaran direksi"
+  }, {
+    jp: "企業価値",
+    reading: "きぎょうかち",
+    id: "nilai perusahaan"
+  }, {
+    jp: "経営コンサルタント",
+    reading: "けいえいこんさるたんと",
+    id: "konsultan manajemen"
+  }, {
+    jp: "業務フロー",
+    reading: "ぎょうむふろー",
+    id: "alur kerja operasional"
+  }, {
+    jp: "経営陣刷新",
+    reading: "けいえいじんさっしん",
+    id: "penyegaran jajaran direksi"
+  }, {
+    jp: "事業撤退",
+    reading: "じぎょうてったい",
+    id: "penarikan diri dari bisnis"
+  }, {
+    jp: "収益源の多角化",
+    reading: "しゅうえきげんのたかくか",
+    id: "diversifikasi sumber pendapatan"
+  }, {
+    jp: "経営破綻回避",
+    reading: "けいえいはたんかいひ",
+    id: "penghindaran kebangkrutan"
+  }, {
+    jp: "業務標準化",
+    reading: "ぎょうむひょうじゅんか",
+    id: "standardisasi operasional"
+  }, {
+    jp: "株主価値",
+    reading: "かぶぬしかち",
+    id: "nilai bagi pemegang saham"
+  }, {
+    jp: "損益分岐点",
+    reading: "そんえきぶんきてん",
+    id: "titik impas"
+  }, {
+    jp: "業界動向",
+    reading: "ぎょうかいどうこう",
+    id: "tren industri"
+  }, {
+    jp: "競争力",
+    reading: "きょうそうりょく",
+    id: "daya saing"
+  }, {
+    jp: "収益性",
+    reading: "しゅうえきせい",
+    id: "profitabilitas"
+  }, {
+    jp: "事業計画",
+    reading: "じぎょうけいかく",
+    id: "rencana bisnis"
+  }, {
+    jp: "投資家",
+    reading: "とうしか",
+    id: "investor"
+  }, {
+    jp: "業務効率化",
+    reading: "ぎょうむこうりつか",
+    id: "efisiensi operasional"
+  }],
+  "Akademik": [{
+    jp: "論文執筆",
+    reading: "ろんぶんしっぴつ",
+    id: "penulisan makalah"
+  }, {
+    jp: "先行研究",
+    reading: "せんこうけんきゅう",
+    id: "penelitian terdahulu"
+  }, {
+    jp: "定量的",
+    reading: "ていりょうてき",
+    id: "kuantitatif"
+  }, {
+    jp: "定性的",
+    reading: "ていせいてき",
+    id: "kualitatif"
+  }, {
+    jp: "相関関係",
+    reading: "そうかんかんけい",
+    id: "korelasi"
+  }, {
+    jp: "因果関係",
+    reading: "いんがかんけい",
+    id: "hubungan sebab-akibat"
+  }, {
+    jp: "仮説検定",
+    reading: "かせつけんてい",
+    id: "uji hipotesis"
+  }, {
+    jp: "母集団",
+    reading: "ぼしゅうだん",
+    id: "populasi statistik"
+  }, {
+    jp: "標本",
+    reading: "ひょうほん",
+    id: "sampel"
+  }, {
+    jp: "査読",
+    reading: "さどく",
+    id: "peer review"
+  }, {
+    jp: "学会発表",
+    reading: "がっかいはっぴょう",
+    id: "presentasi konferensi"
+  }, {
+    jp: "引用",
+    reading: "いんよう",
+    id: "kutipan"
+  }, {
+    jp: "出典",
+    reading: "しゅってん",
+    id: "sumber referensi"
+  }, {
+    jp: "参照",
+    reading: "さんしょう",
+    id: "merujuk"
+  }, {
+    jp: "概観",
+    reading: "がいかん",
+    id: "tinjauan umum"
+  }, {
+    jp: "序論",
+    reading: "じょろん",
+    id: "pendahuluan"
+  }, {
+    jp: "本論",
+    reading: "ほんろん",
+    id: "isi utama"
+  }, {
+    jp: "結語",
+    reading: "けつご",
+    id: "penutup"
+  }, {
+    jp: "妥当性",
+    reading: "だとうせい",
+    id: "validitas"
+  }, {
+    jp: "信頼性",
+    reading: "しんらいせい",
+    id: "reliabilitas"
+  }, {
+    jp: "再現性",
+    reading: "さいげんせい",
+    id: "reproduktibilitas"
+  }, {
+    jp: "帰納法",
+    reading: "きのうほう",
+    id: "metode induktif"
+  }, {
+    jp: "演繹法",
+    reading: "えんえきほう",
+    id: "metode deduktif"
+  }, {
+    jp: "学際的",
+    reading: "がくさいてき",
+    id: "interdisipliner"
+  }, {
+    jp: "指導教官",
+    reading: "しどうきょうかん",
+    id: "dosen pembimbing"
+  }, {
+    jp: "学位",
+    reading: "がくい",
+    id: "gelar akademik"
+  }, {
+    jp: "博士課程",
+    reading: "はくしかてい",
+    id: "program doktoral"
+  }, {
+    jp: "修士論文",
+    reading: "しゅうしろんぶん",
+    id: "tesis master"
+  }, {
+    jp: "学術論文",
+    reading: "がくじゅつろんぶん",
+    id: "makalah akademik"
+  }, {
+    jp: "仮説検証",
+    reading: "かせつけんしょう",
+    id: "pengujian hipotesis"
+  }, {
+    jp: "引用文献",
+    reading: "いんようぶんけん",
+    id: "daftar pustaka"
+  }, {
+    jp: "実証研究",
+    reading: "じっしょうけんきゅう",
+    id: "penelitian empiris"
+  }, {
+    jp: "方法論",
+    reading: "ほうほうろん",
+    id: "metodologi"
+  }, {
+    jp: "批判的思考",
+    reading: "ひはんてきしこう",
+    id: "berpikir kritis"
+  }, {
+    jp: "客観性",
+    reading: "きゃっかんせい",
+    id: "objektivitas"
+  }, {
+    jp: "定量分析",
+    reading: "ていりょうぶんせき",
+    id: "analisis kuantitatif"
+  }, {
+    jp: "定性分析",
+    reading: "ていせいぶんせき",
+    id: "analisis kualitatif"
+  }, {
+    jp: "学位論文",
+    reading: "がくいろんぶん",
+    id: "tesis/disertasi"
+  }, {
+    jp: "実践知",
+    reading: "じっせんち",
+    id: "pengetahuan praktis"
+  }, {
+    jp: "学術的貢献",
+    reading: "がくじゅつてきこうけん",
+    id: "kontribusi akademik"
+  }, {
+    jp: "研究計画書",
+    reading: "けんきゅうけいかくしょ",
+    id: "proposal penelitian"
+  }, {
+    jp: "実験手順",
+    reading: "じっけんてじゅん",
+    id: "prosedur eksperimen"
+  }, {
+    jp: "研究テーマ",
+    reading: "けんきゅうてーま",
+    id: "tema penelitian"
+  }, {
+    jp: "理論的背景",
+    reading: "りろんてきはいけい",
+    id: "latar belakang teori"
+  }, {
+    jp: "学問領域",
+    reading: "がくもんりょういき",
+    id: "bidang keilmuan"
+  }, {
+    jp: "研究不正",
+    reading: "けんきゅうふせい",
+    id: "kecurangan penelitian"
+  }, {
+    jp: "学位取得",
+    reading: "がくいしゅとく",
+    id: "memperoleh gelar"
+  }, {
+    jp: "研究チーム",
+    reading: "けんきゅうちーむ",
+    id: "tim peneliti"
+  }, {
+    jp: "研究成果発表",
+    reading: "けんきゅうせいかはっぴょう",
+    id: "presentasi hasil riset"
+  }, {
+    jp: "学術界",
+    reading: "がくじゅつかい",
+    id: "dunia akademis"
+  }, {
+    jp: "研究助成金",
+    reading: "けんきゅうじょせいきん",
+    id: "hibah penelitian"
+  }, {
+    jp: "研究データ",
+    reading: "けんきゅうでーた",
+    id: "data penelitian"
+  }, {
+    jp: "学術交流",
+    reading: "がくじゅつこうりゅう",
+    id: "pertukaran akademik"
+  }, {
+    jp: "研究成果の応用",
+    reading: "けんきゅうせいかのおうよう",
+    id: "penerapan hasil penelitian"
+  }, {
+    jp: "学問的探求",
+    reading: "がくもんてきたんきゅう",
+    id: "penyelidikan ilmiah"
+  }, {
+    jp: "研究倫理審査",
+    reading: "けんきゅうりんりしんさ",
+    id: "tinjauan etika penelitian"
+  }, {
+    jp: "研究対象者",
+    reading: "けんきゅうたいしょうしゃ",
+    id: "subjek penelitian (manusia)"
+  }, {
+    jp: "学術的正確性",
+    reading: "がくじゅつてきせいかくせい",
+    id: "akurasi akademis"
+  }, {
+    jp: "研究の再現性",
+    reading: "けんきゅうのさいげんせい",
+    id: "reproduktibilitas penelitian"
+  }, {
+    jp: "学位審査",
+    reading: "がくいしんさ",
+    id: "sidang gelar"
+  }, {
+    jp: "研究成果の公表",
+    reading: "けんきゅうせいかのこうひょう",
+    id: "publikasi hasil penelitian"
+  }, {
+    jp: "先入観",
+    reading: "せんにゅうかん",
+    id: "prasangka/bias awal"
+  }, {
+    jp: "研究対象",
+    reading: "けんきゅうたいしょう",
+    id: "objek penelitian"
+  }, {
+    jp: "客観的評価",
+    reading: "きゃっかんてきひょうか",
+    id: "penilaian objektif"
+  }, {
+    jp: "独創性",
+    reading: "どくそうせい",
+    id: "orisinalitas"
+  }, {
+    jp: "研究成果",
+    reading: "けんきゅうせいか",
+    id: "hasil penelitian"
+  }, {
+    jp: "学術的",
+    reading: "がくじゅつてき",
+    id: "bersifat akademis"
+  }, {
+    jp: "先駆的",
+    reading: "せんくてき",
+    id: "pionir/perintis"
+  }, {
+    jp: "実証主義",
+    reading: "じっしょうしゅぎ",
+    id: "positivisme"
+  }, {
+    jp: "理論構築",
+    reading: "りろんこうちく",
+    id: "konstruksi teori"
+  }],
+  "Politik": [{
+    jp: "政権",
+    reading: "せいけん",
+    id: "pemerintahan berkuasa"
+  }, {
+    jp: "内閣",
+    reading: "ないかく",
+    id: "kabinet"
+  }, {
+    jp: "与野党",
+    reading: "よやとう",
+    id: "partai berkuasa dan oposisi"
+  }, {
+    jp: "国民投票",
+    reading: "こくみんとうひょう",
+    id: "referendum"
+  }, {
+    jp: "支持率",
+    reading: "しじりつ",
+    id: "tingkat dukungan"
+  }, {
+    jp: "政局",
+    reading: "せいきょく",
+    id: "situasi politik"
+  }, {
+    jp: "政界",
+    reading: "せいかい",
+    id: "dunia politik"
+  }, {
+    jp: "官僚",
+    reading: "かんりょう",
+    id: "birokrat"
+  }, {
+    jp: "行政改革",
+    reading: "ぎょうせいかいかく",
+    id: "reformasi administrasi"
+  }, {
+    jp: "財政赤字",
+    reading: "ざいせいあかじ",
+    id: "defisit fiskal"
+  }, {
+    jp: "増税",
+    reading: "ぞうぜい",
+    id: "kenaikan pajak"
+  }, {
+    jp: "減税",
+    reading: "げんぜい",
+    id: "penurunan pajak"
+  }, {
+    jp: "政治資金",
+    reading: "せいじしきん",
+    id: "dana politik"
+  }, {
+    jp: "汚職事件",
+    reading: "おしょくじけん",
+    id: "kasus korupsi"
+  }, {
+    jp: "不信任案",
+    reading: "ふしんにんあん",
+    id: "mosi tidak percaya"
+  }, {
+    jp: "解散総選挙",
+    reading: "かいさんそうせんきょ",
+    id: "pembubaran dan pemilu ulang"
+  }, {
+    jp: "圧力団体",
+    reading: "あつりょくだんたい",
+    id: "kelompok penekan"
+  }, {
+    jp: "政策提言",
+    reading: "せいさくていげん",
+    id: "usulan kebijakan"
+  }, {
+    jp: "国益",
+    reading: "こくえき",
+    id: "kepentingan nasional"
+  }, {
+    jp: "主権",
+    reading: "しゅけん",
+    id: "kedaulatan"
+  }, {
+    jp: "統治",
+    reading: "とうち",
+    id: "pemerintahan, tata kelola"
+  }, {
+    jp: "地方自治",
+    reading: "ちほうじち",
+    id: "otonomi daerah"
+  }, {
+    jp: "行政府",
+    reading: "ぎょうせいふ",
+    id: "eksekutif pemerintah"
+  }, {
+    jp: "立法府",
+    reading: "りっぽうふ",
+    id: "badan legislatif"
+  }, {
+    jp: "政権交代",
+    reading: "せいけんこうたい",
+    id: "pergantian kekuasaan"
+  }, {
+    jp: "野党連合",
+    reading: "やとうれんごう",
+    id: "koalisi oposisi"
+  }, {
+    jp: "政策立案",
+    reading: "せいさくりつあん",
+    id: "perumusan kebijakan"
+  }, {
+    jp: "有権者",
+    reading: "ゆうけんしゃ",
+    id: "pemilih"
+  }, {
+    jp: "議席",
+    reading: "ぎせき",
+    id: "kursi parlemen"
+  }, {
+    jp: "政治腐敗",
+    reading: "せいじふはい",
+    id: "korupsi politik"
+  }, {
+    jp: "三権分立",
+    reading: "さんけんぶんりつ",
+    id: "pemisahan tiga kekuasaan"
+  }, {
+    jp: "政治的中立",
+    reading: "せいじてきちゅうりつ",
+    id: "netralitas politik"
+  }, {
+    jp: "憲法改正",
+    reading: "けんぽうかいせい",
+    id: "amandemen konstitusi"
+  }, {
+    jp: "地方分権",
+    reading: "ちほうぶんけん",
+    id: "desentralisasi"
+  }, {
+    jp: "政党助成金",
+    reading: "せいとうじょせいきん",
+    id: "subsidi partai politik"
+  }, {
+    jp: "汚職防止",
+    reading: "おしょくぼうし",
+    id: "pencegahan korupsi"
+  }, {
+    jp: "政治的意図",
+    reading: "せいじてきいと",
+    id: "maksud politik"
+  }, {
+    jp: "政治団体",
+    reading: "せいじだんたい",
+    id: "organisasi politik"
+  }, {
+    jp: "政治的圧力",
+    reading: "せいじてきあつりょく",
+    id: "tekanan politik"
+  }, {
+    jp: "政策転換",
+    reading: "せいさくてんかん",
+    id: "perubahan kebijakan"
+  }, {
+    jp: "政界再編",
+    reading: "せいかいさいへん",
+    id: "reorganisasi dunia politik"
+  }, {
+    jp: "国会審議",
+    reading: "こっかいしんぎ",
+    id: "pembahasan di parlemen"
+  }, {
+    jp: "政治スキャンダル",
+    reading: "せいじすきゃんだる",
+    id: "skandal politik"
+  }, {
+    jp: "政策論争",
+    reading: "せいさくろんそう",
+    id: "perdebatan kebijakan"
+  }, {
+    jp: "政治的立場",
+    reading: "せいじてきたちば",
+    id: "sikap politik"
+  }, {
+    jp: "外交儀礼",
+    reading: "がいこうぎれい",
+    id: "protokol diplomatik"
+  }, {
+    jp: "政治的中枢",
+    reading: "せいじてきちゅうすう",
+    id: "pusat kekuasaan politik"
+  }, {
+    jp: "政治体制",
+    reading: "せいじたいせい",
+    id: "sistem politik"
+  }, {
+    jp: "政治的駆け引き",
+    reading: "せいじてきかけひき",
+    id: "tawar-menawar politik"
+  }, {
+    jp: "与党内対立",
+    reading: "よとうないたいりつ",
+    id: "perselisihan internal partai berkuasa"
+  }, {
+    jp: "政策実行力",
+    reading: "せいさくじっこうりょく",
+    id: "kapasitas eksekusi kebijakan"
+  }, {
+    jp: "政治的正当性",
+    reading: "せいじてきせいとうせい",
+    id: "legitimasi politik"
+  }, {
+    jp: "政治的意思決定",
+    reading: "せいじてきいしけってい",
+    id: "pengambilan keputusan politik"
+  }, {
+    jp: "選挙制度",
+    reading: "せんきょせいど",
+    id: "sistem pemilu"
+  }, {
+    jp: "政策評価",
+    reading: "せいさくひょうか",
+    id: "evaluasi kebijakan"
+  }, {
+    jp: "政治的安定",
+    reading: "せいじてきあんてい",
+    id: "stabilitas politik"
+  }, {
+    jp: "公約",
+    reading: "こうやく",
+    id: "janji kampanye"
+  }, {
+    jp: "政治不信",
+    reading: "せいじふしん",
+    id: "ketidakpercayaan pada politik"
+  }, {
+    jp: "外交政策",
+    reading: "がいこうせいさく",
+    id: "kebijakan luar negeri"
+  }, {
+    jp: "政策決定",
+    reading: "せいさくけってい",
+    id: "penetapan kebijakan"
+  }, {
+    jp: "行政手腕",
+    reading: "ぎょうせいしゅわん",
+    id: "kecakapan administratif"
+  }],
+  "Sastra": [{
+    jp: "文体",
+    reading: "ぶんたい",
+    id: "gaya bahasa tulisan"
+  }, {
+    jp: "修辞",
+    reading: "しゅうじ",
+    id: "retorika"
+  }, {
+    jp: "隠喩",
+    reading: "いんゆ",
+    id: "metafora"
+  }, {
+    jp: "直喩",
+    reading: "ちょくゆ",
+    id: "simile"
+  }, {
+    jp: "擬人法",
+    reading: "ぎじんほう",
+    id: "personifikasi"
+  }, {
+    jp: "伏線",
+    reading: "ふくせん",
+    id: "foreshadowing"
+  }, {
+    jp: "余韻",
+    reading: "よいん",
+    id: "gema, kesan mendalam"
+  }, {
+    jp: "情景描写",
+    reading: "じょうけいびょうしゃ",
+    id: "deskripsi suasana"
+  }, {
+    jp: "心理描写",
+    reading: "しんりびょうしゃ",
+    id: "penggambaran psikologis"
+  }, {
+    jp: "語り手",
+    reading: "かたりて",
+    id: "narator"
+  }, {
+    jp: "一人称",
+    reading: "いちにんしょう",
+    id: "sudut pandang orang pertama"
+  }, {
+    jp: "三人称",
+    reading: "さんにんしょう",
+    id: "sudut pandang orang ketiga"
+  }, {
+    jp: "主題",
+    reading: "しゅだい",
+    id: "tema utama"
+  }, {
+    jp: "起承転結",
+    reading: "きしょうてんけつ",
+    id: "struktur narasi empat babak"
+  }, {
+    jp: "韻文",
+    reading: "いんぶん",
+    id: "puisi berirama"
+  }, {
+    jp: "散文",
+    reading: "さんぶん",
+    id: "prosa"
+  }, {
+    jp: "古典文学",
+    reading: "こてんぶんがく",
+    id: "sastra klasik"
+  }, {
+    jp: "現代文学",
+    reading: "げんだいぶんがく",
+    id: "sastra modern"
+  }, {
+    jp: "随筆",
+    reading: "ずいひつ",
+    id: "esai reflektif"
+  }, {
+    jp: "書評",
+    reading: "しょひょう",
+    id: "resensi buku"
+  }, {
+    jp: "文豪",
+    reading: "ぶんごう",
+    id: "sastrawan besar"
+  }, {
+    jp: "名作",
+    reading: "めいさく",
+    id: "karya masterpiece"
+  }, {
+    jp: "傑作",
+    reading: "けっさく",
+    id: "karya agung"
+  }, {
+    jp: "筆致",
+    reading: "ひっち",
+    id: "gaya penulisan"
+  }, {
+    jp: "情緒",
+    reading: "じょうちょ",
+    id: "suasana emosional"
+  }, {
+    jp: "比喩表現",
+    reading: "ひゆひょうげん",
+    id: "ungkapan metafora"
+  }, {
+    jp: "叙事詩",
+    reading: "じょじし",
+    id: "puisi epik"
+  }, {
+    jp: "風刺",
+    reading: "ふうし",
+    id: "satir"
+  }, {
+    jp: "象徴主義",
+    reading: "しょうちょうしゅぎ",
+    id: "simbolisme"
+  }, {
+    jp: "韻律",
+    reading: "いんりつ",
+    id: "metrum/irama sastra"
+  }, {
+    jp: "独白",
+    reading: "どくはく",
+    id: "monolog"
+  }, {
+    jp: "寓話",
+    reading: "ぐうわ",
+    id: "fabel"
+  }, {
+    jp: "文学批評",
+    reading: "ぶんがくひひょう",
+    id: "kritik sastra"
+  }, {
+    jp: "私小説",
+    reading: "ししょうせつ",
+    id: "novel otobiografi Jepang"
+  }, {
+    jp: "結末",
+    reading: "けつまつ",
+    id: "akhir cerita"
+  }, {
+    jp: "推敲",
+    reading: "すいこう",
+    id: "penyuntingan tulisan"
+  }, {
+    jp: "文脈",
+    reading: "ぶんみゃく",
+    id: "konteks (tulisan)"
+  }, {
+    jp: "暗喩",
+    reading: "あんゆ",
+    id: "metafora tersembunyi"
+  }, {
+    jp: "文学史",
+    reading: "ぶんがくし",
+    id: "sejarah sastra"
+  }, {
+    jp: "作品世界",
+    reading: "さくひんせかい",
+    id: "dunia karya sastra"
+  }, {
+    jp: "文学的価値",
+    reading: "ぶんがくてきかち",
+    id: "nilai sastra"
+  }, {
+    jp: "文体模写",
+    reading: "ぶんたいもしゃ",
+    id: "tiruan gaya penulisan"
+  }, {
+    jp: "小説技法",
+    reading: "しょうせつぎほう",
+    id: "teknik penulisan novel"
+  }, {
+    jp: "詩的表現",
+    reading: "してきひょうげん",
+    id: "ekspresi puitis"
+  }, {
+    jp: "文学思潮",
+    reading: "ぶんがくしちょう",
+    id: "aliran pemikiran sastra"
+  }, {
+    jp: "作家性",
+    reading: "さっかせい",
+    id: "karakteristik penulis"
+  }, {
+    jp: "文学作品の解釈",
+    reading: "ぶんがくさくひんのかいしゃく",
+    id: "interpretasi karya sastra"
+  }, {
+    jp: "戯曲作家",
+    reading: "ぎきょくさっか",
+    id: "penulis naskah drama"
+  }, {
+    jp: "物語の展開",
+    reading: "ものがたりのてんかい",
+    id: "perkembangan alur cerita"
+  }, {
+    jp: "文学理論",
+    reading: "ぶんがくりろん",
+    id: "teori sastra"
+  }, {
+    jp: "時代小説",
+    reading: "じだいしょうせつ",
+    id: "novel sejarah"
+  }, {
+    jp: "虚構",
+    reading: "きょこう",
+    id: "fiksi"
+  }, {
+    jp: "叙述",
+    reading: "じょじゅつ",
+    id: "narasi"
+  }, {
+    jp: "暗示",
+    reading: "あんじ",
+    id: "sugesti/petunjuk implisit"
+  }, {
+    jp: "風刺画",
+    reading: "ふうしが",
+    id: "kartun satire"
+  }, {
+    jp: "時代背景",
+    reading: "じだいはいけい",
+    id: "latar belakang zaman"
+  }, {
+    jp: "登場人物",
+    reading: "とうじょうじんぶつ",
+    id: "tokoh cerita"
+  }],
+  "Idiom": [{
+    jp: "一石二鳥",
+    reading: "いっせきにちょう",
+    id: "sekali dayung, dua tiga pulau terlampaui"
+  }, {
+    jp: "臨機応変",
+    reading: "りんきおうへん",
+    id: "adaptif sesuai situasi"
+  }, {
+    jp: "温故知新",
+    reading: "おんこちしん",
+    id: "belajar dari masa lalu untuk masa depan"
+  }, {
+    jp: "自業自得",
+    reading: "じごうじとく",
+    id: "menuai akibat perbuatan sendiri"
+  }, {
+    jp: "十人十色",
+    reading: "じゅうにんといろ",
+    id: "setiap orang berbeda"
+  }, {
+    jp: "大器晩成",
+    reading: "たいきばんせい",
+    id: "sukses besar di usia matang"
+  }, {
+    jp: "有言実行",
+    reading: "ゆうげんじっこう",
+    id: "menepati ucapan dengan tindakan"
+  }, {
+    jp: "一期一会",
+    reading: "いちごいちえ",
+    id: "pertemuan sekali seumur hidup"
+  }, {
+    jp: "花より団子",
+    reading: "はなよりだんご",
+    id: "mementingkan hal praktis daripada estetika"
+  }, {
+    jp: "猿も木から落ちる",
+    reading: "さるもきからおちる",
+    id: "ahli pun bisa salah"
+  }, {
+    jp: "石の上にも三年",
+    reading: "いしのうえにもさんねん",
+    id: "kesabaran membuahkan hasil"
+  }, {
+    jp: "七転び八起き",
+    reading: "ななころびやおき",
+    id: "jatuh bangun pantang menyerah"
+  }, {
+    jp: "目は口ほどに物を言う",
+    reading: "めはくちほどにものをいう",
+    id: "mata bisa lebih jujur dari mulut"
+  }, {
+    jp: "塵も積もれば山となる",
+    reading: "ちりもつもればやまとなる",
+    id: "sedikit demi sedikit jadi bukit"
+  }, {
+    jp: "井の中の蛙",
+    reading: "いのなかのかわず",
+    id: "katak dalam tempurung"
+  }, {
+    jp: "灯台下暗し",
+    reading: "とうだいもとくらし",
+    id: "hal terdekat sering terabaikan"
+  }, {
+    jp: "馬の耳に念仏",
+    reading: "うまのみみにねんぶつ",
+    id: "nasihat yang tidak digubris"
+  }, {
+    jp: "猫に小判",
+    reading: "ねこにこばん",
+    id: "memberi sesuatu berharga pada yang tak paham nilainya"
+  }, {
+    jp: "二の足を踏む",
+    reading: "にのあしをふむ",
+    id: "ragu-ragu melangkah"
+  }, {
+    jp: "手のひらを返す",
+    reading: "てのひらをかえす",
+    id: "berubah sikap drastis"
+  }, {
+    jp: "気が置けない",
+    reading: "きがおけない",
+    id: "bisa santai tanpa sungkan"
+  }, {
+    jp: "油を売る",
+    reading: "あぶらをうる",
+    id: "membuang-buang waktu saat bekerja"
+  }, {
+    jp: "猫の手も借りたい",
+    reading: "ねこのてもかりたい",
+    id: "sangat sibuk butuh bantuan"
+  }, {
+    jp: "棚に上げる",
+    reading: "たなにあげる",
+    id: "mengabaikan kesalahan sendiri"
+  }, {
+    jp: "板挟みになる",
+    reading: "いたばさみになる",
+    id: "terjepit di antara dua pihak"
+  }, {
+    jp: "目から鱗が落ちる",
+    reading: "めからうろこがおちる",
+    id: "tersadar tiba-tiba"
+  }, {
+    jp: "光陰矢の如し",
+    reading: "こういんやのごとし",
+    id: "waktu berlalu cepat"
+  }, {
+    jp: "虎の子",
+    reading: "とらのこ",
+    id: "harta paling berharga"
+  }, {
+    jp: "蛇足",
+    reading: "だそく",
+    id: "hal yang tidak perlu ditambahkan"
+  }, {
+    jp: "氷山の一角",
+    reading: "ひょうざんのいっかく",
+    id: "puncak gunung es"
+  }, {
+    jp: "棚から牡丹餅",
+    reading: "たなからぼたもち",
+    id: "keberuntungan tak terduga"
+  }, {
+    jp: "河童の川流れ",
+    reading: "かっぱのかわながれ",
+    id: "ahli pun bisa gagal"
+  }, {
+    jp: "急がば回れ",
+    reading: "いそがばまわれ",
+    id: "lebih baik pelan tapi pasti"
+  }, {
+    jp: "能ある鷹は爪を隠す",
+    reading: "のうあるたかはつめをかくす",
+    id: "orang pandai tidak sombong"
+  }, {
+    jp: "備えあれば憂いなし",
+    reading: "そなえあればうれいなし",
+    id: "sedia payung sebelum hujan"
+  }, {
+    jp: "郷に入っては郷に従え",
+    reading: "ごうにいってはごうにしたがえ",
+    id: "di mana bumi dipijak di situ langit dijunjung"
+  }, {
+    jp: "虎穴に入らずんば虎子を得ず",
+    reading: "こけつにいらずんばこじをえず",
+    id: "tanpa berani ambil risiko tidak akan dapat hasil besar"
+  }, {
+    jp: "覆水盆に返らず",
+    reading: "ふくすいぼんにかえらず",
+    id: "nasi sudah jadi bubur"
+  }, {
+    jp: "好きこそ物の上手なれ",
+    reading: "すきこそもののじょうずなれ",
+    id: "kesukaan mendatangkan kemahiran"
+  }, {
+    jp: "転ばぬ先の杖",
+    reading: "ころばぬさきのつえ",
+    id: "sedia payung sebelum hujan"
+  }, {
+    jp: "案ずるより産むが易し",
+    reading: "あんずるよりうむがやすし",
+    id: "mengerjakan lebih mudah dari yang dikhawatirkan"
+  }, {
+    jp: "石橋を叩いて渡る",
+    reading: "いしばしをたたいてわたる",
+    id: "sangat berhati-hati"
+  }, {
+    jp: "二兎を追う者は一兎をも得ず",
+    reading: "にとをおうものはいっとをもえず",
+    id: "mengejar dua kelinci tidak dapat satupun"
+  }, {
+    jp: "暖簾に腕押し",
+    reading: "のれんにうでおし",
+    id: "usaha yang sia-sia"
+  }, {
+    jp: "百聞は一見に如かず",
+    reading: "ひゃくぶんはいっけんにしかず",
+    id: "melihat lebih baik dari mendengar"
+  }, {
+    jp: "捕らぬ狸の皮算用",
+    reading: "とらぬたぬきのかわざんよう",
+    id: "menghitung ayam sebelum menetas"
+  }, {
+    jp: "画竜点睛",
+    reading: "がりょうてんせい",
+    id: "sentuhan akhir penyempurna"
+  }, {
+    jp: "四面楚歌",
+    reading: "しめんそか",
+    id: "terkepung dari segala arah"
+  }, {
+    jp: "以心伝心",
+    reading: "いしんでんしん",
+    id: "saling memahami tanpa kata"
+  }],
+  "Hukum Formal & Kontrak": [{
+    jp: "条項",
+    reading: "じょうこう",
+    id: "klausul"
+  }, {
+    jp: "但し書き",
+    reading: "ただしがき",
+    id: "klausa pengecualian"
+  }, {
+    jp: "違約金",
+    reading: "いやくきん",
+    id: "denda pelanggaran kontrak"
+  }, {
+    jp: "履行",
+    reading: "りこう",
+    id: "pelaksanaan kewajiban"
+  }, {
+    jp: "不履行",
+    reading: "ふりこう",
+    id: "wanprestasi"
+  }, {
+    jp: "解約",
+    reading: "かいやく",
+    id: "pembatalan kontrak"
+  }, {
+    jp: "更改",
+    reading: "こうかい",
+    id: "pembaruan kontrak"
+  }, {
+    jp: "準拠法",
+    reading: "じゅんきょほう",
+    id: "hukum yang berlaku"
+  }, {
+    jp: "管轄裁判所",
+    reading: "かんかつさいばんしょ",
+    id: "pengadilan berwenang"
+  }, {
+    jp: "訴状",
+    reading: "そじょう",
+    id: "surat gugatan"
+  }, {
+    jp: "答弁書",
+    reading: "とうべんしょ",
+    id: "jawaban gugatan"
+  }, {
+    jp: "判例",
+    reading: "はんれい",
+    id: "yurisprudensi"
+  }, {
+    jp: "立証責任",
+    reading: "りっしょうせきにん",
+    id: "beban pembuktian"
+  }, {
+    jp: "過失",
+    reading: "かしつ",
+    id: "kelalaian"
+  }, {
+    jp: "故意",
+    reading: "こい",
+    id: "kesengajaan"
+  }, {
+    jp: "免責事項",
+    reading: "めんせきじこう",
+    id: "klausa pembebasan tanggung jawab"
+  }, {
+    jp: "守秘義務",
+    reading: "しゅひぎむ",
+    id: "kewajiban kerahasiaan"
+  }, {
+    jp: "知的財産権",
+    reading: "ちてきざいさんけん",
+    id: "hak kekayaan intelektual"
+  }, {
+    jp: "特許",
+    reading: "とっきょ",
+    id: "paten"
+  }, {
+    jp: "商標",
+    reading: "しょうひょう",
+    id: "merek dagang"
+  }, {
+    jp: "著作権侵害",
+    reading: "ちょさくけんしんがい",
+    id: "pelanggaran hak cipta"
+  }, {
+    jp: "仲裁条項",
+    reading: "ちゅうさいじょうこう",
+    id: "klausul arbitrase"
+  }, {
+    jp: "準用",
+    reading: "じゅんよう",
+    id: "penerapan analog aturan"
+  }, {
+    jp: "施行日",
+    reading: "しこうび",
+    id: "tanggal berlaku"
+  }, {
+    jp: "債権者",
+    reading: "さいけんしゃ",
+    id: "kreditur"
+  }, {
+    jp: "被告人",
+    reading: "ひこくにん",
+    id: "terdakwa"
+  }, {
+    jp: "上告",
+    reading: "じょうこく",
+    id: "kasasi"
+  }, {
+    jp: "契約不履行",
+    reading: "けいやくふりこう",
+    id: "wanprestasi"
+  }, {
+    jp: "時効",
+    reading: "じこう",
+    id: "kedaluwarsa hukum"
+  }, {
+    jp: "損害賠償請求",
+    reading: "そんがいばいしょうせいきゅう",
+    id: "tuntutan ganti rugi"
+  }, {
+    jp: "善意の第三者",
+    reading: "ぜんいのだいさんしゃ",
+    id: "pihak ketiga beritikad baik"
+  }, {
+    jp: "公序良俗",
+    reading: "こうじょりょうぞく",
+    id: "ketertiban umum & kesusilaan"
+  }, {
+    jp: "瑕疵担保責任",
+    reading: "かしたんぽせきにん",
+    id: "tanggung jawab cacat tersembunyi"
+  }, {
+    jp: "連帯保証",
+    reading: "れんたいほしょう",
+    id: "jaminan bersama"
+  }, {
+    jp: "公正証書",
+    reading: "こうせいしょうしょ",
+    id: "akta notaris"
+  }, {
+    jp: "消滅時効",
+    reading: "しょうめつじこう",
+    id: "kedaluwarsa hak"
+  }, {
+    jp: "契約解除",
+    reading: "けいやくかいじょ",
+    id: "pembatalan kontrak"
+  }, {
+    jp: "債務者",
+    reading: "さいむしゃ",
+    id: "debitur"
+  }, {
+    jp: "法的拘束力",
+    reading: "ほうてきこうそくりょく",
+    id: "kekuatan mengikat hukum"
+  }, {
+    jp: "知的財産侵害",
+    reading: "ちてきざいさんしんがい",
+    id: "pelanggaran kekayaan intelektual"
+  }, {
+    jp: "裁判所命令",
+    reading: "さいばんしょめいれい",
+    id: "perintah pengadilan"
+  }, {
+    jp: "法廷闘争",
+    reading: "ほうていとうそう",
+    id: "pertarungan di pengadilan"
+  }, {
+    jp: "証拠能力",
+    reading: "しょうこのうりょく",
+    id: "keabsahan bukti"
+  }, {
+    jp: "弁護士費用",
+    reading: "べんごしひよう",
+    id: "biaya pengacara"
+  }, {
+    jp: "契約書の条項",
+    reading: "けいやくしょのじょうこう",
+    id: "klausul kontrak"
+  }, {
+    jp: "法的手続き",
+    reading: "ほうてきてつづき",
+    id: "prosedur hukum"
+  }, {
+    jp: "契約当事者",
+    reading: "けいやくとうじしゃ",
+    id: "pihak dalam kontrak"
+  }, {
+    jp: "契約更新条項",
+    reading: "けいやくこうしんじょうこう",
+    id: "klausul perpanjangan kontrak"
+  }, {
+    jp: "履行遅滞",
+    reading: "りこうちたい",
+    id: "keterlambatan pemenuhan kontrak"
+  }, {
+    jp: "解除条件",
+    reading: "かいじょじょうけん",
+    id: "syarat pembatalan"
+  }, {
+    jp: "訴訟手続き",
+    reading: "そしょうてつづき",
+    id: "prosedur litigasi"
+  }, {
+    jp: "民事訴訟",
+    reading: "みんじそしょう",
+    id: "gugatan perdata"
+  }, {
+    jp: "刑事責任",
+    reading: "けいじせきにん",
+    id: "tanggung jawab pidana"
+  }, {
+    jp: "法的責任",
+    reading: "ほうてきせきにん",
+    id: "tanggung jawab hukum"
+  }],
+  "Ekonomi Makro": [{
+    jp: "国内総生産",
+    reading: "こくないそうせいさん",
+    id: "PDB"
+  }, {
+    jp: "経済成長率",
+    reading: "けいざいせいちょうりつ",
+    id: "tingkat pertumbuhan ekonomi"
+  }, {
+    jp: "インフレ率",
+    reading: "いんふれりつ",
+    id: "tingkat inflasi"
+  }, {
+    jp: "金利政策",
+    reading: "きんりせいさく",
+    id: "kebijakan suku bunga"
+  }, {
+    jp: "金融緩和",
+    reading: "きんゆうかんわ",
+    id: "pelonggaran moneter"
+  }, {
+    jp: "金融引き締め",
+    reading: "きんゆうひきしめ",
+    id: "pengetatan moneter"
+  }, {
+    jp: "財政政策",
+    reading: "ざいせいせいさく",
+    id: "kebijakan fiskal"
+  }, {
+    jp: "国債",
+    reading: "こくさい",
+    id: "obligasi negara"
+  }, {
+    jp: "為替介入",
+    reading: "かわせかいにゅう",
+    id: "intervensi mata uang"
+  }, {
+    jp: "貿易収支",
+    reading: "ぼうえきしゅうし",
+    id: "neraca perdagangan"
+  }, {
+    jp: "経常収支",
+    reading: "けいじょうしゅうし",
+    id: "neraca transaksi berjalan"
+  }, {
+    jp: "失業率",
+    reading: "しつぎょうりつ",
+    id: "tingkat pengangguran"
+  }, {
+    jp: "有効求人倍率",
+    reading: "ゆうこうきゅうじんばいりつ",
+    id: "rasio lowongan kerja"
+  }, {
+    jp: "潜在成長率",
+    reading: "せんざいせいちょうりつ",
+    id: "tingkat pertumbuhan potensial"
+  }, {
+    jp: "景気循環",
+    reading: "けいきじゅんかん",
+    id: "siklus bisnis"
+  }, {
+    jp: "バブル経済",
+    reading: "ばぶるけいざい",
+    id: "ekonomi gelembung"
+  }, {
+    jp: "恐慌",
+    reading: "きょうこう",
+    id: "depresi ekonomi"
+  }, {
+    jp: "格差社会",
+    reading: "かくさしゃかい",
+    id: "masyarakat timpang"
+  }, {
+    jp: "富の分配",
+    reading: "とみのぶんぱい",
+    id: "distribusi kekayaan"
+  }, {
+    jp: "保護貿易",
+    reading: "ほごぼうえき",
+    id: "proteksionisme perdagangan"
+  }, {
+    jp: "自由市場",
+    reading: "じゆうしじょう",
+    id: "pasar bebas"
+  }, {
+    jp: "独占",
+    reading: "どくせん",
+    id: "monopoli"
+  }, {
+    jp: "寡占",
+    reading: "かせん",
+    id: "oligopoli"
+  }, {
+    jp: "需給バランス",
+    reading: "じゅきゅうばらんす",
+    id: "keseimbangan permintaan-penawaran"
+  }, {
+    jp: "量的緩和",
+    reading: "りょうてきかんわ",
+    id: "pelonggaran kuantitatif"
+  }, {
+    jp: "構造改革",
+    reading: "こうぞうかいかく",
+    id: "reformasi struktural"
+  }, {
+    jp: "実質GDP",
+    reading: "じっしつジーディーピー",
+    id: "PDB riil"
+  }, {
+    jp: "名目金利",
+    reading: "めいもくきんり",
+    id: "suku bunga nominal"
+  }, {
+    jp: "経済指標",
+    reading: "けいざいしひょう",
+    id: "indikator ekonomi"
+  }, {
+    jp: "金融緩和政策",
+    reading: "きんゆうかんわせいさく",
+    id: "kebijakan pelonggaran moneter"
+  }, {
+    jp: "財政出動",
+    reading: "ざいせいしゅつどう",
+    id: "stimulus fiskal"
+  }, {
+    jp: "経済安定化",
+    reading: "けいざいあんていか",
+    id: "stabilisasi ekonomi"
+  }, {
+    jp: "生産性向上策",
+    reading: "せいさんせいこうじょうさく",
+    id: "langkah peningkatan produktivitas"
+  }, {
+    jp: "経済連携協定",
+    reading: "けいざいれんけいきょうてい",
+    id: "perjanjian kemitraan ekonomi"
+  }, {
+    jp: "為替変動",
+    reading: "かわせへんどう",
+    id: "fluktuasi nilai tukar"
+  }, {
+    jp: "経済危機",
+    reading: "けいざいきき",
+    id: "krisis ekonomi"
+  }, {
+    jp: "経済制裁措置",
+    reading: "けいざいせいさいそち",
+    id: "langkah sanksi ekonomi"
+  }, {
+    jp: "市場規模",
+    reading: "しじょうきぼ",
+    id: "ukuran pasar"
+  }, {
+    jp: "経済圏",
+    reading: "けいざいけん",
+    id: "kawasan ekonomi"
+  }, {
+    jp: "経済成長鈍化",
+    reading: "けいざいせいちょうどんか",
+    id: "perlambatan pertumbuhan ekonomi"
+  }, {
+    jp: "財政健全化",
+    reading: "ざいせいけんぜんか",
+    id: "konsolidasi fiskal"
+  }, {
+    jp: "金融市場の変動",
+    reading: "きんゆうしじょうのへんどう",
+    id: "volatilitas pasar keuangan"
+  }, {
+    jp: "経済圏統合",
+    reading: "けいざいけんとうごう",
+    id: "integrasi kawasan ekonomi"
+  }, {
+    jp: "実質賃金",
+    reading: "じっしつちんぎん",
+    id: "upah riil"
+  }, {
+    jp: "金融政策決定会合",
+    reading: "きんゆうせいさくけっていかいごう",
+    id: "rapat kebijakan moneter"
+  }, {
+    jp: "設備投資",
+    reading: "せつびとうし",
+    id: "investasi peralatan"
+  }, {
+    jp: "金融政策",
+    reading: "きんゆうせいさく",
+    id: "kebijakan moneter"
+  }, {
+    jp: "デフレ",
+    reading: "デフレ",
+    id: "deflasi"
+  }, {
+    jp: "景気後退",
+    reading: "けいきこうたい",
+    id: "resesi ekonomi"
+  }, {
+    jp: "経済格差",
+    reading: "けいざいかくさ",
+    id: "kesenjangan ekonomi"
+  }, {
+    jp: "資本主義",
+    reading: "しほんしゅぎ",
+    id: "kapitalisme"
+  }, {
+    jp: "市場原理",
+    reading: "しじょうげんり",
+    id: "prinsip pasar"
+  }, {
+    jp: "貿易摩擦",
+    reading: "ぼうえきまさつ",
+    id: "gesekan perdagangan"
+  }],
+  "Ilmiah & Penelitian Lanjutan": [{
+    jp: "統計的有意差",
+    reading: "とうけいてきゆういさ",
+    id: "signifikansi statistik"
+  }, {
+    jp: "標準偏差",
+    reading: "ひょうじゅんへんさ",
+    id: "deviasi standar"
+  }, {
+    jp: "変数",
+    reading: "へんすう",
+    id: "variabel"
+  }, {
+    jp: "独立変数",
+    reading: "どくりつへんすう",
+    id: "variabel independen"
+  }, {
+    jp: "従属変数",
+    reading: "じゅうぞくへんすう",
+    id: "variabel dependen"
+  }, {
+    jp: "制御群",
+    reading: "せいぎょぐん",
+    id: "kelompok kontrol"
+  }, {
+    jp: "実験群",
+    reading: "じっけんぐん",
+    id: "kelompok eksperimen"
+  }, {
+    jp: "誤差",
+    reading: "ごさ",
+    id: "margin kesalahan"
+  }, {
+    jp: "精度",
+    reading: "せいど",
+    id: "akurasi, presisi"
+  }, {
+    jp: "妥当性検証",
+    reading: "だとうせいけんしょう",
+    id: "verifikasi validitas"
+  }, {
+    jp: "追試",
+    reading: "ついし",
+    id: "replikasi eksperimen"
+  }, {
+    jp: "学術誌",
+    reading: "がくじゅつし",
+    id: "jurnal akademik"
+  }, {
+    jp: "特許出願",
+    reading: "とっきょしゅつがん",
+    id: "pengajuan paten"
+  }, {
+    jp: "学際研究",
+    reading: "がくさいけんきゅう",
+    id: "penelitian interdisipliner"
+  }, {
+    jp: "応用研究",
+    reading: "おうようけんきゅう",
+    id: "penelitian terapan"
+  }, {
+    jp: "研究倫理",
+    reading: "けんきゅうりんり",
+    id: "etika penelitian"
+  }, {
+    jp: "利益相反",
+    reading: "りえきそうはん",
+    id: "konflik kepentingan"
+  }, {
+    jp: "共同研究",
+    reading: "きょうどうけんきゅう",
+    id: "penelitian kolaboratif"
+  }, {
+    jp: "実証的",
+    reading: "じっしょうてき",
+    id: "empiris"
+  }, {
+    jp: "統計的有意",
+    reading: "とうけいてきゆうい",
+    id: "signifikansi statistik"
+  }, {
+    jp: "対照群",
+    reading: "たいしょうぐん",
+    id: "kelompok kontrol"
+  }, {
+    jp: "反証可能性",
+    reading: "はんしょうかのうせい",
+    id: "falsifiabilitas"
+  }, {
+    jp: "交絡因子",
+    reading: "こうらくいんし",
+    id: "faktor perancu"
+  }, {
+    jp: "標本抽出",
+    reading: "ひょうほんちゅうしゅつ",
+    id: "pengambilan sampel"
+  }, {
+    jp: "バイアス除去",
+    reading: "バイアスじょきょ",
+    id: "penghilangan bias"
+  }, {
+    jp: "二重盲検",
+    reading: "にじゅうもうけん",
+    id: "uji buta ganda"
+  }, {
+    jp: "外的妥当性",
+    reading: "がいてきだとうせい",
+    id: "validitas eksternal"
+  }, {
+    jp: "再現実験",
+    reading: "さいげんじっけん",
+    id: "eksperimen replikasi"
+  }, {
+    jp: "対照実験",
+    reading: "たいしょうじっけん",
+    id: "eksperimen kontrol"
+  }, {
+    jp: "研究サンプル",
+    reading: "けんきゅうさんぷる",
+    id: "sampel penelitian"
+  }, {
+    jp: "科学的根拠",
+    reading: "かがくてきこんきょ",
+    id: "dasar ilmiah"
+  }, {
+    jp: "研究の妥当性",
+    reading: "けんきゅうのだとうせい",
+    id: "validitas penelitian"
+  }, {
+    jp: "実証的証拠",
+    reading: "じっしょうてきしょうこ",
+    id: "bukti empiris"
+  }, {
+    jp: "科学的発見",
+    reading: "かがくてきはっけん",
+    id: "penemuan ilmiah"
+  }, {
+    jp: "研究の限界",
+    reading: "けんきゅうのげんかい",
+    id: "keterbatasan penelitian"
+  }, {
+    jp: "科学的手法",
+    reading: "かがくてきしゅほう",
+    id: "metode ilmiah"
+  }, {
+    jp: "研究プロトコル",
+    reading: "けんきゅうぷろとこる",
+    id: "protokol penelitian"
+  }, {
+    jp: "研究の一般化可能性",
+    reading: "けんきゅうのいっぱんかかのうせい",
+    id: "generalisasi hasil penelitian"
+  }, {
+    jp: "実験誤差",
+    reading: "じっけんごさ",
+    id: "kesalahan eksperimen"
+  }, {
+    jp: "研究デザイン",
+    reading: "けんきゅうでざいん",
+    id: "desain penelitian"
+  }, {
+    jp: "実験計画法",
+    reading: "じっけんけいかくほう",
+    id: "desain eksperimen"
+  }, {
+    jp: "客観的データ",
+    reading: "きゃっかんてきデータ",
+    id: "data objektif"
+  }, {
+    jp: "理論的枠組み",
+    reading: "りろんてきわくぐみ",
+    id: "kerangka teoretis"
+  }, {
+    jp: "先端技術",
+    reading: "せんたんぎじゅつ",
+    id: "teknologi mutakhir"
+  }],
+  "Media Formal & Jurnalistik": [{
+    jp: "論説",
+    reading: "ろんせつ",
+    id: "artikel opini"
+  }, {
+    jp: "特派員",
+    reading: "とくはいん",
+    id: "koresponden"
+  }, {
+    jp: "報道機関",
+    reading: "ほうどうきかん",
+    id: "lembaga pers"
+  }, {
+    jp: "匿名希望",
+    reading: "とくめいきぼう",
+    id: "minta anonim"
+  }, {
+    jp: "裏付け取材",
+    reading: "うらづけしゅざい",
+    id: "verifikasi liputan"
+  }, {
+    jp: "誤報",
+    reading: "ごほう",
+    id: "berita salah"
+  }, {
+    jp: "訂正記事",
+    reading: "ていせいきじ",
+    id: "artikel koreksi"
+  }, {
+    jp: "世論形成",
+    reading: "よろんけいせい",
+    id: "pembentukan opini publik"
+  }, {
+    jp: "偏向報道",
+    reading: "へんこうほうどう",
+    id: "liputan bias"
+  }, {
+    jp: "独占インタビュー",
+    reading: "どくせんインタビュー",
+    id: "wawancara eksklusif"
+  }, {
+    jp: "社会面",
+    reading: "しゃかいめん",
+    id: "halaman berita sosial"
+  }, {
+    jp: "論調",
+    reading: "ろんちょう",
+    id: "arah opini media"
+  }, {
+    jp: "検閲",
+    reading: "けんえつ",
+    id: "sensor"
+  }, {
+    jp: "報道の自由",
+    reading: "ほうどうのじゆう",
+    id: "kebebasan pers"
+  }, {
+    jp: "情報操作",
+    reading: "じょうほうそうさ",
+    id: "manipulasi informasi"
+  }, {
+    jp: "報道倫理",
+    reading: "ほうどうりんり",
+    id: "etika jurnalistik"
+  }, {
+    jp: "情報源の秘匿",
+    reading: "じょうほうげんのひとく",
+    id: "kerahasiaan sumber"
+  }, {
+    jp: "編集方針",
+    reading: "へんしゅうほうしん",
+    id: "kebijakan editorial"
+  }, {
+    jp: "匿名報道",
+    reading: "とくめいほうどう",
+    id: "pelaporan anonim"
+  }, {
+    jp: "報道規制",
+    reading: "ほうどうきせい",
+    id: "pembatasan pemberitaan"
+  }, {
+    jp: "フェイクニュース",
+    reading: "フェイクニュース",
+    id: "berita palsu"
+  }, {
+    jp: "報道番組",
+    reading: "ほうどうばんぐみ",
+    id: "program pemberitaan"
+  }, {
+    jp: "取材活動",
+    reading: "しゅざいかつどう",
+    id: "kegiatan liputan"
+  }, {
+    jp: "報道姿勢",
+    reading: "ほうどうしせい",
+    id: "sikap pemberitaan"
+  }, {
+    jp: "メディアリテラシー",
+    reading: "めでぃありてらしー",
+    id: "literasi media"
+  }, {
+    jp: "報道各社",
+    reading: "ほうどうかくしゃ",
+    id: "berbagai media pemberitaan"
+  }, {
+    jp: "メディア倫理",
+    reading: "めでぃありんり",
+    id: "etika media"
+  }, {
+    jp: "特ダネ",
+    reading: "とくだね",
+    id: "berita eksklusif"
+  }, {
+    jp: "記事の信憑性",
+    reading: "きじのしんぴょうせい",
+    id: "kredibilitas artikel"
+  }, {
+    jp: "報道の公平性",
+    reading: "ほうどうのこうへいせい",
+    id: "keadilan pemberitaan"
+  }, {
+    jp: "情報の信頼性",
+    reading: "じょうほうのしんらいせい",
+    id: "kredibilitas informasi"
+  }, {
+    jp: "メディアの多様性",
+    reading: "めでぃあのたようせい",
+    id: "keberagaman media"
+  }, {
+    jp: "報道価値",
+    reading: "ほうどうかち",
+    id: "nilai berita"
+  }, {
+    jp: "情報の信憑性",
+    reading: "じょうほうのしんぴょうせい",
+    id: "kredibilitas informasi"
+  }],
+  "Filosofi & Pemikiran Abstrak": [{
+    jp: "形而上学",
+    reading: "けいじじょうがく",
+    id: "metafisika"
+  }, {
+    jp: "認識論",
+    reading: "にんしきろん",
+    id: "epistemologi"
+  }, {
+    jp: "存在論",
+    reading: "そんざいろん",
+    id: "ontologi"
+  }, {
+    jp: "弁証法",
+    reading: "べんしょうほう",
+    id: "dialektika"
+  }, {
+    jp: "実存主義",
+    reading: "じつぞんしゅぎ",
+    id: "eksistensialisme"
+  }, {
+    jp: "合理主義",
+    reading: "ごうりしゅぎ",
+    id: "rasionalisme"
+  }, {
+    jp: "経験主義",
+    reading: "けいけんしゅぎ",
+    id: "empirisisme"
+  }, {
+    jp: "相対主義",
+    reading: "そうたいしゅぎ",
+    id: "relativisme"
+  }, {
+    jp: "二元論",
+    reading: "にげんろん",
+    id: "dualisme"
+  }, {
+    jp: "一元論",
+    reading: "いちげんろん",
+    id: "monisme"
+  }, {
+    jp: "普遍性",
+    reading: "ふへんせい",
+    id: "universalitas"
+  }, {
+    jp: "個別性",
+    reading: "こべつせい",
+    id: "partikularitas"
+  }, {
+    jp: "論理的整合性",
+    reading: "ろんりてきせいごうせい",
+    id: "konsistensi logis"
+  }, {
+    jp: "命題",
+    reading: "めいだい",
+    id: "proposisi"
+  }, {
+    jp: "逆説",
+    reading: "ぎゃくせつ",
+    id: "paradoks"
+  }, {
+    jp: "詭弁",
+    reading: "きべん",
+    id: "sofisme"
+  }, {
+    jp: "洞察",
+    reading: "どうさつ",
+    id: "wawasan mendalam"
+  }, {
+    jp: "直感",
+    reading: "ちょっかん",
+    id: "intuisi"
+  }, {
+    jp: "思索",
+    reading: "しさく",
+    id: "perenungan"
+  }, {
+    jp: "価値判断",
+    reading: "かちはんだん",
+    id: "penilaian nilai"
+  }, {
+    jp: "唯物論",
+    reading: "ゆいぶつろん",
+    id: "materialisme"
+  }, {
+    jp: "観念論",
+    reading: "かんねんろん",
+    id: "idealisme"
+  }, {
+    jp: "懐疑主義",
+    reading: "かいぎしゅぎ",
+    id: "skeptisisme"
+  }, {
+    jp: "功利主義",
+    reading: "こうりしゅぎ",
+    id: "utilitarianisme"
+  }, {
+    jp: "決定論",
+    reading: "けっていろん",
+    id: "determinisme"
+  }, {
+    jp: "自由意志",
+    reading: "じゆういし",
+    id: "kehendak bebas"
+  }, {
+    jp: "形而上学的",
+    reading: "けいじじょうがくてき",
+    id: "secara metafisik"
+  }, {
+    jp: "客体",
+    reading: "きゃくたい",
+    id: "objek (filsafat)"
+  }, {
+    jp: "超越的",
+    reading: "ちょうえつてき",
+    id: "transenden"
+  }, {
+    jp: "哲学的問い",
+    reading: "てつがくてきとい",
+    id: "pertanyaan filosofis"
+  }, {
+    jp: "価値相対主義",
+    reading: "かちそうたいしゅぎ",
+    id: "relativisme nilai"
+  }, {
+    jp: "倫理的ジレンマ",
+    reading: "りんりてきじれんま",
+    id: "dilema etika"
+  }, {
+    jp: "認識の限界",
+    reading: "にんしきのげんかい",
+    id: "batas pengetahuan"
+  }, {
+    jp: "思想体系",
+    reading: "しそうたいけい",
+    id: "sistem pemikiran"
+  }, {
+    jp: "実在論",
+    reading: "じつざいろん",
+    id: "realisme (filsafat)"
+  }, {
+    jp: "道徳的責任",
+    reading: "どうとくてきせきにん",
+    id: "tanggung jawab moral"
+  }, {
+    jp: "知の限界",
+    reading: "ちのげんかい",
+    id: "batas pengetahuan"
+  }, {
+    jp: "経験論",
+    reading: "けいけんろん",
+    id: "empirisisme"
+  }, {
+    jp: "弁証法的",
+    reading: "べんしょうほうてき",
+    id: "dialektis"
+  }, {
+    jp: "本質主義",
+    reading: "ほんしつしゅぎ",
+    id: "esensialisme"
+  }, {
+    jp: "二項対立",
+    reading: "にこうたいりつ",
+    id: "dikotomi/oposisi biner"
+  }, {
+    jp: "実存",
+    reading: "じつぞん",
+    id: "eksistensi"
+  }],
+  "Diplomasi & Hubungan Internasional Lanjutan": [{
+    jp: "外交交渉",
+    reading: "がいこうこうしょう",
+    id: "negosiasi diplomatik"
+  }, {
+    jp: "首脳外交",
+    reading: "しゅのうがいこう",
+    id: "diplomasi tingkat kepala negara"
+  }, {
+    jp: "領土問題",
+    reading: "りょうどもんだい",
+    id: "sengketa wilayah"
+  }, {
+    jp: "安保理",
+    reading: "あんぽり",
+    id: "Dewan Keamanan PBB"
+  }, {
+    jp: "多国間協議",
+    reading: "たこくかんきょうぎ",
+    id: "perundingan multilateral"
+  }, {
+    jp: "二国間関係",
+    reading: "にこくかんかんけい",
+    id: "hubungan bilateral"
+  }, {
+    jp: "内政不干渉",
+    reading: "ないせいふかんしょう",
+    id: "tidak campur tangan urusan dalam negeri"
+  }, {
+    jp: "国際世論",
+    reading: "こくさいよろん",
+    id: "opini publik internasional"
+  }, {
+    jp: "軍縮",
+    reading: "ぐんしゅく",
+    id: "perlucutan senjata"
+  }, {
+    jp: "亡命政権",
+    reading: "ぼうめいせいけん",
+    id: "pemerintahan pengasingan"
+  }, {
+    jp: "国際法違反",
+    reading: "こくさいほういはん",
+    id: "pelanggaran hukum internasional"
+  }, {
+    jp: "人道支援",
+    reading: "じんどうしえん",
+    id: "bantuan kemanusiaan"
+  }, {
+    jp: "経済援助",
+    reading: "けいざいえんじょ",
+    id: "bantuan ekonomi"
+  }, {
+    jp: "民間外交",
+    reading: "みんかんがいこう",
+    id: "diplomasi masyarakat sipil"
+  }, {
+    jp: "密約",
+    reading: "みつやく",
+    id: "perjanjian rahasia"
+  }, {
+    jp: "覇権主義",
+    reading: "はけんしゅぎ",
+    id: "hegemonisme"
+  }, {
+    jp: "勢力圏",
+    reading: "せいりょくけん",
+    id: "wilayah pengaruh"
+  }, {
+    jp: "緊密化",
+    reading: "きんみつか",
+    id: "semakin eratnya hubungan"
+  }, {
+    jp: "多国間協定",
+    reading: "たこくかんきょうてい",
+    id: "perjanjian multilateral"
+  }, {
+    jp: "外交特権",
+    reading: "がいこうとっけん",
+    id: "kekebalan diplomatik"
+  }, {
+    jp: "同盟関係",
+    reading: "どうめいかんけい",
+    id: "hubungan aliansi"
+  }, {
+    jp: "国際法",
+    reading: "こくさいほう",
+    id: "hukum internasional"
+  }, {
+    jp: "安全保障理事会",
+    reading: "あんぜんほしょうりじかい",
+    id: "Dewan Keamanan PBB"
+  }, {
+    jp: "難民条約",
+    reading: "なんみんじょうやく",
+    id: "konvensi pengungsi"
+  }, {
+    jp: "内政干渉",
+    reading: "ないせいかんしょう",
+    id: "intervensi urusan dalam negeri"
+  }, {
+    jp: "最恵国待遇",
+    reading: "さいけいこくたいぐう",
+    id: "perlakuan negara paling disukai"
+  }, {
+    jp: "非政府組織",
+    reading: "ひせいふそしき",
+    id: "organisasi non-pemerintah"
+  }, {
+    jp: "国際規範",
+    reading: "こくさいきはん",
+    id: "norma internasional"
+  }, {
+    jp: "多国間主義",
+    reading: "たこくかんしゅぎ",
+    id: "multilateralisme"
+  }, {
+    jp: "国家主権",
+    reading: "こっかしゅけん",
+    id: "kedaulatan negara"
+  }, {
+    jp: "国際法廷",
+    reading: "こくさいほうてい",
+    id: "pengadilan internasional"
+  }, {
+    jp: "国際的圧力",
+    reading: "こくさいてきあつりょく",
+    id: "tekanan internasional"
+  }, {
+    jp: "同盟国",
+    reading: "どうめいこく",
+    id: "negara sekutu"
+  }, {
+    jp: "地政学的リスク",
+    reading: "ちせいがくてきりすく",
+    id: "risiko geopolitik"
+  }, {
+    jp: "国際協定",
+    reading: "こくさいきょうてい",
+    id: "perjanjian internasional"
+  }, {
+    jp: "国際紛争",
+    reading: "こくさいふんそう",
+    id: "konflik internasional"
+  }, {
+    jp: "国際的信頼",
+    reading: "こくさいてきしんらい",
+    id: "kepercayaan internasional"
+  }, {
+    jp: "国際協力体制",
+    reading: "こくさいきょうりょくたいせい",
+    id: "sistem kerja sama internasional"
+  }, {
+    jp: "国際機関",
+    reading: "こくさいきかん",
+    id: "organisasi internasional"
+  }, {
+    jp: "外交的孤立",
+    reading: "がいこうてきこりつ",
+    id: "isolasi diplomatik"
+  }, {
+    jp: "勢力均衡",
+    reading: "せいりょくきんこう",
+    id: "keseimbangan kekuatan"
+  }, {
+    jp: "覇権",
+    reading: "はけん",
+    id: "hegemoni"
+  }],
+  "Psikologi Lanjutan & Perilaku Kompleks": [{
+    jp: "自己肯定感",
+    reading: "じここうていかん",
+    id: "rasa percaya diri"
+  }, {
+    jp: "承認欲求",
+    reading: "しょうにんよっきゅう",
+    id: "kebutuhan pengakuan"
+  }, {
+    jp: "防衛機制",
+    reading: "ぼうえいきせい",
+    id: "mekanisme pertahanan diri"
+  }, {
+    jp: "投影",
+    reading: "とうえい",
+    id: "proyeksi psikologis"
+  }, {
+    jp: "認知バイアス",
+    reading: "にんちバイアス",
+    id: "bias kognitif"
+  }, {
+    jp: "確証バイアス",
+    reading: "かくしょうバイアス",
+    id: "bias konfirmasi"
+  }, {
+    jp: "自己実現",
+    reading: "じこじつげん",
+    id: "aktualisasi diri"
+  }, {
+    jp: "内発的動機",
+    reading: "ないはつてきどうき",
+    id: "motivasi intrinsik"
+  }, {
+    jp: "外発的動機",
+    reading: "がいはつてきどうき",
+    id: "motivasi ekstrinsik"
+  }, {
+    jp: "同調行動",
+    reading: "どうちょうこうどう",
+    id: "perilaku konformitas"
+  }, {
+    jp: "自己効力感",
+    reading: "じここうりょくかん",
+    id: "efikasi diri"
+  }, {
+    jp: "心理的安全性",
+    reading: "しんりてきあんぜんせい",
+    id: "keamanan psikologis"
+  }, {
+    jp: "潜在意識",
+    reading: "せんざいいしき",
+    id: "alam bawah sadar"
+  }, {
+    jp: "認知の歪み",
+    reading: "にんちのゆがみ",
+    id: "distorsi kognitif"
+  }, {
+    jp: "対人関係",
+    reading: "たいじんかんけい",
+    id: "hubungan interpersonal"
+  }, {
+    jp: "自尊心",
+    reading: "じそんしん",
+    id: "harga diri"
+  }, {
+    jp: "依存傾向",
+    reading: "いぞんけいこう",
+    id: "kecenderungan bergantung"
+  }, {
+    jp: "自制心",
+    reading: "じせいしん",
+    id: "pengendalian diri"
+  }, {
+    jp: "認知的不協和",
+    reading: "にんちてきふきょうわ",
+    id: "disonansi kognitif"
+  }, {
+    jp: "学習性無力感",
+    reading: "がくしゅうせいむりょくかん",
+    id: "ketidakberdayaan yang dipelajari"
+  }, {
+    jp: "自己成就予言",
+    reading: "じこじょうじゅよげん",
+    id: "ramalan yang mewujud sendiri"
+  }, {
+    jp: "回避行動",
+    reading: "かいひこうどう",
+    id: "perilaku menghindar"
+  }, {
+    jp: "合理化",
+    reading: "ごうりか",
+    id: "rasionalisasi"
+  }, {
+    jp: "集団思考",
+    reading: "しゅうだんしこう",
+    id: "pemikiran kelompok"
+  }, {
+    jp: "心理的距離",
+    reading: "しんりてききょり",
+    id: "jarak psikologis"
+  }, {
+    jp: "承認バイアス",
+    reading: "しょうにんばいあす",
+    id: "bias konfirmasi"
+  }, {
+    jp: "感情調整",
+    reading: "かんじょうちょうせい",
+    id: "regulasi emosi"
+  }, {
+    jp: "行動変容",
+    reading: "こうどうへんよう",
+    id: "perubahan perilaku"
+  }, {
+    jp: "心理的レジリエンス",
+    reading: "しんりてきれじりえんす",
+    id: "resiliensi psikologis"
+  }, {
+    jp: "認知発達",
+    reading: "にんちはったつ",
+    id: "perkembangan kognitif"
+  }, {
+    jp: "同調圧力",
+    reading: "どうちょうあつりょく",
+    id: "tekanan konformitas"
+  }],
+  "Teknologi Mutakhir & AI": [{
+    jp: "深層学習",
+    reading: "しんそうがくしゅう",
+    id: "deep learning"
+  }, {
+    jp: "自然言語処理",
+    reading: "しぜんげんごしょり",
+    id: "natural language processing"
+  }, {
+    jp: "アルゴリズム",
+    reading: "あるごりずむ",
+    id: "algoritma"
+  }, {
+    jp: "ビッグデータ",
+    reading: "びっぐでーた",
+    id: "big data"
+  }, {
+    jp: "仮想現実",
+    reading: "かそうげんじつ",
+    id: "realitas virtual"
+  }, {
+    jp: "拡張現実",
+    reading: "かくちょうげんじつ",
+    id: "augmented reality"
+  }, {
+    jp: "ロボット工学",
+    reading: "ろぼっとこうがく",
+    id: "robotika"
+  }, {
+    jp: "サイバー攻撃",
+    reading: "さいばーこうげき",
+    id: "serangan siber"
+  }, {
+    jp: "デジタルトランスフォーメーション",
+    reading: "でじたるとらんすふぉーめーしょん",
+    id: "transformasi digital"
+  }, {
+    jp: "自動化技術",
+    reading: "じどうかぎじゅつ",
+    id: "teknologi otomasi"
+  }, {
+    jp: "生成AI",
+    reading: "せいせいえーあい",
+    id: "AI generatif"
+  }, {
+    jp: "技術革新",
+    reading: "ぎじゅつかくしん",
+    id: "inovasi teknologi"
+  }, {
+    jp: "倫理的AI",
+    reading: "りんりてきエーアイ",
+    id: "AI etis"
+  }, {
+    jp: "データプライバシー",
+    reading: "データプライバシー",
+    id: "privasi data"
+  }, {
+    jp: "過学習",
+    reading: "かがくしゅう",
+    id: "overfitting"
+  }, {
+    jp: "説明可能なAI",
+    reading: "せつめいかのうなエーアイ",
+    id: "AI yang dapat dijelaskan"
+  }, {
+    jp: "エッジコンピューティング",
+    reading: "エッジコンピューティング",
+    id: "edge computing"
+  }, {
+    jp: "強化学習",
+    reading: "きょうかがくしゅう",
+    id: "reinforcement learning"
+  }, {
+    jp: "ニューラルネットワーク",
+    reading: "にゅーらるねっとわーく",
+    id: "jaringan saraf tiruan"
+  }, {
+    jp: "自律型システム",
+    reading: "じりつがたしすてむ",
+    id: "sistem otonom"
+  }, {
+    jp: "アルゴリズムバイアス",
+    reading: "あるごりずむばいあす",
+    id: "bias algoritma"
+  }, {
+    jp: "量子暗号",
+    reading: "りょうしあんごう",
+    id: "enkripsi kuantum"
+  }, {
+    jp: "自動化社会",
+    reading: "じどうかしゃかい",
+    id: "masyarakat terotomatisasi"
+  }, {
+    jp: "機械翻訳",
+    reading: "きかいほんやく",
+    id: "penerjemahan mesin"
+  }, {
+    jp: "音声合成技術",
+    reading: "おんせいごうせいぎじゅつ",
+    id: "teknologi sintesis suara"
+  }, {
+    jp: "自動運転技術",
+    reading: "じどううんてんぎじゅつ",
+    id: "teknologi mengemudi otonom"
+  }, {
+    jp: "半導体",
+    reading: "はんどうたい",
+    id: "semikonduktor"
+  }, {
+    jp: "自律走行",
+    reading: "じりつそうこう",
+    id: "kendaraan otonom"
+  }, {
+    jp: "情報漏洩対策",
+    reading: "じょうほうろうえいたいさく",
+    id: "langkah pencegahan kebocoran data"
+  }, {
+    jp: "自動運転",
+    reading: "じどううんてん",
+    id: "mobil otonom"
+  }, {
+    jp: "情報格差",
+    reading: "じょうほうかくさ",
+    id: "kesenjangan digital"
+  }],
+  "Lingkungan & Perubahan Iklim Lanjutan": [{
+    jp: "温室効果ガス",
+    reading: "おんしつこうかガス",
+    id: "gas rumah kaca"
+  }, {
+    jp: "脱炭素",
+    reading: "だつたんそ",
+    id: "dekarbonisasi"
+  }, {
+    jp: "カーボンニュートラル",
+    reading: "かーぼんにゅーとらる",
+    id: "netral karbon"
+  }, {
+    jp: "再生可能エネルギー",
+    reading: "さいせいかのうエネルギー",
+    id: "energi terbarukan"
+  }, {
+    jp: "生態系破壊",
+    reading: "せいたいけいはかい",
+    id: "kerusakan ekosistem"
+  }, {
+    jp: "森林減少",
+    reading: "しんりんげんしょう",
+    id: "deforestasi"
+  }, {
+    jp: "気候変動対策",
+    reading: "きこうへんどうたいさく",
+    id: "tindakan perubahan iklim"
+  }, {
+    jp: "海面上昇",
+    reading: "かいめんじょうしょう",
+    id: "kenaikan permukaan laut"
+  }, {
+    jp: "異常気象頻発",
+    reading: "いじょうきしょうひんぱつ",
+    id: "cuaca ekstrem yang sering terjadi"
+  }, {
+    jp: "環境負荷",
+    reading: "かんきょうふか",
+    id: "beban lingkungan"
+  }, {
+    jp: "循環型社会",
+    reading: "じゅんかんがたしゃかい",
+    id: "masyarakat sirkular"
+  }, {
+    jp: "生物多様性喪失",
+    reading: "せいぶつたようせいそうしつ",
+    id: "hilangnya keanekaragaman hayati"
+  }, {
+    jp: "環境規制",
+    reading: "かんきょうきせい",
+    id: "regulasi lingkungan"
+  }, {
+    jp: "持続可能な開発目標",
+    reading: "じぞくかのうなかいはつもくひょう",
+    id: "SDGs"
+  }, {
+    jp: "化石燃料依存",
+    reading: "かせきねんりょういぞん",
+    id: "ketergantungan bahan bakar fosil"
+  }, {
+    jp: "環境影響評価",
+    reading: "かんきょうえいきょうひょうか",
+    id: "studi dampak lingkungan"
+  }, {
+    jp: "生態系サービス",
+    reading: "せいたいけいサービス",
+    id: "jasa ekosistem"
+  }, {
+    jp: "脱プラスチック",
+    reading: "だつプラスチック",
+    id: "pengurangan plastik"
+  }, {
+    jp: "生物多様性損失",
+    reading: "せいぶつたようせいそんしつ",
+    id: "kehilangan keanekaragaman hayati"
+  }, {
+    jp: "気候難民",
+    reading: "きこうなんみん",
+    id: "pengungsi iklim"
+  }, {
+    jp: "排出権取引",
+    reading: "はいしゅつけんとりひき",
+    id: "perdagangan karbon"
+  }, {
+    jp: "温室効果ガス排出",
+    reading: "おんしつこうかがすはいしゅつ",
+    id: "emisi gas rumah kaca"
+  }, {
+    jp: "生物多様性の喪失",
+    reading: "せいぶつたようせいのそうしつ",
+    id: "hilangnya keanekaragaman hayati"
+  }, {
+    jp: "再生可能資源",
+    reading: "さいせいかのうしげん",
+    id: "sumber daya terbarukan"
+  }, {
+    jp: "環境アセスメント",
+    reading: "かんきょうあせすめんと",
+    id: "penilaian dampak lingkungan"
+  }, {
+    jp: "脱炭素社会",
+    reading: "だつたんそしゃかい",
+    id: "masyarakat rendah karbon"
+  }, {
+    jp: "生態系の回復力",
+    reading: "せいたいけいのかいふくりょく",
+    id: "daya pulih ekosistem"
+  }, {
+    jp: "気候変動適応策",
+    reading: "きこうへんどうてきおうさく",
+    id: "langkah adaptasi perubahan iklim"
+  }, {
+    jp: "炭素税",
+    reading: "たんそぜい",
+    id: "pajak karbon"
+  }, {
+    jp: "森林再生",
+    reading: "しんりんさいせい",
+    id: "reboisasi"
+  }, {
+    jp: "資源枯渇",
+    reading: "しげんこかつ",
+    id: "penipisan sumber daya"
+  }, {
+    jp: "環境破壊",
+    reading: "かんきょうはかい",
+    id: "kerusakan lingkungan"
+  }, {
+    jp: "持続可能性",
+    reading: "じぞくかのうせい",
+    id: "keberlanjutan"
+  }],
+  "Kedokteran & Ilmu Kesehatan Lanjutan": [{
+    jp: "臨床試験",
+    reading: "りんしょうしけん",
+    id: "uji klinis"
+  }, {
+    jp: "診療科",
+    reading: "しんりょうか",
+    id: "departemen medis"
+  }, {
+    jp: "外来診療",
+    reading: "がいらいしんりょう",
+    id: "rawat jalan"
+  }, {
+    jp: "検査結果",
+    reading: "けんさけっか",
+    id: "hasil pemeriksaan"
+  }, {
+    jp: "病理診断",
+    reading: "びょうりしんだん",
+    id: "diagnosis patologi"
+  }, {
+    jp: "予後",
+    reading: "よご",
+    id: "prognosis"
+  }, {
+    jp: "合併症",
+    reading: "がっぺいしょう",
+    id: "komplikasi medis"
+  }, {
+    jp: "副作用",
+    reading: "ふくさよう",
+    id: "efek samping"
+  }, {
+    jp: "麻酔科",
+    reading: "ますいか",
+    id: "departemen anestesi"
+  }, {
+    jp: "医療従事者",
+    reading: "いりょうじゅうじしゃ",
+    id: "tenaga medis"
+  }, {
+    jp: "医療倫理",
+    reading: "いりょうりんり",
+    id: "etika medis"
+  }, {
+    jp: "遠隔医療",
+    reading: "えんかくいりょう",
+    id: "telemedicine"
+  }, {
+    jp: "感染対策",
+    reading: "かんせんたいさく",
+    id: "pengendalian infeksi"
+  }, {
+    jp: "予防医学",
+    reading: "よぼういがく",
+    id: "kedokteran preventif"
+  }, {
+    jp: "慢性疾患",
+    reading: "まんせいしっかん",
+    id: "penyakit kronis"
+  }, {
+    jp: "急性疾患",
+    reading: "きゅうせいしっかん",
+    id: "penyakit akut"
+  }, {
+    jp: "免疫療法",
+    reading: "めんえきりょうほう",
+    id: "imunoterapi"
+  }, {
+    jp: "遺伝子治療",
+    reading: "いでんしちりょう",
+    id: "terapi gen"
+  }, {
+    jp: "薬物耐性",
+    reading: "やくぶつたいせい",
+    id: "resistensi obat"
+  }, {
+    jp: "緩和ケア",
+    reading: "かんわケア",
+    id: "perawatan paliatif"
+  }, {
+    jp: "末期医療",
+    reading: "まっきいりょう",
+    id: "perawatan tahap akhir"
+  }, {
+    jp: "遺伝的素因",
+    reading: "いでんてきそいん",
+    id: "predisposisi genetik"
+  }, {
+    jp: "疫学調査",
+    reading: "えきがくちょうさ",
+    id: "survei epidemiologi"
+  }, {
+    jp: "臨床データ",
+    reading: "りんしょうでーた",
+    id: "data klinis"
+  }, {
+    jp: "医療過誤",
+    reading: "いりょうかご",
+    id: "malpraktik medis"
+  }, {
+    jp: "先進医療",
+    reading: "せんしんいりょう",
+    id: "pengobatan mutakhir"
+  }, {
+    jp: "医療格差",
+    reading: "いりょうかくさ",
+    id: "kesenjangan layanan kesehatan"
+  }, {
+    jp: "予防医学的アプローチ",
+    reading: "よぼういがくてきあぷろーち",
+    id: "pendekatan kedokteran preventif"
+  }, {
+    jp: "精密医療",
+    reading: "せいみついりょう",
+    id: "pengobatan presisi"
+  }, {
+    jp: "患者中心医療",
+    reading: "かんじゃちゅうしんいりょう",
+    id: "perawatan berpusat pada pasien"
+  }, {
+    jp: "医療アクセス",
+    reading: "いりょうあくせす",
+    id: "akses layanan kesehatan"
+  }, {
+    jp: "医療の質",
+    reading: "いりょうのしつ",
+    id: "kualitas layanan medis"
+  }, {
+    jp: "薬物相互作用",
+    reading: "やくぶつそうごさよう",
+    id: "interaksi obat"
+  }, {
+    jp: "臨床心理士",
+    reading: "りんしょうしんりし",
+    id: "psikolog klinis"
+  }, {
+    jp: "早期発見",
+    reading: "そうきはっけん",
+    id: "deteksi dini"
+  }, {
+    jp: "健康寿命",
+    reading: "けんこうじゅみょう",
+    id: "usia harapan hidup sehat"
+  }, {
+    jp: "公衆衛生",
+    reading: "こうしゅうえいせい",
+    id: "kesehatan masyarakat"
+  }, {
+    jp: "患者中心",
+    reading: "かんじゃちゅうしん",
+    id: "berpusat pada pasien"
+  }],
+  "Seni Rupa & Estetika": [{
+    jp: "造形美",
+    reading: "ぞうけいび",
+    id: "keindahan bentuk"
+  }, {
+    jp: "構図",
+    reading: "こうず",
+    id: "komposisi visual"
+  }, {
+    jp: "陰影",
+    reading: "いんえい",
+    id: "bayangan, gradasi"
+  }, {
+    jp: "遠近法",
+    reading: "えんきんほう",
+    id: "perspektif"
+  }, {
+    jp: "色彩感覚",
+    reading: "しきさいかんかく",
+    id: "rasa warna"
+  }, {
+    jp: "抽象表現",
+    reading: "ちゅうしょうひょうげん",
+    id: "ekspresi abstrak"
+  }, {
+    jp: "写実主義",
+    reading: "しゃじつしゅぎ",
+    id: "realisme"
+  }, {
+    jp: "印象派",
+    reading: "いんしょうは",
+    id: "impresionisme"
+  }, {
+    jp: "前衛芸術",
+    reading: "ぜんえいげいじゅつ",
+    id: "seni avant-garde"
+  }, {
+    jp: "美的感覚",
+    reading: "びてきかんかく",
+    id: "rasa estetika"
+  }, {
+    jp: "造形芸術",
+    reading: "ぞうけいげいじゅつ",
+    id: "seni rupa"
+  }, {
+    jp: "芸術性",
+    reading: "げいじゅつせい",
+    id: "nilai artistik"
+  }, {
+    jp: "作風",
+    reading: "さくふう",
+    id: "gaya karya"
+  }, {
+    jp: "技法",
+    reading: "ぎほう",
+    id: "teknik seni"
+  }, {
+    jp: "芸術批評",
+    reading: "げいじゅつひひょう",
+    id: "kritik seni"
+  }, {
+    jp: "美術評論家",
+    reading: "びじゅつひょうろんか",
+    id: "kritikus seni"
+  }, {
+    jp: "色彩理論",
+    reading: "しきさいりろん",
+    id: "teori warna"
+  }, {
+    jp: "様式美",
+    reading: "ようしきび",
+    id: "keindahan gaya"
+  }, {
+    jp: "視覚効果",
+    reading: "しかくこうか",
+    id: "efek visual"
+  }, {
+    jp: "造形美術",
+    reading: "ぞうけいびじゅつ",
+    id: "seni rupa tiga dimensi"
+  }, {
+    jp: "芸術的表現",
+    reading: "げいじゅつてきひょうげん",
+    id: "ekspresi artistik"
+  }, {
+    jp: "美術史",
+    reading: "びじゅつし",
+    id: "sejarah seni rupa"
+  }, {
+    jp: "現代アート",
+    reading: "げんだいあーと",
+    id: "seni kontemporer"
+  }, {
+    jp: "視覚芸術",
+    reading: "しかくげいじゅつ",
+    id: "seni visual"
+  }, {
+    jp: "美の基準",
+    reading: "びのきじゅん",
+    id: "standar keindahan"
+  }, {
+    jp: "芸術運動",
+    reading: "げいじゅつうんどう",
+    id: "gerakan seni"
+  }, {
+    jp: "創作意欲",
+    reading: "そうさくいよく",
+    id: "semangat berkarya"
+  }, {
+    jp: "美術批評",
+    reading: "びじゅつひひょう",
+    id: "kritik seni"
+  }],
+  "Militer & Strategi Lanjutan": [{
+    jp: "兵站",
+    reading: "へいたん",
+    id: "logistik militer"
+  }, {
+    jp: "防衛力",
+    reading: "ぼうえいりょく",
+    id: "kekuatan pertahanan"
+  }, {
+    jp: "抑止力",
+    reading: "よくしりょく",
+    id: "daya penggentar"
+  }, {
+    jp: "軍拡",
+    reading: "ぐんかく",
+    id: "perlombaan senjata"
+  }, {
+    jp: "攻防",
+    reading: "こうぼう",
+    id: "serangan dan pertahanan"
+  }, {
+    jp: "戦局",
+    reading: "せんきょく",
+    id: "situasi pertempuran"
+  }, {
+    jp: "作戦",
+    reading: "さくせん",
+    id: "operasi militer"
+  }, {
+    jp: "諜報活動",
+    reading: "ちょうほうかつどう",
+    id: "kegiatan intelijen"
+  }, {
+    jp: "機密情報",
+    reading: "きみつじょうほう",
+    id: "informasi rahasia"
+  }, {
+    jp: "動員",
+    reading: "どういん",
+    id: "mobilisasi"
+  }, {
+    jp: "補給線",
+    reading: "ほきゅうせん",
+    id: "jalur pasokan"
+  }, {
+    jp: "指揮系統",
+    reading: "しきけいとう",
+    id: "rantai komando"
+  }, {
+    jp: "国防",
+    reading: "こくぼう",
+    id: "pertahanan negara"
+  }, {
+    jp: "有事",
+    reading: "ゆうじ",
+    id: "situasi darurat, perang"
+  }, {
+    jp: "戦略的抑止",
+    reading: "せんりゃくてきよくし",
+    id: "deterensi strategis"
+  }, {
+    jp: "非対称戦",
+    reading: "ひたいしょうせん",
+    id: "perang asimetris"
+  }, {
+    jp: "情報戦",
+    reading: "じょうほうせん",
+    id: "perang informasi"
+  }, {
+    jp: "軍事同盟",
+    reading: "ぐんじどうめい",
+    id: "aliansi militer"
+  }, {
+    jp: "集団的自衛権",
+    reading: "しゅうだんてきじえいけん",
+    id: "hak pertahanan kolektif"
+  }, {
+    jp: "戦力均衡",
+    reading: "せんりょくきんこう",
+    id: "keseimbangan kekuatan"
+  }, {
+    jp: "核抑止力",
+    reading: "かくよくしりょく",
+    id: "deterensi nuklir"
+  }, {
+    jp: "防衛力整備",
+    reading: "ぼうえいりょくせいび",
+    id: "pembangunan pertahanan"
+  }, {
+    jp: "戦略的優位性",
+    reading: "せんりゃくてきゆういせい",
+    id: "keunggulan strategis"
+  }, {
+    jp: "防衛戦略",
+    reading: "ぼうえいせんりゃく",
+    id: "strategi pertahanan"
+  }, {
+    jp: "戦術的判断",
+    reading: "せんじゅつてきはんだん",
+    id: "keputusan taktis"
+  }, {
+    jp: "軍備管理",
+    reading: "ぐんびかんり",
+    id: "pengendalian senjata"
+  }, {
+    jp: "軍事戦略家",
+    reading: "ぐんじせんりゃくか",
+    id: "ahli strategi militer"
+  }, {
+    jp: "領域防衛",
+    reading: "りょういきぼうえい",
+    id: "pertahanan wilayah"
+  }, {
+    jp: "戦争抑止",
+    reading: "せんそうよくし",
+    id: "pencegahan perang"
+  }, {
+    jp: "軍事技術",
+    reading: "ぐんじぎじゅつ",
+    id: "teknologi militer"
+  }, {
+    jp: "戦術的優位",
+    reading: "せんじゅつてきゆうい",
+    id: "keunggulan taktis"
+  }, {
+    jp: "防諜活動",
+    reading: "ぼうちょうかつどう",
+    id: "kegiatan kontra-intelijen"
+  }],
+  "Sosiologi & Struktur Masyarakat": [{
+    jp: "社会階層",
+    reading: "しゃかいかいそう",
+    id: "strata sosial"
+  }, {
+    jp: "社会移動",
+    reading: "しゃかいいどう",
+    id: "mobilitas sosial"
+  }, {
+    jp: "社会統合",
+    reading: "しゃかいとうごう",
+    id: "integrasi sosial"
+  }, {
+    jp: "社会的排除",
+    reading: "しゃかいてきはいじょ",
+    id: "pengucilan sosial"
+  }, {
+    jp: "核家族化",
+    reading: "かくかぞくか",
+    id: "nuklearisasi keluarga"
+  }, {
+    jp: "地域コミュニティ",
+    reading: "ちいきコミュニティ",
+    id: "komunitas lokal"
+  }, {
+    jp: "社会病理",
+    reading: "しゃかいびょうり",
+    id: "patologi sosial"
+  }, {
+    jp: "逸脱行動",
+    reading: "いつだつこうどう",
+    id: "perilaku menyimpang"
+  }, {
+    jp: "社会化",
+    reading: "しゃかいか",
+    id: "sosialisasi"
+  }, {
+    jp: "集団帰属意識",
+    reading: "しゅうだんきぞくいしき",
+    id: "rasa kepemilikan kelompok"
+  }, {
+    jp: "都市化現象",
+    reading: "としかげんしょう",
+    id: "fenomena urbanisasi"
+  }, {
+    jp: "社会資本",
+    reading: "しゃかいしほん",
+    id: "modal sosial"
+  }, {
+    jp: "相互扶助",
+    reading: "そうごふじょ",
+    id: "saling membantu"
+  }, {
+    jp: "社会流動性",
+    reading: "しゃかいりゅうどうせい",
+    id: "mobilitas sosial"
+  }, {
+    jp: "規範意識",
+    reading: "きはんいしき",
+    id: "kesadaran norma"
+  }, {
+    jp: "社会契約",
+    reading: "しゃかいけいやく",
+    id: "kontrak sosial"
+  }, {
+    jp: "文化資本",
+    reading: "ぶんかしほん",
+    id: "modal budaya"
+  }, {
+    jp: "社会的包摂",
+    reading: "しゃかいてきほうせつ",
+    id: "inklusi sosial"
+  }, {
+    jp: "階級意識",
+    reading: "かいきゅういしき",
+    id: "kesadaran kelas"
+  }, {
+    jp: "社会移動性",
+    reading: "しゃかいいどうせい",
+    id: "mobilitas sosial"
+  }, {
+    jp: "階層構造",
+    reading: "かいそうこうぞう",
+    id: "struktur kelas sosial"
+  }, {
+    jp: "社会的統合",
+    reading: "しゃかいてきとうごう",
+    id: "integrasi sosial"
+  }, {
+    jp: "集団規範",
+    reading: "しゅうだんきはん",
+    id: "norma kelompok"
+  }, {
+    jp: "社会的連帯",
+    reading: "しゃかいてきれんたい",
+    id: "solidaritas sosial"
+  }, {
+    jp: "社会変動",
+    reading: "しゃかいへんどう",
+    id: "perubahan sosial"
+  }, {
+    jp: "共同体意識",
+    reading: "きょうどうたいいしき",
+    id: "kesadaran komunitas"
+  }, {
+    jp: "社会的孤立",
+    reading: "しゃかいてきこりつ",
+    id: "isolasi sosial"
+  }, {
+    jp: "文化的多様性",
+    reading: "ぶんかてきたようせい",
+    id: "keberagaman budaya"
+  }, {
+    jp: "社会的責任",
+    reading: "しゃかいてきせきにん",
+    id: "tanggung jawab sosial"
+  }, {
+    jp: "価値観の多様化",
+    reading: "かちかんのたようか",
+    id: "diversifikasi nilai"
+  }, {
+    jp: "少数派",
+    reading: "しょうすうは",
+    id: "kelompok minoritas"
+  }, {
+    jp: "社会運動",
+    reading: "しゃかいうんどう",
+    id: "gerakan sosial"
+  }],
+  "Linguistik Lanjutan & Semantik": [{
+    jp: "意味論",
+    reading: "いみろん",
+    id: "semantik"
+  }, {
+    jp: "統語論",
+    reading: "とうごろん",
+    id: "sintaksis"
+  }, {
+    jp: "音韻論",
+    reading: "おんいんろん",
+    id: "fonologi"
+  }, {
+    jp: "語用論",
+    reading: "ごようろん",
+    id: "pragmatik"
+  }, {
+    jp: "形態素",
+    reading: "けいたいそ",
+    id: "morfem"
+  }, {
+    jp: "言語習得",
+    reading: "げんごしゅうとく",
+    id: "pemerolehan bahasa"
+  }, {
+    jp: "二言語併用",
+    reading: "にげんごへいよう",
+    id: "bilingualisme"
+  }, {
+    jp: "言語変化",
+    reading: "げんごへんか",
+    id: "perubahan bahasa"
+  }, {
+    jp: "方言学",
+    reading: "ほうげんがく",
+    id: "dialektologi"
+  }, {
+    jp: "談話分析",
+    reading: "だんわぶんせき",
+    id: "analisis wacana"
+  }, {
+    jp: "比較言語学",
+    reading: "ひかくげんごがく",
+    id: "linguistik komparatif"
+  }, {
+    jp: "言語相対性",
+    reading: "げんごそうたいせい",
+    id: "relativitas bahasa"
+  }, {
+    jp: "同義語",
+    reading: "どうぎご",
+    id: "sinonim"
+  }, {
+    jp: "多義語",
+    reading: "たぎご",
+    id: "kata polisemi"
+  }, {
+    jp: "統語構造",
+    reading: "とうごこうぞう",
+    id: "struktur sintaksis"
+  }, {
+    jp: "意味論的分析",
+    reading: "いみろんてきぶんせき",
+    id: "analisis semantik"
+  }, {
+    jp: "言語類型論",
+    reading: "げんごるいけいろん",
+    id: "tipologi bahasa"
+  }, {
+    jp: "語彙的意味",
+    reading: "ごいてきいみ",
+    id: "makna leksikal"
+  }, {
+    jp: "文法化",
+    reading: "ぶんぽうか",
+    id: "gramatikalisasi"
+  }, {
+    jp: "言語接触",
+    reading: "げんごせっしょく",
+    id: "kontak bahasa"
+  }, {
+    jp: "語彙論",
+    reading: "ごいろん",
+    id: "leksikologi"
+  }],
+  "Manajemen & Kepemimpinan Lanjutan": [{
+    jp: "経営戦略",
+    reading: "けいえいせんりゃく",
+    id: "strategi bisnis"
+  }, {
+    jp: "組織文化",
+    reading: "そしきぶんか",
+    id: "budaya organisasi"
+  }, {
+    jp: "リスクマネジメント",
+    reading: "りすくまねじめんと",
+    id: "manajemen risiko"
+  }, {
+    jp: "意思決定プロセス",
+    reading: "いしけっていプロセス",
+    id: "proses pengambilan keputusan"
+  }, {
+    jp: "権限委譲",
+    reading: "けんげんいじょう",
+    id: "delegasi wewenang"
+  }, {
+    jp: "業務改革",
+    reading: "ぎょうむかいかく",
+    id: "reformasi proses kerja"
+  }, {
+    jp: "人材育成",
+    reading: "じんざいいくせい",
+    id: "pengembangan SDM"
+  }, {
+    jp: "組織再編",
+    reading: "そしきさいへん",
+    id: "restrukturisasi organisasi"
+  }, {
+    jp: "経営理念",
+    reading: "けいえいりねん",
+    id: "filosofi manajemen"
+  }, {
+    jp: "目標管理",
+    reading: "もくひょうかんり",
+    id: "manajemen berbasis tujuan"
+  }, {
+    jp: "変革型リーダーシップ",
+    reading: "へんかくがたリーダーシップ",
+    id: "kepemimpinan transformasional"
+  }, {
+    jp: "危機管理",
+    reading: "ききかんり",
+    id: "manajemen krisis"
+  }, {
+    jp: "中間管理職",
+    reading: "ちゅうかんかんりしょく",
+    id: "manajer tingkat menengah"
+  }, {
+    jp: "経営判断",
+    reading: "けいえいはんだん",
+    id: "keputusan manajerial"
+  }, {
+    jp: "人事評価制度",
+    reading: "じんじひょうかせいど",
+    id: "sistem penilaian kinerja"
+  }, {
+    jp: "組織開発",
+    reading: "そしきかいはつ",
+    id: "pengembangan organisasi"
+  }, {
+    jp: "人材マネジメント",
+    reading: "じんざいまねじめんと",
+    id: "manajemen talenta"
+  }, {
+    jp: "経営ビジョン",
+    reading: "けいえいびじょん",
+    id: "visi manajemen"
+  }, {
+    jp: "戦略的思考",
+    reading: "せんりゃくてきしこう",
+    id: "pemikiran strategis"
+  }, {
+    jp: "組織的知識",
+    reading: "そしきてきちしき",
+    id: "pengetahuan organisasi"
+  }, {
+    jp: "人材登用",
+    reading: "じんざいとうよう",
+    id: "promosi/pengangkatan talenta"
+  }, {
+    jp: "経営判断力",
+    reading: "けいえいはんだんりょく",
+    id: "kemampuan penilaian manajerial"
+  }, {
+    jp: "目標設定理論",
+    reading: "もくひょうせっていりろん",
+    id: "teori penetapan tujuan"
+  }, {
+    jp: "意思疎通",
+    reading: "いしそつう",
+    id: "komunikasi yang lancar"
+  }, {
+    jp: "人的資源",
+    reading: "じんてきしげん",
+    id: "sumber daya manusia"
+  }, {
+    jp: "危機対応",
+    reading: "ききたいおう",
+    id: "respons krisis"
+  }, {
+    jp: "組織風土",
+    reading: "そしきふうど",
+    id: "iklim organisasi"
+  }],
+  "Antropologi & Kebudayaan Lanjutan": [{
+    jp: "文化相対主義",
+    reading: "ぶんかそうたいしゅぎ",
+    id: "relativisme budaya"
+  }, {
+    jp: "民族誌",
+    reading: "みんぞくし",
+    id: "etnografi"
+  }, {
+    jp: "儀礼",
+    reading: "ぎれい",
+    id: "ritual"
+  }, {
+    jp: "通過儀礼",
+    reading: "つうかぎれい",
+    id: "ritual peralihan"
+  }, {
+    jp: "部族社会",
+    reading: "ぶぞくしゃかい",
+    id: "masyarakat suku"
+  }, {
+    jp: "文化変容",
+    reading: "ぶんかへんよう",
+    id: "akulturasi"
+  }, {
+    jp: "同化政策",
+    reading: "どうかせいさく",
+    id: "kebijakan asimilasi"
+  }, {
+    jp: "口承文化",
+    reading: "こうしょうぶんか",
+    id: "budaya lisan"
+  }, {
+    jp: "象徴体系",
+    reading: "しょうちょうたいけい",
+    id: "sistem simbol"
+  }, {
+    jp: "神話体系",
+    reading: "しんわたいけい",
+    id: "sistem mitologi"
+  }, {
+    jp: "集合的記憶",
+    reading: "しゅうごうてききおく",
+    id: "memori kolektif"
+  }, {
+    jp: "文化的アイデンティティ",
+    reading: "ぶんかてきアイデンティティ",
+    id: "identitas budaya"
+  }, {
+    jp: "異文化理解",
+    reading: "いぶんかりかい",
+    id: "pemahaman lintas budaya"
+  }, {
+    jp: "文化摩擦",
+    reading: "ぶんかまさつ",
+    id: "gesekan budaya"
+  }, {
+    jp: "儀礼的行為",
+    reading: "ぎれいてきこうい",
+    id: "tindakan ritual"
+  }, {
+    jp: "伝統の継承",
+    reading: "でんとうのけいしょう",
+    id: "pewarisan tradisi"
+  }, {
+    jp: "文化的多元主義",
+    reading: "ぶんかてきたげんしゅぎ",
+    id: "pluralisme budaya"
+  }],
+  "Sejarah Modern & Peradaban Lanjutan": [{
+    jp: "産業革命",
+    reading: "さんぎょうかくめい",
+    id: "revolusi industri"
+  }, {
+    jp: "植民地支配",
+    reading: "しょくみんちしはい",
+    id: "penjajahan kolonial"
+  }, {
+    jp: "独立運動",
+    reading: "どくりつうんどう",
+    id: "gerakan kemerdekaan"
+  }, {
+    jp: "冷戦時代",
+    reading: "れいせんじだい",
+    id: "era perang dingin"
+  }, {
+    jp: "世界大戦",
+    reading: "せかいたいせん",
+    id: "perang dunia"
+  }, {
+    jp: "近代化政策",
+    reading: "きんだいかせいさく",
+    id: "kebijakan modernisasi"
+  }, {
+    jp: "民族主義運動",
+    reading: "みんぞくしゅぎうんどう",
+    id: "gerakan nasionalisme"
+  }, {
+    jp: "帝国主義",
+    reading: "ていこくしゅぎ",
+    id: "imperialisme"
+  }, {
+    jp: "歴史的転換点",
+    reading: "れきしてきてんかんてん",
+    id: "titik balik sejarah"
+  }, {
+    jp: "復興期",
+    reading: "ふっこうき",
+    id: "masa pemulihan"
+  }, {
+    jp: "経済制度改革",
+    reading: "けいざいせいどかいかく",
+    id: "reformasi sistem ekonomi"
+  }, {
+    jp: "王政復古",
+    reading: "おうせいふっこ",
+    id: "restorasi monarki"
+  }, {
+    jp: "歴史認識",
+    reading: "れきしにんしき",
+    id: "pemahaman sejarah"
+  }, {
+    jp: "史料",
+    reading: "しりょう",
+    id: "sumber sejarah"
+  }, {
+    jp: "年代記",
+    reading: "ねんだいき",
+    id: "catatan kronologis"
+  }, {
+    jp: "歴史修正主義",
+    reading: "れきししゅうせいしゅぎ",
+    id: "revisionisme sejarah"
+  }, {
+    jp: "近代化",
+    reading: "きんだいか",
+    id: "modernisasi"
+  }, {
+    jp: "歴史的検証",
+    reading: "れきしてきけんしょう",
+    id: "verifikasi sejarah"
+  }, {
+    jp: "文明の衝突",
+    reading: "ぶんめいのしょうとつ",
+    id: "benturan peradaban"
+  }],
+  "Fisika & Astronomi Lanjutan": [{
+    jp: "相対性理論",
+    reading: "そうたいせいりろん",
+    id: "teori relativitas"
+  }, {
+    jp: "量子力学",
+    reading: "りょうしりきがく",
+    id: "mekanika kuantum"
+  }, {
+    jp: "万有引力",
+    reading: "ばんゆういんりょく",
+    id: "gravitasi universal"
+  }, {
+    jp: "電磁波",
+    reading: "でんじは",
+    id: "gelombang elektromagnetik"
+  }, {
+    jp: "熱力学",
+    reading: "ねつりきがく",
+    id: "termodinamika"
+  }, {
+    jp: "素粒子",
+    reading: "そりゅうし",
+    id: "partikel elementer"
+  }, {
+    jp: "光速",
+    reading: "こうそく",
+    id: "kecepatan cahaya"
+  }, {
+    jp: "宇宙膨張",
+    reading: "うちゅうぼうちょう",
+    id: "ekspansi alam semesta"
+  }, {
+    jp: "系外惑星",
+    reading: "けいがいわくせい",
+    id: "exoplanet"
+  }, {
+    jp: "暗黒物質",
+    reading: "あんこくぶっしつ",
+    id: "materi gelap"
+  }, {
+    jp: "ビッグバン",
+    reading: "びっぐばん",
+    id: "Big Bang"
+  }, {
+    jp: "核融合",
+    reading: "かくゆうごう",
+    id: "fusi nuklir"
+  }, {
+    jp: "質量保存の法則",
+    reading: "しつりょうほぞんのほうそく",
+    id: "hukum kekekalan massa"
+  }, {
+    jp: "波動関数",
+    reading: "はどうかんすう",
+    id: "fungsi gelombang"
+  }, {
+    jp: "重力波",
+    reading: "じゅうりょくは",
+    id: "gelombang gravitasi"
+  }],
+  "Biologi & Genetika Lanjutan": [{
+    jp: "遺伝情報",
+    reading: "いでんじょうほう",
+    id: "informasi genetik"
+  }, {
+    jp: "染色体",
+    reading: "せんしょくたい",
+    id: "kromosom"
+  }, {
+    jp: "DNA配列",
+    reading: "でぃーえぬえーはいれつ",
+    id: "urutan DNA"
+  }, {
+    jp: "自然選択",
+    reading: "しぜんせんたく",
+    id: "seleksi alam"
+  }, {
+    jp: "細胞分裂",
+    reading: "さいぼうぶんれつ",
+    id: "pembelahan sel"
+  }, {
+    jp: "代謝",
+    reading: "たいしゃ",
+    id: "metabolisme"
+  }, {
+    jp: "免疫システム",
+    reading: "めんえきシステム",
+    id: "sistem imun"
+  }, {
+    jp: "遺伝子組み換え",
+    reading: "いでんしくみかえ",
+    id: "rekayasa genetika"
+  }, {
+    jp: "クローン技術",
+    reading: "クローンぎじゅつ",
+    id: "teknologi kloning"
+  }, {
+    jp: "生態系バランス",
+    reading: "せいたいけいバランス",
+    id: "keseimbangan ekosistem"
+  }, {
+    jp: "微生物",
+    reading: "びせいぶつ",
+    id: "mikroorganisme"
+  }, {
+    jp: "光合成作用",
+    reading: "こうごうせいさよう",
+    id: "proses fotosintesis"
+  }, {
+    jp: "生殖細胞",
+    reading: "せいしょくさいぼう",
+    id: "sel reproduksi"
+  }, {
+    jp: "進化生物学",
+    reading: "しんかせいぶつがく",
+    id: "biologi evolusi"
+  }, {
+    jp: "進化論",
+    reading: "しんかろん",
+    id: "teori evolusi"
+  }, {
+    jp: "分子生物学",
+    reading: "ぶんしせいぶつがく",
+    id: "biologi molekuler"
+  }, {
+    jp: "ゲノム編集",
+    reading: "げのむへんしゅう",
+    id: "penyuntingan genom"
+  }, {
+    jp: "遺伝的多様性",
+    reading: "いでんてきたようせい",
+    id: "keanekaragaman genetik"
+  }],
+  "Pendidikan & Kurikulum Lanjutan": [{
+    jp: "教育制度",
+    reading: "きょういくせいど",
+    id: "sistem pendidikan"
+  }, {
+    jp: "カリキュラム編成",
+    reading: "カリキュラムへんせい",
+    id: "penyusunan kurikulum"
+  }, {
+    jp: "学習指導要領",
+    reading: "がくしゅうしどうようりょう",
+    id: "pedoman pembelajaran"
+  }, {
+    jp: "教育格差",
+    reading: "きょういくかくさ",
+    id: "kesenjangan pendidikan"
+  }, {
+    jp: "生涯学習",
+    reading: "しょうがいがくしゅう",
+    id: "pembelajaran seumur hidup"
+  }, {
+    jp: "特別支援教育",
+    reading: "とくべつしえんきょういく",
+    id: "pendidikan kebutuhan khusus"
+  }, {
+    jp: "教育評価",
+    reading: "きょういくひょうか",
+    id: "evaluasi pendidikan"
+  }, {
+    jp: "学力向上",
+    reading: "がくりょくこうじょう",
+    id: "peningkatan kemampuan akademik"
+  }, {
+    jp: "教育改革",
+    reading: "きょういくかいかく",
+    id: "reformasi pendidikan"
+  }, {
+    jp: "義務教育",
+    reading: "ぎむきょういく",
+    id: "pendidikan wajib"
+  }, {
+    jp: "高等教育",
+    reading: "こうとうきょういく",
+    id: "pendidikan tinggi"
+  }, {
+    jp: "教員研修",
+    reading: "きょういんけんしゅう",
+    id: "pelatihan guru"
+  }, {
+    jp: "学校運営",
+    reading: "がっこううんえい",
+    id: "manajemen sekolah"
+  }, {
+    jp: "教育方針",
+    reading: "きょういくほうしん",
+    id: "kebijakan pendidikan"
+  }, {
+    jp: "個別指導",
+    reading: "こべつしどう",
+    id: "bimbingan individual"
+  }, {
+    jp: "学習意欲",
+    reading: "がくしゅういよく",
+    id: "motivasi belajar"
+  }, {
+    jp: "学習到達度",
+    reading: "がくしゅうとうたつど",
+    id: "tingkat pencapaian belajar"
+  }, {
+    jp: "学習者中心",
+    reading: "がくしゅうしゃちゅうしん",
+    id: "berpusat pada pembelajar"
+  }, {
+    jp: "個別最適化学習",
+    reading: "こべつさいてきかがくしゅう",
+    id: "pembelajaran yang dipersonalisasi"
+  }],
+  "Agrikultur & Pangan Global": [{
+    jp: "食料安全保障",
+    reading: "しょくりょうあんぜんほしょう",
+    id: "ketahanan pangan"
+  }, {
+    jp: "農地改革",
+    reading: "のうちかいかく",
+    id: "reformasi lahan pertanian"
+  }, {
+    jp: "遺伝子組み換え作物",
+    reading: "いでんしくみかえさくもつ",
+    id: "tanaman transgenik"
+  }, {
+    jp: "有機農業",
+    reading: "ゆうきのうぎょう",
+    id: "pertanian organik"
+  }, {
+    jp: "持続可能な農業",
+    reading: "じぞくかのうなのうぎょう",
+    id: "pertanian berkelanjutan"
+  }, {
+    jp: "農業生産性",
+    reading: "のうぎょうせいさんせい",
+    id: "produktivitas pertanian"
+  }, {
+    jp: "食糧危機",
+    reading: "しょくりょうきき",
+    id: "krisis pangan"
+  }, {
+    jp: "灌漑設備",
+    reading: "かんがいせつび",
+    id: "fasilitas irigasi"
+  }, {
+    jp: "農薬使用",
+    reading: "のうやくしよう",
+    id: "penggunaan pestisida"
+  }, {
+    jp: "品種改良技術",
+    reading: "ひんしゅかいりょうぎじゅつ",
+    id: "teknologi pemuliaan varietas"
+  }, {
+    jp: "輸入依存",
+    reading: "ゆにゅういぞん",
+    id: "ketergantungan impor"
+  }, {
+    jp: "食品ロス",
+    reading: "しょくひんロス",
+    id: "pemborosan makanan"
+  }, {
+    jp: "農村振興",
+    reading: "のうそんしんこう",
+    id: "pengembangan desa pertanian"
+  }],
+  "Perbankan & Pasar Modal": [{
+    jp: "証券取引所",
+    reading: "しょうけんとりひきじょ",
+    id: "bursa efek"
+  }, {
+    jp: "株価指数",
+    reading: "かぶかしすう",
+    id: "indeks saham"
+  }, {
+    jp: "配当金",
+    reading: "はいとうきん",
+    id: "dividen"
+  }, {
+    jp: "投資信託",
+    reading: "とうししんたく",
+    id: "reksa dana"
+  }, {
+    jp: "ポートフォリオ",
+    reading: "ポートフォリオ",
+    id: "portofolio"
+  }, {
+    jp: "信用格付け",
+    reading: "しんようかくづけ",
+    id: "peringkat kredit"
+  }, {
+    jp: "中央銀行",
+    reading: "ちゅうおうぎんこう",
+    id: "bank sentral"
+  }, {
+    jp: "公定歩合",
+    reading: "こうていぶあい",
+    id: "suku bunga diskonto"
+  }, {
+    jp: "金融商品",
+    reading: "きんゆうしょうひん",
+    id: "produk keuangan"
+  }, {
+    jp: "デリバティブ取引",
+    reading: "デリバティブとりひき",
+    id: "perdagangan derivatif"
+  }, {
+    jp: "為替相場",
+    reading: "かわせそうば",
+    id: "nilai tukar mata uang"
+  }, {
+    jp: "不良債権",
+    reading: "ふりょうさいけん",
+    id: "kredit macet"
+  }, {
+    jp: "資金繰り",
+    reading: "しきんぐり",
+    id: "arus kas"
+  }, {
+    jp: "上場企業",
+    reading: "じょうじょうきぎょう",
+    id: "perusahaan terbuka"
+  }, {
+    jp: "資本市場",
+    reading: "しほんしじょう",
+    id: "pasar modal"
+  }, {
+    jp: "投資ポートフォリオ",
+    reading: "とうしぽーとふぉりお",
+    id: "portofolio investasi"
+  }, {
+    jp: "金融リテラシー",
+    reading: "きんゆうりてらしー",
+    id: "literasi keuangan"
+  }, {
+    jp: "市場流動性",
+    reading: "しじょうりゅうどうせい",
+    id: "likuiditas pasar"
+  }],
+  "Asuransi & Manajemen Risiko Finansial": [{
+    jp: "保険契約",
+    reading: "ほけんけいやく",
+    id: "polis asuransi"
+  }, {
+    jp: "保険料率",
+    reading: "ほけんりょうりつ",
+    id: "tarif premi"
+  }, {
+    jp: "免責金額",
+    reading: "めんせききんがく",
+    id: "jumlah deductible"
+  }, {
+    jp: "損害査定",
+    reading: "そんがいさてい",
+    id: "penilaian klaim kerugian"
+  }, {
+    jp: "再保険",
+    reading: "さいほけん",
+    id: "reasuransi"
+  }, {
+    jp: "リスク分散",
+    reading: "リスクぶんさん",
+    id: "diversifikasi risiko"
+  }, {
+    jp: "資産防衛",
+    reading: "しさんぼうえい",
+    id: "perlindungan aset"
+  }, {
+    jp: "財務リスク",
+    reading: "ざいむリスク",
+    id: "risiko keuangan"
+  }, {
+    jp: "信用リスク",
+    reading: "しんようリスク",
+    id: "risiko kredit"
+  }, {
+    jp: "市場リスク",
+    reading: "しじょうリスク",
+    id: "risiko pasar"
+  }, {
+    jp: "流動性リスク",
+    reading: "りゅうどうせいリスク",
+    id: "risiko likuiditas"
+  }, {
+    jp: "ヘッジ取引",
+    reading: "ヘッジとりひき",
+    id: "transaksi lindung nilai"
+  }, {
+    jp: "保険金請求",
+    reading: "ほけんきんせいきゅう",
+    id: "klaim asuransi"
+  }, {
+    jp: "保険業界",
+    reading: "ほけんぎょうかい",
+    id: "industri asuransi"
+  }, {
+    jp: "保険金",
+    reading: "ほけんきん",
+    id: "klaim asuransi"
+  }, {
+    jp: "リスクヘッジ",
+    reading: "リスクヘッジ",
+    id: "lindung nilai risiko"
+  }],
+  "Etika Bisnis & Tanggung Jawab Sosial": [{
+    jp: "企業倫理",
+    reading: "きぎょうりんり",
+    id: "etika perusahaan"
+  }, {
+    jp: "内部告発",
+    reading: "ないぶこくはつ",
+    id: "whistleblowing"
+  }, {
+    jp: "利益相反防止",
+    reading: "りえきそうはんぼうし",
+    id: "pencegahan konflik kepentingan"
+  }, {
+    jp: "透明性",
+    reading: "とうめいせい",
+    id: "transparansi"
+  }, {
+    jp: "ガバナンス強化",
+    reading: "ガバナンスきょうか",
+    id: "penguatan tata kelola"
+  }, {
+    jp: "持続可能な経営",
+    reading: "じぞくかのうなけいえい",
+    id: "manajemen berkelanjutan"
+  }, {
+    jp: "環境配慮",
+    reading: "かんきょうはいりょ",
+    id: "kepedulian lingkungan"
+  }, {
+    jp: "労働環境改善",
+    reading: "ろうどうかんきょうかいぜん",
+    id: "perbaikan lingkungan kerja"
+  }, {
+    jp: "公正取引",
+    reading: "こうせいとりひき",
+    id: "perdagangan yang adil"
+  }, {
+    jp: "企業イメージ",
+    reading: "きぎょうイメージ",
+    id: "citra perusahaan"
+  }, {
+    jp: "社会貢献活動",
+    reading: "しゃかいこうけんかつどう",
+    id: "kegiatan kontribusi sosial"
+  }, {
+    jp: "倫理規定",
+    reading: "りんりきてい",
+    id: "kode etik"
+  }, {
+    jp: "労働倫理",
+    reading: "ろうどうりんり",
+    id: "etika kerja"
+  }, {
+    jp: "透明性の確保",
+    reading: "とうめいせいのかくほ",
+    id: "penjaminan transparansi"
+  }],
+  "Retorika & Debat Formal": [{
+    jp: "論拠",
+    reading: "ろんきょ",
+    id: "dasar argumen"
+  }, {
+    jp: "反論",
+    reading: "はんろん",
+    id: "sanggahan"
+  }, {
+    jp: "論点",
+    reading: "ろんてん",
+    id: "poin argumen"
+  }, {
+    jp: "説得力",
+    reading: "せっとくりょく",
+    id: "daya persuasi"
+  }, {
+    jp: "立論",
+    reading: "りつろん",
+    id: "penyusunan argumen"
+  }, {
+    jp: "論証",
+    reading: "ろんしょう",
+    id: "pembuktian argumen"
+  }, {
+    jp: "詭弁的",
+    reading: "きべんてき",
+    id: "sofistik"
+  }, {
+    jp: "譲歩案",
+    reading: "じょうほあん",
+    id: "usulan konsesi"
+  }, {
+    jp: "討論会",
+    reading: "とうろんかい",
+    id: "forum debat"
+  }, {
+    jp: "挙証責任",
+    reading: "きょしょうせきにん",
+    id: "beban pembuktian"
+  }, {
+    jp: "論理の飛躍",
+    reading: "ろんりのひやく",
+    id: "lompatan logika"
+  }, {
+    jp: "説得技術",
+    reading: "せっとくぎじゅつ",
+    id: "teknik persuasi"
+  }, {
+    jp: "弁論",
+    reading: "べんろん",
+    id: "pidato pembelaan"
+  }, {
+    jp: "論戦",
+    reading: "ろんせん",
+    id: "perang argumen"
+  }, {
+    jp: "論理的矛盾",
+    reading: "ろんりてきむじゅん",
+    id: "kontradiksi logis"
+  }, {
+    jp: "説得力のある議論",
+    reading: "せっとくりょくのあるぎろん",
+    id: "argumen yang meyakinkan"
+  }, {
+    jp: "論点整理",
+    reading: "ろんてんせいり",
+    id: "penyusunan poin argumen"
+  }],
+  "Transportasi & Logistik Lanjutan": [{
+    jp: "物流網",
+    reading: "ぶつりゅうもう",
+    id: "jaringan logistik"
+  }, {
+    jp: "配送センター",
+    reading: "はいそうセンター",
+    id: "pusat distribusi"
+  }, {
+    jp: "輸送コスト",
+    reading: "ゆそうコスト",
+    id: "biaya pengiriman"
+  }, {
+    jp: "貨物輸送",
+    reading: "かもつゆそう",
+    id: "pengangkutan kargo"
+  }, {
+    jp: "コンテナ船",
+    reading: "コンテナせん",
+    id: "kapal kontainer"
+  }, {
+    jp: "通関手続き",
+    reading: "つうかんてつづき",
+    id: "prosedur kepabeanan"
+  }, {
+    jp: "物流拠点",
+    reading: "ぶつりゅうきょてん",
+    id: "titik logistik"
+  }, {
+    jp: "ラストマイル配送",
+    reading: "らすとまいるはいそう",
+    id: "pengiriman mil terakhir"
+  }, {
+    jp: "積載量",
+    reading: "せきさいりょう",
+    id: "kapasitas muatan"
+  }, {
+    jp: "運行スケジュール",
+    reading: "うんこうスケジュール",
+    id: "jadwal operasional"
+  }, {
+    jp: "交通インフラ整備",
+    reading: "こうつうインフラせいび",
+    id: "pembangunan infrastruktur transportasi"
+  }, {
+    jp: "渋滞緩和策",
+    reading: "じゅうたいかんわさく",
+    id: "langkah mengurangi kemacetan"
+  }, {
+    jp: "自動配送",
+    reading: "じどうはいそう",
+    id: "pengiriman otomatis"
+  }, {
+    jp: "倉庫管理システム",
+    reading: "そうこかんりシステム",
+    id: "sistem manajemen gudang"
+  }, {
+    jp: "輸送手段",
+    reading: "ゆそうしゅだん",
+    id: "moda transportasi"
+  }, {
+    jp: "積み替え",
+    reading: "つみかえ",
+    id: "transshipment"
+  }, {
+    jp: "陸運",
+    reading: "りくうん",
+    id: "transportasi darat"
+  }, {
+    jp: "海運",
+    reading: "かいうん",
+    id: "transportasi laut"
+  }, {
+    jp: "空運",
+    reading: "くううん",
+    id: "transportasi udara"
+  }, {
+    jp: "物流効率化",
+    reading: "ぶつりゅうこうりつか",
+    id: "efisiensi logistik"
+  }, {
+    jp: "需要予測",
+    reading: "じゅようよそく",
+    id: "prakiraan permintaan"
+  }, {
+    jp: "配車",
+    reading: "はいしゃ",
+    id: "penjadwalan kendaraan"
+  }, {
+    jp: "運送業者",
+    reading: "うんそうぎょうしゃ",
+    id: "perusahaan ekspedisi"
+  }, {
+    jp: "追跡システム",
+    reading: "ついせきシステム",
+    id: "sistem pelacakan"
+  }, {
+    jp: "積荷",
+    reading: "つみに",
+    id: "muatan"
+  }, {
+    jp: "物流ネットワーク",
+    reading: "ぶつりゅうねっとわーく",
+    id: "jaringan logistik"
+  }, {
+    jp: "サプライチェーン管理",
+    reading: "さぷらいちぇーんかんり",
+    id: "manajemen rantai pasok"
+  }, {
+    jp: "輸送効率",
+    reading: "ゆそうこうりつ",
+    id: "efisiensi transportasi"
+  }, {
+    jp: "在庫最適化",
+    reading: "ざいこさいてきか",
+    id: "optimalisasi persediaan"
+  }, {
+    jp: "配送最適化",
+    reading: "はいそうさいてきか",
+    id: "optimalisasi pengiriman"
+  }],
+  "Energi & Infrastruktur Lanjutan": [{
+    jp: "送電網",
+    reading: "そうでんもう",
+    id: "jaringan transmisi listrik"
+  }, {
+    jp: "発電所",
+    reading: "はつでんしょ",
+    id: "pembangkit listrik"
+  }, {
+    jp: "電力自由化",
+    reading: "でんりょくじゆうか",
+    id: "liberalisasi pasar listrik"
+  }, {
+    jp: "蓄電池",
+    reading: "ちくでんち",
+    id: "baterai penyimpan"
+  }, {
+    jp: "スマートグリッド",
+    reading: "スマートグリッド",
+    id: "jaringan listrik pintar"
+  }, {
+    jp: "送配電",
+    reading: "そうはいでん",
+    id: "transmisi dan distribusi listrik"
+  }, {
+    jp: "電力需給",
+    reading: "でんりょくじゅきゅう",
+    id: "permintaan-pasokan listrik"
+  }, {
+    jp: "原子力発電",
+    reading: "げんしりょくはつでん",
+    id: "pembangkit listrik nuklir"
+  }, {
+    jp: "水道インフラ",
+    reading: "すいどうインフラ",
+    id: "infrastruktur air bersih"
+  }, {
+    jp: "上下水道",
+    reading: "じょうげすいどう",
+    id: "sistem air bersih dan limbah"
+  }, {
+    jp: "道路整備計画",
+    reading: "どうろせいびけいかく",
+    id: "rencana perbaikan jalan"
+  }, {
+    jp: "公共事業",
+    reading: "こうきょうじぎょう",
+    id: "proyek publik"
+  }, {
+    jp: "インフラ老朽化",
+    reading: "インフラろうきゅうか",
+    id: "penuaan infrastruktur"
+  }, {
+    jp: "耐用年数",
+    reading: "たいようねんすう",
+    id: "masa pakai"
+  }, {
+    jp: "維持管理費",
+    reading: "いじかんりひ",
+    id: "biaya pemeliharaan"
+  }, {
+    jp: "再開発計画",
+    reading: "さいかいはつけいかく",
+    id: "rencana pembangunan ulang"
+  }, {
+    jp: "電力網強化",
+    reading: "でんりょくもうきょうか",
+    id: "penguatan jaringan listrik"
+  }, {
+    jp: "停電対策",
+    reading: "ていでんたいさく",
+    id: "langkah antisipasi pemadaman listrik"
+  }, {
+    jp: "エネルギー安全保障",
+    reading: "エネルギーあんぜんほしょう",
+    id: "ketahanan energi"
+  }, {
+    jp: "天然資源開発",
+    reading: "てんねんしげんかいはつ",
+    id: "pengembangan sumber daya alam"
+  }, {
+    jp: "都市開発計画",
+    reading: "としかいはつけいかく",
+    id: "rencana pembangunan kota"
+  }, {
+    jp: "建設許可",
+    reading: "けんせつきょか",
+    id: "izin konstruksi"
+  }, {
+    jp: "公共施設整備",
+    reading: "こうきょうしせつせいび",
+    id: "pembangunan fasilitas publik"
+  }, {
+    jp: "送水管",
+    reading: "そうすいかん",
+    id: "pipa distribusi air"
+  }, {
+    jp: "分散型電源",
+    reading: "ぶんさんがたでんげん",
+    id: "sumber listrik terdesentralisasi"
+  }],
+  "Perdagangan & Ritel Lanjutan": [{
+    jp: "小売業界",
+    reading: "こうりぎょうかい",
+    id: "industri ritel"
+  }, {
+    jp: "卸売業",
+    reading: "おろしうりぎょう",
+    id: "perdagangan grosir"
+  }, {
+    jp: "流通経路",
+    reading: "りゅうつうけいろ",
+    id: "jalur distribusi"
+  }, {
+    jp: "消費動向",
+    reading: "しょうひどうこう",
+    id: "tren konsumsi"
+  }, {
+    jp: "販売戦略",
+    reading: "はんばいせんりゃく",
+    id: "strategi penjualan"
+  }, {
+    jp: "市場シェア",
+    reading: "しじょうシェア",
+    id: "pangsa pasar"
+  }, {
+    jp: "顧客ロイヤルティ",
+    reading: "こきゃくロイヤルティ",
+    id: "loyalitas pelanggan"
+  }, {
+    jp: "プライベートブランド",
+    reading: "プライベートブランド",
+    id: "merek toko sendiri"
+  }, {
+    jp: "オムニチャネル",
+    reading: "オムニチャネル",
+    id: "omnichannel"
+  }, {
+    jp: "在庫回転率",
+    reading: "ざいこかいてんりつ",
+    id: "perputaran stok"
+  }, {
+    jp: "販売促進",
+    reading: "はんばいそくしん",
+    id: "promosi penjualan"
+  }, {
+    jp: "セール戦略",
+    reading: "セールせんりゃく",
+    id: "strategi diskon"
+  }, {
+    jp: "商品陳列",
+    reading: "しょうひんちんれつ",
+    id: "pemajangan produk"
+  }, {
+    jp: "客単価",
+    reading: "きゃくたんか",
+    id: "rata-rata belanja per pelanggan"
+  }, {
+    jp: "来客数",
+    reading: "らいきゃくすう",
+    id: "jumlah pengunjung"
+  }, {
+    jp: "消費者行動",
+    reading: "しょうひしゃこうどう",
+    id: "perilaku konsumen"
+  }, {
+    jp: "ブランド戦略",
+    reading: "ブランドせんりゃく",
+    id: "strategi merek"
+  }, {
+    jp: "価格競争",
+    reading: "かかくきょうそう",
+    id: "persaingan harga"
+  }, {
+    jp: "差別化戦略",
+    reading: "さべつかせんりゃく",
+    id: "strategi diferensiasi"
+  }, {
+    jp: "市場参入",
+    reading: "しじょうさんにゅう",
+    id: "masuk ke pasar baru"
+  }, {
+    jp: "撤退戦略",
+    reading: "てったいせんりゃく",
+    id: "strategi keluar pasar"
+  }, {
+    jp: "顧客満足度",
+    reading: "こきゃくまんぞくど",
+    id: "kepuasan pelanggan"
+  }, {
+    jp: "需要予測分析",
+    reading: "じゅようよそくぶんせき",
+    id: "analisis prakiraan permintaan"
+  }, {
+    jp: "消費者心理",
+    reading: "しょうひしゃしんり",
+    id: "psikologi konsumen"
+  }, {
+    jp: "電子商取引",
+    reading: "でんししょうとりひき",
+    id: "e-commerce"
+  }],
+  "Telekomunikasi & Jaringan": [{
+    jp: "通信インフラ",
+    reading: "つうしんインフラ",
+    id: "infrastruktur telekomunikasi"
+  }, {
+    jp: "光回線",
+    reading: "ひかりかいせん",
+    id: "jaringan fiber optic"
+  }, {
+    jp: "通信速度",
+    reading: "つうしんそくど",
+    id: "kecepatan koneksi"
+  }, {
+    jp: "基地局",
+    reading: "きちきょく",
+    id: "menara BTS"
+  }, {
+    jp: "電波帯域",
+    reading: "でんぱたいいき",
+    id: "pita frekuensi"
+  }, {
+    jp: "通信障害",
+    reading: "つうしんしょうがい",
+    id: "gangguan komunikasi"
+  }, {
+    jp: "データ通信量",
+    reading: "データつうしんりょう",
+    id: "volume data"
+  }, {
+    jp: "5G通信網",
+    reading: "ごじーつうしんもう",
+    id: "jaringan 5G"
+  }, {
+    jp: "通信事業者",
+    reading: "つうしんじぎょうしゃ",
+    id: "operator telekomunikasi"
+  }, {
+    jp: "回線契約",
+    reading: "かいせんけいやく",
+    id: "kontrak layanan koneksi"
+  }, {
+    jp: "ネットワーク障害",
+    reading: "ネットワークしょうがい",
+    id: "gangguan jaringan"
+  }, {
+    jp: "通信規格",
+    reading: "つうしんきかく",
+    id: "standar komunikasi"
+  }, {
+    jp: "衛星通信",
+    reading: "えいせいつうしん",
+    id: "komunikasi satelit"
+  }, {
+    jp: "無線通信",
+    reading: "むせんつうしん",
+    id: "komunikasi nirkabel"
+  }, {
+    jp: "通信の安定性",
+    reading: "つうしんのあんていせい",
+    id: "stabilitas koneksi"
+  }, {
+    jp: "データセンター",
+    reading: "データセンター",
+    id: "pusat data"
+  }, {
+    jp: "クラウドサービス",
+    reading: "クラウドサービス",
+    id: "layanan cloud"
+  }, {
+    jp: "サーバー障害",
+    reading: "サーバーしょうがい",
+    id: "gangguan server"
+  }, {
+    jp: "帯域制限",
+    reading: "たいいきせいげん",
+    id: "pembatasan bandwidth"
+  }, {
+    jp: "ネットワークセキュリティ",
+    reading: "ネットワークセキュリティ",
+    id: "keamanan jaringan"
+  }, {
+    jp: "通信費",
+    reading: "つうしんひ",
+    id: "biaya komunikasi"
+  }, {
+    jp: "遠隔通信",
+    reading: "えんかくつうしん",
+    id: "komunikasi jarak jauh"
+  }, {
+    jp: "通信網整備",
+    reading: "つうしんもうせいび",
+    id: "pembangunan jaringan komunikasi"
+  }, {
+    jp: "デジタルデバイド",
+    reading: "デジタルデバイド",
+    id: "kesenjangan digital"
+  }, {
+    jp: "帯域幅",
+    reading: "たいいきはば",
+    id: "bandwidth"
+  }, {
+    jp: "ネットワーク遅延",
+    reading: "ねっとわーくちえん",
+    id: "latensi jaringan"
+  }, {
+    jp: "暗号化通信",
+    reading: "あんごうかつうしん",
+    id: "komunikasi terenkripsi"
+  }],
+  "Arsitektur & Perencanaan Kota Lanjutan": [{
+    jp: "建築基準法",
+    reading: "けんちくきじゅんほう",
+    id: "undang-undang standar bangunan"
+  }, {
+    jp: "用途地域",
+    reading: "ようとちいき",
+    id: "zona peruntukan lahan"
+  }, {
+    jp: "容積率",
+    reading: "ようせきりつ",
+    id: "rasio kepadatan bangunan"
+  }, {
+    jp: "建蔽率",
+    reading: "けんぺいりつ",
+    id: "rasio penutupan lahan"
+  }, {
+    jp: "耐火構造",
+    reading: "たいかこうぞう",
+    id: "struktur tahan api"
+  }, {
+    jp: "免震構造",
+    reading: "めんしんこうぞう",
+    id: "struktur peredam gempa"
+  }, {
+    jp: "都市再生",
+    reading: "としさいせい",
+    id: "regenerasi kota"
+  }, {
+    jp: "スマートシティ",
+    reading: "スマートシティ",
+    id: "kota pintar"
+  }, {
+    jp: "公共空間デザイン",
+    reading: "こうきょうくうかんデザイン",
+    id: "desain ruang publik"
+  }, {
+    jp: "建築確認申請",
+    reading: "けんちくかくにんしんせい",
+    id: "izin konstruksi bangunan"
+  }, {
+    jp: "景観条例",
+    reading: "けいかんじょうれい",
+    id: "peraturan tata ruang kota"
+  }, {
+    jp: "バリアフリー設計",
+    reading: "バリアフリーせっけい",
+    id: "desain ramah difabel"
+  }, {
+    jp: "街づくり",
+    reading: "まちづくり",
+    id: "pembangunan komunitas kota"
+  }, {
+    jp: "空き家問題",
+    reading: "あきやもんだい",
+    id: "masalah rumah kosong"
+  }, {
+    jp: "密集市街地",
+    reading: "みっしゅうしがいち",
+    id: "kawasan padat penduduk"
+  }, {
+    jp: "建築デザイン",
+    reading: "けんちくデザイン",
+    id: "desain arsitektur"
+  }, {
+    jp: "建物耐震診断",
+    reading: "たてものたいしんしんだん",
+    id: "pemeriksaan ketahanan gempa bangunan"
+  }, {
+    jp: "緑化計画",
+    reading: "りょくかけいかく",
+    id: "rencana penghijauan"
+  }, {
+    jp: "交通結節点",
+    reading: "こうつうけっせつてん",
+    id: "titik simpul transportasi"
+  }, {
+    jp: "建築様式",
+    reading: "けんちくようしき",
+    id: "gaya arsitektur"
+  }, {
+    jp: "施工管理",
+    reading: "せこうかんり",
+    id: "manajemen konstruksi"
+  }, {
+    jp: "設計図面",
+    reading: "せっけいずめん",
+    id: "gambar rancangan"
+  }, {
+    jp: "持続可能な都市計画",
+    reading: "じぞくかのうなとしけいかく",
+    id: "perencanaan kota berkelanjutan"
+  }, {
+    jp: "土地利用計画",
+    reading: "とちりようけいかく",
+    id: "perencanaan tata guna lahan"
+  }, {
+    jp: "公共空間",
+    reading: "こうきょうくうかん",
+    id: "ruang publik"
+  }],
+  "Kimia Lanjutan & Material Sains": [{
+    jp: "化学反応式",
+    reading: "かがくはんのうしき",
+    id: "persamaan reaksi kimia"
+  }, {
+    jp: "触媒",
+    reading: "しょくばい",
+    id: "katalis"
+  }, {
+    jp: "分子構造",
+    reading: "ぶんしこうぞう",
+    id: "struktur molekul"
+  }, {
+    jp: "化合物合成",
+    reading: "かごうぶつごうせい",
+    id: "sintesis senyawa"
+  }, {
+    jp: "ポリマー",
+    reading: "ポリマー",
+    id: "polimer"
+  }, {
+    jp: "高分子化学",
+    reading: "こうぶんしかがく",
+    id: "kimia polimer"
+  }, {
+    jp: "酸化還元反応",
+    reading: "さんかかんげんはんのう",
+    id: "reaksi redoks"
+  }, {
+    jp: "電気化学",
+    reading: "でんきかがく",
+    id: "elektrokimia"
+  }, {
+    jp: "有機化学",
+    reading: "ゆうきかがく",
+    id: "kimia organik"
+  }, {
+    jp: "無機化学",
+    reading: "むきかがく",
+    id: "kimia anorganik"
+  }, {
+    jp: "半導体材料",
+    reading: "はんどうたいざいりょう",
+    id: "material semikonduktor"
+  }, {
+    jp: "複合材料",
+    reading: "ふくごうざいりょう",
+    id: "material komposit"
+  }, {
+    jp: "ナノテクノロジー",
+    reading: "ナノテクノロジー",
+    id: "nanoteknologi"
+  }, {
+    jp: "結晶構造",
+    reading: "けっしょうこうぞう",
+    id: "struktur kristal"
+  }, {
+    jp: "化学工業",
+    reading: "かがくこうぎょう",
+    id: "industri kimia"
+  }, {
+    jp: "反応速度",
+    reading: "はんのうそくど",
+    id: "laju reaksi"
+  }, {
+    jp: "溶液濃度",
+    reading: "ようえきのうど",
+    id: "konsentrasi larutan"
+  }, {
+    jp: "化学分析",
+    reading: "かがくぶんせき",
+    id: "analisis kimia"
+  }, {
+    jp: "元素周期表",
+    reading: "げんそしゅうきひょう",
+    id: "tabel periodik unsur"
+  }, {
+    jp: "材料強度",
+    reading: "ざいりょうきょうど",
+    id: "kekuatan material"
+  }, {
+    jp: "腐食防止",
+    reading: "ふしょくぼうし",
+    id: "pencegahan korosi"
+  }, {
+    jp: "化学平衡",
+    reading: "かがくへいこう",
+    id: "kesetimbangan kimia"
+  }, {
+    jp: "高分子化合物",
+    reading: "こうぶんしかごうぶつ",
+    id: "senyawa polimer"
+  }, {
+    jp: "触媒作用",
+    reading: "しょくばいさよう",
+    id: "aksi katalis"
+  }, {
+    jp: "材料特性",
+    reading: "ざいりょうとくせい",
+    id: "sifat material"
+  }, {
+    jp: "有機化合物",
+    reading: "ゆうきかごうぶつ",
+    id: "senyawa organik"
+  }, {
+    jp: "ナノ材料",
+    reading: "なのざいりょう",
+    id: "material nano"
+  }],
+  "Matematika Lanjutan & Statistika": [{
+    jp: "微分積分",
+    reading: "びぶんせきぶん",
+    id: "kalkulus diferensial dan integral"
+  }, {
+    jp: "線形代数",
+    reading: "せんけいだいすう",
+    id: "aljabar linear"
+  }, {
+    jp: "確率分布",
+    reading: "かくりつぶんぷ",
+    id: "distribusi probabilitas"
+  }, {
+    jp: "統計的推定",
+    reading: "とうけいてきすいてい",
+    id: "estimasi statistik"
+  }, {
+    jp: "回帰分析",
+    reading: "かいきぶんせき",
+    id: "analisis regresi"
+  }, {
+    jp: "標準誤差",
+    reading: "ひょうじゅんごさ",
+    id: "standard error"
+  }, {
+    jp: "信頼区間",
+    reading: "しんらいくかん",
+    id: "interval kepercayaan"
+  }, {
+    jp: "有意水準",
+    reading: "ゆういすいじゅん",
+    id: "tingkat signifikansi"
+  }, {
+    jp: "数列",
+    reading: "すうれつ",
+    id: "barisan bilangan"
+  }, {
+    jp: "極限値",
+    reading: "きょくげんち",
+    id: "nilai limit"
+  }, {
+    jp: "幾何学",
+    reading: "きかがく",
+    id: "geometri"
+  }, {
+    jp: "集合論",
+    reading: "しゅうごうろん",
+    id: "teori himpunan"
+  }, {
+    jp: "論理演算",
+    reading: "ろんりえんざん",
+    id: "operasi logika"
+  }, {
+    jp: "アルゴリズム設計",
+    reading: "アルゴリズムせっけい",
+    id: "perancangan algoritma"
+  }, {
+    jp: "最適化問題",
+    reading: "さいてきかもんだい",
+    id: "masalah optimasi"
+  }, {
+    jp: "数理モデル",
+    reading: "すうりモデル",
+    id: "model matematis"
+  }, {
+    jp: "データ分布",
+    reading: "データぶんぷ",
+    id: "distribusi data"
+  }, {
+    jp: "分散分析",
+    reading: "ぶんさんぶんせき",
+    id: "analisis varians"
+  }, {
+    jp: "相関係数",
+    reading: "そうかんけいすう",
+    id: "koefisien korelasi"
+  }, {
+    jp: "母数",
+    reading: "ぼすう",
+    id: "parameter populasi"
+  }, {
+    jp: "数値解析",
+    reading: "すうちかいせき",
+    id: "analisis numerik"
+  }, {
+    jp: "統計的推論",
+    reading: "とうけいてきすいろん",
+    id: "inferensi statistik"
+  }, {
+    jp: "多変量解析",
+    reading: "たへんりょうかいせき",
+    id: "analisis multivariat"
+  }],
+  "Olahraga Profesional & Manajemen Event": [{
+    jp: "プロスポーツ",
+    reading: "プロスポーツ",
+    id: "olahraga profesional"
+  }, {
+    jp: "契約更改",
+    reading: "けいやくこうかい",
+    id: "perpanjangan kontrak atlet"
+  }, {
+    jp: "移籍",
+    reading: "いせき",
+    id: "transfer pemain"
+  }, {
+    jp: "年俸",
+    reading: "ねんぽう",
+    id: "gaji tahunan atlet"
+  }, {
+    jp: "スポンサー契約",
+    reading: "スポンサーけいやく",
+    id: "kontrak sponsor"
+  }, {
+    jp: "大会運営",
+    reading: "たいかいうんえい",
+    id: "penyelenggaraan turnamen"
+  }, {
+    jp: "選手育成",
+    reading: "せんしゅいくせい",
+    id: "pembinaan atlet"
+  }, {
+    jp: "ドーピング検査",
+    reading: "ドーピングけんさ",
+    id: "tes doping"
+  }, {
+    jp: "競技団体",
+    reading: "きょうぎだんたい",
+    id: "federasi olahraga"
+  }, {
+    jp: "観客動員数",
+    reading: "かんきゃくどういんすう",
+    id: "jumlah penonton"
+  }, {
+    jp: "放映権",
+    reading: "ほうえいけん",
+    id: "hak siar"
+  }, {
+    jp: "スポーツマーケティング",
+    reading: "スポーツマーケティング",
+    id: "pemasaran olahraga"
+  }, {
+    jp: "実況中継",
+    reading: "じっきょうちゅうけい",
+    id: "siaran langsung"
+  }, {
+    jp: "会場設営",
+    reading: "かいじょうせつえい",
+    id: "persiapan lokasi acara"
+  }, {
+    jp: "イベント企画",
+    reading: "イベントきかく",
+    id: "perencanaan acara"
+  }, {
+    jp: "集客戦略",
+    reading: "しゅうきゃくせんりゃく",
+    id: "strategi menarik pengunjung"
+  }, {
+    jp: "選手選考",
+    reading: "せんしゅせんこう",
+    id: "seleksi atlet"
+  }, {
+    jp: "競技規則",
+    reading: "きょうぎきそく",
+    id: "peraturan pertandingan"
+  }, {
+    jp: "記録更新",
+    reading: "きろくこうしん",
+    id: "pemecahan rekor"
+  }, {
+    jp: "興行主",
+    reading: "こうぎょうぬし",
+    id: "promotor acara"
+  }, {
+    jp: "競技運営",
+    reading: "きょうぎうんえい",
+    id: "penyelenggaraan kompetisi"
+  }, {
+    jp: "選手契約",
+    reading: "せんしゅけいやく",
+    id: "kontrak atlet"
+  }],
+  "Perfilman & Produksi Media": [{
+    jp: "撮影監督",
+    reading: "さつえいかんとく",
+    id: "sinematografer"
+  }, {
+    jp: "制作会社",
+    reading: "せいさくがいしゃ",
+    id: "rumah produksi"
+  }, {
+    jp: "配給会社",
+    reading: "はいきゅうがいしゃ",
+    id: "perusahaan distribusi film"
+  }, {
+    jp: "脚本家",
+    reading: "きゃくほんか",
+    id: "penulis skenario"
+  }, {
+    jp: "編集作業",
+    reading: "へんしゅうさぎょう",
+    id: "proses editing"
+  }, {
+    jp: "特殊効果",
+    reading: "とくしゅこうか",
+    id: "efek khusus"
+  }, {
+    jp: "興行成績",
+    reading: "こうぎょうせいせき",
+    id: "pendapatan box office"
+  }, {
+    jp: "試写会",
+    reading: "ししゃかい",
+    id: "pemutaran perdana"
+  }, {
+    jp: "撮影許可",
+    reading: "さつえいきょか",
+    id: "izin syuting"
+  }, {
+    jp: "キャスティング",
+    reading: "キャスティング",
+    id: "casting"
+  }, {
+    jp: "ロケーション撮影",
+    reading: "ロケーションさつえい",
+    id: "syuting lokasi"
+  }, {
+    jp: "音響効果",
+    reading: "おんきょうこうか",
+    id: "efek suara"
+  }, {
+    jp: "映像制作",
+    reading: "えいぞうせいさく",
+    id: "produksi video"
+  }, {
+    jp: "配信プラットフォーム",
+    reading: "はいしんプラットフォーム",
+    id: "platform streaming"
+  }, {
+    jp: "著作権管理",
+    reading: "ちょさくけんかんり",
+    id: "manajemen hak cipta"
+  }, {
+    jp: "映画祭",
+    reading: "えいがさい",
+    id: "festival film"
+  }, {
+    jp: "興行収入ランキング",
+    reading: "こうぎょうしゅうにゅうランキング",
+    id: "peringkat box office"
+  }, {
+    jp: "制作費",
+    reading: "せいさくひ",
+    id: "biaya produksi"
+  }, {
+    jp: "撮影スケジュール",
+    reading: "さつえいスケジュール",
+    id: "jadwal syuting"
+  }, {
+    jp: "編集技術",
+    reading: "へんしゅうぎじゅつ",
+    id: "teknik penyuntingan"
+  }],
+  "Keamanan Siber & Privasi Data": [{
+    jp: "不正アクセス",
+    reading: "ふせいアクセス",
+    id: "akses ilegal"
+  }, {
+    jp: "データ保護",
+    reading: "データほご",
+    id: "perlindungan data"
+  }, {
+    jp: "プライバシー侵害",
+    reading: "プライバシーしんがい",
+    id: "pelanggaran privasi"
+  }, {
+    jp: "個人情報保護法",
+    reading: "こじんじょうほうほごほう",
+    id: "undang-undang perlindungan data pribadi"
+  }, {
+    jp: "サイバーセキュリティ対策",
+    reading: "サイバーセキュリティたいさく",
+    id: "langkah keamanan siber"
+  }, {
+    jp: "二段階認証",
+    reading: "にだんかいにんしょう",
+    id: "autentikasi dua langkah"
+  }, {
+    jp: "フィッシング詐欺",
+    reading: "フィッシングさぎ",
+    id: "penipuan phishing"
+  }, {
+    jp: "マルウェア",
+    reading: "マルウェア",
+    id: "malware"
+  }, {
+    jp: "ランサムウェア",
+    reading: "ランサムウェア",
+    id: "ransomware"
+  }, {
+    jp: "データ暗号化",
+    reading: "データあんごうか",
+    id: "enkripsi data"
+  }, {
+    jp: "脆弱性",
+    reading: "ぜいじゃくせい",
+    id: "kerentanan sistem"
+  }, {
+    jp: "セキュリティパッチ",
+    reading: "セキュリティパッチ",
+    id: "tambalan keamanan"
+  }, {
+    jp: "アクセス権限",
+    reading: "アクセスけんげん",
+    id: "hak akses"
+  }, {
+    jp: "認証システム",
+    reading: "にんしょうシステム",
+    id: "sistem autentikasi"
+  }, {
+    jp: "データ流出",
+    reading: "データりゅうしゅつ",
+    id: "kebocoran data"
+  }, {
+    jp: "監視カメラ",
+    reading: "かんしカメラ",
+    id: "kamera pengawas"
+  }, {
+    jp: "情報統制",
+    reading: "じょうほうとうせい",
+    id: "kontrol informasi"
+  }, {
+    jp: "デジタルフォレンジック",
+    reading: "デジタルフォレンジック",
+    id: "forensik digital"
+  }, {
+    jp: "セキュリティ意識",
+    reading: "セキュリティいしき",
+    id: "kesadaran keamanan"
+  }, {
+    jp: "個人情報保護",
+    reading: "こじんじょうほうほご",
+    id: "perlindungan data pribadi"
+  }, {
+    jp: "暗号化技術",
+    reading: "あんごうかぎじゅつ",
+    id: "teknologi enkripsi"
+  }, {
+    jp: "多要素認証",
+    reading: "たようそにんしょう",
+    id: "autentikasi multifaktor"
+  }, {
+    jp: "ゼロデイ攻撃",
+    reading: "ぜろでいこうげき",
+    id: "serangan zero-day"
+  }, {
+    jp: "データ漏洩対策",
+    reading: "でーたろうえいたいさく",
+    id: "langkah pencegahan kebocoran data"
+  }],
+  "Keigo Bisnis & Korespondensi Formal": [{
+    jp: "平素より",
+    reading: "へいそより",
+    id: "selama ini (ungkapan formal pembuka)"
+  }, {
+    jp: "格別のご高配",
+    reading: "かくべつのごこうはい",
+    id: "perhatian istimewa (bahasa surat formal)"
+  }, {
+    jp: "何卒よろしくお願い申し上げます",
+    reading: "なにとぞよろしくおねがいもうしあげます",
+    id: "mohon bantuannya (sangat formal)"
+  }, {
+    jp: "ご多忙のところ",
+    reading: "ごたぼうのところ",
+    id: "di tengah kesibukan Anda"
+  }, {
+    jp: "略儀ながら",
+    reading: "りゃくぎながら",
+    id: "meski dengan cara sederhana ini"
+  }, {
+    jp: "謹んで",
+    reading: "つつしんで",
+    id: "dengan hormat"
+  }, {
+    jp: "恐縮ですが",
+    reading: "きょうしゅくですが",
+    id: "maaf merepotkan, tapi"
+  }, {
+    jp: "お手数をおかけしますが",
+    reading: "おてすうをおかけしますが",
+    id: "maaf merepotkan Anda, tapi"
+  }, {
+    jp: "ご査収ください",
+    reading: "ごさしゅうください",
+    id: "mohon diperiksa dan diterima"
+  }, {
+    jp: "ご確認のほどよろしくお願いいたします",
+    reading: "ごかくにんのほどよろしくおねがいいたします",
+    id: "mohon dikonfirmasi"
+  }, {
+    jp: "取り急ぎご連絡まで",
+    reading: "とりいそぎごれんらくまで",
+    id: "sekilas info secepatnya"
+  }, {
+    jp: "ご笑納ください",
+    reading: "ごしょうのうください",
+    id: "mohon diterima dengan senang hati"
+  }, {
+    jp: "お詫び申し上げます",
+    reading: "おわびもうしあげます",
+    id: "kami mohon maaf sedalam-dalamnya"
+  }, {
+    jp: "ご不便をおかけし",
+    reading: "ごふべんをおかけし",
+    id: "mohon maaf atas ketidaknyamanan"
+  }, {
+    jp: "拝復",
+    reading: "はいふく",
+    id: "balasan surat formal"
+  }, {
+    jp: "恐縮です",
+    reading: "きょうしゅくです",
+    id: "mohon maaf/terima kasih (sopan)"
+  }],
+  "Peribahasa & Yojijukugo Lanjutan": [{
+    jp: "玉石混交",
+    reading: "ぎょくせきこんこう",
+    id: "yang baik dan buruk bercampur"
+  }, {
+    jp: "優柔不断",
+    reading: "ゆうじゅうふだん",
+    id: "peragu, tidak tegas"
+  }, {
+    jp: "言語道断",
+    reading: "ごんごどうだん",
+    id: "tidak masuk akal/tak terkatakan"
+  }, {
+    jp: "空前絶後",
+    reading: "くうぜんぜつご",
+    id: "belum pernah dan tidak akan terjadi lagi"
+  }, {
+    jp: "和洋折衷",
+    reading: "わようせっちゅう",
+    id: "perpaduan gaya Jepang dan Barat"
+  }, {
+    jp: "諸行無常",
+    reading: "しょぎょうむじょう",
+    id: "segala sesuatu tidak kekal"
+  }, {
+    jp: "責任転嫁",
+    reading: "せきにんてんか",
+    id: "melempar tanggung jawab"
+  }, {
+    jp: "五里霧中",
+    reading: "ごりむちゅう",
+    id: "bingung tanpa arah"
+  }, {
+    jp: "針小棒大",
+    reading: "しんしょうぼうだい",
+    id: "melebih-lebihkan"
+  }, {
+    jp: "竜頭蛇尾",
+    reading: "りゅうとうだび",
+    id: "awal hebat akhir mengecewakan"
+  }, {
+    jp: "縦横無尽",
+    reading: "じゅうおうむじん",
+    id: "bebas tanpa batas"
+  }, {
+    jp: "一朝一夕",
+    reading: "いっちょういっせき",
+    id: "dalam waktu singkat"
+  }, {
+    jp: "千差万別",
+    reading: "せんさばんべつ",
+    id: "beraneka ragam"
+  }, {
+    jp: "虎視眈々",
+    reading: "こしたんたん",
+    id: "mengintai kesempatan dengan cermat"
+  }, {
+    jp: "難攻不落",
+    reading: "なんこうふらく",
+    id: "sulit ditaklukkan"
+  }],
+  "Geologi & Ilmu Kebumian": [{
+    jp: "地殻変動",
+    reading: "ちかくへんどう",
+    id: "pergerakan kerak bumi"
+  }, {
+    jp: "プレートテクトニクス",
+    reading: "ぷれーとてくとにくす",
+    id: "tektonik lempeng"
+  }, {
+    jp: "断層",
+    reading: "だんそう",
+    id: "patahan (geologi)"
+  }, {
+    jp: "地質年代",
+    reading: "ちしつねんだい",
+    id: "era geologi"
+  }, {
+    jp: "マグマ",
+    reading: "まぐま",
+    id: "magma"
+  }, {
+    jp: "堆積岩",
+    reading: "たいせきがん",
+    id: "batuan sedimen"
+  }, {
+    jp: "侵食作用",
+    reading: "しんしょくさよう",
+    id: "erosi"
+  }, {
+    jp: "地下水脈",
+    reading: "ちかすいみゃく",
+    id: "aliran air tanah"
+  }, {
+    jp: "鉱床",
+    reading: "こうしょう",
+    id: "deposit mineral"
+  }, {
+    jp: "地殻",
+    reading: "ちかく",
+    id: "kerak bumi"
+  }, {
+    jp: "地層",
+    reading: "ちそう",
+    id: "lapisan batuan"
+  }, {
+    jp: "火山活動",
+    reading: "かざんかつどう",
+    id: "aktivitas vulkanik"
+  }],
+  "Oseanografi & Ilmu Kelautan": [{
+    jp: "海流",
+    reading: "かいりゅう",
+    id: "arus laut"
+  }, {
+    jp: "海洋生態系",
+    reading: "かいようせいたいけい",
+    id: "ekosistem laut"
+  }, {
+    jp: "深海生物",
+    reading: "しんかいせいぶつ",
+    id: "biota laut dalam"
+  }, {
+    jp: "海水温上昇",
+    reading: "かいすいおんじょうしょう",
+    id: "kenaikan suhu air laut"
+  }, {
+    jp: "珊瑚礁の白化",
+    reading: "さんごしょうのはっか",
+    id: "pemutihan terumbu karang"
+  }, {
+    jp: "海洋汚染",
+    reading: "かいようおせん",
+    id: "polusi laut"
+  }, {
+    jp: "潮汐",
+    reading: "ちょうせき",
+    id: "pasang surut"
+  }, {
+    jp: "海底地形",
+    reading: "かいていちけい",
+    id: "topografi dasar laut"
+  }, {
+    jp: "深海",
+    reading: "しんかい",
+    id: "laut dalam"
+  }, {
+    jp: "潮流",
+    reading: "ちょうりゅう",
+    id: "arus pasang surut"
+  }, {
+    jp: "海洋資源",
+    reading: "かいようしげん",
+    id: "sumber daya laut"
+  }],
+  "Perdagangan Internasional & Bea Cukai": [{
+    jp: "原産地証明",
+    reading: "げんさんちしょうめい",
+    id: "sertifikat asal barang"
+  }, {
+    jp: "関税率",
+    reading: "かんぜいりつ",
+    id: "tarif bea masuk"
+  }, {
+    jp: "輸出入規制",
+    reading: "ゆしゅつにゅうきせい",
+    id: "regulasi ekspor-impor"
+  }, {
+    jp: "自由貿易協定",
+    reading: "じゆうぼうえききょうてい",
+    id: "perjanjian perdagangan bebas"
+  }, {
+    jp: "非関税障壁",
+    reading: "ひかんぜいしょうへき",
+    id: "hambatan non-tarif"
+  }, {
+    jp: "船積書類",
+    reading: "ふなづみしょるい",
+    id: "dokumen pengapalan"
+  }, {
+    jp: "関税障壁",
+    reading: "かんぜいしょうへき",
+    id: "hambatan tarif"
+  }, {
+    jp: "輸出入手続き",
+    reading: "ゆしゅつにゅうてつづき",
+    id: "prosedur ekspor-impor"
+  }, {
+    jp: "原産国表示",
+    reading: "げんさんこくひょうじ",
+    id: "label negara asal"
+  }, {
+    jp: "貿易自由化",
+    reading: "ぼうえきじゆうか",
+    id: "liberalisasi perdagangan"
+  }],
+  "Kuliner Profesional & Gastronomi": [{
+    jp: "食材の産地",
+    reading: "しょくざいのさんち",
+    id: "asal-usul bahan makanan"
+  }, {
+    jp: "調理技術",
+    reading: "ちょうりぎじゅつ",
+    id: "teknik memasak"
+  }, {
+    jp: "味覚のバランス",
+    reading: "みかくのばらんす",
+    id: "keseimbangan rasa"
+  }, {
+    jp: "食の安全性",
+    reading: "しょくのあんぜんせい",
+    id: "keamanan pangan"
+  }, {
+    jp: "発酵技術",
+    reading: "はっこうぎじゅつ",
+    id: "teknik fermentasi"
+  }, {
+    jp: "食文化の多様性",
+    reading: "しょくぶんかのたようせい",
+    id: "keberagaman budaya kuliner"
+  }, {
+    jp: "料理の芸術性",
+    reading: "りょうりのげいじゅつせい",
+    id: "nilai seni dalam masakan"
+  }, {
+    jp: "食材の旬",
+    reading: "しょくざいのしゅん",
+    id: "musim panen terbaik bahan pangan"
+  }, {
+    jp: "盛り付け技術",
+    reading: "もりつけぎじゅつ",
+    id: "teknik penyajian"
+  }, {
+    jp: "食感",
+    reading: "しょっかん",
+    id: "tekstur makanan"
+  }, {
+    jp: "味覚",
+    reading: "みかく",
+    id: "indra pengecap"
+  }, {
+    jp: "料理人",
+    reading: "りょうりにん",
+    id: "koki profesional"
+  }],
+  "Fashion & Industri Tekstil Lanjutan": [{
+    jp: "ファッション業界",
+    reading: "ふぁっしょんぎょうかい",
+    id: "industri fesyen"
+  }, {
+    jp: "持続可能なファッション",
+    reading: "じぞくかのうなふぁっしょん",
+    id: "fesyen berkelanjutan"
+  }, {
+    jp: "テキスタイルデザイン",
+    reading: "てきすたいるでざいん",
+    id: "desain tekstil"
+  }, {
+    jp: "トレンド予測",
+    reading: "とれんどよそく",
+    id: "peramalan tren"
+  }, {
+    jp: "素材開発",
+    reading: "そざいかいはつ",
+    id: "pengembangan material"
+  }, {
+    jp: "繊維産業",
+    reading: "せんいさんぎょう",
+    id: "industri tekstil"
+  }, {
+    jp: "縫製",
+    reading: "ほうせい",
+    id: "penjahitan"
+  }, {
+    jp: "流行色",
+    reading: "りゅうこうしょく",
+    id: "warna tren"
+  }, {
+    jp: "既製服",
+    reading: "きせいふく",
+    id: "pakaian jadi"
+  }, {
+    jp: "オーダーメイド",
+    reading: "オーダーメイド",
+    id: "dibuat khusus/tailor-made"
+  }, {
+    jp: "耐久性素材",
+    reading: "たいきゅうせいそざい",
+    id: "material tahan lama"
+  }],
+  "Ilmu Kedirgantaraan & Eksplorasi Luar Angkasa": [{
+    jp: "宇宙開発",
+    reading: "うちゅうかいはつ",
+    id: "pengembangan luar angkasa"
+  }, {
+    jp: "人工衛星",
+    reading: "じんこうえいせい",
+    id: "satelit buatan"
+  }, {
+    jp: "宇宙探査機",
+    reading: "うちゅうたんさき",
+    id: "wahana antariksa"
+  }, {
+    jp: "軌道投入",
+    reading: "きどうとうにゅう",
+    id: "penempatan orbit"
+  }, {
+    jp: "宇宙ステーション",
+    reading: "うちゅうすてーしょん",
+    id: "stasiun luar angkasa"
+  }, {
+    jp: "有人宇宙飛行",
+    reading: "ゆうじんうちゅうひこう",
+    id: "penerbangan antariksa berawak"
+  }, {
+    jp: "打ち上げ",
+    reading: "うちあげ",
+    id: "peluncuran roket"
+  }, {
+    jp: "有人飛行",
+    reading: "ゆうじんひこう",
+    id: "penerbangan berawak"
+  }, {
+    jp: "軌道上",
+    reading: "きどうじょう",
+    id: "di orbit"
+  }, {
+    jp: "無重力",
+    reading: "むじゅうりょく",
+    id: "tanpa gravitasi"
+  }],
+  "Farmasi & Bioteknologi Lanjutan": [{
+    jp: "新薬開発",
+    reading: "しんやくかいはつ",
+    id: "pengembangan obat baru"
+  }, {
+    jp: "薬物動態",
+    reading: "やくぶつどうたい",
+    id: "farmakokinetik"
+  }, {
+    jp: "副作用リスク",
+    reading: "ふくさようりすく",
+    id: "risiko efek samping"
+  }, {
+    jp: "創薬プロセス",
+    reading: "そうやくぷろせす",
+    id: "proses penemuan obat"
+  }, {
+    jp: "バイオ医薬品",
+    reading: "ばいおいやくひん",
+    id: "obat bioteknologi"
+  }, {
+    jp: "臨床薬理学",
+    reading: "りんしょうやくりがく",
+    id: "farmakologi klinis"
+  }, {
+    jp: "創薬",
+    reading: "そうやく",
+    id: "pengembangan obat"
+  }, {
+    jp: "臨床応用",
+    reading: "りんしょうおうよう",
+    id: "aplikasi klinis"
+  }, {
+    jp: "治験",
+    reading: "ちけん",
+    id: "uji coba obat"
+  }, {
+    jp: "薬効",
+    reading: "やっこう",
+    id: "efikasi obat"
+  }, {
+    jp: "後発医薬品",
+    reading: "こうはついやくひん",
+    id: "obat generik"
+  }],
+  "Sosiologi Perkotaan & Demografi Lanjutan": [{
+    jp: "スラム問題",
+    reading: "すらむもんだい",
+    id: "masalah permukiman kumuh"
+  }, {
+    jp: "ジェントリフィケーション",
+    reading: "じぇんとりふぃけーしょん",
+    id: "gentrifikasi"
+  }, {
+    jp: "都市インフラ格差",
+    reading: "としいんふらかくさ",
+    id: "kesenjangan infrastruktur kota"
+  }, {
+    jp: "人口流出",
+    reading: "じんこうりゅうしゅつ",
+    id: "arus keluar penduduk"
+  }, {
+    jp: "都市計画法",
+    reading: "としけいかくほう",
+    id: "undang-undang tata kota"
+  }, {
+    jp: "都市化",
+    reading: "としか",
+    id: "urbanisasi"
+  }, {
+    jp: "過密",
+    reading: "かみつ",
+    id: "kepadatan berlebih"
+  }, {
+    jp: "空洞化",
+    reading: "くうどうか",
+    id: "pengosongan/hollowing"
+  }, {
+    jp: "スプロール現象",
+    reading: "スプロールげんしょう",
+    id: "urban sprawl"
+  }, {
+    jp: "限界集落",
+    reading: "げんかいしゅうらく",
+    id: "desa di ambang punah"
+  }],
+  "Akuntansi & Perpajakan Lanjutan": [{
+    jp: "会計基準",
+    reading: "かいけいきじゅん",
+    id: "standar akuntansi"
+  }, {
+    jp: "税務申告",
+    reading: "ぜいむしんこく",
+    id: "pelaporan pajak"
+  }, {
+    jp: "連結決算",
+    reading: "れんけつけっさん",
+    id: "laporan keuangan konsolidasi"
+  }, {
+    jp: "監査報告書",
+    reading: "かんさほうこくしょ",
+    id: "laporan audit"
+  }, {
+    jp: "移転価格税制",
+    reading: "いてんかかくぜいせい",
+    id: "aturan pajak transfer pricing"
+  }, {
+    jp: "会計監査",
+    reading: "かいけいかんさ",
+    id: "audit akuntansi"
+  }, {
+    jp: "損益通算",
+    reading: "そんえきつうさん",
+    id: "konsolidasi laba rugi"
+  }, {
+    jp: "控除額",
+    reading: "こうじょがく",
+    id: "jumlah pengurangan pajak"
+  }, {
+    jp: "累進課税",
+    reading: "るいしんかぜい",
+    id: "pajak progresif"
+  }, {
+    jp: "簿記",
+    reading: "ぼき",
+    id: "pembukuan"
+  }],
+  "Manajemen Sumber Daya Manusia Lanjutan": [{
+    jp: "人事考課",
+    reading: "じんじこうか",
+    id: "penilaian personalia"
+  }, {
+    jp: "採用戦略",
+    reading: "さいようせんりゃく",
+    id: "strategi rekrutmen"
+  }, {
+    jp: "離職率",
+    reading: "りしょくりつ",
+    id: "tingkat turnover karyawan"
+  }, {
+    jp: "福利厚生",
+    reading: "ふくりこうせい",
+    id: "tunjangan kesejahteraan karyawan"
+  }, {
+    jp: "労働契約",
+    reading: "ろうどうけいやく",
+    id: "kontrak kerja"
+  }, {
+    jp: "人材開発計画",
+    reading: "じんざいかいはつけいかく",
+    id: "rencana pengembangan SDM"
+  }, {
+    jp: "人材配置",
+    reading: "じんざいはいち",
+    id: "penempatan SDM"
+  }, {
+    jp: "労働環境",
+    reading: "ろうどうかんきょう",
+    id: "lingkungan kerja"
+  }, {
+    jp: "能力開発",
+    reading: "のうりょくかいはつ",
+    id: "pengembangan kemampuan"
+  }],
+  "Ilmu Komunikasi & Public Relations": [{
+    jp: "広報戦略",
+    reading: "こうほうせんりゃく",
+    id: "strategi kehumasan"
+  }, {
+    jp: "危機管理広報",
+    reading: "ききかんりこうほう",
+    id: "PR manajemen krisis"
+  }, {
+    jp: "ブランドイメージ",
+    reading: "ぶらんどいめーじ",
+    id: "citra merek"
+  }, {
+    jp: "ステークホルダー",
+    reading: "すてーくほるだー",
+    id: "pemangku kepentingan"
+  }, {
+    jp: "コーポレートコミュニケーション",
+    reading: "こーぽれーとこみゅにけーしょん",
+    id: "komunikasi korporat"
+  }, {
+    jp: "広報活動",
+    reading: "こうほうかつどう",
+    id: "kegiatan humas"
+  }, {
+    jp: "危機広報",
+    reading: "ききこうほう",
+    id: "PR krisis"
+  }, {
+    jp: "メディア戦略",
+    reading: "メディアせんりゃく",
+    id: "strategi media"
+  }, {
+    jp: "世論操作",
+    reading: "よろんそうさ",
+    id: "manipulasi opini publik"
+  }, {
+    jp: "記者会見",
+    reading: "きしゃかいけん",
+    id: "konferensi pers"
+  }, {
+    jp: "炎上",
+    reading: "えんじょう",
+    id: "viral negatif di media sosial"
+  }],
+  "Neurosains & Ilmu Otak": [{
+    jp: "脳科学",
+    reading: "のうかがく",
+    id: "ilmu saraf otak"
+  }, {
+    jp: "神経伝達物質",
+    reading: "しんけいでんたつぶっしつ",
+    id: "neurotransmitter"
+  }, {
+    jp: "認知機能",
+    reading: "にんちきのう",
+    id: "fungsi kognitif"
+  }, {
+    jp: "脳の可塑性",
+    reading: "のうのかそせい",
+    id: "plastisitas otak"
+  }, {
+    jp: "記憶のメカニズム",
+    reading: "きおくのめかにずむ",
+    id: "mekanisme memori"
+  }, {
+    jp: "神経回路",
+    reading: "しんけいかいろ",
+    id: "sirkuit saraf"
+  }, {
+    jp: "脳機能",
+    reading: "のうきのう",
+    id: "fungsi otak"
+  }, {
+    jp: "記憶形成",
+    reading: "きおくけいせい",
+    id: "pembentukan memori"
+  }, {
+    jp: "脳波",
+    reading: "のうは",
+    id: "gelombang otak"
+  }, {
+    jp: "大脳皮質",
+    reading: "だいのうひしつ",
+    id: "korteks serebral"
+  }, {
+    jp: "神経可塑性",
+    reading: "しんけいかそせい",
+    id: "plastisitas saraf"
+  }],
+  "Kriminologi & Ilmu Forensik": [{
+    jp: "犯罪心理学",
+    reading: "はんざいしんりがく",
+    id: "psikologi kriminal"
+  }, {
+    jp: "科学捜査",
+    reading: "かがくそうさ",
+    id: "penyelidikan forensik"
+  }, {
+    jp: "再犯率",
+    reading: "さいはんりつ",
+    id: "tingkat residivisme"
+  }, {
+    jp: "犯罪抑止",
+    reading: "はんざいよくし",
+    id: "pencegahan kejahatan"
+  }, {
+    jp: "量刑判断",
+    reading: "りょうけいはんだん",
+    id: "penentuan hukuman"
+  }, {
+    jp: "犯罪心理",
+    reading: "はんざいしんり",
+    id: "psikologi kriminal"
+  }, {
+    jp: "鑑識",
+    reading: "かんしき",
+    id: "forensik"
+  }, {
+    jp: "犯行現場",
+    reading: "はんこうげんば",
+    id: "TKP"
+  }, {
+    jp: "目撃証言",
+    reading: "もくげきしょうげん",
+    id: "kesaksian saksi mata"
+  }],
+  "Sejarah Seni & Musik Klasik": [{
+    jp: "交響曲",
+    reading: "こうきょうきょく",
+    id: "simfoni"
+  }, {
+    jp: "作曲家",
+    reading: "さっきょくか",
+    id: "komposer"
+  }, {
+    jp: "和声",
+    reading: "わせい",
+    id: "harmoni musik"
+  }, {
+    jp: "旋律",
+    reading: "せんりつ",
+    id: "melodi"
+  }, {
+    jp: "演奏会",
+    reading: "えんそうかい",
+    id: "konser musik"
+  }, {
+    jp: "楽譜",
+    reading: "がくふ",
+    id: "partitur musik"
+  }, {
+    jp: "音楽理論",
+    reading: "おんがくりろん",
+    id: "teori musik"
+  }, {
+    jp: "音楽史",
+    reading: "おんがくし",
+    id: "sejarah musik"
+  }, {
+    jp: "バロック様式",
+    reading: "ばろっくようしき",
+    id: "gaya Barok"
+  }, {
+    jp: "古典音楽",
+    reading: "こてんおんがく",
+    id: "musik klasik"
+  }, {
+    jp: "巨匠",
+    reading: "きょしょう",
+    id: "maestro seni"
+  }],
+  "Statistika Sosial & Survei": [{
+    jp: "回答率",
+    reading: "かいとうりつ",
+    id: "tingkat respons survei"
+  }, {
+    jp: "調査バイアス",
+    reading: "ちょうさばいあす",
+    id: "bias survei"
+  }, {
+    jp: "信頼性と妥当性",
+    reading: "しんらいせいとだとうせい",
+    id: "reliabilitas dan validitas"
+  }, {
+    jp: "質問票設計",
+    reading: "しつもんひょうせっけい",
+    id: "desain kuesioner"
+  }, {
+    jp: "標本調査",
+    reading: "ひょうほんちょうさ",
+    id: "survei sampel"
+  }, {
+    jp: "有意差",
+    reading: "ゆういさ",
+    id: "perbedaan signifikan"
+  }, {
+    jp: "集計",
+    reading: "しゅうけい",
+    id: "tabulasi data"
+  }, {
+    jp: "無作為抽出",
+    reading: "むさくいちゅうしゅつ",
+    id: "pengambilan sampel acak"
+  }],
+  "Manajemen Bencana & Tanggap Darurat": [{
+    jp: "災害対応計画",
+    reading: "さいがいたいおうけいかく",
+    id: "rencana tanggap bencana"
+  }, {
+    jp: "避難所運営",
+    reading: "ひなんじょうんえい",
+    id: "pengelolaan tempat pengungsian"
+  }, {
+    jp: "復興支援",
+    reading: "ふっこうしえん",
+    id: "bantuan pemulihan"
+  }, {
+    jp: "危機対応能力",
+    reading: "ききたいおうのうりょく",
+    id: "kapasitas tanggap krisis"
+  }, {
+    jp: "災害リスク評価",
+    reading: "さいがいりすくひょうか",
+    id: "penilaian risiko bencana"
+  }, {
+    jp: "緊急事態宣言",
+    reading: "きんきゅうじたいせんげん",
+    id: "deklarasi keadaan darurat"
+  }, {
+    jp: "避難訓練",
+    reading: "ひなんくんれん",
+    id: "latihan evakuasi"
+  }, {
+    jp: "緊急対応",
+    reading: "きんきゅうたいおう",
+    id: "respons darurat"
+  }, {
+    jp: "災害復興",
+    reading: "さいがいふっこう",
+    id: "pemulihan pascabencana"
+  }, {
+    jp: "防災意識",
+    reading: "ぼうさいいしき",
+    id: "kesadaran mitigasi bencana"
+  }, {
+    jp: "救援活動",
+    reading: "きゅうえんかつどう",
+    id: "kegiatan bantuan darurat"
+  }, {
+    jp: "耐震基準",
+    reading: "たいしんきじゅん",
+    id: "standar tahan gempa"
+  }, {
+    jp: "被災地",
+    reading: "ひさいち",
+    id: "daerah terdampak bencana"
+  }],
+  "Hak Asasi Manusia & Keadilan Sosial": [{
+    jp: "人権擁護",
+    reading: "じんけんようご",
+    id: "pembelaan HAM"
+  }, {
+    jp: "社会正義",
+    reading: "しゃかいせいぎ",
+    id: "keadilan sosial"
+  }, {
+    jp: "差別撤廃",
+    reading: "さべつてっぱい",
+    id: "penghapusan diskriminasi"
+  }, {
+    jp: "少数者の権利",
+    reading: "しょうすうしゃのけんり",
+    id: "hak kaum minoritas"
+  }, {
+    jp: "人権侵害",
+    reading: "じんけんしんがい",
+    id: "pelanggaran HAM"
+  }, {
+    jp: "平等な機会",
+    reading: "びょうどうなきかい",
+    id: "kesetaraan kesempatan"
+  }, {
+    jp: "平等権",
+    reading: "びょうどうけん",
+    id: "hak kesetaraan"
+  }, {
+    jp: "弱者保護",
+    reading: "じゃくしゃほご",
+    id: "perlindungan kaum lemah"
+  }, {
+    jp: "児童の権利",
+    reading: "じどうのけんり",
+    id: "hak anak"
+  }, {
+    jp: "多様性尊重",
+    reading: "たようせいそんちょう",
+    id: "penghormatan keberagaman"
+  }],
+  "Etika Teknologi & Bioetika": [{
+    jp: "生命倫理",
+    reading: "せいめいりんり",
+    id: "bioetika"
+  }, {
+    jp: "技術倫理",
+    reading: "ぎじゅつりんり",
+    id: "etika teknologi"
+  }, {
+    jp: "プライバシー権",
+    reading: "ぷらいばしーけん",
+    id: "hak privasi"
+  }, {
+    jp: "インフォームドコンセント",
+    reading: "いんふぉーむどこんせんと",
+    id: "persetujuan berdasar informasi"
+  }, {
+    jp: "倫理的配慮",
+    reading: "りんりてきはいりょ",
+    id: "pertimbangan etis"
+  }, {
+    jp: "技術的責任",
+    reading: "ぎじゅつてきせきにん",
+    id: "tanggung jawab teknologi"
+  }, {
+    jp: "監視社会",
+    reading: "かんししゃかい",
+    id: "masyarakat pengawasan"
+  }, {
+    jp: "遺伝子操作",
+    reading: "いでんしそうさ",
+    id: "rekayasa genetik"
+  }, {
+    jp: "代理出産",
+    reading: "だいりしゅっさん",
+    id: "ibu pengganti"
+  }],
+  "Ekonomi Perilaku & Pengambilan Keputusan": [{
+    jp: "行動経済学",
+    reading: "こうどうけいざいがく",
+    id: "ekonomi perilaku"
+  }, {
+    jp: "非合理的行動",
+    reading: "ひごうりてきこうどう",
+    id: "perilaku tidak rasional"
+  }, {
+    jp: "損失回避",
+    reading: "そんしつかいひ",
+    id: "penghindaran kerugian"
+  }, {
+    jp: "意思決定バイアス",
+    reading: "いしけっていばいあす",
+    id: "bias pengambilan keputusan"
+  }, {
+    jp: "ナッジ理論",
+    reading: "なっじりろん",
+    id: "teori nudge"
+  }, {
+    jp: "非合理性",
+    reading: "ひごうりせい",
+    id: "irasionalitas"
+  }, {
+    jp: "アンカリング効果",
+    reading: "アンカリングこうか",
+    id: "efek anchoring"
+  }, {
+    jp: "現状維持バイアス",
+    reading: "げんじょういじバイアス",
+    id: "bias status quo"
+  }, {
+    jp: "フレーミング効果",
+    reading: "フレーミングこうか",
+    id: "efek framing"
+  }, {
+    jp: "直感的判断",
+    reading: "ちょっかんてきはんだん",
+    id: "penilaian intuitif"
+  }],
+  "Manajemen Proyek Lanjutan": [{
+    jp: "プロジェクトスコープ",
+    reading: "ぷろじぇくとすこーぷ",
+    id: "cakupan proyek"
+  }, {
+    jp: "マイルストーン",
+    reading: "まいるすとーん",
+    id: "tonggak capaian proyek"
+  }, {
+    jp: "クリティカルパス",
+    reading: "くりてぃかるぱす",
+    id: "jalur kritis proyek"
+  }, {
+    jp: "リソース配分",
+    reading: "りそーすはいぶん",
+    id: "alokasi sumber daya"
+  }, {
+    jp: "プロジェクトリスク",
+    reading: "ぷろじぇくとりすく",
+    id: "risiko proyek"
+  }, {
+    jp: "進捗管理",
+    reading: "しんちょくかんり",
+    id: "manajemen progres"
+  }, {
+    jp: "リスク管理",
+    reading: "リスクかんり",
+    id: "manajemen risiko"
+  }, {
+    jp: "納期",
+    reading: "のうき",
+    id: "tenggat pengiriman"
+  }, {
+    jp: "工程表",
+    reading: "こうていひょう",
+    id: "jadwal proyek"
+  }, {
+    jp: "成果物",
+    reading: "せいかぶつ",
+    id: "deliverable"
+  }, {
+    jp: "予算超過",
+    reading: "よさんちょうか",
+    id: "kelebihan anggaran"
+  }],
+  "Kata Kerja Umum N2": [{
+    jp: "心掛ける",
+    reading: "こころがける",
+    id: "berusaha memperhatikan"
+  }, {
+    jp: "見習う",
+    reading: "みならう",
+    id: "belajar dari, meneladani"
+  }, {
+    jp: "見落とす",
+    reading: "みおとす",
+    id: "terlewat melihat"
+  }, {
+    jp: "見直す",
+    reading: "みなおす",
+    id: "meninjau ulang"
+  }, {
+    jp: "見上げる",
+    reading: "みあげる",
+    id: "melihat ke atas"
+  }, {
+    jp: "見下ろす",
+    reading: "みおろす",
+    id: "melihat ke bawah"
+  }, {
+    jp: "心得る",
+    reading: "こころえる",
+    id: "memahami, menguasai"
+  }, {
+    jp: "携わる",
+    reading: "たずさわる",
+    id: "terlibat dalam"
+  }, {
+    jp: "兼ねる",
+    reading: "かねる",
+    id: "merangkap"
+  }, {
+    jp: "欠ける",
+    reading: "かける",
+    id: "kurang, hilang sebagian"
+  }, {
+    jp: "応じる",
+    reading: "おうじる",
+    id: "menanggapi sesuai"
+  }, {
+    jp: "通じる",
+    reading: "つうじる",
+    id: "tersambung, dipahami"
+  }, {
+    jp: "高まる",
+    reading: "たかまる",
+    id: "meningkat"
+  }, {
+    jp: "深まる",
+    reading: "ふかまる",
+    id: "semakin dalam"
+  }, {
+    jp: "定まる",
+    reading: "さだまる",
+    id: "ditetapkan"
+  }, {
+    jp: "改まる",
+    reading: "あらたまる",
+    id: "berubah jadi formal"
+  }, {
+    jp: "縮まる",
+    reading: "ちぢまる",
+    id: "menyusut"
+  }, {
+    jp: "埋まる",
+    reading: "うまる",
+    id: "terisi penuh"
+  }, {
+    jp: "兆す",
+    reading: "きざす",
+    id: "mulai muncul tanda"
+  }, {
+    jp: "察する",
+    reading: "さっする",
+    id: "menduga, merasakan"
+  }, {
+    jp: "甘える",
+    reading: "あまえる",
+    id: "manja"
+  }, {
+    jp: "甘やかす",
+    reading: "あまやかす",
+    id: "memanjakan"
+  }, {
+    jp: "逆らう",
+    reading: "さからう",
+    id: "melawan"
+  }, {
+    jp: "従う",
+    reading: "したがう",
+    id: "mematuhi"
+  }, {
+    jp: "交わる",
+    reading: "まじわる",
+    id: "berbaur, bertemu"
+  }, {
+    jp: "携える",
+    reading: "たずさえる",
+    id: "membawa serta"
+  }, {
+    jp: "遂げる",
+    reading: "とげる",
+    id: "mencapai, mewujudkan"
+  }, {
+    jp: "果たす",
+    reading: "はたす",
+    id: "memenuhi, melaksanakan"
+  }, {
+    jp: "費やす",
+    reading: "ついやす",
+    id: "menghabiskan"
+  }, {
+    jp: "悟る",
+    reading: "さとる",
+    id: "menyadari"
+  }],
+  "Kata Kerja Umum N1": [{
+    jp: "辿る",
+    reading: "たどる",
+    id: "menelusuri"
+  }, {
+    jp: "培う",
+    reading: "つちかう",
+    id: "memupuk, mengembangkan"
+  }, {
+    jp: "育む",
+    reading: "はぐくむ",
+    id: "mengasuh, memupuk"
+  }, {
+    jp: "慕う",
+    reading: "したう",
+    id: "merindukan, mengagumi"
+  }, {
+    jp: "悔いる",
+    reading: "くいる",
+    id: "menyesal"
+  }, {
+    jp: "顧みる",
+    reading: "かえりみる",
+    id: "merenungkan kembali"
+  }, {
+    jp: "躊躇う",
+    reading: "ためらう",
+    id: "ragu-ragu"
+  }, {
+    jp: "賄う",
+    reading: "まかなう",
+    id: "mencukupi, membiayai"
+  }, {
+    jp: "諭す",
+    reading: "さとす",
+    id: "menasihati"
+  }, {
+    jp: "遂行する",
+    reading: "すいこうする",
+    id: "melaksanakan"
+  }, {
+    jp: "携行する",
+    reading: "けいこうする",
+    id: "membawa"
+  }, {
+    jp: "是正する",
+    reading: "ぜせいする",
+    id: "mengoreksi"
+  }, {
+    jp: "適応する",
+    reading: "てきおうする",
+    id: "beradaptasi"
+  }, {
+    jp: "折衝する",
+    reading: "せっしょうする",
+    id: "bernegosiasi"
+  }, {
+    jp: "是認する",
+    reading: "ぜにんする",
+    id: "menyetujui"
+  }, {
+    jp: "阻む",
+    reading: "はばむ",
+    id: "menghalangi"
+  }, {
+    jp: "施す",
+    reading: "ほどこす",
+    id: "memberikan, menerapkan"
+  }, {
+    jp: "賜る",
+    reading: "たまわる",
+    id: "menerima dengan hormat"
+  }, {
+    jp: "危ぶむ",
+    reading: "あやぶむ",
+    id: "mengkhawatirkan"
+  }, {
+    jp: "憂う",
+    reading: "うれう",
+    id: "mencemaskan"
+  }, {
+    jp: "慈しむ",
+    reading: "いつくしむ",
+    id: "menyayangi"
+  }, {
+    jp: "労う",
+    reading: "ねぎらう",
+    id: "menghargai jerih payah"
+  }, {
+    jp: "弁える",
+    reading: "わきまえる",
+    id: "memahami batasan"
+  }, {
+    jp: "見なす",
+    reading: "みなす",
+    id: "menganggap"
+  }, {
+    jp: "見極める",
+    reading: "みきわめる",
+    id: "memastikan dengan teliti"
+  }, {
+    jp: "見合わせる",
+    reading: "みあわせる",
+    id: "menunda"
+  }],
+  "Kata Sifat Umum N2-N1": [{
+    jp: "著しい",
+    reading: "いちじるしい",
+    id: "mencolok, nyata"
+  }, {
+    jp: "甚だしい",
+    reading: "はなはだしい",
+    id: "sangat, luar biasa"
+  }, {
+    jp: "惜しい",
+    reading: "おしい",
+    id: "sayang sekali"
+  }, {
+    jp: "賢い",
+    reading: "かしこい",
+    id: "pintar"
+  }, {
+    jp: "逞しい",
+    reading: "たくましい",
+    id: "kuat, tangguh"
+  }, {
+    jp: "潔い",
+    reading: "いさぎよい",
+    id: "berjiwa besar, rela"
+  }, {
+    jp: "呆気ない",
+    reading: "あっけない",
+    id: "terlalu cepat berakhir"
+  }, {
+    jp: "望ましい",
+    reading: "のぞましい",
+    id: "diinginkan"
+  }, {
+    jp: "相応しい",
+    reading: "ふさわしい",
+    id: "pantas, sesuai"
+  }, {
+    jp: "心強い",
+    reading: "こころづよい",
+    id: "menenangkan hati"
+  }, {
+    jp: "心細い",
+    reading: "こころぼそい",
+    id: "merasa tidak yakin"
+  }, {
+    jp: "名残惜しい",
+    reading: "なごりおしい",
+    id: "berat untuk berpisah"
+  }, {
+    jp: "目まぐるしい",
+    reading: "めまぐるしい",
+    id: "berubah cepat"
+  }, {
+    jp: "気まずい",
+    reading: "きまずい",
+    id: "canggung"
+  }, {
+    jp: "忙しない",
+    reading: "せわしない",
+    id: "sibuk terus-terusan"
+  }, {
+    jp: "幼い",
+    reading: "おさない",
+    id: "masih kecil, kekanak-kanakan"
+  }, {
+    jp: "儚い",
+    reading: "はかない",
+    id: "rapuh, fana"
+  }, {
+    jp: "淡々とした",
+    reading: "たんたんとした",
+    id: "datar, tenang"
+  }, {
+    jp: "華やか",
+    reading: "はなやか",
+    id: "meriah"
+  }, {
+    jp: "大まか",
+    reading: "おおまか",
+    id: "garis besar"
+  }, {
+    jp: "大幅",
+    reading: "おおはば",
+    id: "besar-besaran"
+  }, {
+    jp: "一律",
+    reading: "いちりつ",
+    id: "seragam"
+  }, {
+    jp: "妥当",
+    reading: "だとう",
+    id: "layak"
+  }, {
+    jp: "円滑",
+    reading: "えんかつ",
+    id: "lancar"
+  }, {
+    jp: "顕著",
+    reading: "けんちょ",
+    id: "menonjol"
+  }, {
+    jp: "素朴",
+    reading: "そぼく",
+    id: "sederhana"
+  }, {
+    jp: "微妙",
+    reading: "びみょう",
+    id: "rumit, subtle"
+  }, {
+    jp: "曖昧",
+    reading: "あいまい",
+    id: "ambigu"
+  }],
+  "Kata Keterangan (Fukushi) N2": [{
+    jp: "相変わらず",
+    reading: "あいかわらず",
+    id: "seperti biasa"
+  }, {
+    jp: "依然として",
+    reading: "いぜんとして",
+    id: "masih tetap"
+  }, {
+    jp: "案の定",
+    reading: "あんのじょう",
+    id: "seperti dugaan"
+  }, {
+    jp: "一応",
+    reading: "いちおう",
+    id: "sebisa mungkin, untuk jaga-jaga"
+  }, {
+    jp: "一向に",
+    reading: "いっこうに",
+    id: "sama sekali (tidak)"
+  }, {
+    jp: "おおむね",
+    reading: "おおむね",
+    id: "secara umum"
+  }, {
+    jp: "思い切り",
+    reading: "おもいきり",
+    id: "sepuas hati"
+  }, {
+    jp: "概して",
+    reading: "がいして",
+    id: "secara umum"
+  }, {
+    jp: "格別",
+    reading: "かくべつ",
+    id: "istimewa"
+  }, {
+    jp: "仮に",
+    reading: "かりに",
+    id: "seandainya"
+  }, {
+    jp: "かえって",
+    reading: "かえって",
+    id: "justru sebaliknya"
+  }, {
+    jp: "きっかり",
+    reading: "きっかり",
+    id: "tepat, pas"
+  }, {
+    jp: "極力",
+    reading: "きょくりょく",
+    id: "sekuat tenaga"
+  }, {
+    jp: "何とか",
+    reading: "なんとか",
+    id: "entah bagaimana"
+  }, {
+    jp: "何とも",
+    reading: "なんとも",
+    id: "sungguh"
+  }, {
+    jp: "強いて",
+    reading: "しいて",
+    id: "dengan paksa"
+  }, {
+    jp: "何気なく",
+    reading: "なにげなく",
+    id: "tanpa sengaja"
+  }, {
+    jp: "果たして",
+    reading: "はたして",
+    id: "benarkah"
+  }, {
+    jp: "一斉に",
+    reading: "いっせいに",
+    id: "serentak"
+  }, {
+    jp: "差し当たり",
+    reading: "さしあたり",
+    id: "untuk sementara"
+  }, {
+    jp: "少なくとも",
+    reading: "すくなくとも",
+    id: "setidaknya"
+  }, {
+    jp: "是非とも",
+    reading: "ぜひとも",
+    id: "dengan sangat"
+  }, {
+    jp: "大して",
+    reading: "たいして",
+    id: "tidak begitu (dengan negasi)"
+  }, {
+    jp: "たちまち",
+    reading: "たちまち",
+    id: "seketika"
+  }, {
+    jp: "とっさに",
+    reading: "とっさに",
+    id: "secara spontan"
+  }, {
+    jp: "何しろ",
+    reading: "なにしろ",
+    id: "bagaimanapun juga"
+  }],
+  "Kata Keterangan (Fukushi) N1": [{
+    jp: "あいにく",
+    reading: "あいにく",
+    id: "sayangnya"
+  }, {
+    jp: "いかにも",
+    reading: "いかにも",
+    id: "benar-benar terlihat seperti"
+  }, {
+    jp: "一概に",
+    reading: "いちがいに",
+    id: "secara umum (dengan negasi)"
+  }, {
+    jp: "言わば",
+    reading: "いわば",
+    id: "dengan kata lain"
+  }, {
+    jp: "おのずと",
+    reading: "おのずと",
+    id: "dengan sendirinya"
+  }, {
+    jp: "きっぱり",
+    reading: "きっぱり",
+    id: "dengan tegas"
+  }, {
+    jp: "極めて",
+    reading: "きわめて",
+    id: "sangat"
+  }, {
+    jp: "さぞ",
+    reading: "さぞ",
+    id: "pastilah (dugaan)"
+  }, {
+    jp: "さりげない",
+    reading: "さりげない",
+    id: "seolah tidak sengaja"
+  }, {
+    jp: "至って",
+    reading: "いたって",
+    id: "sangat"
+  }, {
+    jp: "総じて",
+    reading: "そうじて",
+    id: "secara keseluruhan"
+  }, {
+    jp: "ひいては",
+    reading: "ひいては",
+    id: "dan pada akhirnya"
+  }, {
+    jp: "無論",
+    reading: "むろん",
+    id: "tentu saja"
+  }, {
+    jp: "あたかも",
+    reading: "あたかも",
+    id: "seolah-olah"
+  }, {
+    jp: "いっそ",
+    reading: "いっそ",
+    id: "lebih baik"
+  }, {
+    jp: "もっぱら",
+    reading: "もっぱら",
+    id: "khususnya, melulu"
+  }, {
+    jp: "唯々",
+    reading: "ただただ",
+    id: "semata-mata"
+  }, {
+    jp: "断じて",
+    reading: "だんじて",
+    id: "sekali-kali (tidak)"
+  }, {
+    jp: "存分に",
+    reading: "ぞんぶんに",
+    id: "sepuasnya"
+  }, {
+    jp: "案外",
+    reading: "あんがい",
+    id: "di luar dugaan"
+  }, {
+    jp: "なおさら",
+    reading: "なおさら",
+    id: "makin, lebih-lebih lagi"
+  }, {
+    jp: "かろうじて",
+    reading: "かろうじて",
+    id: "dengan susah payah"
+  }, {
+    jp: "もはや",
+    reading: "もはや",
+    id: "sudah tidak lagi"
+  }, {
+    jp: "いまさら",
+    reading: "いまさら",
+    id: "sekarang sudah terlambat"
+  }],
+  "Ungkapan & Ekspresi Umum N2-N1": [{
+    jp: "目に余る",
+    reading: "めにあまる",
+    id: "tak tertahankan melihatnya"
+  }, {
+    jp: "手を焼く",
+    reading: "てをやく",
+    id: "kewalahan menangani"
+  }, {
+    jp: "気が利く",
+    reading: "きがきく",
+    id: "pandai membaca situasi"
+  }, {
+    jp: "腰を据える",
+    reading: "こしをすえる",
+    id: "fokus serius mengerjakan"
+  }, {
+    jp: "骨を折る",
+    reading: "ほねをおる",
+    id: "bersusah payah"
+  }, {
+    jp: "目を通す",
+    reading: "めをとおす",
+    id: "membaca sekilas"
+  }, {
+    jp: "手に負えない",
+    reading: "てにおえない",
+    id: "di luar kemampuan"
+  }, {
+    jp: "気にかける",
+    reading: "きにかける",
+    id: "mengkhawatirkan"
+  }, {
+    jp: "念頭に置く",
+    reading: "ねんとうにおく",
+    id: "mengingat dalam pikiran"
+  }, {
+    jp: "見当がつく",
+    reading: "けんとうがつく",
+    id: "punya perkiraan"
+  }, {
+    jp: "目処が立つ",
+    reading: "めどがたつ",
+    id: "ada kejelasan, prospek"
+  }, {
+    jp: "埒が明かない",
+    reading: "らちがあかない",
+    id: "tidak ada kemajuan"
+  }, {
+    jp: "拍車をかける",
+    reading: "はくしゃをかける",
+    id: "memacu, mempercepat"
+  }, {
+    jp: "一線を画す",
+    reading: "いっせんをかくす",
+    id: "membuat garis pemisah tegas"
+  }, {
+    jp: "一石を投じる",
+    reading: "いっせきをとうじる",
+    id: "melontarkan sesuatu yang menggugah"
+  }, {
+    jp: "波紋を呼ぶ",
+    reading: "はもんをよぶ",
+    id: "menimbulkan kehebohan"
+  }, {
+    jp: "拍子抜けする",
+    reading: "ひょうしぬけする",
+    id: "jadi kendur semangatnya"
+  }, {
+    jp: "板につく",
+    reading: "いたにつく",
+    id: "jadi terbiasa, mahir"
+  }, {
+    jp: "音を上げる",
+    reading: "ねをあげる",
+    id: "menyerah mengeluh"
+  }, {
+    jp: "息を呑む",
+    reading: "いきをのむ",
+    id: "terkesiap"
+  }, {
+    jp: "目を配る",
+    reading: "めをくばる",
+    id: "mengawasi sekeliling"
+  }, {
+    jp: "手を尽くす",
+    reading: "てをつくす",
+    id: "berusaha sekuat tenaga"
+  }, {
+    jp: "腰が引ける",
+    reading: "こしがひける",
+    id: "gentar, ragu"
+  }, {
+    jp: "頭を抱える",
+    reading: "あたまをかかえる",
+    id: "pusing memikirkan masalah"
+  }],
+  "Kata Benda Umum di Bacaan JLPT": [{
+    jp: "背景",
+    reading: "はいけい",
+    id: "latar belakang"
+  }, {
+    jp: "傾向",
+    reading: "けいこう",
+    id: "kecenderungan"
+  }, {
+    jp: "特徴",
+    reading: "とくちょう",
+    id: "ciri khas"
+  }, {
+    jp: "要素",
+    reading: "ようそ",
+    id: "elemen, faktor"
+  }, {
+    jp: "要因",
+    reading: "よういん",
+    id: "faktor penyebab"
+  }, {
+    jp: "観点",
+    reading: "かんてん",
+    id: "sudut pandang"
+  }, {
+    jp: "見解",
+    reading: "けんかい",
+    id: "pandangan"
+  }, {
+    jp: "手段",
+    reading: "しゅだん",
+    id: "cara, sarana"
+  }, {
+    jp: "対象",
+    reading: "たいしょう",
+    id: "objek, sasaran"
+  }, {
+    jp: "対応",
+    reading: "たいおう",
+    id: "penanganan"
+  }, {
+    jp: "状況",
+    reading: "じょうきょう",
+    id: "situasi"
+  }, {
+    jp: "状態",
+    reading: "じょうたい",
+    id: "keadaan"
+  }, {
+    jp: "傾き",
+    reading: "かたむき",
+    id: "kecenderungan, kemiringan"
+  }, {
+    jp: "割合",
+    reading: "わりあい",
+    id: "proporsi"
+  }, {
+    jp: "比率",
+    reading: "ひりつ",
+    id: "rasio"
+  }, {
+    jp: "過程",
+    reading: "かてい",
+    id: "proses"
+  }, {
+    jp: "結果",
+    reading: "けっか",
+    id: "hasil"
+  }, {
+    jp: "原因",
+    reading: "げんいん",
+    id: "penyebab"
+  }, {
+    jp: "目的",
+    reading: "もくてき",
+    id: "tujuan"
+  }, {
+    jp: "方針",
+    reading: "ほうしん",
+    id: "kebijakan, arah"
+  }, {
+    jp: "基準",
+    reading: "きじゅん",
+    id: "standar"
+  }, {
+    jp: "前提",
+    reading: "ぜんてい",
+    id: "premis, asumsi"
+  }, {
+    jp: "制約",
+    reading: "せいやく",
+    id: "batasan"
+  }, {
+    jp: "限界",
+    reading: "げんかい",
+    id: "batas"
+  }, {
+    jp: "影響力",
+    reading: "えいきょうりょく",
+    id: "daya pengaruh"
+  }, {
+    jp: "側面",
+    reading: "そくめん",
+    id: "aspek, sisi"
+  }],
+  "Onomatope (Giongo & Gitaigo) N1": [{
+    jp: "ぐったり",
+    reading: "ぐったり",
+    id: "lemas"
+  }, {
+    jp: "いらいら",
+    reading: "いらいら",
+    id: "jengkel"
+  }, {
+    jp: "うんざり",
+    reading: "うんざり",
+    id: "muak, bosan"
+  }, {
+    jp: "げっそり",
+    reading: "げっそり",
+    id: "kurus mendadak, lesu"
+  }, {
+    jp: "しみじみ",
+    reading: "しみじみ",
+    id: "dengan haru mendalam"
+  }, {
+    jp: "つくづく",
+    reading: "つくづく",
+    id: "benar-benar merasakan"
+  }, {
+    jp: "てきぱき",
+    reading: "てきぱき",
+    id: "cekatan"
+  }, {
+    jp: "のんびり",
+    reading: "のんびり",
+    id: "santai"
+  }, {
+    jp: "ぼんやり",
+    reading: "ぼんやり",
+    id: "melamun"
+  }, {
+    jp: "むしゃくしゃ",
+    reading: "むしゃくしゃ",
+    id: "kesal tanpa sebab jelas"
+  }, {
+    jp: "わくわく",
+    reading: "わくわく",
+    id: "berdebar senang"
+  }, {
+    jp: "はらはら",
+    reading: "はらはら",
+    id: "cemas berdebar"
+  }, {
+    jp: "いそいそ",
+    reading: "いそいそ",
+    id: "bergegas dengan senang"
+  }, {
+    jp: "こそこそ",
+    reading: "こそこそ",
+    id: "diam-diam sembunyi"
+  }, {
+    jp: "さばさば",
+    reading: "さばさば",
+    id: "lega, plong"
+  }, {
+    jp: "じたばた",
+    reading: "じたばた",
+    id: "meronta-ronta panik"
+  }, {
+    jp: "すんなり",
+    reading: "すんなり",
+    id: "dengan lancar"
+  }, {
+    jp: "ずるずる",
+    reading: "ずるずる",
+    id: "berlarut-larut"
+  }, {
+    jp: "てんてこ舞い",
+    reading: "てんてこまい",
+    id: "sangat sibuk"
+  }, {
+    jp: "ぴりぴり",
+    reading: "ぴりぴり",
+    id: "tegang, sensitif"
+  }],
+  "Kata Sambung & Konjungsi Formal": [{
+    jp: "従って",
+    reading: "したがって",
+    id: "oleh karena itu"
+  }, {
+    jp: "故に",
+    reading: "ゆえに",
+    id: "maka dari itu"
+  }, {
+    jp: "それゆえ",
+    reading: "それゆえ",
+    id: "karenanya"
+  }, {
+    jp: "にもかかわらず",
+    reading: "にもかかわらず",
+    id: "meskipun demikian"
+  }, {
+    jp: "ものの",
+    reading: "ものの",
+    id: "meskipun"
+  }, {
+    jp: "とはいえ",
+    reading: "とはいえ",
+    id: "meski begitu"
+  }, {
+    jp: "ただし",
+    reading: "ただし",
+    id: "akan tetapi"
+  }, {
+    jp: "もっとも",
+    reading: "もっとも",
+    id: "hanya saja"
+  }, {
+    jp: "一方で",
+    reading: "いっぽうで",
+    id: "di sisi lain"
+  }, {
+    jp: "それに対して",
+    reading: "それにたいして",
+    id: "sebaliknya"
+  }, {
+    jp: "かつ",
+    reading: "かつ",
+    id: "dan juga"
+  }, {
+    jp: "ならびに",
+    reading: "ならびに",
+    id: "serta"
+  }, {
+    jp: "もしくは",
+    reading: "もしくは",
+    id: "atau"
+  }, {
+    jp: "あるいは",
+    reading: "あるいは",
+    id: "atau"
+  }, {
+    jp: "すなわち",
+    reading: "すなわち",
+    id: "yaitu"
+  }, {
+    jp: "つまり",
+    reading: "つまり",
+    id: "dengan kata lain"
+  }, {
+    jp: "要するに",
+    reading: "ようするに",
+    id: "singkatnya"
+  }, {
+    jp: "換言すれば",
+    reading: "かんげんすれば",
+    id: "dengan kata lain"
+  }],
+  "Kanyouku (Ungkapan Tetap) Umum": [{
+    jp: "肩を持つ",
+    reading: "かたをもつ",
+    id: "memihak seseorang"
+  }, {
+    jp: "気が合う",
+    reading: "きがあう",
+    id: "cocok, klop"
+  }, {
+    jp: "気を遣う",
+    reading: "きをつかう",
+    id: "memperhatikan perasaan orang lain"
+  }, {
+    jp: "口を挟む",
+    reading: "くちをはさむ",
+    id: "menyela bicara"
+  }, {
+    jp: "腹が立つ",
+    reading: "はらがたつ",
+    id: "marah"
+  }, {
+    jp: "顔を出す",
+    reading: "かおをだす",
+    id: "muncul, hadir sebentar"
+  }, {
+    jp: "手が空く",
+    reading: "てがあく",
+    id: "punya waktu luang"
+  }, {
+    jp: "目が高い",
+    reading: "めがたかい",
+    id: "punya selera bagus"
+  }, {
+    jp: "耳が痛い",
+    reading: "みみがいたい",
+    id: "menyakitkan didengar (kritik benar)"
+  }, {
+    jp: "気が重い",
+    reading: "きがおもい",
+    id: "merasa berat, malas"
+  }, {
+    jp: "気が長い",
+    reading: "きがながい",
+    id: "sabar"
+  }, {
+    jp: "気が短い",
+    reading: "きがみじかい",
+    id: "gampang marah"
+  }, {
+    jp: "頭が固い",
+    reading: "あたまがかたい",
+    id: "keras kepala, kaku"
+  }, {
+    jp: "腰が低い",
+    reading: "こしがひくい",
+    id: "rendah hati"
+  }, {
+    jp: "口が堅い",
+    reading: "くちがかたい",
+    id: "bisa menyimpan rahasia"
+  }, {
+    jp: "胸を張る",
+    reading: "むねをはる",
+    id: "bangga menegakkan dada"
+  }, {
+    jp: "気を配る",
+    reading: "きをくばる",
+    id: "memperhatikan sekitar dengan cermat"
+  }, {
+    jp: "目を疑う",
+    reading: "めをうたがう",
+    id: "tidak percaya dengan yang dilihat"
+  }, {
+    jp: "舌を巻く",
+    reading: "したをまく",
+    id: "kagum takjub"
+  }, {
+    jp: "肝を冷やす",
+    reading: "きもをひやす",
+    id: "ketakutan"
+  }],
+  "Kata Kerja Majemuk (Fukugou Doushi) N2": [{
+    jp: "話し合う",
+    reading: "はなしあう",
+    id: "berdiskusi"
+  }, {
+    jp: "引き受ける",
+    reading: "ひきうける",
+    id: "menerima tanggung jawab"
+  }, {
+    jp: "立ち上がる",
+    reading: "たちあがる",
+    id: "berdiri, bangkit"
+  }, {
+    jp: "追いつく",
+    reading: "おいつく",
+    id: "menyusul"
+  }, {
+    jp: "乗り越える",
+    reading: "のりこえる",
+    id: "mengatasi"
+  }, {
+    jp: "取り組む",
+    reading: "とりくむ",
+    id: "menangani serius"
+  }, {
+    jp: "見つかる",
+    reading: "みつかる",
+    id: "ditemukan"
+  }, {
+    jp: "落ち着く",
+    reading: "おちつく",
+    id: "menjadi tenang"
+  }, {
+    jp: "打ち合わせる",
+    reading: "うちあわせる",
+    id: "berkoordinasi"
+  }, {
+    jp: "呼びかける",
+    reading: "よびかける",
+    id: "mengimbau"
+  }, {
+    jp: "突き止める",
+    reading: "つきとめる",
+    id: "memastikan, melacak"
+  }, {
+    jp: "押し付ける",
+    reading: "おしつける",
+    id: "memaksakan"
+  }, {
+    jp: "引き止める",
+    reading: "ひきとめる",
+    id: "mencegah pergi"
+  }, {
+    jp: "追い込む",
+    reading: "おいこむ",
+    id: "mendesak, memojokkan"
+  }, {
+    jp: "乗り出す",
+    reading: "のりだす",
+    id: "mulai terjun"
+  }, {
+    jp: "取り上げる",
+    reading: "とりあげる",
+    id: "mengangkat topik"
+  }, {
+    jp: "呼び止める",
+    reading: "よびとめる",
+    id: "memanggil berhenti"
+  }, {
+    jp: "引き取る",
+    reading: "ひきとる",
+    id: "mengambil alih"
+  }, {
+    jp: "割り込む",
+    reading: "わりこむ",
+    id: "menyela"
+  }, {
+    jp: "立ち止まる",
+    reading: "たちどまる",
+    id: "berhenti sejenak"
+  }, {
+    jp: "押し寄せる",
+    reading: "おしよせる",
+    id: "berbondong-bondong datang"
+  }, {
+    jp: "追い越す",
+    reading: "おいこす",
+    id: "menyalip"
+  }, {
+    jp: "見送る",
+    reading: "みおくる",
+    id: "mengantar kepergian"
+  }, {
+    jp: "巻き込む",
+    reading: "まきこむ",
+    id: "melibatkan"
+  }, {
+    jp: "踏み切る",
+    reading: "ふみきる",
+    id: "memutuskan bertindak"
+  }, {
+    jp: "差し出す",
+    reading: "さしだす",
+    id: "menyodorkan"
+  }, {
+    jp: "呼び出す",
+    reading: "よびだす",
+    id: "memanggil keluar"
+  }, {
+    jp: "積み重ねる",
+    reading: "つみかさねる",
+    id: "menumpuk, mengakumulasi"
+  }],
+  "Kata Kerja Majemuk (Fukugou Doushi) N1": [{
+    jp: "成り立つ",
+    reading: "なりたつ",
+    id: "terbentuk dari"
+  }, {
+    jp: "打ち明ける",
+    reading: "うちあける",
+    id: "mengungkapkan rahasia"
+  }, {
+    jp: "見計らう",
+    reading: "みはからう",
+    id: "memperkirakan waktu"
+  }, {
+    jp: "割り切る",
+    reading: "わりきる",
+    id: "menerima dengan pasrah"
+  }, {
+    jp: "思い詰める",
+    reading: "おもいつめる",
+    id: "terlalu memikirkan"
+  }, {
+    jp: "差し掛かる",
+    reading: "さしかかる",
+    id: "mendekati suatu titik"
+  }, {
+    jp: "取り締まる",
+    reading: "とりしまる",
+    id: "menertibkan"
+  }, {
+    jp: "立ち向かう",
+    reading: "たちむかう",
+    id: "menghadapi tantangan"
+  }, {
+    jp: "割り出す",
+    reading: "わりだす",
+    id: "menghitung, menyimpulkan"
+  }, {
+    jp: "踏まえる",
+    reading: "ふまえる",
+    id: "berdasarkan"
+  }, {
+    jp: "見繕う",
+    reading: "みつくろう",
+    id: "memilih sesuai selera"
+  }, {
+    jp: "押し切る",
+    reading: "おしきる",
+    id: "memaksakan kehendak"
+  }, {
+    jp: "取り繕う",
+    reading: "とりつくろう",
+    id: "menutupi kesalahan"
+  }, {
+    jp: "見過ごす",
+    reading: "みすごす",
+    id: "membiarkan lewat"
+  }, {
+    jp: "練り上げる",
+    reading: "ねりあげる",
+    id: "menyempurnakan rencana"
+  }, {
+    jp: "打ち込む",
+    reading: "うちこむ",
+    id: "fokus mendalami"
+  }, {
+    jp: "突き詰める",
+    reading: "つきつめる",
+    id: "mendalami sampai tuntas"
+  }, {
+    jp: "追い求める",
+    reading: "おいもとめる",
+    id: "mengejar cita-cita"
+  }, {
+    jp: "織り交ぜる",
+    reading: "おりまぜる",
+    id: "memadukan"
+  }, {
+    jp: "言い張る",
+    reading: "いいはる",
+    id: "bersikeras"
+  }, {
+    jp: "取り戻す",
+    reading: "とりもどす",
+    id: "mengambil kembali"
+  }, {
+    jp: "掘り下げる",
+    reading: "ほりさげる",
+    id: "menggali lebih dalam"
+  }, {
+    jp: "抱え込む",
+    reading: "かかえこむ",
+    id: "memendam sendiri masalah"
+  }, {
+    jp: "持ち堪える",
+    reading: "もちこたえる",
+    id: "bertahan"
+  }, {
+    jp: "差し引く",
+    reading: "さしひく",
+    id: "mengurangi"
+  }, {
+    jp: "割り当てる",
+    reading: "わりあてる",
+    id: "mengalokasikan"
+  }],
+  "Kata Benda Formal & Akademik Tambahan": [{
+    jp: "概要",
+    reading: "がいよう",
+    id: "ringkasan"
+  }, {
+    jp: "要旨",
+    reading: "ようし",
+    id: "inti, gist"
+  }, {
+    jp: "趣旨",
+    reading: "しゅし",
+    id: "maksud, tujuan"
+  }, {
+    jp: "見識",
+    reading: "けんしき",
+    id: "wawasan, pengetahuan"
+  }, {
+    jp: "見地",
+    reading: "けんち",
+    id: "sudut pandang"
+  }, {
+    jp: "是非",
+    reading: "ぜひ",
+    id: "benar salah, dengan sangat"
+  }, {
+    jp: "是正",
+    reading: "ぜせい",
+    id: "koreksi"
+  }, {
+    jp: "妥協点",
+    reading: "だきょうてん",
+    id: "titik kompromi"
+  }, {
+    jp: "打開策",
+    reading: "だかいさく",
+    id: "jalan keluar"
+  }, {
+    jp: "打診",
+    reading: "だしん",
+    id: "penjajakan"
+  }, {
+    jp: "折衷案",
+    reading: "せっちゅうあん",
+    id: "jalan tengah"
+  }, {
+    jp: "施策",
+    reading: "しさく",
+    id: "langkah kebijakan"
+  }, {
+    jp: "是認",
+    reading: "ぜにん",
+    id: "persetujuan"
+  }, {
+    jp: "見通し",
+    reading: "みとおし",
+    id: "prospek, perkiraan"
+  }, {
+    jp: "見込み",
+    reading: "みこみ",
+    id: "perkiraan"
+  }, {
+    jp: "兆候",
+    reading: "ちょうこう",
+    id: "tanda-tanda"
+  }, {
+    jp: "端緒",
+    reading: "たんしょ",
+    id: "titik awal"
+  }, {
+    jp: "契機",
+    reading: "けいき",
+    id: "momentum, pemicu"
+  }, {
+    jp: "一環",
+    reading: "いっかん",
+    id: "bagian dari rangkaian"
+  }, {
+    jp: "岐路",
+    reading: "きろ",
+    id: "titik persimpangan"
+  }, {
+    jp: "局面",
+    reading: "きょくめん",
+    id: "fase situasi"
+  }, {
+    jp: "節目",
+    reading: "ふしめ",
+    id: "titik penting, milestone"
+  }, {
+    jp: "矛先",
+    reading: "ほこさき",
+    id: "sasaran kritik"
+  }, {
+    jp: "台頭",
+    reading: "たいとう",
+    id: "kebangkitan"
+  }, {
+    jp: "波及",
+    reading: "はきゅう",
+    id: "dampak menyebar"
+  }, {
+    jp: "発端",
+    reading: "ほったん",
+    id: "awal mula"
+  }, {
+    jp: "弊害",
+    reading: "へいがい",
+    id: "dampak negatif"
+  }, {
+    jp: "是が非でも",
+    reading: "ぜがひでも",
+    id: "dengan segala cara"
+  }],
+  "Keigo & Sonkeigo/Kenjougo Lanjutan": [{
+    jp: "いらっしゃる",
+    reading: "いらっしゃる",
+    id: "ada, datang, pergi (hormat)"
+  }, {
+    jp: "おっしゃる",
+    reading: "おっしゃる",
+    id: "berkata (hormat)"
+  }, {
+    jp: "召し上がる",
+    reading: "めしあがる",
+    id: "makan, minum (hormat)"
+  }, {
+    jp: "ご覧になる",
+    reading: "ごらんになる",
+    id: "melihat (hormat)"
+  }, {
+    jp: "なさる",
+    reading: "なさる",
+    id: "melakukan (hormat)"
+  }, {
+    jp: "伺う",
+    reading: "うかがう",
+    id: "bertanya, mengunjungi (merendah)"
+  }, {
+    jp: "参る",
+    reading: "まいる",
+    id: "pergi, datang (merendah)"
+  }, {
+    jp: "申す",
+    reading: "もうす",
+    id: "berkata (merendah)"
+  }, {
+    jp: "存じる",
+    reading: "ぞんじる",
+    id: "tahu, berpikir (merendah)"
+  }, {
+    jp: "拝見する",
+    reading: "はいけんする",
+    id: "melihat (merendah)"
+  }, {
+    jp: "拝聴する",
+    reading: "はいちょうする",
+    id: "mendengarkan (merendah)"
+  }, {
+    jp: "承る",
+    reading: "うけたまわる",
+    id: "menerima, mendengar (merendah)"
+  }, {
+    jp: "差し上げる",
+    reading: "さしあげる",
+    id: "memberi (merendah)"
+  }, {
+    jp: "頂戴する",
+    reading: "ちょうだいする",
+    id: "menerima (merendah)"
+  }, {
+    jp: "お目にかかる",
+    reading: "おめにかかる",
+    id: "bertemu (merendah)"
+  }, {
+    jp: "ご無沙汰する",
+    reading: "ごぶさたする",
+    id: "lama tidak berkabar"
+  }, {
+    jp: "お世話になる",
+    reading: "おせわになる",
+    id: "dibantu, berterima kasih"
+  }, {
+    jp: "恐れ入ります",
+    reading: "おそれいります",
+    id: "mohon maaf, terima kasih"
+  }, {
+    jp: "承知いたしました",
+    reading: "しょうちいたしました",
+    id: "baik, dimengerti"
+  }, {
+    jp: "差し支えなければ",
+    reading: "さしつかえなければ",
+    id: "kalau tidak keberatan"
+  }, {
+    jp: "お手数をおかけします",
+    reading: "おてすうをおかけします",
+    id: "merepotkan Anda"
+  }, {
+    jp: "ご遠慮なく",
+    reading: "ごえんりょなく",
+    id: "silakan tanpa sungkan"
+  }, {
+    jp: "お忙しいところ",
+    reading: "おいそがしいところ",
+    id: "di tengah kesibukan"
+  }],
+  "Kata Sifat-na Formal N2-N1": [{
+    jp: "円満",
+    reading: "えんまん",
+    id: "harmonis"
+  }, {
+    jp: "温厚",
+    reading: "おんこう",
+    id: "lembut, ramah"
+  }, {
+    jp: "几帳面",
+    reading: "きちょうめん",
+    id: "teliti, rapi"
+  }, {
+    jp: "果敢",
+    reading: "かかん",
+    id: "berani bertindak"
+  }, {
+    jp: "大胆",
+    reading: "だいたん",
+    id: "berani"
+  }, {
+    jp: "率直",
+    reading: "そっちょく",
+    id: "terus terang"
+  }, {
+    jp: "積極的",
+    reading: "せっきょくてき",
+    id: "proaktif"
+  }, {
+    jp: "消極的",
+    reading: "しょうきょくてき",
+    id: "pasif"
+  }, {
+    jp: "主体的",
+    reading: "しゅたいてき",
+    id: "mandiri, berinisiatif"
+  }, {
+    jp: "客観的",
+    reading: "きゃっかんてき",
+    id: "objektif"
+  }, {
+    jp: "主観的",
+    reading: "しゅかんてき",
+    id: "subjektif"
+  }, {
+    jp: "具体的",
+    reading: "ぐたいてき",
+    id: "konkret"
+  }, {
+    jp: "抽象的",
+    reading: "ちゅうしょうてき",
+    id: "abstrak"
+  }, {
+    jp: "潜在的",
+    reading: "せんざいてき",
+    id: "potensial"
+  }, {
+    jp: "相対的",
+    reading: "そうたいてき",
+    id: "relatif"
+  }, {
+    jp: "絶対的",
+    reading: "ぜったいてき",
+    id: "absolut"
+  }, {
+    jp: "画期的",
+    reading: "かっきてき",
+    id: "revolusioner"
+  }, {
+    jp: "圧倒的",
+    reading: "あっとうてき",
+    id: "dominan, luar biasa"
+  }, {
+    jp: "効果的",
+    reading: "こうかてき",
+    id: "efektif"
+  }, {
+    jp: "一時的",
+    reading: "いちじてき",
+    id: "sementara"
+  }, {
+    jp: "根本的",
+    reading: "こんぽんてき",
+    id: "mendasar"
+  }, {
+    jp: "画一的",
+    reading: "かくいつてき",
+    id: "seragam"
+  }, {
+    jp: "短絡的",
+    reading: "たんらくてき",
+    id: "berpikiran pendek"
+  }, {
+    jp: "献身的",
+    reading: "けんしんてき",
+    id: "berdedikasi"
+  }, {
+    jp: "独創的",
+    reading: "どくそうてき",
+    id: "kreatif, orisinal"
+  }, {
+    jp: "総合的",
+    reading: "そうごうてき",
+    id: "komprehensif"
+  }],
+  "Ungkapan Pembuka & Penutup Bisnis": [{
+    jp: "お世話になっております",
+    reading: "おせわになっております",
+    id: "terima kasih atas bantuannya selama ini"
+  }, {
+    jp: "突然のご連絡失礼いたします",
+    reading: "とつぜんのごれんらくしつれいいたします",
+    id: "mohon maaf menghubungi tiba-tiba"
+  }, {
+    jp: "ご不明な点がございましたら",
+    reading: "ごふめいなてんがございましたら",
+    id: "jika ada yang kurang jelas"
+  }, {
+    jp: "引き続きよろしくお願いいたします",
+    reading: "ひきつづきよろしくおねがいいたします",
+    id: "mohon kerja samanya ke depan"
+  }, {
+    jp: "ご多忙のところ恐縮ですが",
+    reading: "ごたぼうのところきょうしゅくですが",
+    id: "mohon maaf di tengah kesibukan Anda"
+  }, {
+    jp: "心よりお詫び申し上げます",
+    reading: "こころよりおわびもうしあげます",
+    id: "mohon maaf sebesar-besarnya"
+  }, {
+    jp: "ご了承ください",
+    reading: "ごりょうしょうください",
+    id: "mohon dimaklumi"
+  }, {
+    jp: "大変恐縮ですが",
+    reading: "たいへんきょうしゅくですが",
+    id: "mohon maaf merepotkan"
+  }, {
+    jp: "ご検討のほどお願いいたします",
+    reading: "ごけんとうのほどおねがいいたします",
+    id: "mohon dipertimbangkan"
+  }, {
+    jp: "お力添えいただければ幸いです",
+    reading: "おちからぞえいただければさいわいです",
+    id: "akan senang jika dibantu"
+  }, {
+    jp: "心よりお礼申し上げます",
+    reading: "こころよりおれいもうしあげます",
+    id: "terima kasih dari hati"
+  }, {
+    jp: "ご容赦ください",
+    reading: "ごようしゃください",
+    id: "mohon dimaafkan"
+  }, {
+    jp: "幸いに存じます",
+    reading: "さいわいにぞんじます",
+    id: "akan senang sekali"
+  }],
+  "Kosakata Berita & Editorial Tambahan": [{
+    jp: "是正措置",
+    reading: "ぜせいそち",
+    id: "langkah koreksi"
+  }, {
+    jp: "波紋",
+    reading: "はもん",
+    id: "riak, dampak"
+  }, {
+    jp: "深刻化",
+    reading: "しんこくか",
+    id: "semakin memburuk"
+  }, {
+    jp: "顕在化",
+    reading: "けんざいか",
+    id: "menjadi nyata"
+  }, {
+    jp: "浮き彫りになる",
+    reading: "うきぼりになる",
+    id: "tersorot jelas"
+  }, {
+    jp: "相次ぐ",
+    reading: "あいつぐ",
+    id: "beruntun terjadi"
+  }, {
+    jp: "相次いで",
+    reading: "あいついで",
+    id: "secara beruntun"
+  }, {
+    jp: "一連",
+    reading: "いちれん",
+    id: "serangkaian"
+  }, {
+    jp: "一挙に",
+    reading: "いっきょに",
+    id: "sekaligus"
+  }, {
+    jp: "急増",
+    reading: "きゅうぞう",
+    id: "meningkat drastis"
+  }, {
+    jp: "急減",
+    reading: "きゅうげん",
+    id: "menurun drastis"
+  }, {
+    jp: "頭打ち",
+    reading: "あたまうち",
+    id: "mencapai puncak, stagnan"
+  }, {
+    jp: "底を打つ",
+    reading: "そこをうつ",
+    id: "mencapai titik terendah"
+  }, {
+    jp: "是非を問う",
+    reading: "ぜひをとう",
+    id: "mempertanyakan benar salahnya"
+  }, {
+    jp: "波及効果",
+    reading: "はきゅうこうか",
+    id: "efek berantai"
+  }, {
+    jp: "発足",
+    reading: "ほっそく",
+    id: "pembentukan, peluncuran"
+  }, {
+    jp: "発足式",
+    reading: "ほっそくしき",
+    id: "upacara peresmian"
+  }, {
+    jp: "相応の",
+    reading: "そうおうの",
+    id: "yang sepadan"
+  }, {
+    jp: "見送り",
+    reading: "みおくり",
+    id: "penundaan, pembatalan"
+  }, {
+    jp: "動向",
+    reading: "どうこう",
+    id: "arah pergerakan"
+  }, {
+    jp: "情勢",
+    reading: "じょうせい",
+    id: "situasi"
+  }, {
+    jp: "局地的",
+    reading: "きょくちてき",
+    id: "lokal, setempat"
+  }, {
+    jp: "全国的",
+    reading: "ぜんこくてき",
+    id: "secara nasional"
+  }, {
+    jp: "前代未聞",
+    reading: "ぜんだいみもん",
+    id: "belum pernah terjadi sebelumnya"
+  }],
+  "Kosakata Emosi & Sikap Tambahan": [{
+    jp: "やるせない",
+    reading: "やるせない",
+    id: "perasaan tak berdaya"
+  }, {
+    jp: "切ない",
+    reading: "せつない",
+    id: "pilu"
+  }, {
+    jp: "いたたまれない",
+    reading: "いたたまれない",
+    id: "tak tahan berada di sana"
+  }, {
+    jp: "後ろめたい",
+    reading: "うしろめたい",
+    id: "merasa bersalah diam-diam"
+  }, {
+    jp: "面目ない",
+    reading: "めんぼくない",
+    id: "malu tak punya muka"
+  }, {
+    jp: "気が引ける",
+    reading: "きがひける",
+    id: "segan, sungkan"
+  }, {
+    jp: "気が咎める",
+    reading: "きがとがめる",
+    id: "hati nurani terganggu"
+  }, {
+    jp: "やむを得ない",
+    reading: "やむをえない",
+    id: "tak dapat dihindari"
+  }, {
+    jp: "心苦しい",
+    reading: "こころぐるしい",
+    id: "merasa tidak enak hati"
+  }, {
+    jp: "感慨深い",
+    reading: "かんがいぶかい",
+    id: "sangat berkesan"
+  }, {
+    jp: "感無量",
+    reading: "かんむりょう",
+    id: "terharu tak terkira"
+  }, {
+    jp: "胸がいっぱいになる",
+    reading: "むねがいっぱいになる",
+    id: "hati penuh perasaan"
+  }, {
+    jp: "身につまされる",
+    reading: "みにつまされる",
+    id: "merasa senasib"
+  }, {
+    jp: "腑に落ちない",
+    reading: "ふにおちない",
+    id: "tidak masuk akal"
+  }, {
+    jp: "気が引き締まる",
+    reading: "きがひきしまる",
+    id: "semangat terpacu"
+  }, {
+    jp: "張り合いがある",
+    reading: "はりあいがある",
+    id: "ada semangat berjuang"
+  }, {
+    jp: "割り切れない",
+    reading: "わりきれない",
+    id: "tidak bisa menerima dengan pasrah"
+  }, {
+    jp: "気兼ねする",
+    reading: "きがねする",
+    id: "sungkan"
+  }, {
+    jp: "後ろ髪を引かれる",
+    reading: "うしろがみをひかれる",
+    id: "berat meninggalkan"
+  }, {
+    jp: "未練がましい",
+    reading: "みれんがましい",
+    id: "masih terus menyesali"
+  }, {
+    jp: "気を揉む",
+    reading: "きをもむ",
+    id: "cemas gelisah"
+  }],
+  "Kata Kerja Pasif & Kausatif dalam Bacaan": [{
+    jp: "見なされる",
+    reading: "みなされる",
+    id: "dianggap"
+  }, {
+    jp: "求められる",
+    reading: "もとめられる",
+    id: "dituntut"
+  }, {
+    jp: "位置づけられる",
+    reading: "いちづけられる",
+    id: "diposisikan"
+  }, {
+    jp: "迫られる",
+    reading: "せまられる",
+    id: "didesak"
+  }, {
+    jp: "強いられる",
+    reading: "しいられる",
+    id: "dipaksa"
+  }, {
+    jp: "委ねられる",
+    reading: "ゆだねられる",
+    id: "dipercayakan"
+  }, {
+    jp: "費やされる",
+    reading: "ついやされる",
+    id: "dihabiskan"
+  }, {
+    jp: "見直される",
+    reading: "みなおされる",
+    id: "ditinjau ulang"
+  }, {
+    jp: "反映される",
+    reading: "はんえいされる",
+    id: "tercermin"
+  }, {
+    jp: "位置付ける",
+    reading: "いちづける",
+    id: "memposisikan"
+  }, {
+    jp: "余儀なくされる",
+    reading: "よぎなくされる",
+    id: "terpaksa"
+  }, {
+    jp: "強いる",
+    reading: "しいる",
+    id: "memaksa"
+  }, {
+    jp: "委ねる",
+    reading: "ゆだねる",
+    id: "mempercayakan"
+  }, {
+    jp: "反映させる",
+    reading: "はんえいさせる",
+    id: "merefleksikan"
+  }, {
+    jp: "際立たせる",
+    reading: "きわだたせる",
+    id: "menonjolkan"
+  }, {
+    jp: "際立つ",
+    reading: "きわだつ",
+    id: "menonjol"
+  }, {
+    jp: "見出す",
+    reading: "みいだす",
+    id: "menemukan"
+  }, {
+    jp: "見据える",
+    reading: "みすえる",
+    id: "menatap tajam ke depan"
+  }],
+  "Kosakata Waktu & Perubahan Formal": [{
+    jp: "逐次",
+    reading: "ちくじ",
+    id: "secara berurutan"
+  }, {
+    jp: "随時",
+    reading: "ずいじ",
+    id: "kapan saja"
+  }, {
+    jp: "一斉",
+    reading: "いっせい",
+    id: "serentak"
+  }, {
+    jp: "当面",
+    reading: "とうめん",
+    id: "untuk saat ini"
+  }, {
+    jp: "目下",
+    reading: "もっか",
+    id: "saat ini"
+  }, {
+    jp: "従来",
+    reading: "じゅうらい",
+    id: "selama ini, konvensional"
+  }, {
+    jp: "今後",
+    reading: "こんご",
+    id: "ke depan"
+  }, {
+    jp: "今もって",
+    reading: "いまもって",
+    id: "hingga sekarang"
+  }, {
+    jp: "折を見て",
+    reading: "おりをみて",
+    id: "mencari kesempatan"
+  }, {
+    jp: "今しがた",
+    reading: "いましがた",
+    id: "baru saja"
+  }, {
+    jp: "いずれ",
+    reading: "いずれ",
+    id: "pada akhirnya, suatu saat"
+  }, {
+    jp: "やがて",
+    reading: "やがて",
+    id: "tak lama lagi"
+  }, {
+    jp: "追って",
+    reading: "おって",
+    id: "menyusul kemudian"
+  }, {
+    jp: "近々",
+    reading: "ちかぢか",
+    id: "dalam waktu dekat"
+  }, {
+    jp: "一変する",
+    reading: "いっぺんする",
+    id: "berubah total"
+  }, {
+    jp: "様変わりする",
+    reading: "さまがわりする",
+    id: "berubah drastis"
+  }, {
+    jp: "移り変わる",
+    reading: "うつりかわる",
+    id: "berubah seiring waktu"
+  }, {
+    jp: "定着する",
+    reading: "ていちゃくする",
+    id: "menjadi mapan"
+  }, {
+    jp: "一新する",
+    reading: "いっしんする",
+    id: "memperbarui total"
+  }, {
+    jp: "過渡期",
+    reading: "かとき",
+    id: "masa transisi"
+  }, {
+    jp: "恒常的",
+    reading: "こうじょうてき",
+    id: "permanen, tetap"
+  }],
+  "Kata Benda Abstrak N2": [{
+    jp: "可能性",
+    reading: "かのうせい",
+    id: "kemungkinan"
+  }, {
+    jp: "必要性",
+    reading: "ひつようせい",
+    id: "kepentingan, urgensi"
+  }, {
+    jp: "重要性",
+    reading: "じゅうようせい",
+    id: "tingkat kepentingan"
+  }, {
+    jp: "有効性",
+    reading: "ゆうこうせい",
+    id: "efektivitas"
+  }, {
+    jp: "一貫性",
+    reading: "いっかんせい",
+    id: "konsistensi"
+  }, {
+    jp: "独自性",
+    reading: "どくじせい",
+    id: "keunikan"
+  }, {
+    jp: "多様性",
+    reading: "たようせい",
+    id: "keberagaman"
+  }, {
+    jp: "正当性",
+    reading: "せいとうせい",
+    id: "legitimasi"
+  }, {
+    jp: "信憑性",
+    reading: "しんぴょうせい",
+    id: "kredibilitas"
+  }, {
+    jp: "実効性",
+    reading: "じっこうせい",
+    id: "efektivitas nyata"
+  }, {
+    jp: "主観性",
+    reading: "しゅかんせい",
+    id: "subjektivitas"
+  }, {
+    jp: "柔軟性",
+    reading: "じゅうなんせい",
+    id: "fleksibilitas"
+  }, {
+    jp: "積極性",
+    reading: "せっきょくせい",
+    id: "inisiatif"
+  }, {
+    jp: "緊急性",
+    reading: "きんきゅうせい",
+    id: "urgensi"
+  }, {
+    jp: "危険性",
+    reading: "きけんせい",
+    id: "tingkat bahaya"
+  }, {
+    jp: "可読性",
+    reading: "かどくせい",
+    id: "keterbacaan"
+  }, {
+    jp: "公平性",
+    reading: "こうへいせい",
+    id: "keadilan"
+  }, {
+    jp: "効率性",
+    reading: "こうりつせい",
+    id: "efisiensi"
+  }, {
+    jp: "適応性",
+    reading: "てきおうせい",
+    id: "adaptabilitas"
+  }, {
+    jp: "継続性",
+    reading: "けいぞくせい",
+    id: "keberlanjutan"
+  }, {
+    jp: "発展性",
+    reading: "はってんせい",
+    id: "potensi berkembang"
+  }, {
+    jp: "生産性",
+    reading: "せいさんせい",
+    id: "produktivitas"
+  }, {
+    jp: "具体性",
+    reading: "ぐたいせい",
+    id: "konkretitas"
+  }],
+  "Kata Benda Abstrak N1": [{
+    jp: "必然性",
+    reading: "ひつぜんせい",
+    id: "keniscayaan"
+  }, {
+    jp: "蓋然性",
+    reading: "がいぜんせい",
+    id: "probabilitas"
+  }, {
+    jp: "恣意性",
+    reading: "しいせい",
+    id: "arbitraritas"
+  }, {
+    jp: "排他性",
+    reading: "はいたせい",
+    id: "eksklusivitas"
+  }, {
+    jp: "汎用性",
+    reading: "はんようせい",
+    id: "keserbagunaan"
+  }, {
+    jp: "依存性",
+    reading: "いぞんせい",
+    id: "ketergantungan"
+  }, {
+    jp: "相互依存性",
+    reading: "そうごいぞんせい",
+    id: "saling ketergantungan"
+  }, {
+    jp: "独立性",
+    reading: "どくりつせい",
+    id: "independensi"
+  }, {
+    jp: "主体性",
+    reading: "しゅたいせい",
+    id: "kemandirian"
+  }, {
+    jp: "流動性",
+    reading: "りゅうどうせい",
+    id: "likuiditas, fluiditas"
+  }, {
+    jp: "恒久性",
+    reading: "こうきゅうせい",
+    id: "keabadian"
+  }, {
+    jp: "一時性",
+    reading: "いちじせい",
+    id: "sifat sementara"
+  }, {
+    jp: "潜在性",
+    reading: "せんざいせい",
+    id: "potensi tersembunyi"
+  }, {
+    jp: "顕著性",
+    reading: "けんちょせい",
+    id: "keterlihatan jelas"
+  }, {
+    jp: "実現性",
+    reading: "じつげんせい",
+    id: "kelayakan diwujudkan"
+  }, {
+    jp: "因果性",
+    reading: "いんがせい",
+    id: "kausalitas"
+  }, {
+    jp: "総合性",
+    reading: "そうごうせい",
+    id: "komprehensifitas"
+  }, {
+    jp: "多義性",
+    reading: "たぎせい",
+    id: "ambiguitas makna"
+  }, {
+    jp: "網羅性",
+    reading: "もうらせい",
+    id: "kelengkapan cakupan"
+  }, {
+    jp: "可塑性",
+    reading: "かそせい",
+    id: "plastisitas, keluwesan"
+  }, {
+    jp: "均一性",
+    reading: "きんいつせい",
+    id: "keseragaman"
+  }, {
+    jp: "特異性",
+    reading: "とくいせい",
+    id: "kekhususan"
+  }],
+  "Kata Kerja Suru Formal N2": [{
+    jp: "実施する",
+    reading: "じっしする",
+    id: "melaksanakan"
+  }, {
+    jp: "実行する",
+    reading: "じっこうする",
+    id: "menjalankan"
+  }, {
+    jp: "検討する",
+    reading: "けんとうする",
+    id: "mempertimbangkan"
+  }, {
+    jp: "判断する",
+    reading: "はんだんする",
+    id: "memutuskan, menilai"
+  }, {
+    jp: "判明する",
+    reading: "はんめいする",
+    id: "menjadi jelas, terungkap"
+  }, {
+    jp: "発生する",
+    reading: "はっせいする",
+    id: "terjadi"
+  }, {
+    jp: "発展する",
+    reading: "はってんする",
+    id: "berkembang"
+  }, {
+    jp: "発揮する",
+    reading: "はっきする",
+    id: "menunjukkan kemampuan"
+  }, {
+    jp: "集中する",
+    reading: "しゅうちゅうする",
+    id: "berkonsentrasi"
+  }, {
+    jp: "継続する",
+    reading: "けいぞくする",
+    id: "melanjutkan"
+  }, {
+    jp: "維持する",
+    reading: "いじする",
+    id: "mempertahankan"
+  }, {
+    jp: "改善する",
+    reading: "かいぜんする",
+    id: "memperbaiki"
+  }, {
+    jp: "改良する",
+    reading: "かいりょうする",
+    id: "meningkatkan kualitas"
+  }, {
+    jp: "対応する",
+    reading: "たいおうする",
+    id: "menanggapi"
+  }, {
+    jp: "対処する",
+    reading: "たいしょする",
+    id: "menangani"
+  }, {
+    jp: "相当する",
+    reading: "そうとうする",
+    id: "setara dengan"
+  }, {
+    jp: "該当する",
+    reading: "がいとうする",
+    id: "sesuai kriteria"
+  }, {
+    jp: "適用する",
+    reading: "てきようする",
+    id: "menerapkan"
+  }, {
+    jp: "適合する",
+    reading: "てきごうする",
+    id: "sesuai"
+  }, {
+    jp: "反映する",
+    reading: "はんえいする",
+    id: "mencerminkan"
+  }, {
+    jp: "反発する",
+    reading: "はんぱつする",
+    id: "menentang keras"
+  }, {
+    jp: "反省する",
+    reading: "はんせいする",
+    id: "introspeksi"
+  }, {
+    jp: "実践する",
+    reading: "じっせんする",
+    id: "mempraktikkan"
+  }, {
+    jp: "実感する",
+    reading: "じっかんする",
+    id: "merasakan langsung"
+  }, {
+    jp: "直面する",
+    reading: "ちょくめんする",
+    id: "menghadapi langsung"
+  }, {
+    jp: "従事する",
+    reading: "じゅうじする",
+    id: "menekuni pekerjaan"
+  }],
+  "Kata Kerja Suru Formal N1": [{
+    jp: "着目する",
+    reading: "ちゃくもくする",
+    id: "memfokuskan perhatian"
+  }, {
+    jp: "着手する",
+    reading: "ちゃくしゅする",
+    id: "mulai mengerjakan"
+  }, {
+    jp: "精査する",
+    reading: "せいさする",
+    id: "memeriksa teliti"
+  }, {
+    jp: "察知する",
+    reading: "さっちする",
+    id: "menyadari, mendeteksi"
+  }, {
+    jp: "誇張する",
+    reading: "こちょうする",
+    id: "melebih-lebihkan"
+  }, {
+    jp: "網羅する",
+    reading: "もうらする",
+    id: "mencakup semua"
+  }, {
+    jp: "統括する",
+    reading: "とうかつする",
+    id: "mengoordinasikan seluruhnya"
+  }, {
+    jp: "統合する",
+    reading: "とうごうする",
+    id: "mengintegrasikan"
+  }, {
+    jp: "統率する",
+    reading: "とうそつする",
+    id: "memimpin"
+  }, {
+    jp: "逸脱する",
+    reading: "いつだつする",
+    id: "menyimpang"
+  }, {
+    jp: "収束する",
+    reading: "しゅうそくする",
+    id: "mereda, berakhir"
+  }, {
+    jp: "収斂する",
+    reading: "しゅうれんする",
+    id: "konvergen"
+  }, {
+    jp: "派生する",
+    reading: "はせいする",
+    id: "berasal dari, turunan"
+  }, {
+    jp: "波及する",
+    reading: "はきゅうする",
+    id: "menyebar dampak"
+  }, {
+    jp: "帰属する",
+    reading: "きぞくする",
+    id: "menjadi milik"
+  }, {
+    jp: "依拠する",
+    reading: "いきょする",
+    id: "berdasarkan pada"
+  }, {
+    jp: "準拠する",
+    reading: "じゅんきょする",
+    id: "mengacu pada"
+  }, {
+    jp: "増幅する",
+    reading: "ぞうふくする",
+    id: "memperkuat, mengamplifikasi"
+  }, {
+    jp: "縮小する",
+    reading: "しゅくしょうする",
+    id: "mengecil"
+  }, {
+    jp: "拡充する",
+    reading: "かくじゅうする",
+    id: "memperluas dan memperkaya"
+  }, {
+    jp: "抑制する",
+    reading: "よくせいする",
+    id: "mengendalikan"
+  }, {
+    jp: "補完する",
+    reading: "ほかんする",
+    id: "melengkapi"
+  }, {
+    jp: "補強する",
+    reading: "ほきょうする",
+    id: "memperkuat"
+  }, {
+    jp: "醸成する",
+    reading: "じょうせいする",
+    id: "menumbuhkan suasana"
+  }],
+  "Ungkapan Perbandingan & Kontras": [{
+    jp: "それに比べて",
+    reading: "それにくらべて",
+    id: "dibandingkan dengan itu"
+  }, {
+    jp: "反面",
+    reading: "はんめん",
+    id: "di sisi lain"
+  }, {
+    jp: "逆に",
+    reading: "ぎゃくに",
+    id: "sebaliknya"
+  }, {
+    jp: "むしろ",
+    reading: "むしろ",
+    id: "malah, lebih baik"
+  }, {
+    jp: "対照的に",
+    reading: "たいしょうてきに",
+    id: "secara kontras"
+  }, {
+    jp: "一方",
+    reading: "いっぽう",
+    id: "di sisi lain"
+  }, {
+    jp: "それに引き換え",
+    reading: "それにひきかえ",
+    id: "berbeda dengan itu"
+  }, {
+    jp: "比べ物にならない",
+    reading: "くらべものにならない",
+    id: "tak sebanding"
+  }, {
+    jp: "断然",
+    reading: "だんぜん",
+    id: "jauh lebih"
+  }, {
+    jp: "遥かに",
+    reading: "はるかに",
+    id: "jauh lebih"
+  }, {
+    jp: "一段と",
+    reading: "いちだんと",
+    id: "semakin"
+  }, {
+    jp: "より一層",
+    reading: "よりいっそう",
+    id: "lebih lagi"
+  }, {
+    jp: "同様に",
+    reading: "どうように",
+    id: "dengan cara yang sama"
+  }, {
+    jp: "同然",
+    reading: "どうぜん",
+    id: "sama saja dengan"
+  }, {
+    jp: "異なり",
+    reading: "ことなり",
+    id: "berbeda dengan"
+  }, {
+    jp: "対して",
+    reading: "たいして",
+    id: "terhadap, kontras dengan"
+  }, {
+    jp: "打って変わって",
+    reading: "うってかわって",
+    id: "berubah drastis"
+  }, {
+    jp: "引き比べる",
+    reading: "ひきくらべる",
+    id: "membandingkan"
+  }],
+  "Ungkapan Sebab-Akibat Lanjutan": [{
+    jp: "これに伴い",
+    reading: "これにともない",
+    id: "seiring dengan ini"
+  }, {
+    jp: "に起因する",
+    reading: "にきいんする",
+    id: "disebabkan oleh"
+  }, {
+    jp: "の結果として",
+    reading: "のけっかとして",
+    id: "sebagai hasil dari"
+  }, {
+    jp: "を踏まえて",
+    reading: "をふまえて",
+    id: "berdasarkan"
+  }, {
+    jp: "に鑑みて",
+    reading: "にかんがみて",
+    id: "mengingat, mempertimbangkan"
+  }, {
+    jp: "のゆえに",
+    reading: "のゆえに",
+    id: "karena"
+  }, {
+    jp: "がゆえに",
+    reading: "がゆえに",
+    id: "karena"
+  }, {
+    jp: "に基づいて",
+    reading: "にもとづいて",
+    id: "berdasarkan pada"
+  }, {
+    jp: "を受けて",
+    reading: "をうけて",
+    id: "merespons terhadap"
+  }, {
+    jp: "を契機に",
+    reading: "をけいきに",
+    id: "dengan momentum"
+  }, {
+    jp: "の余波で",
+    reading: "のよはで",
+    id: "akibat dari dampak"
+  }, {
+    jp: "相まって",
+    reading: "あいまって",
+    id: "bersamaan dengan faktor lain"
+  }, {
+    jp: "それに応じて",
+    reading: "それにおうじて",
+    id: "sesuai dengan itu"
+  }, {
+    jp: "の一途をたどる",
+    reading: "のいっとをたどる",
+    id: "terus menerus menuju arah tertentu"
+  }, {
+    jp: "引き金となる",
+    reading: "ひきがねとなる",
+    id: "menjadi pemicu"
+  }, {
+    jp: "尾を引く",
+    reading: "おをひく",
+    id: "berdampak berkepanjangan"
+  }],
+  "Kosakata Perasaan Fisik & Kondisi Tubuh": [{
+    jp: "気だるい",
+    reading: "けだるい",
+    id: "lesu tak bersemangat"
+  }, {
+    jp: "だるい",
+    reading: "だるい",
+    id: "lesu, pegal"
+  }, {
+    jp: "息切れ",
+    reading: "いきぎれ",
+    id: "sesak napas"
+  }, {
+    jp: "めまいがする",
+    reading: "めまいがする",
+    id: "pusing berputar"
+  }, {
+    jp: "肩こり",
+    reading: "かたこり",
+    id: "pegal bahu"
+  }, {
+    jp: "手足がしびれる",
+    reading: "てあしがしびれる",
+    id: "tangan kaki kesemutan"
+  }, {
+    jp: "寒気がする",
+    reading: "さむけがする",
+    id: "menggigil"
+  }, {
+    jp: "吐き気がする",
+    reading: "はきけがする",
+    id: "mual"
+  }, {
+    jp: "食欲不振",
+    reading: "しょくよくふしん",
+    id: "nafsu makan menurun"
+  }, {
+    jp: "体がだるい",
+    reading: "からだがだるい",
+    id: "badan lesu"
+  }, {
+    jp: "汗ばむ",
+    reading: "あせばむ",
+    id: "mulai berkeringat"
+  }, {
+    jp: "震え上がる",
+    reading: "ふるえあがる",
+    id: "gemetar ketakutan"
+  }, {
+    jp: "息が詰まる",
+    reading: "いきがつまる",
+    id: "sesak napas karena tegang"
+  }, {
+    jp: "手が震える",
+    reading: "てがふるえる",
+    id: "tangan gemetar"
+  }, {
+    jp: "力が抜ける",
+    reading: "ちからがぬける",
+    id: "kehilangan tenaga"
+  }, {
+    jp: "血の気が引く",
+    reading: "ちのけがひく",
+    id: "wajah pucat pasi"
+  }, {
+    jp: "鳥肌が立つ",
+    reading: "とりはだがたつ",
+    id: "merinding"
+  }, {
+    jp: "涙ぐむ",
+    reading: "なみだぐむ",
+    id: "mata berkaca-kaca"
+  }],
+  "Kosakata Hubungan Sosial Sehari-hari": [{
+    jp: "気配り",
+    reading: "きくばり",
+    id: "perhatian pada sekitar"
+  }, {
+    jp: "目配り",
+    reading: "めくばり",
+    id: "pengawasan sekeliling"
+  }, {
+    jp: "人付き合い",
+    reading: "ひとづきあい",
+    id: "pergaulan sosial"
+  }, {
+    jp: "お節介",
+    reading: "おせっかい",
+    id: "ikut campur berlebihan"
+  }, {
+    jp: "顔色をうかがう",
+    reading: "かおいろをうかがう",
+    id: "membaca ekspresi orang"
+  }, {
+    jp: "気疲れ",
+    reading: "きづかれ",
+    id: "lelah karena terlalu memperhatikan orang lain"
+  }, {
+    jp: "人間関係",
+    reading: "にんげんかんけい",
+    id: "hubungan antarmanusia"
+  }, {
+    jp: "付き合いが良い",
+    reading: "つきあいがよい",
+    id: "mudah bergaul"
+  }, {
+    jp: "義理堅い",
+    reading: "ぎりがたい",
+    id: "setia pada kewajiban sosial"
+  }, {
+    jp: "顔を立てる",
+    reading: "かおをたてる",
+    id: "menjaga muka orang lain"
+  }, {
+    jp: "恩を売る",
+    reading: "おんをうる",
+    id: "membuat orang berutang budi"
+  }, {
+    jp: "借りを返す",
+    reading: "かりをかえす",
+    id: "membalas budi"
+  }, {
+    jp: "距離を置く",
+    reading: "きょりをおく",
+    id: "menjaga jarak"
+  }, {
+    jp: "打ち解ける",
+    reading: "うちとける",
+    id: "menjadi akrab"
+  }, {
+    jp: "気心が知れる",
+    reading: "きごころがしれる",
+    id: "saling memahami dengan baik"
+  }, {
+    jp: "仲を取り持つ",
+    reading: "なかをとりもつ",
+    id: "menjadi penengah"
+  }, {
+    jp: "波風を立てない",
+    reading: "なみかぜをたてない",
+    id: "tidak menimbulkan keributan"
+  }, {
+    jp: "肩の荷が下りる",
+    reading: "かたのにがおりる",
+    id: "merasa lega dari beban"
+  }],
+  "Kata Sifat-i Tambahan N2-N1": [{
+    jp: "めざましい",
+    reading: "めざましい",
+    id: "luar biasa pesat"
+  }, {
+    jp: "慌ただしい",
+    reading: "あわただしい",
+    id: "tergesa-gesa"
+  }, {
+    jp: "待ち遠しい",
+    reading: "まちどおしい",
+    id: "tidak sabar menunggu"
+  }, {
+    jp: "じれったい",
+    reading: "じれったい",
+    id: "tidak sabaran"
+  }, {
+    jp: "気恥ずかしい",
+    reading: "きはずかしい",
+    id: "agak malu"
+  }, {
+    jp: "あくどい",
+    reading: "あくどい",
+    id: "licik, curang"
+  }, {
+    jp: "疑わしい",
+    reading: "うたがわしい",
+    id: "mencurigakan"
+  }, {
+    jp: "紛れもない",
+    reading: "まぎれもない",
+    id: "tidak diragukan lagi"
+  }, {
+    jp: "頼もしい",
+    reading: "たのもしい",
+    id: "dapat diandalkan"
+  }, {
+    jp: "悩ましい",
+    reading: "なやましい",
+    id: "membingungkan, menggoda"
+  }, {
+    jp: "危うい",
+    reading: "あやうい",
+    id: "berbahaya, hampir"
+  }, {
+    jp: "華々しい",
+    reading: "はなばなしい",
+    id: "gemilang"
+  }, {
+    jp: "荒々しい",
+    reading: "あらあらしい",
+    id: "kasar, keras"
+  }, {
+    jp: "空しい",
+    reading: "むなしい",
+    id: "hampa, sia-sia"
+  }, {
+    jp: "忌まわしい",
+    reading: "いまわしい",
+    id: "mengerikan, terkutuk"
+  }, {
+    jp: "心もとない",
+    reading: "こころもとない",
+    id: "tidak meyakinkan"
+  }, {
+    jp: "気忙しい",
+    reading: "きぜわしい",
+    id: "sibuk gelisah"
+  }, {
+    jp: "待望の",
+    reading: "たいぼうの",
+    id: "yang dinanti-nanti"
+  }],
+  "Ungkapan Formal untuk Menyatakan Pendapat": [{
+    jp: "私見では",
+    reading: "しけんでは",
+    id: "menurut pendapat pribadi saya"
+  }, {
+    jp: "私見ながら",
+    reading: "しけんながら",
+    id: "meski ini pendapat pribadi"
+  }, {
+    jp: "私見を申し上げますと",
+    reading: "しけんをもうしあげますと",
+    id: "jika saya boleh sampaikan pendapat"
+  }, {
+    jp: "一言で言えば",
+    reading: "ひとことでいえば",
+    id: "singkatnya"
+  }, {
+    jp: "端的に言うと",
+    reading: "たんてきにいうと",
+    id: "secara ringkas dikatakan"
+  }, {
+    jp: "敢えて言えば",
+    reading: "あえていえば",
+    id: "kalau boleh dikatakan"
+  }, {
+    jp: "言い換えれば",
+    reading: "いいかえれば",
+    id: "dengan kata lain"
+  }, {
+    jp: "率直に申し上げると",
+    reading: "そっちょくにもうしあげると",
+    id: "terus terang saya katakan"
+  }, {
+    jp: "個人的には",
+    reading: "こじんてきには",
+    id: "secara pribadi"
+  }, {
+    jp: "私としては",
+    reading: "わたしとしては",
+    id: "sebagai saya"
+  }, {
+    jp: "見る限り",
+    reading: "みるかぎり",
+    id: "sejauh yang saya lihat"
+  }, {
+    jp: "察するに",
+    reading: "さっするに",
+    id: "menduga dari situasi"
+  }, {
+    jp: "思うに",
+    reading: "おもうに",
+    id: "menurut pemikiran saya"
+  }, {
+    jp: "言うまでもなく",
+    reading: "いうまでもなく",
+    id: "sudah jelas tanpa perlu dikatakan"
+  }, {
+    jp: "言わずもがな",
+    reading: "いわずもがな",
+    id: "tidak perlu dikatakan lagi"
+  }, {
+    jp: "一概には言えない",
+    reading: "いちがいにはいえない",
+    id: "tidak bisa digeneralisasi"
+  }],
+  "Kata Benda Kegiatan Sehari-hari Formal": [{
+    jp: "準備段階",
+    reading: "じゅんびだんかい",
+    id: "tahap persiapan"
+  }, {
+    jp: "手順",
+    reading: "てじゅん",
+    id: "langkah kerja"
+  }, {
+    jp: "段取り",
+    reading: "だんどり",
+    id: "persiapan rencana"
+  }, {
+    jp: "見積もり",
+    reading: "みつもり",
+    id: "perkiraan"
+  }, {
+    jp: "打ち合わせ",
+    reading: "うちあわせ",
+    id: "pertemuan koordinasi"
+  }, {
+    jp: "手配",
+    reading: "てはい",
+    id: "pengaturan"
+  }, {
+    jp: "手続き",
+    reading: "てつづき",
+    id: "prosedur"
+  }, {
+    jp: "心構え",
+    reading: "こころがまえ",
+    id: "kesiapan mental"
+  }, {
+    jp: "下準備",
+    reading: "したじゅんび",
+    id: "persiapan awal"
+  }, {
+    jp: "段階的",
+    reading: "だんかいてき",
+    id: "bertahap"
+  }, {
+    jp: "見直し",
+    reading: "みなおし",
+    id: "peninjauan ulang"
+  }, {
+    jp: "取り決め",
+    reading: "とりきめ",
+    id: "kesepakatan"
+  }, {
+    jp: "取り扱い",
+    reading: "とりあつかい",
+    id: "penanganan"
+  }, {
+    jp: "心得",
+    reading: "こころえ",
+    id: "pemahaman dasar"
+  }, {
+    jp: "手回し",
+    reading: "てまわし",
+    id: "persiapan cekatan"
+  }, {
+    jp: "目算",
+    reading: "もくさん",
+    id: "perkiraan, perhitungan"
+  }, {
+    jp: "手立て",
+    reading: "てだて",
+    id: "cara, upaya"
+  }, {
+    jp: "采配を振る",
+    reading: "さいはいをふる",
+    id: "mengambil komando"
+  }],
+  "Kata Kerja Kondisi & Perubahan Keadaan": [{
+    jp: "悪化する",
+    reading: "あっかする",
+    id: "memburuk"
+  }, {
+    jp: "好転する",
+    reading: "こうてんする",
+    id: "membaik"
+  }, {
+    jp: "好調",
+    reading: "こうちょう",
+    id: "dalam kondisi baik"
+  }, {
+    jp: "不調",
+    reading: "ふちょう",
+    id: "kondisi kurang baik"
+  }, {
+    jp: "停滞する",
+    reading: "ていたいする",
+    id: "mandek"
+  }, {
+    jp: "進展する",
+    reading: "しんてんする",
+    id: "berkembang maju"
+  }, {
+    jp: "沈静化する",
+    reading: "ちんせいかする",
+    id: "mereda"
+  }, {
+    jp: "悪循環",
+    reading: "あくじゅんかん",
+    id: "lingkaran setan"
+  }, {
+    jp: "好循環",
+    reading: "こうじゅんかん",
+    id: "siklus positif"
+  }, {
+    jp: "硬直化する",
+    reading: "こうちょくかする",
+    id: "menjadi kaku"
+  }, {
+    jp: "二極化する",
+    reading: "にきょくかする",
+    id: "terpolarisasi"
+  }, {
+    jp: "空洞化する",
+    reading: "くうどうかする",
+    id: "menjadi hampa, berkurang esensinya"
+  }, {
+    jp: "形骸化する",
+    reading: "けいがいかする",
+    id: "kehilangan substansi"
+  }, {
+    jp: "常態化する",
+    reading: "じょうたいかする",
+    id: "menjadi normal"
+  }, {
+    jp: "慢性化する",
+    reading: "まんせいかする",
+    id: "menjadi kronis"
+  }, {
+    jp: "深化する",
+    reading: "しんかする",
+    id: "semakin mendalam"
+  }, {
+    jp: "拡大する",
+    reading: "かくだいする",
+    id: "membesar"
+  }, {
+    jp: "縮減する",
+    reading: "しゅくげんする",
+    id: "mengurangi"
+  }],
+  "Ungkapan Permintaan & Izin Formal": [{
+    jp: "お手数ですが",
+    reading: "おてすうですが",
+    id: "maaf merepotkan"
+  }, {
+    jp: "ご都合がよろしければ",
+    reading: "ごつごうがよろしければ",
+    id: "jika waktu Anda memungkinkan"
+  }, {
+    jp: "お許しいただけますか",
+    reading: "おゆるしいただけますか",
+    id: "bolehkah saya minta izin"
+  }, {
+    jp: "ご検討いただけますと幸いです",
+    reading: "ごけんとういただけますとさいわいです",
+    id: "akan senang jika dipertimbangkan"
+  }, {
+    jp: "お聞かせいただけますか",
+    reading: "おきかせいただけますか",
+    id: "bolehkah saya dengar pendapat Anda"
+  }, {
+    jp: "お伺いしてもよろしいでしょうか",
+    reading: "おうかがいしてもよろしいでしょうか",
+    id: "bolehkah saya bertanya"
+  }, {
+    jp: "ご協力いただけますでしょうか",
+    reading: "ごきょうりょくいただけますでしょうか",
+    id: "bisakah Anda membantu"
+  }, {
+    jp: "差し支えございませんでしょうか",
+    reading: "さしつかえございませんでしょうか",
+    id: "apakah tidak keberatan"
+  }, {
+    jp: "ご一考いただければ",
+    reading: "ごいっこういただければ",
+    id: "mohon dipikirkan sejenak"
+  }, {
+    jp: "ご配慮いただきたく",
+    reading: "ごはいりょいただきたく",
+    id: "mohon dipertimbangkan dengan bijak"
+  }, {
+    jp: "お許し願います",
+    reading: "おゆるしねがいます",
+    id: "mohon diizinkan"
+  }, {
+    jp: "ご理解いただければ幸いです",
+    reading: "ごりかいいただければさいわいです",
+    id: "mohon dapat dipahami"
+  }, {
+    jp: "お聞き及びかと存じますが",
+    reading: "おききおよびかとぞんじますが",
+    id: "mungkin Anda sudah dengar tapi"
+  }, {
+    jp: "ご一報いただけますでしょうか",
+    reading: "ごいっぽういただけますでしょうか",
+    id: "mohon dikabari"
+  }, {
+    jp: "お含みおきください",
+    reading: "おふくみおきください",
+    id: "mohon dipahami sebelumnya"
+  }, {
+    jp: "何とぞご容赦ください",
+    reading: "なにとぞごようしゃください",
+    id: "mohon dimaafkan sepenuhnya"
+  }],
+  "Kosakata Deskripsi Angka & Data Lanjutan": [{
+    jp: "概数",
+    reading: "がいすう",
+    id: "angka perkiraan"
+  }, {
+    jp: "端数",
+    reading: "はすう",
+    id: "pecahan sisa"
+  }, {
+    jp: "桁違い",
+    reading: "けたちがい",
+    id: "berbeda jauh skalanya"
+  }, {
+    jp: "飛躍的に",
+    reading: "ひやくてきに",
+    id: "secara melompat"
+  }, {
+    jp: "右肩上がり",
+    reading: "みぎかたあがり",
+    id: "terus naik grafiknya"
+  }, {
+    jp: "右肩下がり",
+    reading: "みぎかたさがり",
+    id: "terus turun grafiknya"
+  }, {
+    jp: "横ばい",
+    reading: "よこばい",
+    id: "stagnan, mendatar"
+  }, {
+    jp: "急上昇",
+    reading: "きゅうじょうしょう",
+    id: "naik tajam"
+  }, {
+    jp: "急落",
+    reading: "きゅうらく",
+    id: "jatuh tajam"
+  }, {
+    jp: "微増",
+    reading: "びぞう",
+    id: "sedikit meningkat"
+  }, {
+    jp: "微減",
+    reading: "びげん",
+    id: "sedikit menurun"
+  }, {
+    jp: "倍増する",
+    reading: "ばいぞうする",
+    id: "berlipat ganda"
+  }, {
+    jp: "半減する",
+    reading: "はんげんする",
+    id: "berkurang setengahnya"
+  }, {
+    jp: "統計上",
+    reading: "とうけいじょう",
+    id: "secara statistik"
+  }, {
+    jp: "数値化する",
+    reading: "すうちかする",
+    id: "menjadi angka, kuantitatif"
+  }, {
+    jp: "データに基づく",
+    reading: "でーたにもとづく",
+    id: "berdasarkan data"
+  }],
+  "Kata Sifat Menggambarkan Orang N2-N1": [{
+    jp: "気さく",
+    reading: "きさく",
+    id: "ramah tanpa formalitas"
+  }, {
+    jp: "世話好き",
+    reading: "せわずき",
+    id: "suka membantu orang"
+  }, {
+    jp: "涙もろい",
+    reading: "なみだもろい",
+    id: "mudah menangis"
+  }, {
+    jp: "手先が器用",
+    reading: "てさきがきよう",
+    id: "terampil tangan"
+  }, {
+    jp: "口達者",
+    reading: "くちだっしゃ",
+    id: "pandai berbicara"
+  }, {
+    jp: "気短",
+    reading: "きみじか",
+    id: "gampang tidak sabar"
+  }, {
+    jp: "腰が重い",
+    reading: "こしがおもい",
+    id: "malas bergerak"
+  }, {
+    jp: "フットワークが軽い",
+    reading: "ふっとわーくがかるい",
+    id: "gesit bertindak"
+  }, {
+    jp: "押しが強い",
+    reading: "おしがつよい",
+    id: "agresif mendesak"
+  }, {
+    jp: "我が強い",
+    reading: "ががつよい",
+    id: "keras kepala mementingkan diri"
+  }, {
+    jp: "口が悪い",
+    reading: "くちがわるい",
+    id: "suka berkata kasar"
+  }, {
+    jp: "情に厚い",
+    reading: "じょうにあつい",
+    id: "berhati welas asih"
+  }, {
+    jp: "人当たりがいい",
+    reading: "ひとあたりがいい",
+    id: "ramah pada orang"
+  }, {
+    jp: "世渡り上手",
+    reading: "よわたりじょうず",
+    id: "pandai bergaul di masyarakat"
+  }, {
+    jp: "抜け目がない",
+    reading: "ぬけめがない",
+    id: "cerdik tak lengah"
+  }, {
+    jp: "面倒見がいい",
+    reading: "めんどうみがいい",
+    id: "suka mengurus orang lain"
+  }, {
+    jp: "意地っ張り",
+    reading: "いじっぱり",
+    id: "keras kepala"
+  }, {
+    jp: "器が大きい",
+    reading: "うつわがおおきい",
+    id: "berjiwa besar"
+  }],
+  "Ungkapan Kekecewaan & Kepuasan": [{
+    jp: "期待外れ",
+    reading: "きたいはずれ",
+    id: "mengecewakan dari harapan"
+  }, {
+    jp: "がっかりする",
+    reading: "がっかりする",
+    id: "kecewa"
+  }, {
+    jp: "落胆する",
+    reading: "らくたんする",
+    id: "putus asa"
+  }, {
+    jp: "満足のいく",
+    reading: "まんぞくのいく",
+    id: "memuaskan"
+  }, {
+    jp: "申し分ない",
+    reading: "もうしぶんない",
+    id: "tidak ada kekurangan"
+  }, {
+    jp: "物足りない",
+    reading: "ものたりない",
+    id: "kurang memuaskan"
+  }, {
+    jp: "心残り",
+    reading: "こころのこり",
+    id: "masih ada penyesalan"
+  }, {
+    jp: "悔しい",
+    reading: "くやしい",
+    id: "kesal, menyesal"
+  }, {
+    jp: "会心の",
+    reading: "かいしんの",
+    id: "sesuai harapan hati"
+  }, {
+    jp: "手応えがある",
+    reading: "てごたえがある",
+    id: "terasa hasilnya"
+  }, {
+    jp: "見応えがある",
+    reading: "みごたえがある",
+    id: "menarik untuk ditonton"
+  }, {
+    jp: "期待に応える",
+    reading: "きたいにこたえる",
+    id: "memenuhi harapan"
+  }, {
+    jp: "期待を裏切る",
+    reading: "きたいをうらぎる",
+    id: "mengecewakan harapan"
+  }, {
+    jp: "願ったり叶ったり",
+    reading: "ねがったりかなったり",
+    id: "sesuai keinginan sempurna"
+  }, {
+    jp: "満更でもない",
+    reading: "まんざらでもない",
+    id: "tidak buruk juga"
+  }, {
+    jp: "案に相違して",
+    reading: "あんにそういして",
+    id: "berbeda dari dugaan"
+  }],
+  "Kosakata Proses Berpikir & Analisis": [{
+    jp: "考察する",
+    reading: "こうさつする",
+    id: "mengkaji"
+  }, {
+    jp: "分析する",
+    reading: "ぶんせきする",
+    id: "menganalisis"
+  }, {
+    jp: "検証する",
+    reading: "けんしょうする",
+    id: "memverifikasi"
+  }, {
+    jp: "検討を重ねる",
+    reading: "けんとうをかさねる",
+    id: "mempertimbangkan berulang kali"
+  }, {
+    jp: "洞察する",
+    reading: "どうさつする",
+    id: "memahami secara mendalam"
+  }, {
+    jp: "見解を示す",
+    reading: "けんかいをしめす",
+    id: "menunjukkan pandangan"
+  }, {
+    jp: "見当をつける",
+    reading: "けんとうをつける",
+    id: "membuat perkiraan"
+  }, {
+    jp: "筋道を立てる",
+    reading: "すじみちをたてる",
+    id: "menyusun logika"
+  }, {
+    jp: "熟考する",
+    reading: "じゅっこうする",
+    id: "merenungkan matang-matang"
+  }, {
+    jp: "吟味する",
+    reading: "ぎんみする",
+    id: "menelaah cermat"
+  }, {
+    jp: "熟慮する",
+    reading: "じゅくりょする",
+    id: "mempertimbangkan matang"
+  }, {
+    jp: "洗い出す",
+    reading: "あらいだす",
+    id: "mengidentifikasi menyeluruh"
+  }, {
+    jp: "一考を要する",
+    reading: "いっこうをようする",
+    id: "perlu dipikirkan"
+  }, {
+    jp: "再考する",
+    reading: "さいこうする",
+    id: "mempertimbangkan ulang"
+  }, {
+    jp: "咀嚼する",
+    reading: "そしゃくする",
+    id: "mencerna secara mendalam"
+  }, {
+    jp: "検分する",
+    reading: "けんぶんする",
+    id: "memeriksa langsung"
+  }, {
+    jp: "見通しを立てる",
+    reading: "みとおしをたてる",
+    id: "membuat prospek"
+  }, {
+    jp: "判断を下す",
+    reading: "はんだんをくだす",
+    id: "memberikan keputusan"
+  }],
+  "Ungkapan Menyatakan Dugaan & Kemungkinan": [{
+    jp: "恐らく",
+    reading: "おそらく",
+    id: "mungkin"
+  }, {
+    jp: "十中八九",
+    reading: "じっちゅうはっく",
+    id: "hampir pasti"
+  }, {
+    jp: "万が一",
+    reading: "まんがいち",
+    id: "seandainya (kemungkinan kecil)"
+  }, {
+    jp: "とも限らない",
+    reading: "ともかぎらない",
+    id: "belum tentu"
+  }, {
+    jp: "かねない",
+    reading: "かねない",
+    id: "berpotensi terjadi hal buruk"
+  }, {
+    jp: "恐れがある",
+    reading: "おそれがある",
+    id: "ada risiko"
+  }, {
+    jp: "可能性を否めない",
+    reading: "かのうせいをいなめない",
+    id: "tidak bisa dipungkiri kemungkinannya"
+  }, {
+    jp: "蓋然性が高い",
+    reading: "がいぜんせいがたかい",
+    id: "probabilitasnya tinggi"
+  }, {
+    jp: "見込みが薄い",
+    reading: "みこみがうすい",
+    id: "kemungkinan tipis"
+  }, {
+    jp: "確実視される",
+    reading: "かくじつしされる",
+    id: "dianggap pasti"
+  }, {
+    jp: "予断を許さない",
+    reading: "よだんをゆるさない",
+    id: "tidak bisa diprediksi pasti"
+  }, {
+    jp: "どちらとも言えない",
+    reading: "どちらともいえない",
+    id: "tak bisa dipastikan mana"
+  }, {
+    jp: "五分五分",
+    reading: "ごぶごぶ",
+    id: "fifty-fifty"
+  }, {
+    jp: "疑いようがない",
+    reading: "うたがいようがない",
+    id: "tidak diragukan lagi"
+  }, {
+    jp: "見当もつかない",
+    reading: "けんとうもつかない",
+    id: "sama sekali tidak bisa diperkirakan"
+  }],
+  "Kata Benda Sifat Karakter & Kepribadian": [{
+    jp: "根性",
+    reading: "こんじょう",
+    id: "semangat juang"
+  }, {
+    jp: "忍耐力",
+    reading: "にんたいりょく",
+    id: "daya tahan"
+  }, {
+    jp: "包容力",
+    reading: "ほうようりょく",
+    id: "kemampuan menerima orang lain"
+  }, {
+    jp: "統率力",
+    reading: "とうそつりょく",
+    id: "kemampuan memimpin"
+  }, {
+    jp: "洞察力",
+    reading: "どうさつりょく",
+    id: "daya observasi mendalam"
+  }, {
+    jp: "行動力",
+    reading: "こうどうりょく",
+    id: "daya bertindak"
+  }, {
+    jp: "発想力",
+    reading: "はっそうりょく",
+    id: "daya kreativitas ide"
+  }, {
+    jp: "決断力",
+    reading: "けつだんりょく",
+    id: "daya mengambil keputusan"
+  }, {
+    jp: "忍耐強さ",
+    reading: "にんたいづよさ",
+    id: "ketahanan, kesabaran"
+  }, {
+    jp: "大局観",
+    reading: "たいきょくかん",
+    id: "pandangan menyeluruh"
+  }, {
+    jp: "責任感",
+    reading: "せきにんかん",
+    id: "rasa tanggung jawab"
+  }, {
+    jp: "使命感",
+    reading: "しめいかん",
+    id: "rasa misi"
+  }, {
+    jp: "危機感",
+    reading: "ききかん",
+    id: "rasa krisis"
+  }, {
+    jp: "探究心",
+    reading: "たんきゅうしん",
+    id: "rasa ingin tahu mendalam"
+  }, {
+    jp: "独立心",
+    reading: "どくりつしん",
+    id: "jiwa mandiri"
+  }],
+  "Ungkapan Formal Menyampaikan Berita/Info": [{
+    jp: "お知らせいたします",
+    reading: "おしらせいたします",
+    id: "dengan ini kami beritahukan"
+  }, {
+    jp: "謹んでご報告申し上げます",
+    reading: "つつしんでごほうこくもうしあげます",
+    id: "dengan hormat kami laporkan"
+  }, {
+    jp: "下記の通り",
+    reading: "かきのとおり",
+    id: "seperti tercantum di bawah ini"
+  }, {
+    jp: "標記の件について",
+    reading: "ひょうきのけんについて",
+    id: "mengenai perihal tersebut"
+  }, {
+    jp: "追ってご連絡いたします",
+    reading: "おってごれんらくいたします",
+    id: "akan kami kabari kemudian"
+  }, {
+    jp: "別途ご案内いたします",
+    reading: "べつとごあんないいたします",
+    id: "akan kami informasikan terpisah"
+  }, {
+    jp: "早速ではございますが",
+    reading: "さっそくではございますが",
+    id: "langsung saja ke inti"
+  }, {
+    jp: "この度",
+    reading: "このたび",
+    id: "kali ini, perihal ini"
+  }, {
+    jp: "謹啓",
+    reading: "きんけい",
+    id: "salam pembuka surat sangat formal"
+  }, {
+    jp: "謹白",
+    reading: "きんぱく",
+    id: "salam penutup surat sangat formal"
+  }, {
+    jp: "敬白",
+    reading: "けいはく",
+    id: "salam penutup surat formal"
+  }, {
+    jp: "お伝えしたく存じます",
+    reading: "おつたえしたくぞんじます",
+    id: "ingin menyampaikan"
+  }, {
+    jp: "ご参考までに",
+    reading: "ごさんこうまでに",
+    id: "sebagai referensi"
+  }, {
+    jp: "念のため",
+    reading: "ねんのため",
+    id: "untuk berjaga-jaga"
+  }, {
+    jp: "万全を期して",
+    reading: "ばんぜんをきして",
+    id: "demi kesempurnaan"
+  }, {
+    jp: "迅速に対応いたします",
+    reading: "じんそくにたいおういたします",
+    id: "akan kami tanggapi dengan cepat"
+  }],
+  "Pasangan Kata Kerja Transitif-Intransitif Lanjutan": [{
+    jp: "覆る",
+    reading: "くつがえる",
+    id: "terbalik"
+  }, {
+    jp: "覆す",
+    reading: "くつがえす",
+    id: "membalikkan"
+  }, {
+    jp: "蒸れる",
+    reading: "むれる",
+    id: "menjadi pengap, lembap"
+  }, {
+    jp: "凍る",
+    reading: "こおる",
+    id: "membeku"
+  }, {
+    jp: "凍らせる",
+    reading: "こおらせる",
+    id: "membekukan"
+  }, {
+    jp: "溶け出す",
+    reading: "とけだす",
+    id: "mulai mencair"
+  }, {
+    jp: "枯れる",
+    reading: "かれる",
+    id: "layu, mati"
+  }, {
+    jp: "枯らす",
+    reading: "からす",
+    id: "membuat layu"
+  }, {
+    jp: "腐る",
+    reading: "くさる",
+    id: "membusuk"
+  }, {
+    jp: "腐らせる",
+    reading: "くさらせる",
+    id: "membiarkan membusuk"
+  }, {
+    jp: "裂ける",
+    reading: "さける",
+    id: "robek"
+  }, {
+    jp: "裂く",
+    reading: "さく",
+    id: "merobek"
+  }, {
+    jp: "破れる",
+    reading: "やぶれる",
+    id: "robek, kalah"
+  }, {
+    jp: "破る",
+    reading: "やぶる",
+    id: "merobek, melanggar"
+  }, {
+    jp: "散る",
+    reading: "ちる",
+    id: "berguguran"
+  }, {
+    jp: "散らす",
+    reading: "ちらす",
+    id: "menyebarkan"
+  }, {
+    jp: "尽きる",
+    reading: "つきる",
+    id: "habis"
+  }, {
+    jp: "尽くす",
+    reading: "つくす",
+    id: "menghabiskan, mengabdikan"
+  }, {
+    jp: "転がる",
+    reading: "ころがる",
+    id: "menggelinding"
+  }, {
+    jp: "転がす",
+    reading: "ころがす",
+    id: "menggulingkan"
+  }],
+  "Kata Benda Waktu & Periode Formal": [{
+    jp: "かつて",
+    reading: "かつて",
+    id: "dahulu, pernah"
+  }, {
+    jp: "いにしえ",
+    reading: "いにしえ",
+    id: "zaman dahulu kala"
+  }, {
+    jp: "末期",
+    reading: "まっき",
+    id: "periode akhir"
+  }, {
+    jp: "初期",
+    reading: "しょき",
+    id: "periode awal"
+  }, {
+    jp: "最盛期",
+    reading: "さいせいき",
+    id: "masa puncak kejayaan"
+  }, {
+    jp: "黎明期",
+    reading: "れいめいき",
+    id: "era fajar, awal mula"
+  }, {
+    jp: "最終段階",
+    reading: "さいしゅうだんかい",
+    id: "tahap akhir"
+  }, {
+    jp: "節目節目",
+    reading: "ふしめふしめ",
+    id: "setiap titik penting"
+  }, {
+    jp: "時期尚早",
+    reading: "じきしょうそう",
+    id: "masih terlalu dini"
+  }, {
+    jp: "矢先",
+    reading: "やさき",
+    id: "tepat pada saat"
+  }, {
+    jp: "折しも",
+    reading: "おりしも",
+    id: "kebetulan pada saat itu"
+  }, {
+    jp: "この期に及んで",
+    reading: "このごにおよんで",
+    id: "pada saat genting seperti ini"
+  }, {
+    jp: "刻々と",
+    reading: "こくこくと",
+    id: "dari detik ke detik"
+  }],
+  "Ungkapan Menyatakan Tujuan": [{
+    jp: "べく",
+    reading: "べく",
+    id: "dengan tujuan untuk"
+  }, {
+    jp: "ために",
+    reading: "ために",
+    id: "demi, untuk"
+  }, {
+    jp: "を目指して",
+    reading: "をめざして",
+    id: "dengan tujuan menuju"
+  }, {
+    jp: "を目的として",
+    reading: "をもくてきとして",
+    id: "dengan tujuan"
+  }, {
+    jp: "狙いとする",
+    reading: "ねらいとする",
+    id: "menargetkan"
+  }, {
+    jp: "意図する",
+    reading: "いとする",
+    id: "bermaksud"
+  }, {
+    jp: "念願の",
+    reading: "ねんがんの",
+    id: "yang lama diidamkan"
+  }, {
+    jp: "志す",
+    reading: "こころざす",
+    id: "bercita-cita"
+  }, {
+    jp: "目論む",
+    reading: "もくろむ",
+    id: "merencanakan diam-diam"
+  }, {
+    jp: "企てる",
+    reading: "くわだてる",
+    id: "merencanakan sesuatu"
+  }, {
+    jp: "を見据えて",
+    reading: "をみすえて",
+    id: "dengan menatap ke arah"
+  }, {
+    jp: "を睨んで",
+    reading: "をにらんで",
+    id: "dengan mempertimbangkan"
+  }],
+  "Kata Kerja Menyatakan Awal & Akhir": [{
+    jp: "着工する",
+    reading: "ちゃっこうする",
+    id: "memulai konstruksi"
+  }, {
+    jp: "竣工する",
+    reading: "しゅんこうする",
+    id: "menyelesaikan konstruksi"
+  }, {
+    jp: "発足する",
+    reading: "ほっそくする",
+    id: "dibentuk, diluncurkan"
+  }, {
+    jp: "幕を開ける",
+    reading: "まくをあける",
+    id: "memulai babak baru"
+  }, {
+    jp: "幕を閉じる",
+    reading: "まくをとじる",
+    id: "mengakhiri babak"
+  }, {
+    jp: "終止符を打つ",
+    reading: "しゅうしふをうつ",
+    id: "mengakhiri sesuatu"
+  }, {
+    jp: "口火を切る",
+    reading: "くちびをきる",
+    id: "memulai sesuatu (pertama)"
+  }, {
+    jp: "端を発する",
+    reading: "たんをはっする",
+    id: "berawal dari"
+  }, {
+    jp: "端緒につく",
+    reading: "たんしょにつく",
+    id: "mulai dirintis"
+  }, {
+    jp: "軌道に乗る",
+    reading: "きどうにのる",
+    id: "berjalan lancar sesuai rencana"
+  }, {
+    jp: "実を結ぶ",
+    reading: "みをむすぶ",
+    id: "membuahkan hasil"
+  }, {
+    jp: "有終の美を飾る",
+    reading: "ゆうしゅうのびをかざる",
+    id: "mengakhiri dengan sempurna"
+  }],
+  "Ungkapan Menyatakan Syarat": [{
+    jp: "如何によっては",
+    reading: "いかんによっては",
+    id: "tergantung bagaimana"
+  }, {
+    jp: "を条件に",
+    reading: "をじょうけんに",
+    id: "dengan syarat"
+  }, {
+    jp: "を前提として",
+    reading: "をぜんていとして",
+    id: "dengan premis"
+  }, {
+    jp: "限り",
+    reading: "かぎり",
+    id: "selama, sepanjang"
+  }, {
+    jp: "次第だ",
+    reading: "しだいだ",
+    id: "tergantung pada"
+  }, {
+    jp: "如何だ",
+    reading: "いかんだ",
+    id: "tergantung bagaimana keadaannya"
+  }, {
+    jp: "を踏まえた上で",
+    reading: "をふまえたうえで",
+    id: "dengan mempertimbangkan"
+  }, {
+    jp: "を条件とする",
+    reading: "をじょうけんとする",
+    id: "menjadikan syarat"
+  }, {
+    jp: "あってこそ",
+    reading: "あってこそ",
+    id: "hanya karena ada itu"
+  }, {
+    jp: "なくしては",
+    reading: "なくしては",
+    id: "tanpa adanya"
+  }, {
+    jp: "いかんにかかわらず",
+    reading: "いかんにかかわらず",
+    id: "apapun keadaannya"
+  }, {
+    jp: "を余儀なくする",
+    reading: "をよぎなくする",
+    id: "memaksa keadaan tertentu"
+  }],
+  "Kata Benda Tempat & Fasilitas Formal": [{
+    jp: "庁舎",
+    reading: "ちょうしゃ",
+    id: "gedung kantor pemerintah"
+  }, {
+    jp: "施設",
+    reading: "しせつ",
+    id: "fasilitas"
+  }, {
+    jp: "拠り所",
+    reading: "よりどころ",
+    id: "tempat bersandar, dasar"
+  }, {
+    jp: "界隈",
+    reading: "かいわい",
+    id: "area sekitar"
+  }, {
+    jp: "一帯",
+    reading: "いったい",
+    id: "seluruh kawasan"
+  }, {
+    jp: "圏内",
+    reading: "けんない",
+    id: "dalam radius/lingkup"
+  }, {
+    jp: "圏外",
+    reading: "けんがい",
+    id: "di luar radius/lingkup"
+  }, {
+    jp: "直轄",
+    reading: "ちょっかつ",
+    id: "di bawah kendali langsung"
+  }, {
+    jp: "管轄区域",
+    reading: "かんかつくいき",
+    id: "wilayah yurisdiksi"
+  }, {
+    jp: "要衝",
+    reading: "ようしょう",
+    id: "lokasi strategis"
+  }],
+  "Kosakata Pekerjaan & Karir Lanjutan": [{
+    jp: "キャリアパス",
+    reading: "きゃりあぱす",
+    id: "jalur karier"
+  }, {
+    jp: "転籍",
+    reading: "てんせき",
+    id: "pemindahan status kepegawaian"
+  }, {
+    jp: "出向",
+    reading: "しゅっこう",
+    id: "penugasan sementara di perusahaan lain"
+  }, {
+    jp: "天下り",
+    reading: "あまくだり",
+    id: "penempatan pejabat pensiun di swasta"
+  }, {
+    jp: "肩書き",
+    reading: "かたがき",
+    id: "jabatan, gelar"
+  }, {
+    jp: "実務経験",
+    reading: "じつむけいけん",
+    id: "pengalaman kerja praktis"
+  }, {
+    jp: "即戦力",
+    reading: "そくせんりょく",
+    id: "tenaga kerja siap pakai"
+  }, {
+    jp: "キャリアアップ",
+    reading: "きゃりああっぷ",
+    id: "pengembangan karier"
+  }, {
+    jp: "適材適所",
+    reading: "てきざいてきしょ",
+    id: "orang yang tepat di tempat yang tepat"
+  }, {
+    jp: "社内公募",
+    reading: "しゃないこうぼ",
+    id: "lowongan internal perusahaan"
+  }, {
+    jp: "能力主義",
+    reading: "のうりょくしゅぎ",
+    id: "meritokrasi"
+  }],
+  "Kosakata Hasil & Pencapaian Formal": [{
+    jp: "成果を上げる",
+    reading: "せいかをあげる",
+    id: "mencapai hasil"
+  }, {
+    jp: "功績",
+    reading: "こうせき",
+    id: "jasa, prestasi"
+  }, {
+    jp: "業績を残す",
+    reading: "ぎょうせきをのこす",
+    id: "meninggalkan prestasi"
+  }, {
+    jp: "快挙",
+    reading: "かいきょ",
+    id: "pencapaian gemilang"
+  }, {
+    jp: "偉業",
+    reading: "いぎょう",
+    id: "pencapaian besar"
+  }, {
+    jp: "金字塔",
+    reading: "きんじとう",
+    id: "tonggak sejarah pencapaian"
+  }, {
+    jp: "集大成",
+    reading: "しゅうたいせい",
+    id: "puncak rangkuman karya"
+  }, {
+    jp: "総決算",
+    reading: "そうけっさん",
+    id: "rangkuman akhir menyeluruh"
+  }, {
+    jp: "一里塚",
+    reading: "いちりづか",
+    id: "tonggak sejarah, milestone"
+  }, {
+    jp: "快心の出来",
+    reading: "かいしんのでき",
+    id: "hasil yang sangat memuaskan"
+  }, {
+    jp: "満点の出来",
+    reading: "まんてんのでき",
+    id: "hasil sempurna"
+  }, {
+    jp: "好成績",
+    reading: "こうせいせき",
+    id: "prestasi bagus"
+  }, {
+    jp: "労を惜しまない",
+    reading: "ろうをおしまない",
+    id: "tak segan berusaha keras"
+  }, {
+    jp: "精進する",
+    reading: "しょうじんする",
+    id: "berlatih tekun"
+  }, {
+    jp: "研鑽を積む",
+    reading: "けんさんをつむ",
+    id: "mengasah diri terus menerus"
+  }, {
+    jp: "血のにじむ努力",
+    reading: "ちのにじむどりょく",
+    id: "usaha yang sangat keras"
+  }],
+  "Ungkapan Formal Menutup Pembicaraan": [{
+    jp: "以上をもちまして",
+    reading: "いじょうをもちまして",
+    id: "dengan ini saya akhiri"
+  }, {
+    jp: "ご清聴ありがとうございました",
+    reading: "ごせいちょうありがとうございました",
+    id: "terima kasih atas perhatiannya"
+  }, {
+    jp: "簡単ではございますが",
+    reading: "かんたんではございますが",
+    id: "meski singkat"
+  }, {
+    jp: "これをもって",
+    reading: "これをもって",
+    id: "dengan ini"
+  }, {
+    jp: "結びとして",
+    reading: "むすびとして",
+    id: "sebagai penutup"
+  }, {
+    jp: "最後になりますが",
+    reading: "さいごになりますが",
+    id: "terakhir"
+  }, {
+    jp: "お時間をいただき",
+    reading: "おじかんをいただき",
+    id: "terima kasih atas waktunya"
+  }, {
+    jp: "ご清聴に感謝申し上げます",
+    reading: "ごせいちょうにかんしゃもうしあげます",
+    id: "terima kasih atas perhatian Anda"
+  }, {
+    jp: "本日はこれにて",
+    reading: "ほんじつはこれにて",
+    id: "untuk hari ini sekian"
+  }, {
+    jp: "以上でございます",
+    reading: "いじょうでございます",
+    id: "demikian yang dapat disampaikan"
+  }, {
+    jp: "締めくくりとして",
+    reading: "しめくくりとして",
+    id: "sebagai penutup"
+  }, {
+    jp: "お付き合いいただき",
+    reading: "おつきあいいただき",
+    id: "terima kasih telah menemani"
+  }, {
+    jp: "貴重なお時間を",
+    reading: "きちょうなおじかんを",
+    id: "waktu berharga Anda"
+  }, {
+    jp: "皆様のご健勝をお祈り申し上げます",
+    reading: "みなさまのごけんしょうをおいのりもうしあげます",
+    id: "semoga semua sehat sejahtera"
+  }, {
+    jp: "引き続きご指導ご鞭撻のほど",
+    reading: "ひきつづきごしどうごべんたつのほど",
+    id: "mohon bimbingan selanjutnya"
+  }],
+  "Ungkapan Formal Mengajukan Usulan": [{
+    jp: "提案させていただきます",
+    reading: "ていあんさせていただきます",
+    id: "izinkan saya mengusulkan"
+  }, {
+    jp: "ご提案申し上げます",
+    reading: "ごていあんもうしあげます",
+    id: "dengan ini saya mengusulkan"
+  }, {
+    jp: "一案として",
+    reading: "いちあんとして",
+    id: "sebagai salah satu usulan"
+  }, {
+    jp: "叩き台",
+    reading: "たたきだい",
+    id: "draf awal untuk dibahas"
+  }, {
+    jp: "試案",
+    reading: "しあん",
+    id: "usulan percobaan"
+  }, {
+    jp: "腹案",
+    reading: "ふくあん",
+    id: "rencana yang sudah dipikirkan"
+  }, {
+    jp: "代替案",
+    reading: "だいたいあん",
+    id: "usulan alternatif"
+  }, {
+    jp: "改善案",
+    reading: "かいぜんあん",
+    id: "usulan perbaikan"
+  }, {
+    jp: "骨子",
+    reading: "こっし",
+    id: "kerangka utama usulan"
+  }, {
+    jp: "たたき台にする",
+    reading: "たたきだいにする",
+    id: "menjadikan bahan diskusi awal"
+  }, {
+    jp: "練り直す",
+    reading: "ねりなおす",
+    id: "menyusun ulang rencana"
+  }, {
+    jp: "見直しを図る",
+    reading: "みなおしをはかる",
+    id: "berupaya meninjau ulang"
+  }, {
+    jp: "採択される",
+    reading: "さいたくされる",
+    id: "diadopsi, disahkan"
+  }, {
+    jp: "却下される",
+    reading: "きゃっかされる",
+    id: "ditolak"
+  }, {
+    jp: "承認を得る",
+    reading: "しょうにんをえる",
+    id: "memperoleh persetujuan"
+  }, {
+    jp: "再提案する",
+    reading: "さいていあんする",
+    id: "mengajukan ulang usulan"
+  }],
+  "Kosakata Fenomena Alam dalam Bacaan Formal": [{
+    jp: "自然現象",
+    reading: "しぜんげんしょう",
+    id: "fenomena alam"
+  }, {
+    jp: "異常現象",
+    reading: "いじょうげんしょう",
+    id: "fenomena anomali"
+  }, {
+    jp: "気候変動対策会議",
+    reading: "きこうへんどうたいさくかいぎ",
+    id: "konferensi penanggulangan perubahan iklim"
+  }, {
+    jp: "生態系の均衡",
+    reading: "せいたいけいのきんこう",
+    id: "keseimbangan ekosistem"
+  }, {
+    jp: "自然の摂理",
+    reading: "しぜんのせつり",
+    id: "hukum alam"
+  }, {
+    jp: "天変地異",
+    reading: "てんぺんちい",
+    id: "bencana alam besar"
+  }, {
+    jp: "避難勧告",
+    reading: "ひなんかんこく",
+    id: "imbauan evakuasi"
+  }, {
+    jp: "災害対策本部",
+    reading: "さいがいたいさくほんぶ",
+    id: "posko penanggulangan bencana"
+  }, {
+    jp: "復旧作業",
+    reading: "ふっきゅうさぎょう",
+    id: "proses pemulihan"
+  }, {
+    jp: "気象異変",
+    reading: "きしょういへん",
+    id: "perubahan cuaca ekstrem"
+  }, {
+    jp: "自然の脅威",
+    reading: "しぜんのきょうい",
+    id: "ancaman alam"
+  }, {
+    jp: "環境負荷軽減",
+    reading: "かんきょうふかけいげん",
+    id: "pengurangan beban lingkungan"
+  }],
+  "Kata Benda Menyatakan Metode & Cara": [{
+    jp: "手法",
+    reading: "しゅほう",
+    id: "metode, teknik"
+  }, {
+    jp: "方策",
+    reading: "ほうさく",
+    id: "langkah kebijakan"
+  }, {
+    jp: "手口",
+    reading: "てぐち",
+    id: "modus, cara (biasa negatif)"
+  }, {
+    jp: "流儀",
+    reading: "りゅうぎ",
+    id: "gaya, cara tersendiri"
+  }, {
+    jp: "方式",
+    reading: "ほうしき",
+    id: "format, sistem"
+  }, {
+    jp: "やり口",
+    reading: "やりくち",
+    id: "cara melakukan (konotasi negatif)"
+  }, {
+    jp: "しくみ",
+    reading: "しくみ",
+    id: "mekanisme, struktur"
+  }, {
+    jp: "手はず",
+    reading: "てはず",
+    id: "persiapan, rencana"
+  }, {
+    jp: "道筋",
+    reading: "みちすじ",
+    id: "alur, jalur logis"
+  }, {
+    jp: "進め方",
+    reading: "すすめかた",
+    id: "cara menjalankan"
+  }, {
+    jp: "取り組み方",
+    reading: "とりくみかた",
+    id: "cara menangani"
+  }, {
+    jp: "あり方",
+    reading: "ありかた",
+    id: "cara seharusnya sesuatu"
+  }, {
+    jp: "在り様",
+    reading: "ありよう",
+    id: "keadaan, wujud sesuatu"
+  }, {
+    jp: "成り行き",
+    reading: "なりゆき",
+    id: "perkembangan yang terjadi"
+  }],
+  "Ungkapan Formal Memberikan Instruksi": [{
+    jp: "指示を仰ぐ",
+    reading: "しじをあおぐ",
+    id: "meminta instruksi"
+  }, {
+    jp: "指示に従う",
+    reading: "しじにしたがう",
+    id: "mengikuti instruksi"
+  }, {
+    jp: "徹底を図る",
+    reading: "てっていをはかる",
+    id: "berupaya menerapkan sepenuhnya"
+  }, {
+    jp: "周知徹底する",
+    reading: "しゅうちてっていする",
+    id: "menyebarluaskan secara menyeluruh"
+  }, {
+    jp: "励行する",
+    reading: "れいこうする",
+    id: "menjalankan dengan tegas"
+  }, {
+    jp: "遵守する",
+    reading: "じゅんしゅする",
+    id: "mematuhi"
+  }, {
+    jp: "厳守する",
+    reading: "げんしゅする",
+    id: "mematuhi dengan ketat"
+  }, {
+    jp: "留意する",
+    reading: "りゅういする",
+    id: "memperhatikan dengan saksama"
+  }, {
+    jp: "徹底される",
+    reading: "てっていされる",
+    id: "diterapkan secara menyeluruh"
+  }, {
+    jp: "指図する",
+    reading: "さしずする",
+    id: "memberi perintah"
+  }, {
+    jp: "申し伝える",
+    reading: "もうしつたえる",
+    id: "menyampaikan pesan (merendah)"
+  }, {
+    jp: "言い付ける",
+    reading: "いいつける",
+    id: "memerintahkan, mengadukan"
+  }, {
+    jp: "念を押す",
+    reading: "ねんをおす",
+    id: "menegaskan kembali"
+  }, {
+    jp: "肝に銘じる",
+    reading: "きもにめいじる",
+    id: "mengukir dalam hati"
+  }],
+  "Kosakata Kepribadian Negatif & Kritik Halus": [{
+    jp: "身勝手",
+    reading: "みがって",
+    id: "egois, semaunya sendiri"
+  }, {
+    jp: "自己中心的",
+    reading: "じこちゅうしんてき",
+    id: "egosentris"
+  }, {
+    jp: "独りよがり",
+    reading: "ひとりよがり",
+    id: "merasa benar sendiri"
+  }, {
+    jp: "高慢",
+    reading: "こうまん",
+    id: "sombong"
+  }, {
+    jp: "横柄",
+    reading: "おうへい",
+    id: "angkuh, sok berkuasa"
+  }, {
+    jp: "無責任",
+    reading: "むせきにん",
+    id: "tidak bertanggung jawab"
+  }, {
+    jp: "だらしない",
+    reading: "だらしない",
+    id: "tidak disiplin, ceroboh"
+  }, {
+    jp: "薄情",
+    reading: "はくじょう",
+    id: "tidak berperasaan"
+  }, {
+    jp: "狡猾",
+    reading: "こうかつ",
+    id: "licik"
+  }, {
+    jp: "陰険",
+    reading: "いんけん",
+    id: "licik tersembunyi"
+  }, {
+    jp: "横着",
+    reading: "おうちゃく",
+    id: "malas, curang"
+  }],
+  "Kata Kerja Menyatakan Usaha & Upaya": [{
+    jp: "尽力する",
+    reading: "じんりょくする",
+    id: "berupaya sekuat tenaga"
+  }, {
+    jp: "腐心する",
+    reading: "ふしんする",
+    id: "berjuang keras memikirkan"
+  }, {
+    jp: "苦心する",
+    reading: "くしんする",
+    id: "bersusah payah"
+  }, {
+    jp: "邁進する",
+    reading: "まいしんする",
+    id: "maju pantang mundur"
+  }, {
+    jp: "奮闘する",
+    reading: "ふんとうする",
+    id: "berjuang gigih"
+  }, {
+    jp: "励む",
+    reading: "はげむ",
+    id: "berusaha giat"
+  }, {
+    jp: "心血を注ぐ",
+    reading: "しんけつをそそぐ",
+    id: "mencurahkan segenap tenaga"
+  }, {
+    jp: "身を粉にする",
+    reading: "みをこにする",
+    id: "bekerja keras tanpa lelah"
+  }, {
+    jp: "知恵を絞る",
+    reading: "ちえをしぼる",
+    id: "memutar otak"
+  }, {
+    jp: "創意工夫を凝らす",
+    reading: "そういくふうをこらす",
+    id: "mengerahkan kreativitas"
+  }, {
+    jp: "試行錯誤する",
+    reading: "しこうさくごする",
+    id: "mencoba dan belajar dari kesalahan"
+  }],
+  "Ungkapan Formal Menyatakan Keluhan": [{
+    jp: "苦情を申し立てる",
+    reading: "くじょうをもうしたてる",
+    id: "mengajukan keluhan"
+  }, {
+    jp: "異議を唱える",
+    reading: "いぎをとなえる",
+    id: "mengajukan keberatan"
+  }, {
+    jp: "不服を申し立てる",
+    reading: "ふふくをもうしたてる",
+    id: "mengajukan protes resmi"
+  }, {
+    jp: "疑問を呈する",
+    reading: "ぎもんをていする",
+    id: "mengajukan keraguan"
+  }, {
+    jp: "苦言を呈する",
+    reading: "くげんをていする",
+    id: "memberikan kritik pedas"
+  }, {
+    jp: "懸念を示す",
+    reading: "けねんをしめす",
+    id: "menunjukkan kekhawatiran"
+  }, {
+    jp: "反発を招く",
+    reading: "はんぱつをまねく",
+    id: "memancing penolakan"
+  }, {
+    jp: "批判を浴びる",
+    reading: "ひはんをあびる",
+    id: "menuai kritik"
+  }, {
+    jp: "非難を受ける",
+    reading: "ひなんをうける",
+    id: "menerima cercaan"
+  }, {
+    jp: "物言いをつける",
+    reading: "ものいいをつける",
+    id: "mengajukan keberatan"
+  }, {
+    jp: "クレームをつける",
+    reading: "くれーむをつける",
+    id: "mengajukan komplain"
+  }, {
+    jp: "不満を漏らす",
+    reading: "ふまんをもらす",
+    id: "mengungkapkan ketidakpuasan"
+  }],
+  "Kata Benda Formal untuk Isu Sosial": [{
+    jp: "社会問題",
+    reading: "しゃかいもんだい",
+    id: "masalah sosial"
+  }, {
+    jp: "社会的課題",
+    reading: "しゃかいてきかだい",
+    id: "isu sosial"
+  }, {
+    jp: "貧困問題",
+    reading: "ひんこんもんだい",
+    id: "masalah kemiskinan"
+  }, {
+    jp: "格差問題",
+    reading: "かくさもんだい",
+    id: "masalah kesenjangan"
+  }, {
+    jp: "差別問題",
+    reading: "さべつもんだい",
+    id: "masalah diskriminasi"
+  }, {
+    jp: "孤立化",
+    reading: "こりつか",
+    id: "isolasi sosial"
+  }, {
+    jp: "社会的分断",
+    reading: "しゃかいてきぶんだん",
+    id: "perpecahan sosial"
+  }, {
+    jp: "社会不安",
+    reading: "しゃかいふあん",
+    id: "keresahan sosial"
+  }, {
+    jp: "社会的圧力",
+    reading: "しゃかいてきあつりょく",
+    id: "tekanan sosial"
+  }, {
+    jp: "周縁化",
+    reading: "しゅうえんか",
+    id: "marjinalisasi"
+  }, {
+    jp: "世代間対立",
+    reading: "せだいかんたいりつ",
+    id: "konflik antargenerasi"
+  }],
+  "Kosakata Formal Rapat & Diskusi": [{
+    jp: "議事進行",
+    reading: "ぎじしんこう",
+    id: "jalannya rapat"
+  }, {
+    jp: "採決",
+    reading: "さいけつ",
+    id: "pemungutan suara"
+  }, {
+    jp: "挙手",
+    reading: "きょしゅ",
+    id: "angkat tangan"
+  }, {
+    jp: "発言権",
+    reading: "はつげんけん",
+    id: "hak berbicara"
+  }, {
+    jp: "司会進行",
+    reading: "しかいしんこう",
+    id: "memandu jalannya acara"
+  }, {
+    jp: "休憩を挟む",
+    reading: "きゅうけいをはさむ",
+    id: "menyisipkan istirahat"
+  }, {
+    jp: "議論を交わす",
+    reading: "ぎろんをかわす",
+    id: "saling berdiskusi"
+  }, {
+    jp: "多数決",
+    reading: "たすうけつ",
+    id: "suara terbanyak"
+  }, {
+    jp: "反対意見",
+    reading: "はんたいいけん",
+    id: "pendapat yang menentang"
+  }, {
+    jp: "賛成多数",
+    reading: "さんせいたすう",
+    id: "mayoritas setuju"
+  }, {
+    jp: "議論が白熱する",
+    reading: "ぎろんがはくねつする",
+    id: "diskusi memanas"
+  }],
+  "Kata Sifat Formal Menyatakan Tingkat": [{
+    jp: "甚大",
+    reading: "じんだい",
+    id: "sangat besar"
+  }, {
+    jp: "軽微",
+    reading: "けいび",
+    id: "ringan, kecil"
+  }, {
+    jp: "多大",
+    reading: "ただい",
+    id: "sangat banyak"
+  }, {
+    jp: "僅少",
+    reading: "きんしょう",
+    id: "sangat sedikit"
+  }, {
+    jp: "最小限",
+    reading: "さいしょうげん",
+    id: "minimum"
+  }, {
+    jp: "相当",
+    reading: "そうとう",
+    id: "cukup besar, setara"
+  }, {
+    jp: "いささか",
+    reading: "いささか",
+    id: "sedikit"
+  }, {
+    jp: "並外れた",
+    reading: "なみはずれた",
+    id: "luar biasa, di luar rata-rata"
+  }, {
+    jp: "桁外れ",
+    reading: "けたはずれ",
+    id: "jauh melampaui skala biasa"
+  }, {
+    jp: "破格",
+    reading: "はかく",
+    id: "luar biasa (di luar standar)"
+  }, {
+    jp: "尋常でない",
+    reading: "じんじょうでない",
+    id: "tidak biasa"
+  }]
+};
