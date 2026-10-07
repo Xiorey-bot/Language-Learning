@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
-
 /* ===== Tema Terang (default) ===== */
 :root, .nm-root {
   --ink: #3A2418; --paper: #FFF3E6; --line: #F5DCC0;
@@ -18,7 +16,7 @@
    sehingga berlapis rapi dan menyatu. Kelima warna aksen (sakura/sora/matcha/yuzu/momiji) tetap di keluarga hue
    masing-masing, tetapi diset ke tingkat kecerahan (luminans) yang SAMA — jadi tidak ada satu warna yang terasa
    lebih "menyala" dari yang lain. Tint = hue aksen yang sama, sangat gelap & kurang jenuh, untuk latar lencana. */
-html.dark :root, html.dark, body.dark {
+html.dark, body.dark {
   --ink: #F0F2F9; --paper: #0B0E1C; --wash: #121628; --line: #333957;
   --card-bg: #1B2037;
   --text-secondary: #A0A6C5; --text-body: #CDD1E5; --text-muted: #484F75;
@@ -51,8 +49,8 @@ button, input, select, textarea { color: inherit; font: inherit; }
   background: var(--card-bg); border-top: 2px solid var(--line); border-radius: 0 0 20px 20px; }
 .nm-bottomnav-item { display: flex; flex-direction: column; align-items: center; gap: 3px;
   font-family: 'Zen Maru Gothic', sans-serif; font-size: 10.5px; font-weight: 700;
-  background: none; border: none; color: #B8AEA3; cursor: pointer; padding: 4px 2px; flex: 1;
-  transition: color 0.15s ease; }
+  background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: 4px 2px; flex: 1;
+  transition: color 0.15s ease, transform 0.15s ease; }
 .nm-bottomnav-item.active { color: var(--tab-color, var(--sakura)); }
 .nm-bottomnav-item.active .nm-bottomnav-icon { background: var(--tab-color, var(--sakura)); border-radius: 10px; }
 .nm-bottomnav-item.active .nm-bottomnav-icon svg { stroke: #fff; }
@@ -68,17 +66,9 @@ button, input, select, textarea { color: inherit; font: inherit; }
 .nm-item:last-child { border-bottom: none; }
 .nm-lvl-btn { font-family: 'Shippori Mincho', serif; font-size: 15px; font-weight: 700;
   padding: 8px 14px; border-radius: 12px; border: 2px solid var(--line);
-  background: var(--card-bg); cursor: pointer; color: var(--ink); }
+  background: var(--card-bg); cursor: pointer; color: var(--ink);
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease; }
 .nm-lvl-btn.active { background: var(--sakura); color: #fff; border-color: var(--sakura); }
-.nm-kana-tile { display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 3px; width: 54px; height: 54px; border-radius: 14px; border: 2px solid var(--line);
-  cursor: pointer; background: var(--card-bg); transition: all 0.12s ease; }
-.nm-kana-tile.known { background: var(--sora); border-color: var(--sora); }
-.nm-kana-tile.known span { color: #fff !important; }
-.nm-day-pill { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center;
-  justify-content: center; font-size: 11px; font-weight: 700; border: 2px solid var(--line); cursor: pointer;
-  background: var(--card-bg); color: var(--ink); }
-.nm-day-pill.done { background: var(--yuzu); color: #fff; border-color: var(--yuzu); }
 .nm-title { font-family: 'Shippori Mincho', serif; font-weight: 700; }
 svg.acjk { width: 100%; height: 100%; display: block; }
 @keyframes nm-stroke-zk { to { stroke-dashoffset: 0; } }
@@ -87,16 +77,8 @@ svg.acjk { width: 100%; height: 100%; display: block; }
 .nm-card-tap { transition: transform 0.15s ease, box-shadow 0.15s ease; cursor: pointer; }
 .nm-card-tap:active { transform: scale(0.985); }
 
-.nm-lvl-btn { transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease; }
 .nm-lvl-btn:active { transform: scale(0.92); }
 
-.nm-day-pill { transition: transform 0.15s ease, background 0.15s ease; }
-.nm-day-pill:active { transform: scale(0.88); }
-
-.nm-kana-tile { transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease; }
-.nm-kana-tile:active { transform: scale(0.94); }
-
-.nm-bottomnav-item { transition: transform 0.15s ease; }
 .nm-bottomnav-item:active { transform: scale(0.88); }
 .nm-bottomnav-item.active .nm-bottomnav-icon { animation: nm-bounce 0.35s ease; }
 @keyframes nm-bounce {
@@ -147,7 +129,7 @@ button:active { transform: scale(0.96); }
   --shadow-lg: 0 14px 34px rgba(58, 36, 24, 0.16);
   --focus-ring: var(--sora);
 }
-html.dark :root, html.dark {
+html.dark {
   --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.35);
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.38);
   --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.42);
@@ -156,9 +138,9 @@ html.dark :root, html.dark {
 
 /* --- Aksesibilitas: cincin fokus jelas untuk navigasi keyboard --- */
 button:focus-visible, [tabindex]:focus-visible, a:focus-visible, input:focus-visible {
-  outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 8px;
+  outline: 3px solid var(--focus-ring); outline-offset: 2px;
 }
-/* Sentuh nyaman di HP: semua tombol interaktif minimal ~40px, kecuali tombol ghost/ikon kecil bertanda .nm-btn-ghost/.nm-icon-btn-sm */
+/* Sentuh nyaman di HP: semua tombol minimal 36px (tombol ghost .nm-btn-ghost boleh 32px) */
 button { min-height: 36px; }
 
 /* --- Shell aplikasi: melebar penuh di HP, dibatasi & ditengahkan di tablet/desktop --- */
@@ -204,7 +186,6 @@ button { min-height: 36px; }
 .nm-btn-ghost { background: none; border: none; color: var(--text-secondary); padding: 6px 4px; min-height: 32px; }
 @media (hover: hover) { .nm-btn-ghost:hover:not(:disabled) { color: var(--momiji); } }
 .nm-btn:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; transform: none; }
-.nm-btn-block { width: 100%; }
 .nm-btn-sm { padding: 7px 12px; font-size: 12px; min-height: 34px; }
 
 /* ============================= Kartu pilihan jawaban (.nm-choice) ============================= */
@@ -371,7 +352,6 @@ button { min-height: 36px; }
 /* ============================= Penyelarasan tema gelap ============================= */
 /* Latar tiap tab di mode gelap seragam (bukan beda hue per tab) */
 html.dark .nm-tab-wrap { background: var(--wash) !important; }
-html.dark .nm-bottomnav-item:not(.active) { color: var(--text-secondary); }
 html.dark .nm-card::after { opacity: 0.4; filter: saturate(0.5); }
 /* Kartu level di tab Learning: gelap dengan semburat warna levelnya, bukan blok warna terang penuh */
 html.dark .nm-lvlcard {
@@ -419,7 +399,6 @@ html.dark .nm-lvlmark { color: color-mix(in srgb, var(--lc) 26%, transparent) !i
     flex: none; flex-direction: row; justify-content: center; gap: 8px;
     min-height: 44px; padding: 6px 16px 6px 6px; border-radius: 999px; font-size: 14px; white-space: nowrap;
   }
-  .nm-bottomnav-item:not(.active) { color: var(--text-secondary); }
   .nm-bottomnav-item.active { background: color-mix(in srgb, var(--tab-color, var(--sakura)) 14%, transparent); }
   .nm-bottomnav-icon { flex: none; width: 40px; height: 32px; border-radius: 999px; }
   .nm-bottomnav-item.active .nm-bottomnav-icon { border-radius: 999px; }
@@ -506,3 +485,136 @@ html.dark .nm-flash-overlay { background: rgba(5, 8, 20, 0.7); }
 }
 @keyframes nm-flashIn { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .nm-flash-face { transition: none; } .nm-flash-overlay { animation: none; } }
+
+/* ================================================================== */
+/* === Penyempurnaan UI/UX (Oktober 2026)                           === */
+/* === Murni tambahan di style.css: tidak mengubah app.js/dist,     === */
+/* === jadi tidak perlu kompilasi ulang.                            === */
+/* ================================================================== */
+
+/* --- Tipografi: judul pecah baris seimbang, paragraf tanpa kata yatim --- */
+.nm-title, h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* --- Sentuhan: tanpa kilatan abu-abu saat tap, tanpa jeda 300ms --- */
+button, .nm-card-tap, .nm-item, .nm-wr-cell {
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+
+/* --- Navigasi bawah (HP & tablet): bayangan tipis di atas, label sedikit lebih besar --- */
+@media (max-width: 1023px) {
+  .nm-bottomnav { z-index: 30; box-shadow: 0 -6px 18px rgba(58, 36, 24, 0.07); }
+  html.dark .nm-bottomnav { box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.35); }
+  .nm-bottomnav-item { font-size: 11px; min-height: 48px; }
+}
+
+/* --- Kalender: tanggal tanpa aktivitas dibuat ringan (bukan blok krem penuh yang terkesan nonaktif),
+       supaya tanggal beraktivitas (kuning) dan hari ini langsung menonjol --- */
+.nm-t-cal div[style*="aspect-ratio: 1"][style*="background: var(--line)"] {
+  background: var(--paper) !important; box-shadow: inset 0 0 0 1.5px var(--line);
+  transition: box-shadow 0.15s ease, transform 0.12s ease;
+}
+.nm-t-cal div[style*="aspect-ratio: 1"]:active { transform: scale(0.92); }
+@media (hover: hover) {
+  .nm-t-cal div[style*="aspect-ratio: 1"]:hover { box-shadow: inset 0 0 0 2px var(--yuzu); }
+}
+/* panah ganti bulan: area sentuh 40px + umpan balik hover */
+.nm-t-cal > div:first-child > button {
+  min-width: 40px; min-height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+@media (hover: hover) { .nm-t-cal > div:first-child > button:hover { background: var(--paper); } }
+
+/* --- Aksara: kartu progres + tombol Hiragana/Katakana ---
+       cincin progres tidak lagi tergencet; di layar sempit tombol turun ke baris sendiri selebar penuh */
+.nm-card > svg { flex-shrink: 0; }
+.nm-card:has(> div > .nm-lvl-btn) { flex-wrap: wrap; row-gap: 12px; }
+.nm-card:has(> div > .nm-lvl-btn) > div:has(> .nm-lvl-btn) { gap: 8px !important; }
+@media (max-width: 520px) {
+  .nm-card:has(> div > .nm-lvl-btn) > div:has(> .nm-lvl-btn) { flex: 1 0 100%; }
+  .nm-card:has(> div > .nm-lvl-btn) > div > .nm-lvl-btn { flex: 1; min-height: 40px; }
+}
+
+/* --- Aksara: ubin kana (dan ubin kanji di tab Learning, tampilannya disamakan) ---
+       tulisan "ketuk untuk lihat" yang berulang di tiap ubin disembunyikan (petunjuknya sudah ada di kartu atas),
+       dan tanda "sudah hafal" di pojok diberi area sentuh yang lebih lega */
+.nm-d-g5 > div > span[style*="font-size: 10px"],
+.nm-d-g6 > div > span[style*="font-size: 10px"],
+[class^="nm-d-kana-"] > div > span[style*="font-size: 10px"] { display: none; }
+.nm-d-g5 > div > span:first-child,
+.nm-d-g6 > div > span:first-child,
+[class^="nm-d-kana-"] > div > span:first-child {
+  top: 0 !important; right: 0 !important; padding: 6px; display: flex;
+}
+.nm-d-g5 > div, .nm-d-g6 > div, [class^="nm-d-kana-"] > div { min-height: 72px !important; }
+@media (hover: hover) {
+  .nm-d-g5 > div:hover, [class^="nm-d-kana-"] > div:hover {
+    border-color: var(--sora) !important; transform: translateY(-2px); box-shadow: var(--shadow-xs);
+  }
+}
+.nm-d-g5 > div:active, .nm-d-g6 > div:active, [class^="nm-d-kana-"] > div:active { transform: scale(0.95); }
+@media (hover: hover) {
+  .nm-d-g6 > div:hover { border-color: var(--matcha) !important; transform: translateY(-2px); box-shadow: var(--shadow-xs); }
+}
+/* Kanji: 5 kolom di HP & tablet seperti kana (di desktop tetap 6 kolom dari aturan di atas) */
+@media (max-width: 1023px) {
+  .nm-d-g6 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+}
+
+/* Gojūon selalu 5 kolom (a-i-u-e-o sebaris) di semua ukuran layar, dan baris ya / wa / n ditaruh di kolom
+   yang benar seperti tabel kana baku: や・ゆ・よ di kolom a-u-o, わ di kolom a, を di kolom o, ん sendiri. */
+.nm-d-g5, .nm-d-kana-dakuten, .nm-d-kana-handakuten { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+.nm-d-g5 > div:nth-child(36), .nm-d-g5 > div:nth-child(44), .nm-d-g5 > div:nth-child(46) { grid-column: 1; }
+.nm-d-g5 > div:nth-child(37) { grid-column: 3; }
+.nm-d-g5 > div:nth-child(38), .nm-d-g5 > div:nth-child(45) { grid-column: 5; }
+
+/* ============================= HP (< 700px) ============================= */
+@media (max-width: 699px) {
+  /* Rangka lebih hemat tepi: tiga lapis padding (rangka + panel + kartu) sebelumnya memakan ~90px lebar layar */
+  .nm-app-shell { padding: 12px !important; border-radius: 0 !important; }
+  .nm-app-shell > .nm-root { margin-bottom: 12px !important; padding: 14px !important; }
+  .nm-tab-wrap { padding: 10px !important; border-radius: 18px !important; }
+  .nm-card { padding: 15px 15px; }
+  .nm-bottomnav { margin: 12px -12px -12px; border-radius: 0; }
+
+  /* Ubin kana lebih rapat supaya 5 kolom muat nyaman di layar HP */
+  .nm-d-g5, .nm-d-g6, .nm-d-kana-dakuten, .nm-d-kana-handakuten { gap: 6px !important; }
+  .nm-d-g5 > div, .nm-d-g6 > div, .nm-d-kana-dakuten > div, .nm-d-kana-handakuten > div {
+    min-height: 66px !important; padding: 16px 2px 6px !important; border-radius: 14px !important;
+  }
+  .nm-d-g6 > div > .nm-title { font-size: 28px !important; }
+  .nm-d-g5 > div > .nm-title, .nm-d-kana-dakuten > div > .nm-title, .nm-d-kana-handakuten > div > .nm-title { font-size: 25px !important; }
+  .nm-d-g6 > div > span:first-child, .nm-d-g5 > div > span:first-child, .nm-d-kana-dakuten > div > span:first-child, .nm-d-kana-handakuten > div > span:first-child { padding: 4px; }
+
+  /* Beranda: streak & target rapat dan sejajar */
+  .nm-home-hero > div:last-child > div { gap: 6px 14px !important; }
+}
+
+/* --- Hormati "kurangi gerakan" di sistem: animasi hiasan & transisi dimatikan.
+       Animasi urutan goresan (svg.acjk) dikecualikan karena itu isi pelajaran, bukan hiasan. --- */
+@media (prefers-reduced-motion: reduce) {
+  *:not(svg.acjk, svg.acjk *), *:not(svg.acjk, svg.acjk *)::before, *:not(svg.acjk, svg.acjk *)::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+  }
+}
+
+/* Kartu "Cadangan progres" (tab Tracker): jarak dari kartu di atasnya di HP; di desktop jarak diatur oleh grid */
+.nm-t-backup { margin-top: 12px; }
+@media (min-width: 1024px) { .nm-t-backup { margin-top: 0; } }
+
+/* --- Kolom isian (pencarian kosakata, target mingguan, rutinitas) mengikuti tema ---
+       Tanpa ini browser memberi latar putih bawaan, sehingga di mode gelap teks terang (--ink) jadi putih di atas putih.
+       Gaya inline yang sudah menyetel latar sendiri tetap menang karena spesifisitasnya lebih tinggi. */
+input:not([type="file"]):not([type="checkbox"]):not([type="radio"]), textarea, select {
+  background-color: var(--card-bg); color: var(--ink);
+}
+input::placeholder, textarea::placeholder { color: var(--text-secondary); opacity: 0.85; }
+html.dark input, html.dark textarea, html.dark select { color-scheme: dark; }
+input:not([type="file"]):focus, textarea:focus { border-color: var(--momiji) !important; }
+
+/* --- Goresan kanji/kana (animasi urutan tulis) di mode gelap ---
+       SVG-nya membawa gaya sendiri (goresan hitam #000, panduan abu-abu #ccc) sehingga di kartu gelap hampir tak terlihat.
+       Warna diganti mengikuti tema; animasi tetap berjalan karena hanya warna yang diubah. */
+html.dark svg.acjk path[clip-path] { stroke: var(--ink) !important; }
+html.dark svg.acjk path[id] { fill: var(--line) !important; }

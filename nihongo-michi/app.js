@@ -755,6 +755,21 @@ function kanjiExclusiveByLevel() {
   return out;
 }
 
+// Total kanji kumulatif (unik) dari N5 sampai level ke-index. Daftar N4 dan N3 sudah memuat level sebelumnya,
+// sedangkan N2-N1 hanya berisi kanji barunya, jadi dihitung lewat gabungan unik supaya konsisten.
+function kanjiCumulativeCount(index) {
+  const seen = new Set();
+  for (let i = 0; i <= index && i < LEVELS.length; i++) LEVELS[i].kanji.forEach(k => seen.add(k));
+  return seen.size;
+}
+function kanjiCumulativeLabel(index) {
+  if (index <= 0) return LEVELS[0].label;
+  return `${LEVELS[0].label}–${index === LEVELS.length - 1 ? "N1" : LEVELS[index].label}`;
+}
+const kanjiFmt = (n) => n.toLocaleString("id-ID");
+// Hanya kanji yang punya data goresan (WRITING_STROKES) yang bisa dilatih menulis; kanji tambahan 2026-10-07 belum punya.
+const canWriteKanji = (k) => typeof WRITING_STROKES !== "undefined" && !!WRITING_STROKES[k];
+
 // Susunan kana untuk pemilih huruf: dasar (46, berbaris sesuai tabel), dakuten+handakuten (25), dan huruf kecil/tambahan.
 function kanaWritingSets(script) {
   const isH = script === "hiragana";
@@ -1659,6 +1674,164 @@ function SusunKataGame({ onExit }) {
   );
 }
 
+// Rutinitas harian yang bisa diatur sendiri: tambah / ubah nama & menit / hapus target, atau kembali ke bawaan (DAILY_TASKS).
+const DAILY_MAX_TASKS = 12;
+const dailyClampMin = (v) => Math.max(1, Math.min(600, Math.round(Number(v)) || 1));
+function DailyRoutine({ tasks, setTasks, todayDaily, toggleDaily, streak }) {
+  const [editing, setEditing] = useState(false);
+  const [label, setLabel] = useState("");
+  const [minutes, setMinutes] = useState("10");
+  const inputStyle = { border: "1.5px solid var(--line)", background: "var(--card-bg)", color: "inherit", borderRadius: 10, padding: "8px 10px", fontFamily: "inherit", fontSize: 14, minWidth: 0 };
+  const update = (id, patch) => setTasks(prev => prev.map(t => t.id === id ? { ...t, ...patch } : t));
+  const remove = (id) => setTasks(prev => prev.filter(t => t.id !== id));
+  const add = () => {
+    const text = label.trim();
+    if (!text || tasks.length >= DAILY_MAX_TASKS) return;
+    setTasks(prev => [...prev, { id: "c" + Date.now(), label: text.slice(0, 40), minutes: dailyClampMin(minutes) }]);
+    setLabel(""); setMinutes("10");
+  };
+  const reset = () => setTasks(DAILY_TASKS.map(t => ({ ...t })));
+  const finishEditing = () => {
+    // rapikan isian yang dibiarkan kosong sebelum keluar dari mode atur
+    setTasks(prev => prev.map(t => ({ ...t, label: String(t.label).trim() || "Target", minutes: dailyClampMin(t.minutes) })));
+    setEditing(false);
+  };
+  const doneCount = tasks.filter(t => todayDaily[t.id]).length;
+  const totalMin = tasks.reduce((s, t) => s + dailyClampMin(t.minutes), 0);
+  const doneMin = tasks.filter(t => todayDaily[t.id]).reduce((s, t) => s + dailyClampMin(t.minutes), 0);
+
+  return (
+    <>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 6 }}>
+        <p style={{ fontSize: 18, fontWeight: 700, margin: 0, color: "var(--ink)" }}>Rutinitas hari ini</p>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span aria-label={`Streak ${streak} hari`} style={{
+            display: "inline-flex", alignItems: "center", gap: 5, flex: "none",
+            background: "var(--momiji-tint)", border: "1.5px solid var(--momiji)", borderRadius: 999,
+            padding: "4px 12px", fontSize: 13, fontWeight: 700, color: "var(--ink)",
+          }}>🔥 Streak</span>
+          <button className="nm-btn nm-btn-sm nm-btn-secondary" onClick={() => (editing ? finishEditing() : setEditing(true))}>
+            {editing ? "✓ Selesai" : "✎ Atur"}
+          </button>
+        </div>
+      </div>
+      <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "0 0 12px" }}>
+        {tasks.length === 0 ? "Belum ada target — tekan Atur untuk menambah." : `${doneCount}/${tasks.length} selesai · ${doneMin} dari ${totalMin} menit`}
+      </p>
+
+      {!editing && tasks.map(t => {
+        const on = !!todayDaily[t.id];
+        return (
+          <button key={t.id} role="checkbox" aria-checked={on} onClick={() => toggleDaily(t.id)}
+            style={{
+              display: "flex", alignItems: "center", gap: 12, width: "100%", textAlign: "left",
+              padding: "12px 14px", marginBottom: 10, borderRadius: 12, cursor: "pointer",
+              border: "1.5px solid var(--line)", background: "var(--paper)",
+              fontFamily: "inherit", color: "inherit",
+            }}>
+            <span style={{
+              width: 26, height: 26, borderRadius: 7, flex: "none", display: "flex", alignItems: "center", justifyContent: "center",
+              background: on ? "var(--matcha)" : "var(--card-bg)",
+              border: on ? "1.5px solid var(--matcha)" : "1.5px solid var(--line)",
+            }}>
+              {on && <Check size={15} color="#FFFFFF" aria-hidden="true" />}
+            </span>
+            <span style={{
+              flex: 1, fontSize: 16, fontWeight: 600,
+              color: on ? "var(--text-secondary)" : "var(--ink)",
+              textDecoration: on ? "line-through" : "none",
+            }}>{t.label}</span>
+            <span style={{ fontSize: 13, color: "var(--text-secondary)" }}>{t.minutes} menit</span>
+          </button>
+        );
+      })}
+
+      {editing && (
+        <div>
+          {tasks.map(t => (
+            <div key={t.id} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+              <input aria-label="Nama target" value={t.label} maxLength={40} onChange={e => update(t.id, { label: e.target.value })}
+                style={{ ...inputStyle, flex: 1 }} />
+              <input aria-label={`Menit untuk ${t.label}`} inputMode="numeric" value={t.minutes}
+                onChange={e => { const v = e.target.value.replace(/\D/g, "").slice(0, 3); update(t.id, { minutes: v === "" ? "" : Number(v) }); }}
+                onBlur={() => update(t.id, { minutes: dailyClampMin(t.minutes) })}
+                style={{ ...inputStyle, width: 56, textAlign: "center" }} />
+              <span style={{ fontSize: 12, color: "var(--text-secondary)" }}>menit</span>
+              <button aria-label={`Hapus ${t.label}`} onClick={() => remove(t.id)} className="nm-btn nm-btn-ghost"
+                style={{ width: 36, minHeight: 36, padding: 0, flex: "none" }}>✕</button>
+            </div>
+          ))}
+          {tasks.length < DAILY_MAX_TASKS ? (
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4 }}>
+              <input aria-label="Target baru" placeholder="Target baru…" value={label} maxLength={40}
+                onChange={e => setLabel(e.target.value)} onKeyDown={e => { if (e.key === "Enter") add(); }}
+                style={{ ...inputStyle, flex: 1 }} />
+              <input aria-label="Menit target baru" inputMode="numeric" value={minutes}
+                onChange={e => setMinutes(e.target.value.replace(/\D/g, "").slice(0, 3))}
+                style={{ ...inputStyle, width: 56, textAlign: "center" }} />
+              <button className="nm-btn nm-btn-sm nm-btn-primary" onClick={add} disabled={!label.trim()}>+ Tambah</button>
+            </div>
+          ) : (
+            <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: 0 }}>Maksimal {DAILY_MAX_TASKS} target.</p>
+          )}
+          <button className="nm-btn nm-btn-ghost" onClick={reset} style={{ marginTop: 10, fontSize: 12 }}>↺ Kembalikan ke bawaan</button>
+        </div>
+      )}
+    </>
+  );
+}
+
+// Cadangan progres: ekspor seluruh progres ke file JSON dan impor kembali (progres hanya tersimpan di browser ini).
+function BackupCard({ buildSnapshot, applySnapshot }) {
+  const [msg, setMsg] = useState(null);   // { ok, text }
+  const fileRef = React.useRef(null);
+  const exportData = () => {
+    try {
+      const blob = new Blob([JSON.stringify(buildSnapshot(), null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const d = new Date();
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `nihongo-michi-progres-${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}.json`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setMsg({ ok: true, text: "Cadangan disimpan ke file. Simpan file itu di tempat yang aman." });
+    } catch (e) { setMsg({ ok: false, text: "Gagal membuat file cadangan." }); }
+  };
+  const importData = (e) => {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) { setMsg({ ok: false, text: "File terlalu besar untuk cadangan Nihongo Michi." }); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(String(reader.result));
+        if (!data || typeof data !== "object" || Array.isArray(data) || data.v !== 1) throw new Error("format");
+        if (!window.confirm("Ganti progres yang ada sekarang dengan isi file ini?")) return;
+        applySnapshot(data);
+        setMsg({ ok: true, text: "Progres berhasil dipulihkan dari file." });
+      } catch (err) { setMsg({ ok: false, text: "File tidak dikenali sebagai cadangan Nihongo Michi." }); }
+    };
+    reader.onerror = () => setMsg({ ok: false, text: "File tidak bisa dibaca." });
+    reader.readAsText(file);
+  };
+  return (
+    <div className="nm-card nm-t-backup" style={{ marginBottom: 12, gridColumn: "1 / -1" }}>
+      <p style={{ fontSize: 14, fontWeight: 700, margin: "0 0 4px" }}>💾 Cadangan progres</p>
+      <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: "0 0 12px", lineHeight: 1.5 }}>
+        Progresmu tersimpan di browser ini saja. Simpan ke file supaya aman saat ganti HP atau membersihkan data browser.
+      </p>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <button className="nm-btn nm-btn-sm nm-btn-secondary" onClick={exportData}>⬇ Ekspor ke file</button>
+        <button className="nm-btn nm-btn-sm nm-btn-secondary" onClick={() => fileRef.current && fileRef.current.click()}>⬆ Impor dari file</button>
+        <input ref={fileRef} type="file" accept=".json,application/json" onChange={importData} style={{ display: "none" }} aria-label="Pilih file cadangan" />
+      </div>
+      {msg && <p role="status" style={{ fontSize: 12, margin: "10px 0 0", color: msg.ok ? "var(--matcha)" : "var(--sakura)", fontWeight: 700 }}>{msg.text}</p>}
+    </div>
+  );
+}
+
 function NihongoMichi() {
   const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
@@ -1702,6 +1875,10 @@ function NihongoMichi() {
   const [ujianSimTimeLeft, setUjianSimTimeLeft] = useState(0);
   const [ujianSimResults, setUjianSimResults] = useState([]);
   const [ujianSimAllDone, setUjianSimAllDone] = useState(false);
+  // Sesi ujian yang dijeda (keluar di tengah pengerjaan). Disimpan di kunci sendiri, terpisah dari
+  // snapshot progres, dan hanya berisi jawaban + posisi soal; soalnya dibangun ulang saat dilanjutkan.
+  const UJIAN_SESI_KEY = "nihongo-michi-ujian-sesi-v1";
+  const [ujianSaved, setUjianSaved] = useState(() => skLoad(UJIAN_SESI_KEY, null));
   const UJIAN_SECTIONS = [
     { id: "mojigoi", label: "文字・語彙", desc: "もんだい1-4", count: 33, simMinutes: 20 },
     { id: "bunpou_dokkai", label: "文法・読解", desc: "もんだい1-6", count: 32, simMinutes: 40 },
@@ -1792,6 +1969,10 @@ function NihongoMichi() {
       .filter(y => normalizeUjianSection(levelId, y, sectionId).length > 0);
   };
 
+  const ujianSectionSecs = (section) => {
+    const secDef = UJIAN_SECTIONS.find(s => s.id === section);
+    return (secDef ? secDef.simMinutes : 0) * 60;
+  };
   const startUjian = (section, simModeArg, levelOverride, yearOverride) => {
     const qs = normalizeUjianSection(levelOverride || ujianLevel, String(yearOverride || ujianYear), section);
     const useSim = simModeArg !== undefined ? simModeArg : ujianSimMode;
@@ -1799,10 +1980,10 @@ function NihongoMichi() {
     setUjianQuestions(qs);
     setUjianIdx(0); setUjianSel(null); setUjianScore(0); setUjianDone(false); setUjianAnswersMap({}); setShowUjianPembahasan(false); setShowUjianScript(false);
     setUjianSimMode(useSim);
-    if (useSim) {
-      const secDef = UJIAN_SECTIONS.find(s => s.id === section);
-      setUjianSimTimeLeft((secDef ? secDef.simMinutes : 0) * 60);
-    } else {
+    // Timer berlaku untuk simulasi DAN latihan per kategori (Mojigoi/Dokkai/Choukai): durasinya
+    // mengikuti bagian ujian yang dikerjakan (20/40/20 menit).
+    setUjianSimTimeLeft(ujianSectionSecs(section));
+    if (!useSim) {
       setUjianSimResults([]);
       setUjianSimAllDone(false);
     }
@@ -1870,20 +2051,88 @@ function NihongoMichi() {
       setUjianSimAllDone(true);
     }
   };
+  // Keluar dari layar ujian TIDAK menghapus progres: effect penyimpanan di bawah sudah menulis
+  // keadaan terakhir, jadi di sini cukup membaca ulang untuk menampilkan kartu "Lanjutkan".
   const exitUjianSection = () => {
     setUjianYear(null);
     setUjianSection(null); setUjianQuestions([]); setUjianDone(false); setShowUjianPembahasan(false);
     setUjianSimMode(false); setUjianSimResults([]); setUjianSimAllDone(false); setUjianSimTimeLeft(0);
+    setUjianSaved(skLoad(UJIAN_SESI_KEY, null));
   };
+  const ujianClearSaved = () => {
+    try { localStorage.removeItem(UJIAN_SESI_KEY); } catch (e) { /* diabaikan */ }
+    setUjianSaved(null);
+  };
+  // Simpan otomatis tiap jawaban/soal/detik berubah. Tidak menyimpan sesi kosong (belum ada jawaban,
+  // masih di soal 1, bukan simulasi) supaya sesi yang dijeda tidak tertimpa hanya karena membuka latihan.
   useEffect(() => {
-    if (!ujianSimMode || !ujianSection || ujianDone) return;
+    if (!ujianSection || !ujianLevel || !ujianYear) return;
+    if (ujianSimAllDone) { ujianClearSaved(); return; }
+    if (ujianDone) return;
+    if (!ujianSimMode && ujianIdx === 0 && Object.keys(ujianAnswersMap).length === 0) return;
+    skSave(UJIAN_SESI_KEY, {
+      v: 1, cat: ujianCategory, level: ujianLevel, year: String(ujianYear), section: ujianSection,
+      idx: ujianIdx, answers: ujianAnswersMap, sim: ujianSimMode, timeLeft: ujianSimTimeLeft,
+      results: ujianSimResults.map(r => ({ id: r.id, label: r.label, answersMap: r.answersMap, score: r.score })),
+      savedAt: Date.now(),
+    });
+  }, [ujianSection, ujianLevel, ujianYear, ujianCategory, ujianIdx, ujianAnswersMap, ujianSimMode, ujianSimTimeLeft, ujianSimResults, ujianSimAllDone, ujianDone]);
+  // Lanjutkan sesi yang dijeda: bangun ulang soal dari data, lalu pulihkan posisi, jawaban, dan sisa waktu.
+  const resumeUjian = () => {
+    const s = ujianSaved;
+    if (!s || !s.level || !s.section) { ujianClearSaved(); return; }
+    const qs = normalizeUjianSection(s.level, String(s.year), s.section);
+    if (qs.length === 0) { ujianClearSaved(); return; }
+    const answers = s.answers || {};
+    const idx = Math.min(Math.max(Number(s.idx) || 0, 0), qs.length - 1);
+    const results = (s.results || []).map(r => ({ ...r, questions: normalizeUjianSection(s.level, String(s.year), r.id) }));
+    setUjianCategory(s.cat); setUjianLevel(s.level); setUjianYear(String(s.year)); setUjianSection(s.section);
+    setUjianQuestions(qs); setUjianIdx(idx); setUjianAnswersMap(answers);
+    setUjianSel(answers[idx] !== undefined ? answers[idx] : null);
+    setUjianScore(0); setUjianDone(false); setShowUjianPembahasan(false); setShowUjianScript(false);
+    // Sesi lama (sebelum latihan punya timer) tersimpan dengan timeLeft 0 -> beri durasi penuh agar tidak langsung ter-submit.
+    setUjianSimMode(!!s.sim); setUjianSimTimeLeft(Number(s.timeLeft) > 0 ? Number(s.timeLeft) : ujianSectionSecs(s.section));
+    setUjianSimResults(results); setUjianSimAllDone(false);
+    setLatihanMode("ujian");
+  };
+  // Kartu "Ujian dijeda" - dipakai di menu Latihan dan di layar pilih jenis latihan JLPT.
+  const renderUjianResume = () => {
+    const s = ujianSaved;
+    if (!s || ujianSection || !s.section) return null;
+    const lvLabel = String(s.level || "").toUpperCase();
+    const catDef = UJIAN_CATEGORIES.find(c => c.section === s.section);
+    const secDef = UJIAN_SECTIONS.find(x => x.id === s.section);
+    const no = getLatihanYears(s.level, s.section).indexOf(String(s.year)) + 1;
+    const title = s.sim ? `Simulasi Ujian ${lvLabel} · ${secDef ? secDef.label : s.section}` : `${catDef ? catDef.title : "Latihan"} · ${lvLabel}${no > 0 ? ` · Latihan ${no}` : ""}`;
+    const terjawab = Object.keys(s.answers || {}).length;
+    const sisa = Number(s.timeLeft) || 0;
+    return (
+      <div className="nm-card" style={{ borderLeft: "4px solid var(--momiji)", display: "flex", flexDirection: "column", gap: 8 }}>
+        <p style={{ fontSize: 13.5, fontWeight: 700, margin: 0 }}>⏸ Ujian dijeda</p>
+        <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: 0, lineHeight: 1.6 }}>
+          {title}<br />
+          Soal {(Number(s.idx) || 0) + 1} · {terjawab} soal sudah dijawab{sisa > 0 ? ` · sisa waktu ${String(Math.floor(sisa / 60)).padStart(2, "0")}:${String(sisa % 60).padStart(2, "0")}` : ""}
+        </p>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <button onClick={resumeUjian} className="nm-btn nm-btn-primary">Lanjutkan ujian</button>
+          <button onClick={() => { if (window.confirm("Buang progres ujian yang dijeda? Jawaban tidak bisa dikembalikan.")) ujianClearSaved(); }} className="nm-btn nm-btn-ghost">Buang</button>
+        </div>
+      </div>
+    );
+  };
+  // Timer simulasi berhenti saat pengguna keluar dari layar ujian (pindah tab aplikasi) atau saat
+  // halaman tersembunyi (aplikasi ke latar belakang), supaya waktu tidak habis selagi tidak mengerjakan.
+  useEffect(() => {
+    if (!ujianSection || ujianDone) return;
+    if (tab !== "latihan" || latihanMode !== "ujian") return;
     const t = setInterval(() => {
+      if (document.hidden) return;
       setUjianSimTimeLeft(prev => Math.max(0, prev - 1));
     }, 1000);
     return () => clearInterval(t);
-  }, [ujianSimMode, ujianSection, ujianDone]);
+  }, [ujianSection, ujianDone, tab, latihanMode]);
   useEffect(() => {
-    if (ujianSimMode && ujianSection && !ujianDone && ujianSimTimeLeft === 0) {
+    if (ujianSection && !ujianDone && ujianSimTimeLeft === 0) {
       submitUjianSection();
     }
   }, [ujianSimTimeLeft]);
@@ -1961,6 +2210,8 @@ function NihongoMichi() {
   // Rutinitas harian: { "2026-10-02": { d1: true, d3: true }, ... } -> tiap tanggal punya daftar sendiri,
   // jadi checklist otomatis mulai dari nol lagi di hari berikutnya.
   const [dailyLog, setDailyLog] = useState({});
+  // Daftar target rutinitas milik pengguna (awalnya salinan DAILY_TASKS); riwayat centang di dailyLog tetap per id.
+  const [dailyTasks, setDailyTasks] = useState(() => DAILY_TASKS.map(t => ({ ...t })));
   // Flashcard kanji & kana: { kind: "kanji" | "kana", cat, list, index }
   const [flash, setFlash] = useState(null);
   const [flashFlipped, setFlashFlipped] = useState(false);
@@ -1994,7 +2245,7 @@ function NihongoMichi() {
   const [hydrated, setHydrated] = useState(false);
   const buildSnapshot = () => ({
     v: 1, darkMode, checked, activityLog, weeklyGoals, weeklyHistory,
-    completedPracticeLevels, kanaCompletedLevels, writingDone, kanaKnown, dailyLog,
+    completedPracticeLevels, kanaCompletedLevels, writingDone, kanaKnown, dailyLog, dailyTasks,
   });
   const applySnapshot = (d) => {
     if (!d || typeof d !== "object" || Array.isArray(d)) return false;
@@ -2009,6 +2260,12 @@ function NihongoMichi() {
     if (isObj(d.writingDone)) setWritingDone(d.writingDone);
     if (isObj(d.kanaKnown)) setKanaKnown(d.kanaKnown);
     if (isObj(d.dailyLog)) setDailyLog(d.dailyLog);
+    if (Array.isArray(d.dailyTasks)) {
+      setDailyTasks(d.dailyTasks
+        .filter(t => isObj(t) && typeof t.id === "string" && typeof t.label === "string")
+        .slice(0, DAILY_MAX_TASKS)
+        .map(t => ({ id: t.id, label: t.label.slice(0, 40), minutes: dailyClampMin(t.minutes) })));
+    }
     return true;
   };
   useEffect(() => {
@@ -2021,7 +2278,7 @@ function NihongoMichi() {
   useEffect(() => {
     if (!hydrated) return;
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(buildSnapshot())); } catch (e) { /* diabaikan */ }
-  }, [hydrated, darkMode, checked, activityLog, weeklyGoals, weeklyHistory, completedPracticeLevels, kanaCompletedLevels, writingDone, kanaKnown, dailyLog]);
+  }, [hydrated, darkMode, checked, activityLog, weeklyGoals, weeklyHistory, completedPracticeLevels, kanaCompletedLevels, writingDone, kanaKnown, dailyLog, dailyTasks]);
   const speak = (text) => {
     try {
       if (!window.speechSynthesis) return;
@@ -2200,6 +2457,7 @@ function NihongoMichi() {
   };
   const toggleDaily = (taskId) => {
     const k = todayStr();
+    const turningOn = !(dailyLog[k] || {})[taskId];
     setDailyLog(prev => {
       const day = { ...(prev[k] || {}) };
       if (day[taskId]) delete day[taskId]; else day[taskId] = true;
@@ -2207,6 +2465,19 @@ function NihongoMichi() {
       if (Object.keys(day).length) next[k] = day; else delete next[k];
       return next;
     });
+    // Target rutinitas yang dicentang juga dihitung sebagai aktivitas belajar hari ini (streak & kalender),
+    // dan dicabut lagi bila centangnya dibatalkan.
+    const task = dailyTasks.find(t => t.id === taskId);
+    if (task) {
+      const label = `Rutinitas: ${task.label}`;
+      setActivityLog(prev => {
+        const list = (prev[k] || []).filter(x => x !== label);
+        if (turningOn) list.push(label);
+        const next = { ...prev };
+        if (list.length) next[k] = list; else delete next[k];
+        return next;
+      });
+    }
   };
   const addWeeklyGoal = () => {
     const text = newGoalText.trim();
@@ -2508,13 +2779,14 @@ function NihongoMichi() {
             <div className="nm-d-g4" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: 12 }}>
               {[
                 { id: "aksara", title: "Aksara", desc: `${kanaKnownCount}/${kanaTotalCount} dikuasai (${Math.round(kanaPct) || 0}%)`, icon: BookOpen, color: "sora" },
-                { id: "tracker", title: "Learning", desc: `${overallCount.done}/${overallCount.total} item · ${Math.round(overallPct) || 0}%`, icon: Book, color: "matcha" },
+                { id: "tracker", title: "Learning", desc: `${allLevelsPct}% dikuasai`, icon: Book, color: "matcha" },
                 { id: "rutinitas", title: "Tracker", desc: `streak ${streak} hari · ${allLevelsPct}% total progres`, icon: BarChart3, color: "yuzu" },
                 { id: "latihan", title: "Latihan", desc: examSection ? (quizDone ? `${quizScore}/${examQuestions.length} benar` : `Soal ${quizIdx + 1}/${examQuestions.length}`) : "Kosakata, Kanji & Grammar", icon: PenLine, color: "momiji" },
               ].map(card => {
                 const Icon = card.icon;
-                // Kartu "Learning" hanya menampilkan ringkasan progres (informasi) — tidak membuka tab Learning saat diklik.
-                const infoOnly = card.id === "tracker";
+                // Semua kartu pintasan bisa diklik (kartu "Learning" membuka tab Learning). infoOnly dibiarkan false
+                // supaya kartu bisa dijadikan informasi saja lagi bila perlu.
+                const infoOnly = false;
                 const Wrapper = infoOnly ? "div" : "button";
                 const wrapperProps = infoOnly
                   ? { style: { display: "block", textAlign: "left", border: "2px solid var(--line)", width: "100%" } }
@@ -2813,8 +3085,11 @@ function NihongoMichi() {
 
                       <div style={{ width: 32, height: 3, background: "rgba(255,255,255,0.5)", borderRadius: 2, margin: "2px 0 12px" }} />
 
-                      <p style={{ fontSize: 12.5, fontStyle: "italic", margin: "0 0 16px", opacity: 0.92, maxWidth: "80%", lineHeight: 1.5 }}>
+                      <p style={{ fontSize: 12.5, fontStyle: "italic", margin: "0 0 10px", opacity: 0.92, maxWidth: "80%", lineHeight: 1.5 }}>
                         "{l.tagline}"
+                      </p>
+                      <p style={{ fontSize: 12.5, fontWeight: 700, margin: "0 0 16px", opacity: 0.95 }}>
+                        📚 {kanjiFmt(kanjiCumulativeCount(i))} kanji kumulatif ({kanjiCumulativeLabel(i)})
                       </p>
 
                       <span className="nm-lvlpill" style={{
@@ -3013,6 +3288,12 @@ function NihongoMichi() {
                       <p style={{ fontSize: 13, fontWeight: 700, margin: 0 }}>{label}</p>
                       <p style={{ fontSize: 12, color: "var(--matcha)", margin: 0, fontWeight: 700 }}>{done}/{total} · {Math.round(pct)}%</p>
                     </div>
+                    {cat === "kanji" && (
+                      <p style={{ fontSize: 11.5, color: "var(--text-secondary)", margin: "0 0 8px", lineHeight: 1.5 }}>
+                        Total kumulatif {kanjiCumulativeLabel(LEVELS.indexOf(level))}: <b style={{ color: "var(--ink)" }}>{kanjiFmt(kanjiCumulativeCount(LEVELS.indexOf(level)))}</b> kanji
+                        {levelId === "n2n1" ? " · daftar di level ini hanya kanji barunya" : ""}
+                      </p>
+                    )}
                     <div style={{ height: 6, borderRadius: 4, background: "var(--line)", overflow: "hidden", marginBottom: 8 }}>
                       <div style={{ height: "100%", width: `${pct}%`, background: "var(--matcha)", borderRadius: 4, transition: "width 0.2s ease" }} />
                     </div>
@@ -3202,40 +3483,7 @@ function NihongoMichi() {
           return (
           <div className="nm-d-masonry">
             <div className="nm-card nm-t-rut" style={{ marginBottom: 12 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 14 }}>
-                <p style={{ fontSize: 18, fontWeight: 700, margin: 0, color: "var(--ink)" }}>Rutinitas hari ini</p>
-                <span aria-label={`Streak ${streak} hari`} style={{
-                  display: "inline-flex", alignItems: "center", gap: 5, flex: "none",
-                  background: "var(--momiji-tint)", border: "1.5px solid var(--momiji)", borderRadius: 999,
-                  padding: "4px 12px", fontSize: 13, fontWeight: 700, color: "var(--ink)",
-                }}>🔥 Streak</span>
-              </div>
-              {DAILY_TASKS.map(t => {
-                const on = !!todayDaily[t.id];
-                return (
-                  <button key={t.id} role="checkbox" aria-checked={on} onClick={() => toggleDaily(t.id)}
-                    style={{
-                      display: "flex", alignItems: "center", gap: 12, width: "100%", textAlign: "left",
-                      padding: "12px 14px", marginBottom: 10, borderRadius: 12, cursor: "pointer",
-                      border: "1.5px solid var(--line)", background: "var(--paper)",
-                      fontFamily: "inherit", color: "inherit",
-                    }}>
-                    <span style={{
-                      width: 26, height: 26, borderRadius: 7, flex: "none", display: "flex", alignItems: "center", justifyContent: "center",
-                      background: on ? "var(--matcha)" : "var(--card-bg)",
-                      border: on ? "1.5px solid var(--matcha)" : "1.5px solid var(--line)",
-                    }}>
-                      {on && <Check size={15} color="#FFFFFF" aria-hidden="true" />}
-                    </span>
-                    <span style={{
-                      flex: 1, fontSize: 16, fontWeight: 600,
-                      color: on ? "var(--text-secondary)" : "var(--ink)",
-                      textDecoration: on ? "line-through" : "none",
-                    }}>{t.label}</span>
-                    <span style={{ fontSize: 13, color: "var(--text-secondary)" }}>{t.minutes} menit</span>
-                  </button>
-                );
-              })}
+              <DailyRoutine tasks={dailyTasks} setTasks={setDailyTasks} todayDaily={todayDaily} toggleDaily={toggleDaily} streak={streak} />
             </div>
 
             <div className="nm-card nm-t-stat" style={{ marginBottom: 12 }}>
@@ -3439,6 +3687,7 @@ function NihongoMichi() {
                 );
               })()}
             </div>
+            <BackupCard buildSnapshot={buildSnapshot} applySnapshot={applySnapshot} />
           </div>
           );
         })()}
@@ -3454,6 +3703,7 @@ function NihongoMichi() {
           if (!latihanMode) {
             return (
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {renderUjianResume()}
                 <p style={{ fontSize: 12.5, color: "var(--text-secondary)", margin: "0 0 4px" }}>Mau latihan yang mana?</p>
                 <div className="nm-card nm-card-tap" style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}
                   onClick={() => { setKanaScript("hiragana"); setKanaQuizActive(true); }}>
@@ -3602,7 +3852,7 @@ function NihongoMichi() {
 
             // 1) pilih jenis huruf
             if (!writingScript) {
-              const kanjiCount = new Set(LEVELS.flatMap(l => l.kanji)).size;
+              const kanjiCount = [...new Set(LEVELS.flatMap(l => l.kanji))].filter(canWriteKanji).length;
               const hs = kanaWritingSets("hiragana"), ks = kanaWritingSets("katakana");
               const SCRIPTS = [
                 { id: "hiragana", title: "ひらがな Hiragana", desc: `Huruf dasar bahasa Jepang · ${hs.dasar.length + hs.dakuten.length + hs.kecil.length} huruf`, color: "sakura" },
@@ -3652,7 +3902,7 @@ function NihongoMichi() {
                       </div>
                       <div style={{ flex: 1 }}>
                         <p style={{ fontSize: 14, fontWeight: 700, margin: 0 }}>{l.name}</p>
-                        <p style={{ fontSize: 11.5, color: "var(--text-secondary)", margin: "2px 0 0" }}>{(kanjiEx[l.id] || []).length} kanji khusus level ini</p>
+                        <p style={{ fontSize: 11.5, color: "var(--text-secondary)", margin: "2px 0 0" }}>{(kanjiEx[l.id] || []).filter(canWriteKanji).length} kanji khusus level ini</p>
                       </div>
                       <ChevronRight size={16} color="var(--text-secondary)" aria-hidden="true" />
                     </div>
@@ -3825,6 +4075,7 @@ function NihongoMichi() {
                   <button onClick={() => { setLatihanMode(null); setUjianCategory(null); setUjianLevel(null); setUjianYear(null); }} className="nm-btn nm-btn-ghost" style={{ alignSelf: "flex-start", marginBottom: 2 }}>
                     <ChevronRight size={14} style={{ transform: "rotate(180deg)" }} aria-hidden="true" /> Ganti jenis latihan
                   </button>
+                  {renderUjianResume()}
                   <p style={{ fontSize: 12.5, color: "var(--text-secondary)", margin: "0 0 4px" }}>Pilih jenis latihan JLPT:</p>
                   {UJIAN_CATEGORIES.map(cat => {
                     const { color, Icon } = catStyle[cat.id];
@@ -3853,6 +4104,7 @@ function NihongoMichi() {
                   <button onClick={() => { setLatihanMode(null); setUjianCategory(null); setUjianLevel(null); setUjianYear(null); }} className="nm-btn nm-btn-ghost" style={{ alignSelf: "flex-start", marginBottom: 2 }}>
                     <ChevronRight size={14} style={{ transform: "rotate(180deg)" }} aria-hidden="true" /> Ganti jenis latihan
                   </button>
+                  {renderUjianResume()}
                   <p style={{ fontSize: 12.5, color: "var(--text-secondary)", margin: "0 0 4px" }}><b className="nm-title" style={{ color: "var(--ink)" }}>{ujianCatInfo.title}</b> — pilih level ujian JLPT:</p>
                   {["n5", "n4", "n3", "n2", "n1"].map(lvlId => {
                     const lvl = examLevelInfo(lvlId);
@@ -3892,6 +4144,7 @@ function NihongoMichi() {
                   <button onClick={() => setUjianLevel(null)} className="nm-btn nm-btn-ghost" style={{ alignSelf: "flex-start", marginBottom: 2 }}>
                     <ChevronRight size={14} style={{ transform: "rotate(180deg)" }} aria-hidden="true" /> Ganti level
                   </button>
+                  {renderUjianResume()}
                   <p style={{ fontSize: 12.5, color: "var(--text-secondary)", margin: "0 0 4px" }}>
                     <b className="nm-title" style={{ color: "var(--ink)" }}>{ujianCatInfo.title} · {lvl.label}</b> — pilih latihan:
                   </p>
@@ -3974,8 +4227,13 @@ function NihongoMichi() {
                 <button onClick={exitUjianSection} className="nm-btn nm-btn-ghost" style={{ marginBottom: 10 }}>
                   <ChevronRight size={13} style={{ transform: "rotate(180deg)" }} aria-hidden="true" /> {(UJIAN_CATEGORIES.find(c => c.section === ujianSection) || {}).title} · {examLevelInfo(ujianLevel).label} · Latihan {getLatihanYears(ujianLevel, ujianSection).indexOf(String(ujianYear)) + 1}
                 </button>
+                {!ujianDone && !ujianSimAllDone && (
+                  <p style={{ fontSize: 11, color: "var(--text-secondary)", margin: "-4px 0 10px", lineHeight: 1.5 }}>
+                    💾 Progres tersimpan otomatis. Boleh keluar kapan saja, lanjutkan dari menu Latihan — waktu berhenti selama kamu di luar layar ujian.
+                  </p>
+                )}
 
-                {ujianSimMode && !ujianDone && (() => {
+                {!ujianDone && !ujianSimAllDone && (() => {
                   const secDef = UJIAN_SECTIONS.find(s => s.id === ujianSection);
                   const totalSecs = (secDef ? secDef.simMinutes : 0) * 60;
                   const pctLeft = totalSecs > 0 ? (ujianSimTimeLeft / totalSecs) * 100 : 0;
@@ -4061,7 +4319,7 @@ function NihongoMichi() {
                     )}
                     {uq.table && (
                       <div style={{ marginBottom: 12, overflowX: "auto" }}>
-                        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5, background: "#fff", border: "1.5px solid var(--line)", borderRadius: 10, overflow: "hidden" }}>
+                        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5, background: "var(--card-bg)", border: "1.5px solid var(--line)", borderRadius: 10, overflow: "hidden" }}>
                           <thead>
                             <tr>
                               {uq.table.headers.map((h, hi) => (

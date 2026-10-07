@@ -1503,6 +1503,27 @@ function kanjiExclusiveByLevel() {
   return out;
 }
 
+// Total kanji kumulatif (unik) dari N5 sampai level ke-index. Daftar N4 dan N3 sudah memuat level sebelumnya,
+// sedangkan N2-N1 hanya berisi kanji barunya, jadi dihitung lewat gabungan unik supaya konsisten.
+function kanjiCumulativeCount(index) {
+  var seen = new Set();
+  for (var i = 0; i <= index && i < LEVELS.length; i++) LEVELS[i].kanji.forEach(function (k) {
+    return seen.add(k);
+  });
+  return seen.size;
+}
+function kanjiCumulativeLabel(index) {
+  if (index <= 0) return LEVELS[0].label;
+  return "".concat(LEVELS[0].label, "–").concat(index === LEVELS.length - 1 ? "N1" : LEVELS[index].label);
+}
+var kanjiFmt = function kanjiFmt(n) {
+  return n.toLocaleString("id-ID");
+};
+// Hanya kanji yang punya data goresan (WRITING_STROKES) yang bisa dilatih menulis; kanji tambahan 2026-10-07 belum punya.
+var canWriteKanji = function canWriteKanji(k) {
+  return typeof WRITING_STROKES !== "undefined" && !!WRITING_STROKES[k];
+};
+
 // Susunan kana untuk pemilih huruf: dasar (46, berbaris sesuai tabel), dakuten+handakuten (25), dan huruf kecil/tambahan.
 function kanaWritingSets(script) {
   var isH = script === "hiragana";
@@ -3410,6 +3431,428 @@ function SusunKataGame(_ref1) {
     "aria-hidden": "true"
   }))))));
 }
+// Rutinitas harian yang bisa diatur sendiri: tambah / ubah nama & menit / hapus target, atau kembali ke bawaan (DAILY_TASKS).
+var DAILY_MAX_TASKS = 12;
+var dailyClampMin = function dailyClampMin(v) {
+  return Math.max(1, Math.min(600, Math.round(Number(v)) || 1));
+};
+function DailyRoutine(_ref) {
+  var tasks = _ref.tasks,
+    setTasks = _ref.setTasks,
+    todayDaily = _ref.todayDaily,
+    toggleDaily = _ref.toggleDaily,
+    streak = _ref.streak;
+  var _s1 = _slicedToArray(useState(false), 2),
+    editing = _s1[0],
+    setEditing = _s1[1];
+  var _s2 = _slicedToArray(useState(""), 2),
+    label = _s2[0],
+    setLabel = _s2[1];
+  var _s3 = _slicedToArray(useState("10"), 2),
+    minutes = _s3[0],
+    setMinutes = _s3[1];
+  var inputStyle = {
+    border: "1.5px solid var(--line)",
+    background: "var(--card-bg)",
+    color: "inherit",
+    borderRadius: 10,
+    padding: "8px 10px",
+    fontFamily: "inherit",
+    fontSize: 14,
+    minWidth: 0
+  };
+  var update = function update(id, patch) {
+    return setTasks(function (prev) {
+      return prev.map(function (t) {
+        return t.id === id ? _objectSpread(_objectSpread({}, t), patch) : t;
+      });
+    });
+  };
+  var remove = function remove(id) {
+    return setTasks(function (prev) {
+      return prev.filter(function (t) {
+        return t.id !== id;
+      });
+    });
+  };
+  var add = function add() {
+    var text = label.trim();
+    if (!text || tasks.length >= DAILY_MAX_TASKS) return;
+    setTasks(function (prev) {
+      return [].concat(_toConsumableArray(prev), [{
+        id: "c" + Date.now(),
+        label: text.slice(0, 40),
+        minutes: dailyClampMin(minutes)
+      }]);
+    });
+    setLabel("");
+    setMinutes("10");
+  };
+  var reset = function reset() {
+    return setTasks(DAILY_TASKS.map(function (t) {
+      return _objectSpread({}, t);
+    }));
+  };
+  var finishEditing = function finishEditing() {
+    // rapikan isian yang dibiarkan kosong sebelum keluar dari mode atur
+    setTasks(function (prev) {
+      return prev.map(function (t) {
+        return _objectSpread(_objectSpread({}, t), {}, {
+          label: String(t.label).trim() || "Target",
+          minutes: dailyClampMin(t.minutes)
+        });
+      });
+    });
+    setEditing(false);
+  };
+  var doneTasks = tasks.filter(function (t) {
+    return todayDaily[t.id];
+  });
+  var totalMin = tasks.reduce(function (s, t) {
+    return s + dailyClampMin(t.minutes);
+  }, 0);
+  var doneMin = doneTasks.reduce(function (s, t) {
+    return s + dailyClampMin(t.minutes);
+  }, 0);
+  var h = React.createElement;
+  return h(React.Fragment, null, h("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      gap: 10,
+      flexWrap: "wrap",
+      marginBottom: 6
+    }
+  }, h("p", {
+    style: {
+      fontSize: 18,
+      fontWeight: 700,
+      margin: 0,
+      color: "var(--ink)"
+    }
+  }, "Rutinitas hari ini"), h("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 8
+    }
+  }, h("span", {
+    "aria-label": "Streak ".concat(streak, " hari"),
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 5,
+      flex: "none",
+      background: "var(--momiji-tint)",
+      border: "1.5px solid var(--momiji)",
+      borderRadius: 999,
+      padding: "4px 12px",
+      fontSize: 13,
+      fontWeight: 700,
+      color: "var(--ink)"
+    }
+  }, "🔥 Streak"), h("button", {
+    className: "nm-btn nm-btn-sm nm-btn-secondary",
+    onClick: function onClick() {
+      return editing ? finishEditing() : setEditing(true);
+    }
+  }, editing ? "✓ Selesai" : "✎ Atur"))), h("p", {
+    style: {
+      fontSize: 12,
+      color: "var(--text-secondary)",
+      margin: "0 0 12px"
+    }
+  }, tasks.length === 0 ? "Belum ada target — tekan Atur untuk menambah." : "".concat(doneTasks.length, "/").concat(tasks.length, " selesai \xB7 ").concat(doneMin, " dari ").concat(totalMin, " menit")), !editing && tasks.map(function (t) {
+    var on = !!todayDaily[t.id];
+    return h("button", {
+      key: t.id,
+      role: "checkbox",
+      "aria-checked": on,
+      onClick: function onClick() {
+        return toggleDaily(t.id);
+      },
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        width: "100%",
+        textAlign: "left",
+        padding: "12px 14px",
+        marginBottom: 10,
+        borderRadius: 12,
+        cursor: "pointer",
+        border: "1.5px solid var(--line)",
+        background: "var(--paper)",
+        fontFamily: "inherit",
+        color: "inherit"
+      }
+    }, h("span", {
+      style: {
+        width: 26,
+        height: 26,
+        borderRadius: 7,
+        flex: "none",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: on ? "var(--matcha)" : "var(--card-bg)",
+        border: on ? "1.5px solid var(--matcha)" : "1.5px solid var(--line)"
+      }
+    }, on && h(Check, {
+      size: 15,
+      color: "#FFFFFF",
+      "aria-hidden": "true"
+    })), h("span", {
+      style: {
+        flex: 1,
+        fontSize: 16,
+        fontWeight: 600,
+        color: on ? "var(--text-secondary)" : "var(--ink)",
+        textDecoration: on ? "line-through" : "none"
+      }
+    }, t.label), h("span", {
+      style: {
+        fontSize: 13,
+        color: "var(--text-secondary)"
+      }
+    }, t.minutes, " menit"));
+  }), editing && h("div", null, tasks.map(function (t) {
+    return h("div", {
+      key: t.id,
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 8,
+        marginBottom: 10
+      }
+    }, h("input", {
+      "aria-label": "Nama target",
+      value: t.label,
+      maxLength: 40,
+      onChange: function onChange(e) {
+        return update(t.id, {
+          label: e.target.value
+        });
+      },
+      style: _objectSpread(_objectSpread({}, inputStyle), {}, {
+        flex: 1
+      })
+    }), h("input", {
+      "aria-label": "Menit untuk ".concat(t.label),
+      inputMode: "numeric",
+      value: t.minutes,
+      onChange: function onChange(e) {
+        var v = e.target.value.replace(/\D/g, "").slice(0, 3);
+        update(t.id, {
+          minutes: v === "" ? "" : Number(v)
+        });
+      },
+      onBlur: function onBlur() {
+        return update(t.id, {
+          minutes: dailyClampMin(t.minutes)
+        });
+      },
+      style: _objectSpread(_objectSpread({}, inputStyle), {}, {
+        width: 56,
+        textAlign: "center"
+      })
+    }), h("span", {
+      style: {
+        fontSize: 12,
+        color: "var(--text-secondary)"
+      }
+    }, "menit"), h("button", {
+      "aria-label": "Hapus ".concat(t.label),
+      onClick: function onClick() {
+        return remove(t.id);
+      },
+      className: "nm-btn nm-btn-ghost",
+      style: {
+        width: 36,
+        minHeight: 36,
+        padding: 0,
+        flex: "none"
+      }
+    }, "✕"));
+  }), tasks.length < DAILY_MAX_TASKS ? h("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 8,
+      marginTop: 4
+    }
+  }, h("input", {
+    "aria-label": "Target baru",
+    placeholder: "Target baru…",
+    value: label,
+    maxLength: 40,
+    onChange: function onChange(e) {
+      return setLabel(e.target.value);
+    },
+    onKeyDown: function onKeyDown(e) {
+      if (e.key === "Enter") add();
+    },
+    style: _objectSpread(_objectSpread({}, inputStyle), {}, {
+      flex: 1
+    })
+  }), h("input", {
+    "aria-label": "Menit target baru",
+    inputMode: "numeric",
+    value: minutes,
+    onChange: function onChange(e) {
+      return setMinutes(e.target.value.replace(/\D/g, "").slice(0, 3));
+    },
+    style: _objectSpread(_objectSpread({}, inputStyle), {}, {
+      width: 56,
+      textAlign: "center"
+    })
+  }), h("button", {
+    className: "nm-btn nm-btn-sm nm-btn-primary",
+    onClick: add,
+    disabled: !label.trim()
+  }, "+ Tambah")) : h("p", {
+    style: {
+      fontSize: 12,
+      color: "var(--text-secondary)",
+      margin: 0
+    }
+  }, "Maksimal ", DAILY_MAX_TASKS, " target."), h("button", {
+    className: "nm-btn nm-btn-ghost",
+    onClick: reset,
+    style: {
+      marginTop: 10,
+      fontSize: 12
+    }
+  }, "↺ Kembalikan ke bawaan")));
+}
+
+// Cadangan progres: ekspor seluruh progres ke file JSON dan impor kembali (progres hanya tersimpan di browser ini).
+function BackupCard(_ref) {
+  var buildSnapshot = _ref.buildSnapshot,
+    applySnapshot = _ref.applySnapshot;
+  var _s1 = _slicedToArray(useState(null), 2),
+    msg = _s1[0],
+    setMsg = _s1[1]; // { ok, text }
+  var fileRef = React.useRef(null);
+  var exportData = function exportData() {
+    try {
+      var blob = new Blob([JSON.stringify(buildSnapshot(), null, 2)], {
+        type: "application/json"
+      });
+      var url = URL.createObjectURL(blob);
+      var d = new Date();
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "nihongo-michi-progres-".concat(d.getFullYear(), "-").concat(String(d.getMonth() + 1).padStart(2, "0"), "-").concat(String(d.getDate()).padStart(2, "0"), ".json");
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () {
+        return URL.revokeObjectURL(url);
+      }, 1000);
+      setMsg({
+        ok: true,
+        text: "Cadangan disimpan ke file. Simpan file itu di tempat yang aman."
+      });
+    } catch (e) {
+      setMsg({
+        ok: false,
+        text: "Gagal membuat file cadangan."
+      });
+    }
+  };
+  var importData = function importData(e) {
+    var file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      setMsg({
+        ok: false,
+        text: "File terlalu besar untuk cadangan Nihongo Michi."
+      });
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function () {
+      try {
+        var data = JSON.parse(String(reader.result));
+        if (!data || _typeof(data) !== "object" || Array.isArray(data) || data.v !== 1) throw new Error("format");
+        if (!window.confirm("Ganti progres yang ada sekarang dengan isi file ini?")) return;
+        applySnapshot(data);
+        setMsg({
+          ok: true,
+          text: "Progres berhasil dipulihkan dari file."
+        });
+      } catch (err) {
+        setMsg({
+          ok: false,
+          text: "File tidak dikenali sebagai cadangan Nihongo Michi."
+        });
+      }
+    };
+    reader.onerror = function () {
+      return setMsg({
+        ok: false,
+        text: "File tidak bisa dibaca."
+      });
+    };
+    reader.readAsText(file);
+  };
+  var h = React.createElement;
+  return h("div", {
+    className: "nm-card nm-t-backup",
+    style: {
+      marginBottom: 12,
+      gridColumn: "1 / -1"
+    }
+  }, h("p", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700,
+      margin: "0 0 4px"
+    }
+  }, "💾 Cadangan progres"), h("p", {
+    style: {
+      fontSize: 12,
+      color: "var(--text-secondary)",
+      margin: "0 0 12px",
+      lineHeight: 1.5
+    }
+  }, "Progresmu tersimpan di browser ini saja. Simpan ke file supaya aman saat ganti HP atau membersihkan data browser."), h("div", {
+    style: {
+      display: "flex",
+      gap: 8,
+      flexWrap: "wrap"
+    }
+  }, h("button", {
+    className: "nm-btn nm-btn-sm nm-btn-secondary",
+    onClick: exportData
+  }, "⬇ Ekspor ke file"), h("button", {
+    className: "nm-btn nm-btn-sm nm-btn-secondary",
+    onClick: function onClick() {
+      return fileRef.current && fileRef.current.click();
+    }
+  }, "⬆ Impor dari file"), h("input", {
+    ref: fileRef,
+    type: "file",
+    accept: ".json,application/json",
+    onChange: importData,
+    style: {
+      display: "none"
+    },
+    "aria-label": "Pilih file cadangan"
+  })), msg && h("p", {
+    role: "status",
+    style: {
+      fontSize: 12,
+      margin: "10px 0 0",
+      color: msg.ok ? "var(--matcha)" : "var(--sakura)",
+      fontWeight: 700
+    }
+  }, msg.text));
+}
+
 function NihongoMichi() {
   var _TABS$find;
   var _useState119 = useState(false),
@@ -3546,6 +3989,15 @@ function NihongoMichi() {
     _useState174 = _slicedToArray(_useState173, 2),
     ujianSimAllDone = _useState174[0],
     setUjianSimAllDone = _useState174[1];
+  // Sesi ujian yang dijeda (keluar di tengah pengerjaan). Disimpan di kunci sendiri, terpisah dari
+  // snapshot progres, dan hanya berisi jawaban + posisi soal; soalnya dibangun ulang saat dilanjutkan.
+  var UJIAN_SESI_KEY = "nihongo-michi-ujian-sesi-v1";
+  var _useStateSaved = useState(function () {
+      return skLoad(UJIAN_SESI_KEY, null);
+    }),
+    _useStateSaved2 = _slicedToArray(_useStateSaved, 2),
+    ujianSaved = _useStateSaved2[0],
+    setUjianSaved = _useStateSaved2[1];
   var UJIAN_SECTIONS = [{
     id: "mojigoi",
     label: "文字・語彙",
@@ -3778,6 +4230,12 @@ function NihongoMichi() {
       return normalizeUjianSection(levelId, y, sectionId).length > 0;
     });
   };
+  var ujianSectionSecs = function ujianSectionSecs(section) {
+    var secDef = UJIAN_SECTIONS.find(function (s) {
+      return s.id === section;
+    });
+    return (secDef ? secDef.simMinutes : 0) * 60;
+  };
   var startUjian = function startUjian(section, simModeArg, levelOverride, yearOverride) {
     var qs = normalizeUjianSection(levelOverride || ujianLevel, String(yearOverride || ujianYear), section);
     var useSim = simModeArg !== undefined ? simModeArg : ujianSimMode;
@@ -3791,12 +4249,10 @@ function NihongoMichi() {
     setShowUjianPembahasan(false);
     setShowUjianScript(false);
     setUjianSimMode(useSim);
-    if (useSim) {
-      var secDef = UJIAN_SECTIONS.find(function (s) {
-        return s.id === section;
-      });
-      setUjianSimTimeLeft((secDef ? secDef.simMinutes : 0) * 60);
-    } else {
+    // Timer berlaku untuk simulasi DAN latihan per kategori (Mojigoi/Dokkai/Choukai): durasinya
+    // mengikuti bagian ujian yang dikerjakan (20/40/20 menit).
+    setUjianSimTimeLeft(ujianSectionSecs(section));
+    if (!useSim) {
       setUjianSimResults([]);
       setUjianSimAllDone(false);
     }
@@ -3895,6 +4351,8 @@ function NihongoMichi() {
       setUjianSimAllDone(true);
     }
   };
+  // Keluar dari layar ujian TIDAK menghapus progres: effect penyimpanan di bawah sudah menulis
+  // keadaan terakhir, jadi di sini cukup membaca ulang untuk menampilkan kartu "Lanjutkan".
   var exitUjianSection = function exitUjianSection() {
     setUjianYear(null);
     setUjianSection(null);
@@ -3905,10 +4363,142 @@ function NihongoMichi() {
     setUjianSimResults([]);
     setUjianSimAllDone(false);
     setUjianSimTimeLeft(0);
+    setUjianSaved(skLoad(UJIAN_SESI_KEY, null));
   };
+  var ujianClearSaved = function ujianClearSaved() {
+    try {
+      localStorage.removeItem(UJIAN_SESI_KEY);
+    } catch (e) {/* diabaikan */}
+    setUjianSaved(null);
+  };
+  // Simpan otomatis tiap jawaban/soal/detik berubah. Tidak menyimpan sesi kosong (belum ada jawaban,
+  // masih di soal 1, bukan simulasi) supaya sesi yang dijeda tidak tertimpa hanya karena membuka latihan.
   useEffect(function () {
-    if (!ujianSimMode || !ujianSection || ujianDone) return;
+    if (!ujianSection || !ujianLevel || !ujianYear) return;
+    if (ujianSimAllDone) {
+      ujianClearSaved();
+      return;
+    }
+    if (ujianDone) return;
+    if (!ujianSimMode && ujianIdx === 0 && Object.keys(ujianAnswersMap).length === 0) return;
+    skSave(UJIAN_SESI_KEY, {
+      v: 1,
+      cat: ujianCategory,
+      level: ujianLevel,
+      year: String(ujianYear),
+      section: ujianSection,
+      idx: ujianIdx,
+      answers: ujianAnswersMap,
+      sim: ujianSimMode,
+      timeLeft: ujianSimTimeLeft,
+      results: ujianSimResults.map(function (r) {
+        return {
+          id: r.id,
+          label: r.label,
+          answersMap: r.answersMap,
+          score: r.score
+        };
+      }),
+      savedAt: Date.now()
+    });
+  }, [ujianSection, ujianLevel, ujianYear, ujianCategory, ujianIdx, ujianAnswersMap, ujianSimMode, ujianSimTimeLeft, ujianSimResults, ujianSimAllDone, ujianDone]);
+  // Lanjutkan sesi yang dijeda: bangun ulang soal dari data, lalu pulihkan posisi, jawaban, dan sisa waktu.
+  var resumeUjian = function resumeUjian() {
+    var s = ujianSaved;
+    if (!s || !s.level || !s.section) {
+      ujianClearSaved();
+      return;
+    }
+    var qs = normalizeUjianSection(s.level, String(s.year), s.section);
+    if (qs.length === 0) {
+      ujianClearSaved();
+      return;
+    }
+    var answers = s.answers || {};
+    var idx = Math.min(Math.max(Number(s.idx) || 0, 0), qs.length - 1);
+    var results = (s.results || []).map(function (r) {
+      return _objectSpread(_objectSpread({}, r), {}, {
+        questions: normalizeUjianSection(s.level, String(s.year), r.id)
+      });
+    });
+    setUjianCategory(s.cat);
+    setUjianLevel(s.level);
+    setUjianYear(String(s.year));
+    setUjianSection(s.section);
+    setUjianQuestions(qs);
+    setUjianIdx(idx);
+    setUjianAnswersMap(answers);
+    setUjianSel(answers[idx] !== undefined ? answers[idx] : null);
+    setUjianScore(0);
+    setUjianDone(false);
+    setShowUjianPembahasan(false);
+    setShowUjianScript(false);
+    // Sesi lama (sebelum latihan punya timer) tersimpan dengan timeLeft 0 -> beri durasi penuh agar tidak langsung ter-submit.
+    setUjianSimMode(!!s.sim);
+    setUjianSimTimeLeft(Number(s.timeLeft) > 0 ? Number(s.timeLeft) : ujianSectionSecs(s.section));
+    setUjianSimResults(results);
+    setUjianSimAllDone(false);
+    setLatihanMode("ujian");
+  };
+  // Kartu "Ujian dijeda" - dipakai di menu Latihan dan di layar pilih jenis latihan JLPT.
+  var renderUjianResume = function renderUjianResume() {
+    var s = ujianSaved;
+    if (!s || ujianSection || !s.section) return null;
+    var lvLabel = String(s.level || "").toUpperCase();
+    var catDef = UJIAN_CATEGORIES.find(function (c) {
+      return c.section === s.section;
+    });
+    var secDef = UJIAN_SECTIONS.find(function (x) {
+      return x.id === s.section;
+    });
+    var no = getLatihanYears(s.level, s.section).indexOf(String(s.year)) + 1;
+    var title = s.sim ? "Simulasi Ujian ".concat(lvLabel, " \xB7 ").concat(secDef ? secDef.label : s.section) : "".concat(catDef ? catDef.title : "Latihan", " \xB7 ").concat(lvLabel).concat(no > 0 ? " \xB7 Latihan ".concat(no) : "");
+    var terjawab = Object.keys(s.answers || {}).length;
+    var sisa = Number(s.timeLeft) || 0;
+    return /*#__PURE__*/React.createElement("div", {
+      className: "nm-card",
+      style: {
+        borderLeft: "4px solid var(--momiji)",
+        display: "flex",
+        flexDirection: "column",
+        gap: 8
+      }
+    }, /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 13.5,
+        fontWeight: 700,
+        margin: 0
+      }
+    }, "⏸ Ujian dijeda"), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 12,
+        color: "var(--text-secondary)",
+        margin: 0,
+        lineHeight: 1.6
+      }
+    }, title, /*#__PURE__*/React.createElement("br", null), "Soal ", (Number(s.idx) || 0) + 1, " \xB7 ", terjawab, " soal sudah dijawab", sisa > 0 ? " \xB7 sisa waktu ".concat(String(Math.floor(sisa / 60)).padStart(2, "0"), ":").concat(String(sisa % 60).padStart(2, "0")) : ""), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 8,
+        flexWrap: "wrap"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: resumeUjian,
+      className: "nm-btn nm-btn-primary"
+    }, "Lanjutkan ujian"), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        if (window.confirm("Buang progres ujian yang dijeda? Jawaban tidak bisa dikembalikan.")) ujianClearSaved();
+      },
+      className: "nm-btn nm-btn-ghost"
+    }, "Buang")));
+  };
+  // Timer simulasi berhenti saat pengguna keluar dari layar ujian (pindah tab aplikasi) atau saat
+  // halaman tersembunyi (aplikasi ke latar belakang), supaya waktu tidak habis selagi tidak mengerjakan.
+  useEffect(function () {
+    if (!ujianSection || ujianDone) return;
+    if (tab !== "latihan" || latihanMode !== "ujian") return;
     var t = setInterval(function () {
+      if (document.hidden) return;
       setUjianSimTimeLeft(function (prev) {
         return Math.max(0, prev - 1);
       });
@@ -3916,9 +4506,9 @@ function NihongoMichi() {
     return function () {
       return clearInterval(t);
     };
-  }, [ujianSimMode, ujianSection, ujianDone]);
+  }, [ujianSection, ujianDone, tab, latihanMode]);
   useEffect(function () {
-    if (ujianSimMode && ujianSection && !ujianDone && ujianSimTimeLeft === 0) {
+    if (ujianSection && !ujianDone && ujianSimTimeLeft === 0) {
       submitUjianSection();
     }
   }, [ujianSimTimeLeft]);
@@ -4154,6 +4744,14 @@ function NihongoMichi() {
     _useState252 = _slicedToArray(_useState251, 2),
     dailyLog = _useState252[0],
     setDailyLog = _useState252[1];
+  // Daftar target rutinitas milik pengguna (awalnya salinan DAILY_TASKS); riwayat centang di dailyLog tetap per id.
+  var _dtState = _slicedToArray(useState(function () {
+      return DAILY_TASKS.map(function (t) {
+        return _objectSpread({}, t);
+      });
+    }), 2),
+    dailyTasks = _dtState[0],
+    setDailyTasks = _dtState[1];
   // Flashcard kanji & kana: { kind: "kanji" | "kana", cat, list, index }
   var _useState253 = useState(null),
     _useState254 = _slicedToArray(_useState253, 2),
@@ -4234,7 +4832,8 @@ function NihongoMichi() {
       kanaCompletedLevels: kanaCompletedLevels,
       writingDone: writingDone,
       kanaKnown: kanaKnown,
-      dailyLog: dailyLog
+      dailyLog: dailyLog,
+      dailyTasks: dailyTasks
     };
   };
   var applySnapshot = function applySnapshot(d) {
@@ -4252,6 +4851,17 @@ function NihongoMichi() {
     if (isObj(d.writingDone)) setWritingDone(d.writingDone);
     if (isObj(d.kanaKnown)) setKanaKnown(d.kanaKnown);
     if (isObj(d.dailyLog)) setDailyLog(d.dailyLog);
+    if (Array.isArray(d.dailyTasks)) {
+      setDailyTasks(d.dailyTasks.filter(function (t) {
+        return isObj(t) && typeof t.id === "string" && typeof t.label === "string";
+      }).slice(0, DAILY_MAX_TASKS).map(function (t) {
+        return {
+          id: t.id,
+          label: t.label.slice(0, 40),
+          minutes: dailyClampMin(t.minutes)
+        };
+      }));
+    }
     return true;
   };
   useEffect(function () {
@@ -4266,7 +4876,7 @@ function NihongoMichi() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(buildSnapshot()));
     } catch (e) {/* diabaikan */}
-  }, [hydrated, darkMode, checked, activityLog, weeklyGoals, weeklyHistory, completedPracticeLevels, kanaCompletedLevels, writingDone, kanaKnown, dailyLog]);
+  }, [hydrated, darkMode, checked, activityLog, weeklyGoals, weeklyHistory, completedPracticeLevels, kanaCompletedLevels, writingDone, kanaKnown, dailyLog, dailyTasks]);
   var speak = function speak(text) {
     try {
       if (!window.speechSynthesis) return;
@@ -4628,6 +5238,7 @@ function NihongoMichi() {
   };
   var toggleDaily = function toggleDaily(taskId) {
     var k = todayStr();
+    var turningOn = !(dailyLog[k] || {})[taskId];
     setDailyLog(function (prev) {
       var day = _objectSpread({}, prev[k] || {});
       if (day[taskId]) delete day[taskId];else day[taskId] = true;
@@ -4635,6 +5246,23 @@ function NihongoMichi() {
       if (Object.keys(day).length) next[k] = day;else delete next[k];
       return next;
     });
+    // Target rutinitas yang dicentang juga dihitung sebagai aktivitas belajar hari ini (streak & kalender),
+    // dan dicabut lagi bila centangnya dibatalkan.
+    var task = dailyTasks.find(function (t) {
+      return t.id === taskId;
+    });
+    if (task) {
+      var label = "Rutinitas: ".concat(task.label);
+      setActivityLog(function (prev) {
+        var list = (prev[k] || []).filter(function (x) {
+          return x !== label;
+        });
+        if (turningOn) list.push(label);
+        var next = _objectSpread({}, prev);
+        if (list.length) next[k] = list;else delete next[k];
+        return next;
+      });
+    }
   };
   var addWeeklyGoal = function addWeeklyGoal() {
     var text = newGoalText.trim();
@@ -5287,7 +5915,7 @@ function NihongoMichi() {
   }, {
     id: "tracker",
     title: "Learning",
-    desc: "".concat(overallCount.done, "/").concat(overallCount.total, " item \xB7 ").concat(Math.round(overallPct) || 0, "%"),
+    desc: "".concat(allLevelsPct, "% dikuasai"),
     icon: Book,
     color: "matcha"
   }, {
@@ -5304,8 +5932,9 @@ function NihongoMichi() {
     color: "momiji"
   }].map(function (card) {
     var Icon = card.icon;
-    // Kartu "Learning" hanya menampilkan ringkasan progres (informasi) — tidak membuka tab Learning saat diklik.
-    var infoOnly = card.id === "tracker";
+    // Semua kartu pintasan bisa diklik (kartu "Learning" membuka tab Learning). infoOnly dibiarkan false
+    // supaya kartu bisa dijadikan informasi saja lagi bila perlu.
+    var infoOnly = false;
     var Wrapper = infoOnly ? "div" : "button";
     var wrapperProps = infoOnly ? {
       style: {
@@ -6120,12 +6749,19 @@ function NihongoMichi() {
       style: {
         fontSize: 12.5,
         fontStyle: "italic",
-        margin: "0 0 16px",
+        margin: "0 0 10px",
         opacity: 0.92,
         maxWidth: "80%",
         lineHeight: 1.5
       }
-    }, "\"", l.tagline, "\""), /*#__PURE__*/React.createElement("span", {
+    }, "\"", l.tagline, "\""), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 12.5,
+        fontWeight: 700,
+        margin: "0 0 16px",
+        opacity: 0.95
+      }
+    }, "📚 ", kanjiFmt(kanjiCumulativeCount(i)), " kanji kumulatif (", kanjiCumulativeLabel(i), ")"), /*#__PURE__*/React.createElement("span", {
       className: "nm-lvlpill",
       style: {
         display: "inline-flex",
@@ -6656,7 +7292,18 @@ function NihongoMichi() {
         margin: 0,
         fontWeight: 700
       }
-    }, done, "/", total, " \xB7 ", Math.round(pct), "%")), /*#__PURE__*/React.createElement("div", {
+    }, done, "/", total, " \xB7 ", Math.round(pct), "%")), cat === "kanji" && /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 11.5,
+        color: "var(--text-secondary)",
+        margin: "0 0 8px",
+        lineHeight: 1.5
+      }
+    }, "Total kumulatif ", kanjiCumulativeLabel(LEVELS.indexOf(level)), ": ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: "var(--ink)"
+      }
+    }, kanjiFmt(kanjiCumulativeCount(LEVELS.indexOf(level)))), " kanji", levelId === "n2n1" ? " \xB7 daftar di level ini hanya kanji barunya" : ""), /*#__PURE__*/React.createElement("div", {
       style: {
         height: 6,
         borderRadius: 4,
@@ -7126,92 +7773,15 @@ function NihongoMichi() {
       style: {
         marginBottom: 12
       }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        gap: 10,
-        marginBottom: 14
-      }
-    }, /*#__PURE__*/React.createElement("p", {
-      style: {
-        fontSize: 18,
-        fontWeight: 700,
-        margin: 0,
-        color: "var(--ink)"
-      }
-    }, "Rutinitas hari ini"), /*#__PURE__*/React.createElement("span", {
-      "aria-label": "Streak ".concat(streak, " hari"),
-      style: {
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 5,
-        flex: "none",
-        background: "var(--momiji-tint)",
-        border: "1.5px solid var(--momiji)",
-        borderRadius: 999,
-        padding: "4px 12px",
-        fontSize: 13,
-        fontWeight: 700,
-        color: "var(--ink)"
-      }
-    }, "\uD83D\uDD25 Streak")), DAILY_TASKS.map(function (t) {
-      var on = !!todayDaily[t.id];
-      return /*#__PURE__*/React.createElement("button", {
-        key: t.id,
-        role: "checkbox",
-        "aria-checked": on,
-        onClick: function onClick() {
-          return toggleDaily(t.id);
-        },
-        style: {
-          display: "flex",
-          alignItems: "center",
-          gap: 12,
-          width: "100%",
-          textAlign: "left",
-          padding: "12px 14px",
-          marginBottom: 10,
-          borderRadius: 12,
-          cursor: "pointer",
-          border: "1.5px solid var(--line)",
-          background: "var(--paper)",
-          fontFamily: "inherit",
-          color: "inherit"
-        }
-      }, /*#__PURE__*/React.createElement("span", {
-        style: {
-          width: 26,
-          height: 26,
-          borderRadius: 7,
-          flex: "none",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: on ? "var(--matcha)" : "var(--card-bg)",
-          border: on ? "1.5px solid var(--matcha)" : "1.5px solid var(--line)"
-        }
-      }, on && /*#__PURE__*/React.createElement(Check, {
-        size: 15,
-        color: "#FFFFFF",
-        "aria-hidden": "true"
-      })), /*#__PURE__*/React.createElement("span", {
-        style: {
-          flex: 1,
-          fontSize: 16,
-          fontWeight: 600,
-          color: on ? "var(--text-secondary)" : "var(--ink)",
-          textDecoration: on ? "line-through" : "none"
-        }
-      }, t.label), /*#__PURE__*/React.createElement("span", {
-        style: {
-          fontSize: 13,
-          color: "var(--text-secondary)"
-        }
-      }, t.minutes, " menit"));
+    }, /*#__PURE__*/React.createElement(DailyRoutine, {
+      tasks: dailyTasks,
+      setTasks: setDailyTasks,
+      todayDaily: todayDaily,
+      toggleDaily: toggleDaily,
+      streak: streak
     })), /*#__PURE__*/React.createElement("div", {
-      className: "nm-card nm-t-stat",
+      className: "nm-card nm-t-stat"
+,
       style: {
         marginBottom: 12
       }
@@ -7799,7 +8369,10 @@ function NihongoMichi() {
           }
         }, h.completedAt));
       })));
-    }()));
+    }()), /*#__PURE__*/React.createElement(BackupCard, {
+      buildSnapshot: buildSnapshot,
+      applySnapshot: applySnapshot
+    }));
   }(), tab === "latihan" && !kanaQuizActive && function (_DIFFICULTY$examDiffi) {
     var sections = [{
       id: "kosakata",
@@ -7829,13 +8402,13 @@ function NihongoMichi() {
           flexDirection: "column",
           gap: 10
         }
-      }, /*#__PURE__*/React.createElement("p", {
+      }, renderUjianResume(), /*#__PURE__*/React.createElement("p", {
         style: {
           fontSize: 12.5,
           color: "var(--text-secondary)",
           margin: "0 0 4px"
         }
-      }, "Mau latihan yang mana?"), /*#__PURE__*/React.createElement("div", {
+      }, "Mau latihan yang mana?"),/*#__PURE__*/React.createElement("div", {
         className: "nm-card nm-card-tap",
         style: {
           cursor: "pointer",
@@ -8318,9 +8891,9 @@ function NihongoMichi() {
 
       // 1) pilih jenis huruf
       if (!writingScript) {
-        var kanjiCount = new Set(LEVELS.flatMap(function (l) {
+        var kanjiCount = _toConsumableArray(new Set(LEVELS.flatMap(function (l) {
           return l.kanji;
-        })).size;
+        }))).filter(canWriteKanji).length;
         var hs = kanaWritingSets("hiragana"),
           ks = kanaWritingSets("katakana");
         var SCRIPTS = [{
@@ -8493,7 +9066,7 @@ function NihongoMichi() {
               color: "var(--text-secondary)",
               margin: "2px 0 0"
             }
-          }, (kanjiEx[l.id] || []).length, " kanji khusus level ini")), /*#__PURE__*/React.createElement(ChevronRight, {
+          }, (kanjiEx[l.id] || []).filter(canWriteKanji).length, " kanji khusus level ini")), /*#__PURE__*/React.createElement(ChevronRight, {
             size: 16,
             color: "var(--text-secondary)",
             "aria-hidden": "true"
@@ -8966,13 +9539,13 @@ function NihongoMichi() {
             transform: "rotate(180deg)"
           },
           "aria-hidden": "true"
-        }), " Ganti jenis latihan"), /*#__PURE__*/React.createElement("p", {
+        }), " Ganti jenis latihan"), renderUjianResume(), /*#__PURE__*/React.createElement("p", {
           style: {
             fontSize: 12.5,
             color: "var(--text-secondary)",
             margin: "0 0 4px"
           }
-        }, "Pilih jenis latihan JLPT:"), UJIAN_CATEGORIES.map(function (cat) {
+        }, "Pilih jenis latihan JLPT:"),UJIAN_CATEGORIES.map(function (cat) {
           var _catStyle$cat$id = catStyle[cat.id],
             color = _catStyle$cat$id.color,
             Icon = _catStyle$cat$id.Icon;
@@ -9051,7 +9624,7 @@ function NihongoMichi() {
             transform: "rotate(180deg)"
           },
           "aria-hidden": "true"
-        }), " Ganti jenis latihan"), /*#__PURE__*/React.createElement("p", {
+        }), " Ganti jenis latihan"), renderUjianResume(), /*#__PURE__*/React.createElement("p", {
           style: {
             fontSize: 12.5,
             color: "var(--text-secondary)",
@@ -9151,7 +9724,7 @@ function NihongoMichi() {
             transform: "rotate(180deg)"
           },
           "aria-hidden": "true"
-        }), " Ganti level"), /*#__PURE__*/React.createElement("p", {
+        }), " Ganti level"), renderUjianResume(), /*#__PURE__*/React.createElement("p", {
           style: {
             fontSize: 12.5,
             color: "var(--text-secondary)",
@@ -9365,7 +9938,14 @@ function NihongoMichi() {
         "aria-hidden": "true"
       }), " ", (UJIAN_CATEGORIES.find(function (c) {
         return c.section === ujianSection;
-      }) || {}).title, " \xB7 ", examLevelInfo(ujianLevel).label, " \xB7 Latihan ", getLatihanYears(ujianLevel, ujianSection).indexOf(String(ujianYear)) + 1), ujianSimMode && !ujianDone && function () {
+      }) || {}).title, " \xB7 ", examLevelInfo(ujianLevel).label, " \xB7 Latihan ", getLatihanYears(ujianLevel, ujianSection).indexOf(String(ujianYear)) + 1), !ujianDone && !ujianSimAllDone && /*#__PURE__*/React.createElement("p", {
+        style: {
+          fontSize: 11,
+          color: "var(--text-secondary)",
+          margin: "-4px 0 10px",
+          lineHeight: 1.5
+        }
+      }, "💾 Progres tersimpan otomatis. Boleh keluar kapan saja, lanjutkan dari menu Latihan — waktu berhenti selama kamu di luar layar ujian."), !ujianDone && !ujianSimAllDone && function () {
         var secDef = UJIAN_SECTIONS.find(function (s) {
           return s.id === ujianSection;
         });
@@ -9550,7 +10130,7 @@ function NihongoMichi() {
           width: "100%",
           borderCollapse: "collapse",
           fontSize: 12.5,
-          background: "#fff",
+          background: "var(--card-bg)",
           border: "1.5px solid var(--line)",
           borderRadius: 10,
           overflow: "hidden"
